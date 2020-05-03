@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { LoginPage } from './login/login.page';
 
 @Component({
   selector: 'app-root',
@@ -13,37 +14,27 @@ export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public appPages = [
     {
-      title: 'Inbox',
+      title: 'Search Playlist(Home)',
       url: '/folder/Inbox',
-      icon: 'mail'
+      icon: 'search'
     },
     {
-      title: 'Outbox',
+      title: 'Create Playlist',
       url: '/folder/Outbox',
-      icon: 'paper-plane'
+      icon: 'add'
     },
     {
-      title: 'Favorites',
+      title: 'View Aarti list',
       url: '/folder/Favorites',
-      icon: 'heart'
+      icon: 'view'
     },
     {
-      title: 'Archived',
-      url: '/folder/Archived',
-      icon: 'archive'
-    },
-    {
-      title: 'Trash',
-      url: '/folder/Trash',
-      icon: 'trash'
-    },
-    {
-      title: 'Spam',
-      url: '/folder/Spam',
-      icon: 'warning'
+      title: 'Logout ',
+      url: 'login',
+      icon: 'log-out'
     }
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+  // public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
   constructor(
     private platform: Platform,
