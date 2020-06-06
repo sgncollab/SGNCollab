@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Create Playlist</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let item of data">
+    <ion-item>
+      <input type="checkbox" slot="end" (change)="getItem($event,item)">{{item.marathiTitle}}
+    </ion-item>
+  </ion-list>
+  <ion-button (click)="onNext()" id="rightButton">Next</ion-button>
+</ion-content>

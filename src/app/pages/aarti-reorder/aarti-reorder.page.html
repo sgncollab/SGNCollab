@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slots="start">
+      <ion-back-button></ion-back-button>
+      <ion-title>Arrange Playlist</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-reorder-group (ionItemReorder)="reorderItems($event)" disabled="false">
+      <ion-item *ngFor="let item of selectedItems">
+        {{item.marathiTitle}}
+        <ion-reorder slot="end"></ion-reorder>
+      </ion-item>
+    </ion-reorder-group>
+  </ion-list>
+  <ion-button (click)="onNext()" id="rightButton">Next</ion-button>
+</ion-content>

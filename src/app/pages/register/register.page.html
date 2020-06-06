@@ -1,0 +1,18 @@
+<ion-header>
+</ion-header>
+
+<ion-content>
+  <div class="ilist">
+    <ion-card>
+      <ion-item>
+        <ion-input type="text" placeholder="Enter Name" [(ngModel)]="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Enter Phone Number" [(ngModel)]="number"></ion-input>
+      </ion-item>
+      <ion-row style=" justify-content: center;">
+        <ion-button (click)="onSubmit()"> Submit </ion-button>
+      </ion-row>
+    </ion-card>
+  </div>
+</ion-content>

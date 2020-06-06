@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Logo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-item>
+      {{ aartiData.marathiTitle }}
+    </ion-item>
+    <ion-item>
+      {{ aartiData.marathiAarti }}
+    </ion-item>
+    <ion-button (click)="onNextPrev('prev')">
+      <ion-icon name="caret-back-outline"></ion-icon>Prev
+    </ion-button>
+    <ion-button (click)="onNextPrev('next')" class="rightButton">Next
+      <ion-icon name="caret-forward-outline"></ion-icon>
+    </ion-button>
+  </ion-card>
+</ion-content>
