@@ -52,12 +52,12 @@ export class AppComponent implements OnInit {
       },
       {
         title: 'Feedback',
-        url: '/folder/Favorites',
+        url: '',
         icon: 'star'
       },
       {
         title: 'Settings',
-        url: '/folder/Archived',
+        url: '',
         icon: 'settings'
       }
     ];
@@ -76,27 +76,27 @@ export class AppComponent implements OnInit {
       },
       {
         title: 'My Playlist',
-        url: '/folder/Favorites',
+        url: 'my-playlist',
         icon: 'musical-notes'
       },
       {
         title: 'Search Playlist',
-        url: '/folder/Archived',
+        url: '',
         icon: 'archive'
       },
       {
         title: 'Feedback',
-        url: '/folder/Trash',
+        url: '',
         icon: 'star'
       },
       {
         title: 'Settings',
-        url: '/folder/Spam',
+        url: '',
         icon: 'settings'
       },
       {
         title: 'Logout',
-        url: '/folder/Spam',
+        url: 'login-register',
         icon: 'exit'
       }
     ];

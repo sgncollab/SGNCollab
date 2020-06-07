@@ -3,7 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'login-register',
     loadChildren: () => import('./pages/login-register/login-register.module').then( m => m.LoginRegisterPageModule)
   },
   {
@@ -31,7 +31,8 @@ const routes: Routes = [
   {
     path: 'create-playlist',
     loadChildren: () => import('./pages/create-playlist/create-playlist.module').then( m => m.CreatePlaylistPageModule)
-  },  {
+  },
+  {
     path: 'my-playlist',
     loadChildren: () => import('./pages/my-playlist/my-playlist.module').then( m => m.MyPlaylistPageModule)
   }
