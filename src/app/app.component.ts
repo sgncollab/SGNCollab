@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { DataService } from './services/data.service';
 
 @Component({
   selector: 'app-root',
@@ -10,38 +11,8 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 })
 export class AppComponent implements OnInit {
   public selectedIndex = 0;
-  public appPages = [
-    {
-      title: 'Create Playlist',
-      url: 'create-playlist',
-      icon: 'add'
-    },
-    {
-      title: 'Outbox',
-      url: '/folder/Outbox',
-      icon: 'paper-plane'
-    },
-    {
-      title: 'Favorites',
-      url: '/folder/Favorites',
-      icon: 'heart'
-    },
-    {
-      title: 'Archived',
-      url: '/folder/Archived',
-      icon: 'archive'
-    },
-    {
-      title: 'Logout',
-      url: 'login-register',
-      icon: 'trash'
-    },
-    {
-      title: 'Spam',
-      url: '/folder/Spam',
-      icon: 'warning'
-    }
-  ];
+  username:any;
+  public appPages = [ ];
   //public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
   constructor(
@@ -63,6 +34,74 @@ export class AppComponent implements OnInit {
     const path = window.location.pathname.split('folder/')[1];
     if (path !== undefined) {
       this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
-    }
+    } 
   }
+ viewMenu(name){
+   if(name.toLowerCase() == "guest"){
+     this.username = name;
+    this.appPages = [
+      {
+        title: 'HomePage',
+        url: 'aarti-list',
+        icon: 'home'
+      },
+      {
+        title: 'Search Playlist',
+        url: '',
+        icon: 'paper-plane'
+      },
+      {
+        title: 'Feedback',
+        url: '/folder/Favorites',
+        icon: 'star'
+      },
+      {
+        title: 'Settings',
+        url: '/folder/Archived',
+        icon: 'settings'
+      }
+    ];
+   } else {
+    this.username = name ;
+    this.appPages = [
+      {
+        title: 'HomePage',
+        url: 'aarti-list',
+        icon: 'home'
+      },
+      {
+        title: 'Create Playlist',
+        url: 'create-playlist',
+        icon: 'add'
+      },
+      {
+        title: 'My Playlist',
+        url: '/folder/Favorites',
+        icon: 'musical-notes'
+      },
+      {
+        title: 'Search Playlist',
+        url: '/folder/Archived',
+        icon: 'archive'
+      },
+      {
+        title: 'Feedback',
+        url: '/folder/Trash',
+        icon: 'star'
+      },
+      {
+        title: 'Settings',
+        url: '/folder/Spam',
+        icon: 'settings'
+      },
+      {
+        title: 'Logout',
+        url: '/folder/Spam',
+        icon: 'exit'
+      }
+    ];
+   }
+  
+ }
+
 }

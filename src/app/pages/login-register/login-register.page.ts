@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MenuController, NavController } from '@ionic/angular';
 import { FirebaseDbService } from 'src/app/services/firebase-db.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DataService } from 'src/app/services/data.service';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-login-register',
@@ -28,7 +30,8 @@ export class LoginRegisterPage implements OnInit {
     private menu: MenuController,
     public formBuilder: FormBuilder,
     private navCtrl: NavController,
-    private dbService: FirebaseDbService
+    private dbService: FirebaseDbService,
+    private appComponent : AppComponent
   ) {
     this.signUpValidate = formBuilder.group({
       userName: ['', Validators.compose([Validators.required, Validators.minLength(4), Validators.pattern('^[a-zA-Z]+$')])],
@@ -70,38 +73,30 @@ export class LoginRegisterPage implements OnInit {
         }
       });
       // handle null and undefined case
+      
       if (this.regResult.length > 0 && this.regResult != undefined) {
-        if (this.regResult.length == 0) {
-          this.srNo = 1;
-        }
-        else {
-          let oldSrNo = 1, newSrNo = 0;  //change naming convention
-          for (var i = 0; i < this.regResult.length; i++) {
-            newSrNo = this.regResult[i].srno;
-            if (newSrNo > oldSrNo) {
-              oldSrNo = newSrNo;
-            }
-            this.srNo = oldSrNo + 1;
+        let oldSrNo = 1, newSrNo = 0;  //change naming convention
+        for (var i = 0; i < this.regResult.length; i++) {
+          newSrNo = this.regResult[i].sr_no;
+          if (newSrNo > oldSrNo) {
+            oldSrNo = newSrNo;
           }
+          this.srNo = oldSrNo + 1;
         }
-      }
+    }
+    else if (this.regResult.length == 0) {
+      this.srNo = 1;
+    }
 
     });
     this.userNameLog = localStorage.getItem('username');
-    this.mobNoLog= localStorage.getItem('mobno');
-    this.ext = localStorage.getItem('extno');
-    // console.log(this.ext);
-    //console.log(this.signUpValidate.value.userName, this.signUpValidate.value.mobNo);
-    //console.log(this.ext);
-    
-    
+    this.mobNoLog = localStorage.getItem('mobno');
+    this.ext = localStorage.getItem('extno'); 
   }
 
   registerUser() {
     var flag = false;
-    try { // check undefined and null response
-      // console.log(this.regResult);
-      // console.log( this.signUpValidate.value.mobNo,this.signUpValidate.value.userName)
+    try {
       if (this.regResult.length > 0 && this.regResult != undefined) {
         for (let i = 0; i < this.regResult.length; i++) {
           if (this.regResult[i].mobile_no == this.signUpValidate.value.mobNo) {
@@ -114,6 +109,7 @@ export class LoginRegisterPage implements OnInit {
       if (flag == false) {
         this.dbService.createUser(this.srNo, this.signUpValidate.value.userName, (this.signUpValidate.value.code + this.signUpValidate.value.mobNo));
         this.rememberme();
+        this.appComponent.viewMenu(this.signUpValidate.value.userName);
         this.navCtrl.navigateForward('home');
       }
     } catch (e) {
@@ -141,7 +137,8 @@ export class LoginRegisterPage implements OnInit {
                 flag = true;
                 this.dbService.showToast("Login Successful!");
                 this.rememberMe();
-                this.navCtrl.navigateForward('home');
+                this.appComponent.viewMenu(usernameCount[i].name);
+                this.navCtrl.navigateRoot('home');
                 break;
               }
             }
@@ -186,5 +183,8 @@ export class LoginRegisterPage implements OnInit {
     }
   }
 
-
+  displayMenu(identifier){
+    this.appComponent.viewMenu("guest");
+    this.navCtrl.navigateRoot('home');
+  }
 }

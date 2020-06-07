@@ -8,7 +8,7 @@ export class DataService {
   private aartiData = [];
   private selectedItems = [];
   private index = 0;
-
+  
   constructor() { }
 
   setData(data) {
@@ -34,4 +34,6 @@ export class DataService {
   getAarti() {
     return this.selectedItems;
   }
+
+
 }
