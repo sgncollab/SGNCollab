@@ -3,6 +3,11 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: '/login-register',
+    pathMatch: 'full'
+  },
+  {
     path: 'login-register',
     loadChildren: () => import('./pages/login-register/login-register.module').then( m => m.LoginRegisterPageModule)
   },
