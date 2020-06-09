@@ -37,7 +37,8 @@ export class FirebaseDbService {
   }
 
   fetchPlaylist() {
-
+    this.collectionName = 'playlist';
+    return this.firestore.collection(this.collectionName).snapshotChanges();
   }
 
   showToast(message: string) {
