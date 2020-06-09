@@ -9,34 +9,45 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class MyPlaylistPage implements OnInit {
   result = [];
-  resultp = [];
+  listResult=[];
   data = [];
-  srno:any;
+  srno: any;
 
-  constructor(private dbService:FirebaseDbService, private dS:DataService) { }
+  constructor(private dbService: FirebaseDbService, private dataService: DataService) { }
 
   ngOnInit() {
     this.dbService.fetchUserPlaylist().subscribe((data) => {
-      this.resultp = data.map(value => {
+      this.result = data.map(value => {
         return {
           id: value.payload.doc.id,
           playlist_id: value.payload.doc.data()['playlist_id'],
           playlist_name: value.payload.doc.data()['playlist_name'],
-          sr_no: value.payload.doc.data()['sr_no'] 
+          sr_no: value.payload.doc.data()['sr_no']
         }
       });
-     // console.log(this.resultp.length);
+      // console.log(this.resultp.length);
       this.userDetail();
+    });
+
+    this.dbService.fetchPlaylist().subscribe((data) => {
+      this.listResult = data.map(value => {
+        return {
+          id: value.payload.doc.id,
+          playlist_id: value.payload.doc.data()['playlist_id'],
+          playlist_name: value.payload.doc.data()['playlist']
+        }
+      });
+      console.log(this.listResult);
     });
   }
 
-  userDetail(){
-    this.srno = this.dS.getLoggedInUserData();
-    for(let i = 0; i< this.resultp.length; i++){
-      console.log(this.resultp[i].sr_no);
-      if(this.srno == this.resultp[i].sr_no){
+  userDetail() {
+    this.srno = this.dataService.getLoggedInUserData();
+    for (let i = 0; i < this.result.length; i++) {
+      console.log(this.result[i].sr_no);
+      if (this.srno == this.result[i].sr_no) {
         console.log(this.srno);
-        this.data.push(this.resultp[i]);
+        this.data.push(this.result[i]);
         console.log(this.data);
       }
     }
