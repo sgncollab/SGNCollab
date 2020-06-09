@@ -25,13 +25,15 @@ export class LoginRegisterPage implements OnInit {
   view: string = "registerView";
   display = false;
   ext: any;
+ 
 
   constructor(
     private menu: MenuController,
     public formBuilder: FormBuilder,
     private navCtrl: NavController,
     private dbService: FirebaseDbService,
-    private appComponent : AppComponent
+    private appComponent : AppComponent,
+    private dataService: DataService
   ) {
     this.signUpValidate = formBuilder.group({
       userName: ['', Validators.compose([Validators.required, Validators.minLength(4), Validators.pattern('^[a-zA-Z]+$')])],
@@ -99,7 +101,7 @@ export class LoginRegisterPage implements OnInit {
     try {
       if (this.regResult.length > 0 && this.regResult != undefined) {
         for (let i = 0; i < this.regResult.length; i++) {
-          if (this.regResult[i].mobile_no == this.signUpValidate.value.mobNo) {
+          if (this.regResult[i].mobile_no == (this.signUpValidate.value.code + this.signUpValidate.value.mobNo)) {
             flag = true;
             this.dbService.showToast("User with this mobile number already exists");
             break;
@@ -137,6 +139,7 @@ export class LoginRegisterPage implements OnInit {
                 flag = true;
                 this.dbService.showToast("Login Successful!");
                 this.rememberMe();
+                this.dataService.setLoggedInUserData( usernameCount[i].sr_no);
                 this.appComponent.viewMenu(usernameCount[i].name);
                 this.navCtrl.navigateRoot('home');
                 break;
@@ -162,7 +165,6 @@ export class LoginRegisterPage implements OnInit {
       localStorage.setItem('username', this.userNameLog);
       localStorage.setItem('mobno', this.mobNoLog);
       localStorage.setItem('extno', this.ext);
-
     }
   }
   rememberme() {

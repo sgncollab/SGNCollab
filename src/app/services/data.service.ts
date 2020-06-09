@@ -8,6 +8,7 @@ export class DataService {
   private aartiData = [];
   private selectedItems = [];
   private index = 0;
+  private loggedInUser:any;
   
   constructor() { }
 
@@ -34,6 +35,11 @@ export class DataService {
   getAarti() {
     return this.selectedItems;
   }
-
+  setLoggedInUserData(userdata){
+    this.loggedInUser = userdata;
+}
+getLoggedInUserData(){
+  return this.loggedInUser;
+}
 
 }
