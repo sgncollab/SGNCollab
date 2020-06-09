@@ -1,9 +1,15 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>myPlaylist</ion-title>
+    <ion-title>My Playlist</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-list *ngFor="let item of data;index as i">
+    <ion-item >
+      <ion-label color="secondary">
+       {{item.playlist_name}}
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>

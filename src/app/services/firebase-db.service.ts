@@ -21,6 +21,11 @@ export class FirebaseDbService {
     return this.firestore.collection(this.collectionName).add(userData);
   }
 
+  fetchUsers() {
+    this.collectionName = 'users';
+    return this.firestore.collection(this.collectionName).snapshotChanges()
+  }
+
   getCountryCode() {
     this.collectionName = 'countryCode';
     return this.firestore.collection(this.collectionName).snapshotChanges();
@@ -29,6 +34,10 @@ export class FirebaseDbService {
   fetchUserPlaylist() {
     this.collectionName = 'user_playlist';
     return this.firestore.collection(this.collectionName).snapshotChanges();
+  }
+
+  fetchPlaylist() {
+
   }
 
   showToast(message: string) {
