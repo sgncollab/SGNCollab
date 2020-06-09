@@ -5,10 +5,11 @@
 </ion-header>
 
 <ion-content>
-  <ion-list *ngFor="let item of data">
-    <ion-item>
+  <ion-list >
+    <ion-item *ngFor="let item of data">
       <input type="checkbox" slot="end" (change)="getItem($event,item)">{{item.marathiTitle}}
     </ion-item>
+    <ion-button (click)="onNext()" id="rightButton">Next</ion-button>
   </ion-list>
-  <ion-button (click)="onNext()" id="rightButton">Next</ion-button>
+  
 </ion-content>

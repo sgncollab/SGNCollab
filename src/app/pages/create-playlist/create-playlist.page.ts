@@ -19,10 +19,10 @@ export class CreatePlaylistPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    fetch('./assets/data/aarti-data.json').then(res => res.json())
-      .then(json => {
-        this.data = json;
-      });
+      fetch('./assets/data/aarti-data.json').then(res => res.json())
+        .then(json => {
+          this.data = json;
+        });
   }
 
   getItem(e: any, marathiTitle: string) {

@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service'
+import { PopoverController } from '@ionic/angular';
+import { ReorderPopoverComponent } from '../reorder-popover/reorder-popover.component';
+import { FirebaseDbService } from 'src/app/services/firebase-db.service';
+
 
 @Component({
   selector: 'app-aarti-reorder',
@@ -9,9 +13,13 @@ import { DataService } from 'src/app/services/data.service'
 export class AartiReorderPage implements OnInit {
   private data: any;
   private selectedItems = [];
+  userPlaylist = [];
 
   constructor(
-    private dataService: DataService
+    private dataService: DataService,
+    private popovercntrl: PopoverController,
+    private dbService: FirebaseDbService
+    
   ) { }
 
   ngOnInit() {
@@ -20,6 +28,19 @@ export class AartiReorderPage implements OnInit {
         this.data = json;
       });
     this.selectedItems = this.dataService.getAarti();
+
+    this.dbService.fetchUserPlaylist().subscribe((data) => {
+      this.userPlaylist = data.map(value => {
+        return {
+          id: value.payload.doc.id,
+          playlist_id: value.payload.doc.data()['playlist_id'],
+          playlist_name: value.payload.doc.data()['playlist_name'],
+          sr_no: value.payload.doc.data()['sr_no']
+
+        }
+      });
+    });
+    //console.log(this.userPlaylist);
   }
 
   reorderItems(event) {
@@ -28,7 +49,14 @@ export class AartiReorderPage implements OnInit {
     event.detail.complete(); //need to see
   }
 
-  onNext() {
-    console.log(this.selectedItems);
+  async presentPopover(ev) {
+    const popover = await this.popovercntrl.create({
+      component: ReorderPopoverComponent,
+      cssClass: 'my-custom-class',
+      event: ev,
+      translucent: true
+    });
+    return await popover.present();
   }
 }
+

@@ -21,13 +21,13 @@ export class FirebaseDbService {
     return this.firestore.collection(this.collectionName).add(userData);
   }
 
-  fetchUsers() {
-    this.collectionName = 'users';
-    return this.firestore.collection(this.collectionName).snapshotChanges()
-  }
-
   getCountryCode() {
     this.collectionName = 'countryCode';
+    return this.firestore.collection(this.collectionName).snapshotChanges();
+  }
+
+  fetchUserPlaylist() {
+    this.collectionName = 'user_playlist';
     return this.firestore.collection(this.collectionName).snapshotChanges();
   }
 
