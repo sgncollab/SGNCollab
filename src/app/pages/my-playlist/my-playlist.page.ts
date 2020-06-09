@@ -16,7 +16,7 @@ export class MyPlaylistPage implements OnInit {
   constructor(private dbService:FirebaseDbService, private dS:DataService) { }
 
   ngOnInit() {
-    this.dbService.fetchPlaylist().subscribe((data) => {
+    this.dbService.fetchUserPlaylist().subscribe((data) => {
       this.resultp = data.map(value => {
         return {
           id: value.payload.doc.id,

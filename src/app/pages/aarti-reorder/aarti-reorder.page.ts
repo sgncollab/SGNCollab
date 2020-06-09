@@ -4,7 +4,6 @@ import { PopoverController } from '@ionic/angular';
 import { ReorderPopoverComponent } from '../reorder-popover/reorder-popover.component';
 import { FirebaseDbService } from 'src/app/services/firebase-db.service';
 
-
 @Component({
   selector: 'app-aarti-reorder',
   templateUrl: './aarti-reorder.page.html',
@@ -36,11 +35,10 @@ export class AartiReorderPage implements OnInit {
           playlist_id: value.payload.doc.data()['playlist_id'],
           playlist_name: value.payload.doc.data()['playlist_name'],
           sr_no: value.payload.doc.data()['sr_no']
-
         }
       });
+      console.log(this.userPlaylist);
     });
-    //console.log(this.userPlaylist);
   }
 
   reorderItems(event) {
@@ -57,6 +55,10 @@ export class AartiReorderPage implements OnInit {
       translucent: true
     });
     return await popover.present();
+  }
+
+  createPlaylist(){
+    
   }
 }
 

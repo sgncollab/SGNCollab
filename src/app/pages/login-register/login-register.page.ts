@@ -74,7 +74,7 @@ export class LoginRegisterPage implements OnInit {
           sr_no: value.payload.doc.data()['sr_no']
         }
       });
-      console.log(this.regResult);
+      //console.log(this.regResult);
       // handle null and undefined case
       
       if (this.regResult.length > 0 && this.regResult != undefined) {
@@ -124,6 +124,7 @@ export class LoginRegisterPage implements OnInit {
     let count = 0;
     let flag = false;
     let usernameCount = [];
+    
 
     try {
       if (this.regResult.length > 0 && this.regResult != undefined) {
