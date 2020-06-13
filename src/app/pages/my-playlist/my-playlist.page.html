@@ -10,10 +10,10 @@
 <ion-content>
   <ion-list *ngFor="let item of data;index as i">
     <ion-item (click)="stringCheck(item.playlist_id)">
-      <p>Id:</p>{{item.playlist_id}} 
-      <ion-label color="secondary"> 
-        <p>Aarti:</p>{{item.playlist_name}}
-      </ion-label>
+      <ion-label class="ion-text-wrap">
+      <p><b> Id:</b> <ion-note color="secondary">{{item.playlist_id}}</ion-note></p>  
+      <p><b> Aarti Name:</b> <ion-note color="secondary"> {{item.playlist_name}}</ion-note></p>
+      </ion-label>   
     </ion-item>
   </ion-list>
 </ion-content>

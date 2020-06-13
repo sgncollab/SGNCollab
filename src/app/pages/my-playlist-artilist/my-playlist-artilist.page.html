@@ -10,9 +10,7 @@
 <ion-content>
   <ion-list *ngFor="let item of myList;index as i">
     <ion-item (click)="openAartiDetails(item,i)">
-      <ion-label color="secondary">
-        {{ item.marathiTitle }}
-      </ion-label>
+      <ion-label color="secondary">{{ item.marathiTitle }}</ion-label>
     </ion-item>
   </ion-list>
 
