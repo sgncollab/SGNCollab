@@ -9,6 +9,7 @@ export class DataService {
   private selectedItems = [];
   private index = 0;
   private loggedInUser: any;
+  private myplaylistartilist =[]
 
   constructor() { }
 
@@ -42,4 +43,10 @@ export class DataService {
     return this.loggedInUser;
   }
 
+  setmyPlaylistArtilist(list){
+    this.myplaylistartilist = list;
+  }
+  getmyPlaylistArtilist(){
+    return this.myplaylistartilist;
+  }
 }

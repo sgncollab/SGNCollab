@@ -143,7 +143,7 @@ export class LoginRegisterPage implements OnInit {
                 this.rememberMe();
                 this.dataService.setLoggedInUserData( usernameCount[i].sr_no);
                 this.appComponent.viewMenu(usernameCount[i].name);
-                this.navCtrl.navigateRoot('home');
+                this.navCtrl.navigateRoot('aarti-list');
                 break;
               }
             }
@@ -189,6 +189,6 @@ export class LoginRegisterPage implements OnInit {
 
   displayMenu(identifier){
     this.appComponent.viewMenu("guest");
-    this.navCtrl.navigateRoot('home');
+    this.navCtrl.navigateRoot('aarti-list');
   }
 }

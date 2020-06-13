@@ -47,17 +47,17 @@ export class AppComponent implements OnInit {
       },
       {
         title: 'Search Playlist',
-        url: '',
-        icon: 'paper-plane'
+        url: 'home',
+        icon: 'search'
       },
       {
         title: 'Feedback',
-        url: '',
-        icon: 'star'
+        url: 'home',
+        icon: 'create'
       },
       {
         title: 'Settings',
-        url: '',
+        url: 'home',
         icon: 'settings'
       }
     ];
@@ -81,17 +81,17 @@ export class AppComponent implements OnInit {
       },
       {
         title: 'Search Playlist',
-        url: '',
-        icon: 'archive'
+        url: 'home',
+        icon: 'search'
       },
       {
         title: 'Feedback',
-        url: '',
-        icon: 'star'
+        url: 'home',
+        icon: 'create'
       },
       {
         title: 'Settings',
-        url: '',
+        url: 'home',
         icon: 'settings'
       },
       {

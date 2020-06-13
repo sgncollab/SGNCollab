@@ -40,7 +40,15 @@ const routes: Routes = [
   {
     path: 'my-playlist',
     loadChildren: () => import('./pages/my-playlist/my-playlist.module').then( m => m.MyPlaylistPageModule)
+  },  {
+    path: 'my-playlist-artilist',
+    loadChildren: () => import('./pages/my-playlist-artilist/my-playlist-artilist.module').then( m => m.MyPlaylistArtilistPageModule)
+  },
+  {
+    path: 'my-playlist-arti-detail',
+    loadChildren: () => import('./pages/my-playlist-arti-detail/my-playlist-arti-detail.module').then( m => m.MyPlaylistArtiDetailPageModule)
   }
+
 
   
 

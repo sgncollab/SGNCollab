@@ -25,6 +25,7 @@ export class AartiListPage implements OnInit {
   openAartiDetails(item, index) {
     this.dataService.setIndex(index);
     this.dataService.setData(item);
+    this.dataService.setmyPlaylistArtilist(this.data);
     this.navController.navigateForward('aarti-details');
   }
 }
