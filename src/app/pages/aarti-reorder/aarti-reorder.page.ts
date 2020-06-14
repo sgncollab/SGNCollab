@@ -25,7 +25,7 @@ export class AartiReorderPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.currentPage = ('aarti-reorder');
+    //this.currentPage = ('aarti-reorder');
     fetch('./assets/data/aarti-data.json').then(res => res.json())
       .then(json => {
         this.data = json;
@@ -46,8 +46,6 @@ export class AartiReorderPage implements OnInit {
     });
     
     this.srNo = this.dataService.getLoggedInUserData();
-    
-
   }
 
   reorderItems(event) {
