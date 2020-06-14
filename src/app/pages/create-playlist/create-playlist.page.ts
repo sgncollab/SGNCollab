@@ -12,6 +12,7 @@ export class CreatePlaylistPage implements OnInit {
   private data: any;
   private selectedItems = [];
   checkedbtn = true;
+  
 
   constructor(
     private dataService: DataService,
@@ -29,14 +30,18 @@ export class CreatePlaylistPage implements OnInit {
   getItem(e: any, marathiTitle: string) {
     if (e.target.checked) {
       this.selectedItems.push(marathiTitle);
+      this.checkedbtn = false;
+      //console.log(this.selectedItems.length);
     }
     else {
       this.selectedItems = this.selectedItems.filter(item => item != marathiTitle);
+      //console.log(this.selectedItems.length);
+    }
+    if(this.selectedItems.length == 0 ){
+      this.checkedbtn = true;
     }
   }
-
   onNext() {
-    
     this.dataService.setAarti(this.selectedItems);
     this.navController.navigateForward('aarti-reorder');
   }
