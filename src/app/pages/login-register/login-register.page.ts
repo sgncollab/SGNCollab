@@ -90,8 +90,8 @@ export class LoginRegisterPage implements OnInit {
     else if (this.regResult.length == 0) {
       this.srNo = 1;
     }
-
     });
+    
     this.userNameLog = localStorage.getItem('username');
     this.mobNoLog = localStorage.getItem('mobno');
     this.ext = localStorage.getItem('extno'); 

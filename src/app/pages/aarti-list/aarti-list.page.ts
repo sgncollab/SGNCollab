@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { NavController } from '@ionic/angular';
+import { NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-aarti-list',
@@ -20,11 +21,11 @@ export class AartiListPage implements OnInit {
       .then(json => {
         this.data = json;
       });
-  }
+  }                                    
 
   openAartiDetails(item, index) {
     this.dataService.setIndex(index);
-    this.dataService.setData(item);
+    this.dataService.setData(item);                                                                                            
     this.navController.navigateForward('aarti-details');
   }
 }
