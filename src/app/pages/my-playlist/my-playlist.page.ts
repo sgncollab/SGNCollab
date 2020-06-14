@@ -99,7 +99,7 @@ export class MyPlaylistPage implements OnInit {
         }
         console.log(this.fetchArti);
         this.dataService.setmyPlaylistArtilist(this.fetchArti);
-        this.navCtrl.navigateForward('my-playlist-artilist');
+        this.navCtrl.navigateForward('my-playlist-aartilist');
         break;
       }
     }

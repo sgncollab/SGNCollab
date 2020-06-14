@@ -46,8 +46,8 @@ const routes: Routes = [
     loadChildren: () => import('./pages/error-page/error-page.module').then( m => m.ErrorPagePageModule)
   },
   {
-    path: 'my-playlist-artilist',
-    loadChildren: () => import('./pages/my-playlist-artilist/my-playlist-artilist.module').then( m => m.MyPlaylistArtilistPageModule)
+    path: 'my-playlist-aartilist',
+    loadChildren: () => import('./pages/my-playlist-aartilist/my-playlist-aartilist.module').then( m => m.MyPlaylistAartilistPageModule)
   }, 
   {
     path: 'update-user-playlist',

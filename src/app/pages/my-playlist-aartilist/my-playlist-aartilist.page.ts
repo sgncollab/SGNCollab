@@ -4,11 +4,11 @@ import { NavController } from '@ionic/angular';
 import { NavigationExtras } from '@angular/router';
 
 @Component({
-  selector: 'app-my-playlist-artilist',
-  templateUrl: './my-playlist-artilist.page.html',
-  styleUrls: ['./my-playlist-artilist.page.scss'],
+  selector: 'app-my-playlist-aartilist',
+  templateUrl: './my-playlist-aartilist.page.html',
+  styleUrls: ['./my-playlist-aartilist.page.scss'],
 })
-export class MyPlaylistArtilistPage implements OnInit {
+export class MyPlaylistAartilistPage implements OnInit {
 
   myList = [];
 
