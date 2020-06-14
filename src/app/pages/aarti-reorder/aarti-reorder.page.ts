@@ -3,6 +3,8 @@ import { DataService } from 'src/app/services/data.service'
 import { PopoverController } from '@ionic/angular';
 import { ReorderPopoverComponent } from '../reorder-popover/reorder-popover.component';
 import { FirebaseDbService } from 'src/app/services/firebase-db.service';
+import { ActivatedRoute } from '@angular/router';
+import { UpdatePopoverComponent } from '../update-popover/update-popover.component';
 
 @Component({
   selector: 'app-aarti-reorder',
@@ -13,12 +15,13 @@ export class AartiReorderPage implements OnInit {
   private data: any;
   private selectedItems = [];
   userPlaylist = [];
+  item = [];
 
   constructor(
     private dataService: DataService,
     private popovercntrl: PopoverController,
-    private dbService: FirebaseDbService
-    
+    private dbService: FirebaseDbService,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
@@ -27,7 +30,6 @@ export class AartiReorderPage implements OnInit {
         this.data = json;
       });
     this.selectedItems = this.dataService.getAarti();
-
     this.dbService.fetchUserPlaylist().subscribe((data) => {
       this.userPlaylist = data.map(value => {
         return {
@@ -48,6 +50,7 @@ export class AartiReorderPage implements OnInit {
   }
 
   async presentPopover(ev) {
+
     const popover = await this.popovercntrl.create({
       component: ReorderPopoverComponent,
       cssClass: 'my-custom-class',
@@ -55,10 +58,28 @@ export class AartiReorderPage implements OnInit {
       translucent: true
     });
     return await popover.present();
+
+    // if( this.item != null){
+    //   const popover = await this.popovercntrl.create({
+    //     component: UpdatePopoverComponent,
+    //     cssClass: 'my-custom-class',
+    //     event: ev,
+    //     translucent: true
+    //   });
+    //   return await popover.present();
+    // }else{
+    //   const popover = await this.popovercntrl.create({
+    //     component: ReorderPopoverComponent,
+    //     cssClass: 'my-custom-class',
+    //     event: ev,
+    //     translucent: true
+    //   });
+    //   return await popover.present();
+    // }
   }
 
-  createPlaylist(){
-    
+  createPlaylist() {
+
   }
 }
 
