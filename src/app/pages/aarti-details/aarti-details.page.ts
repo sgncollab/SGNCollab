@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 import { ToastController } from '@ionic/angular';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-aarti-details',
@@ -8,7 +9,7 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['./aarti-details.page.scss'],
 })
 export class AartiDetailsPage implements OnInit {
-  private aartiData: any;
+  aartiData: any;
   private data: any;
 
   constructor(
@@ -17,16 +18,13 @@ export class AartiDetailsPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    fetch('./assets/data/aarti-data.json').then(res => res.json())
-      .then(json => {
-        this.data = json;
-      });
     this.aartiData = this.dataService.getData();
+    this.data = this.dataService.getmyPlaylistArtilist();
   }
 
   async onNextPrev(identifier) {
     let index: any;
-    
+
     try {
       index = this.dataService.getIndex();
       if (identifier == 'prev') {

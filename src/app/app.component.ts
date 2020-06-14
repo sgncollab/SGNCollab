@@ -53,73 +53,78 @@ export class AppComponent implements OnInit {
     //   this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
     // } 
   }
-  viewMenu(name) {
-    if (name.toLowerCase() == "guest") {
-      this.username = name;
-      this.appPages = [
-        {
-          title: 'HomePage',
-          url: 'aarti-list',
-          icon: 'home'
-        },
-        {
-          title: 'Search Playlist',
-          url: '',
-          icon: 'paper-plane'
-        },
-        {
-          title: 'Feedback',
-          url: '',
-          icon: 'star'
-        },
-        {
-          title: 'Settings',
-          url: '',
-          icon: 'settings'
-        }
-      ];
-    } else {
-      this.username = name;
-      this.appPages = [
-        {
-          title: 'HomePage',
-          url: 'aarti-list',
-          icon: 'home'
-        },
-        {
-          title: 'Create Playlist',
-          url: 'create-playlist',
-          icon: 'add'
-        },
-        {
-          title: 'My Playlist',
-          url: 'my-playlist',
-          icon: 'musical-notes'
-        },
-        {
-          title: 'Search Playlist',
-          url: '',
-          icon: 'archive'
-        },
-        {
-          title: 'Feedback',
-          url: '',
-          icon: 'star'
-        },
-        {
-          title: 'Settings',
-          url: '',
-          icon: 'settings'
-        },
-        {
-          title: 'Logout',
-          url: 'login-register',
-          icon: 'exit'
-        }
-      ];
-    }
-
+  
+ viewMenu(name){
+   
+   if(name.toLowerCase() == "guest"){
+     this.username = name;
+    this.appPages = [
+      {
+        title: 'HomePage',
+        url: 'aarti-list',
+        icon: 'home'
+      },
+      {
+        title: 'Search Playlist',
+        url: 'home',
+        icon: 'search'
+      },
+      {
+        title: 'Feedback',
+        url: 'home',
+        icon: 'create'
+      },
+      {
+        title: 'Settings',
+        url: 'home',
+        icon: 'settings'
+      }
+    ];
+   } else {
+    this.username = name ;
+    this.appPages = [
+      {
+        title: 'HomePage',
+        url: 'aarti-list',
+        icon: 'home'
+      },
+      {
+        title: 'Create Playlist',
+        url: 'create-playlist',
+        icon: 'add'
+      },
+      {
+        title: 'My Playlist',
+        url: 'my-playlist',
+        icon: 'musical-notes'
+      },
+      {
+        title: 'Search Playlist',
+        url: 'home',
+        icon: 'search'
+      },
+      {
+        title: 'Feedback',
+        url: 'home',
+        icon: 'create'
+      },
+      {
+        title: 'Settings',
+        url: 'home',
+        icon: 'settings'
+      },
+      {
+        title: 'Logout',
+        url: 'login-register',
+        icon: 'exit'
+      }
+    ];
+   }
+  
   }
+
+
+  
 
   demo(index) {
     let count = 0 ;

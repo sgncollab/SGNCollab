@@ -1,15 +1,19 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-title>My Playlist</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list *ngFor="let item of data;index as i">
-    <ion-item>
-      <ion-label color="secondary">
-        {{item.playlist_name}}
-      </ion-label>
+    <ion-item (click)="stringCheck(item.playlist_id)">
+      <ion-label class="ion-text-wrap">
+      <p><b> Id:</b> <ion-note color="secondary">{{item.playlist_id}}</ion-note></p>  
+      <p><b> Aarti Name:</b> <ion-note color="secondary"> {{item.playlist_name}}</ion-note></p>
+      </ion-label>   
     </ion-item>
   </ion-list>
 </ion-content>

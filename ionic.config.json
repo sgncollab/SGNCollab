@@ -1,7 +1,8 @@
 {
   "name": "SGN",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }

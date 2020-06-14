@@ -40,21 +40,19 @@ const routes: Routes = [
   {
     path: 'my-playlist',
     loadChildren: () => import('./pages/my-playlist/my-playlist.module').then( m => m.MyPlaylistPageModule)
-  },  {
+  },
+  {
     path: 'error-page',
     loadChildren: () => import('./pages/error-page/error-page.module').then( m => m.ErrorPagePageModule)
+  },
+  {
+    path: 'my-playlist-artilist',
+    loadChildren: () => import('./pages/my-playlist-artilist/my-playlist-artilist.module').then( m => m.MyPlaylistArtilistPageModule)
+  },
+  {
+    path: 'my-playlist-arti-detail',
+    loadChildren: () => import('./pages/my-playlist-arti-detail/my-playlist-arti-detail.module').then( m => m.MyPlaylistArtiDetailPageModule)
   }
-
-
-  
-
-  
-
-
-
-
-  
-
 ];
 
 @NgModule({

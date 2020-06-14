@@ -113,7 +113,7 @@ export class LoginRegisterPage implements OnInit {
         this.dbService.createUser(this.srNo, this.signUpValidate.value.userName, (this.signUpValidate.value.code + this.signUpValidate.value.mobNo));
         this.rememberme();
         this.appComponent.viewMenu(this.signUpValidate.value.userName);
-        this.navCtrl.navigateForward('home');
+        this.navCtrl.navigateForward('aarti-list');
       }
     } catch (e) {
       this.dbService.showToast(e);
@@ -143,7 +143,7 @@ export class LoginRegisterPage implements OnInit {
                 this.rememberMe();
                 this.dataService.setLoggedInUserData( usernameCount[i].sr_no);
                 this.appComponent.viewMenu(usernameCount[i].name);
-                this.navCtrl.navigateRoot('home');
+                this.navCtrl.navigateRoot('aarti-list');
                 break;
               }
             }
@@ -189,6 +189,6 @@ export class LoginRegisterPage implements OnInit {
 
   displayMenu(identifier){
     this.appComponent.viewMenu("guest");
-    this.navCtrl.navigateRoot('home');
+    this.navCtrl.navigateRoot('aarti-list');
   }
 }

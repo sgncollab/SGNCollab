@@ -10,6 +10,7 @@ export class DataService {
   private index = 0;
   private loggedInUser: any;
   private playlistName:any;
+  private myplaylistartilist =[]
 
   constructor() { }
 
@@ -47,7 +48,11 @@ export class DataService {
   getPlaylistName() {
     return this.playlistName;
   }
-
   
-
+  setmyPlaylistArtilist(list){
+    this.myplaylistartilist = list;
+  }
+  getmyPlaylistArtilist(){
+    return this.myplaylistartilist;
+  }
 }
