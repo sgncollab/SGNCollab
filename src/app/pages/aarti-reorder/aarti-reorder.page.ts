@@ -15,7 +15,9 @@ export class AartiReorderPage implements OnInit {
   private data: any;
   private selectedItems = [];
   userPlaylist = [];
-  item = [];
+  playlistName: string ="";
+  srNo: any;
+  currentPage = "";
 
   constructor(
     private dataService: DataService,
@@ -25,11 +27,14 @@ export class AartiReorderPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    //this.currentPage = ('aarti-reorder');
     fetch('./assets/data/aarti-data.json').then(res => res.json())
       .then(json => {
         this.data = json;
       });
     this.selectedItems = this.dataService.getAarti();
+    //console.log(this.selectedItems);
+
     this.dbService.fetchUserPlaylist().subscribe((data) => {
       this.userPlaylist = data.map(value => {
         return {
@@ -39,8 +44,10 @@ export class AartiReorderPage implements OnInit {
           sr_no: value.payload.doc.data()['sr_no']
         }
       });
-      console.log(this.userPlaylist);
+      //console.log(this.userPlaylist);
     });
+    
+    this.srNo = this.dataService.getLoggedInUserData();
   }
 
   reorderItems(event) {
@@ -76,10 +83,6 @@ export class AartiReorderPage implements OnInit {
     //   });
     //   return await popover.present();
     // }
-  }
-
-  createPlaylist() {
-
   }
 }
 

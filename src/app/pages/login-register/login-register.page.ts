@@ -90,8 +90,8 @@ export class LoginRegisterPage implements OnInit {
     else if (this.regResult.length == 0) {
       this.srNo = 1;
     }
-
     });
+    
     this.userNameLog = localStorage.getItem('username');
     this.mobNoLog = localStorage.getItem('mobno');
     this.ext = localStorage.getItem('extno'); 
@@ -113,7 +113,7 @@ export class LoginRegisterPage implements OnInit {
         this.dbService.createUser(this.srNo, this.signUpValidate.value.userName, (this.signUpValidate.value.code + this.signUpValidate.value.mobNo));
         this.rememberme();
         this.appComponent.viewMenu(this.signUpValidate.value.userName);
-        this.navCtrl.navigateForward('home');
+        this.navCtrl.navigateForward('aarti-list');
       }
     } catch (e) {
       this.dbService.showToast(e);

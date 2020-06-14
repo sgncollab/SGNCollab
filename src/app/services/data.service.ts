@@ -9,6 +9,7 @@ export class DataService {
   private selectedItems = [];
   private index = 0;
   private loggedInUser: any;
+  private playlistName:any;
   private myplaylistartilist =[]
 
   constructor() { }
@@ -16,7 +17,6 @@ export class DataService {
   setData(data) {
     this.aartiData = data;
   }
-
   getData() {
     return this.aartiData;
   }
@@ -24,7 +24,6 @@ export class DataService {
   setIndex(index) {
     this.index = index;
   }
-
   getIndex() {
     return this.index;
   }
@@ -32,10 +31,10 @@ export class DataService {
   setAarti(item) {
     this.selectedItems = item;
   }
-
   getAarti() {
     return this.selectedItems;
   }
+
   setLoggedInUserData(userdata) {
     this.loggedInUser = userdata;
   }
@@ -43,6 +42,13 @@ export class DataService {
     return this.loggedInUser;
   }
 
+  setPlaylistName(name){
+    this.playlistName = name;
+  }
+  getPlaylistName() {
+    return this.playlistName;
+  }
+  
   setmyPlaylistArtilist(list){
     this.myplaylistartilist = list;
   }

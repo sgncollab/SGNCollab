@@ -42,24 +42,17 @@ const routes: Routes = [
     loadChildren: () => import('./pages/my-playlist/my-playlist.module').then( m => m.MyPlaylistPageModule)
   },
   {
+    path: 'error-page',
+    loadChildren: () => import('./pages/error-page/error-page.module').then( m => m.ErrorPagePageModule)
+  },
+  {
     path: 'my-playlist-artilist',
     loadChildren: () => import('./pages/my-playlist-artilist/my-playlist-artilist.module').then( m => m.MyPlaylistArtilistPageModule)
-  },  {
+  }, 
+  {
     path: 'update-user-playlist',
     loadChildren: () => import('./pages/update-user-playlist/update-user-playlist.module').then( m => m.UpdateUserPlaylistPageModule)
   }
-
-
-
-  
-
-  
-
-
-
-
-  
-
 ];
 
 @NgModule({
