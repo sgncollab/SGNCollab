@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
 export class CreatePlaylistPage implements OnInit {
   private data: any;
   private selectedItems = [];
-  checkedbtn: boolean;
+  checkedbtn = true;
 
   constructor(
     private dataService: DataService,
@@ -28,7 +28,6 @@ export class CreatePlaylistPage implements OnInit {
 
   getItem(e: any, marathiTitle: string) {
     if (e.target.checked) {
-      this.checkedbtn = false;
       this.selectedItems.push(marathiTitle);
     }
     else {
@@ -37,6 +36,7 @@ export class CreatePlaylistPage implements OnInit {
   }
 
   onNext() {
+    
     this.dataService.setAarti(this.selectedItems);
     this.navController.navigateForward('aarti-reorder');
   }
