@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseDbService } from 'src/app/services/firebase-db.service';
 import { DataService } from 'src/app/services/data.service';
-import { NavController } from '@ionic/angular';
+import { NavController, LoadingController } from '@ionic/angular';
+import { NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-my-playlist',
@@ -15,11 +16,12 @@ export class MyPlaylistPage implements OnInit {
   srno: any;
   listid = [];
   artiJson = [];
-  // fetchArti=[];
+  fetchArti=[];
 
-  constructor(private dbService: FirebaseDbService, private dataService: DataService, private navCtrl: NavController) { }
+  constructor(private dbService: FirebaseDbService,private loadingController:LoadingController, private dataService: DataService, private navCtrl: NavController) { }
 
   ngOnInit() {
+   // this.loadPlaylist();
     this.dbService.fetchUserPlaylist().subscribe((data) => {
       this.result = data.map(value => {
         return {
@@ -48,8 +50,10 @@ export class MyPlaylistPage implements OnInit {
       });
   }
 
+
   userDetail() {
     this.srno = this.dataService.getLoggedInUserData();
+    this.data =[];
     for (let i = 0; i < this.result.length; i++) {
       if (this.srno == this.result[i].sr_no) {
         this.data.push(this.result[i]);
@@ -75,6 +79,7 @@ export class MyPlaylistPage implements OnInit {
   }
 
 
+
   stringCheck(pId) {
     let str = "";
     console.log(this.listid);
@@ -82,51 +87,56 @@ export class MyPlaylistPage implements OnInit {
       if (pId == this.listid[i].playlist_id) {
         str = this.listid[i].playlist_str;
         console.log(str)
-        let fetchArti = [];
+         this.fetchArti = [];
         for (let k = 0; k < str.length; k++) {
           let key = str.charAt(k)
           console.log(key);
           for (let a = 0; a < this.artiJson.length; a++) {
             if (key == this.artiJson[a].aartiId) {
-              fetchArti.push(this.artiJson[a])
+              this.fetchArti.push(this.artiJson[a])
             }
           }
         }
-        console.log(fetchArti);
-        this.dataService.setmyPlaylistArtilist(fetchArti);
-        this.navCtrl.navigateForward('my-playlist-artilist');
+        console.log(this.fetchArti);
+        this.dataService.setmyPlaylistArtilist(this.fetchArti);
+        this.navCtrl.navigateForward('my-playlist-aartilist');
         break;
       }
     }
   }
 
+updatePlaylist(item){
+this.stringCheck(item.playlist_id);
+  let navigationExtras: NavigationExtras = {
+    queryParams: {
+        item: JSON.stringify(item),
+        aarti: JSON.stringify(this.fetchArti)
 
+    }
+};
+this.navCtrl.navigateForward(['update-user-playlist'], navigationExtras );
+}
 
+  deletePlaylist(item) {
+    let count = 0;
+    let id ="";
+    for (let i=0 ;i<this.result.length;i++){
+      if(item.playlist_id == this.result[i].playlist_id){
+        count++;
+      }
+    }
+    for(let j=0;j< this.listResult.length;j++){
+      if(this.listResult[j].playlist_id == item.playlist_id){
+        id = this.listResult[j].id;
+      }
+    }
+    if(count > 1){
+      this.dbService.deleteUserPlaylist(item.id)
+    }else {
+      this.dbService.deletePlaylist(id)
+      this.dbService.deleteUserPlaylist(item.id)
+    }
+    this.dbService.showToast(item.playlist_name + " "+" Deleted!")
+  }
 
-
-
-  // stringCheck(pId) {
-  //   console.log(pId);
-  //   let str = "";
-  //   for (let i = 0; i < this.listid.length; i++) {
-  //     if (pId == this.listid[i].playlist_id) {
-  //       str = this.listid[i].playlist_str;
-  //       console.log(str)
-  //       let fetchArti = [];
-  //       for (let k = 0; k < str.length; k++) {
-  //         let key = str.charAt(k)
-  //         console.log(key);
-  //         for (let a = 0; a < this.artiJson.length; a++) {
-  //           if (key == this.artiJson[a].aartiId) {
-  //             fetchArti.push(this.artiJson[a])
-  //           }
-  //         }
-  //       }
-  //       console.log(fetchArti);
-  //       this.dataService.setmyPlaylistArtilist(fetchArti);
-  //       this.navCtrl.navigateForward('my-playlist-artilist');
-  //       break;
-  //     }
-  //   }
-  // }
 }

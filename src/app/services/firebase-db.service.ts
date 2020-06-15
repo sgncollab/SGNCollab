@@ -41,16 +41,30 @@ export class FirebaseDbService {
     return this.firestore.collection(this.collectionName).snapshotChanges();
   }
 
+  updatePlaylist(uPid, record) {
+    this.collectionName = "user_playlist";
+    return this.firestore.doc(this.collectionName + '/' + uPid).update(record);
+  }
+  deleteUserPlaylist(uPid) {
+    this.collectionName = 'user_playlist'
+    return this.firestore.collection(this.collectionName).doc(uPid).delete();
+  }
+
+  deletePlaylist(pId) {
+    this.collectionName = 'playlist'
+    return this.firestore.collection(this.collectionName).doc(pId).delete();
+  }
+  
   insertIntoPlaylist(playlistId, playlistString) {
     this.collectionName = 'playlist';
     var playlistData = { 'playlist': playlistString, 'playlist_id': playlistId }
     //this.insertIntoPlaylist(playlistId,name,srNo)
-     return this.firestore.collection(this.collectionName).add(playlistData);
+    return this.firestore.collection(this.collectionName).add(playlistData);
   }
 
-  insertIntoUserPlaylist(playlistId,playlistName,srNo){
+  insertIntoUserPlaylist(playlistId, playlistName, srNo) {
     this.collectionName = 'user_playlist';
-    var userPlaylistData = {'playlist_id':playlistId, 'playlist_name':playlistName, 'sr_no':srNo}
+    var userPlaylistData = { 'playlist_id': playlistId, 'playlist_name': playlistName, 'sr_no': srNo }
     return this.firestore.collection(this.collectionName).add(userPlaylistData);
   }
 
@@ -58,7 +72,7 @@ export class FirebaseDbService {
     this.toastCtrl.create({
       message: message,
       duration: 3000,
-      color:'primary',
+      color: 'primary',
     }).then(toastData => toastData.present());
   }
 }

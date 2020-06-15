@@ -46,12 +46,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/error-page/error-page.module').then( m => m.ErrorPagePageModule)
   },
   {
-    path: 'my-playlist-artilist',
-    loadChildren: () => import('./pages/my-playlist-artilist/my-playlist-artilist.module').then( m => m.MyPlaylistArtilistPageModule)
-  },
+    path: 'my-playlist-aartilist',
+    loadChildren: () => import('./pages/my-playlist-aartilist/my-playlist-aartilist.module').then( m => m.MyPlaylistAartilistPageModule)
+  }, 
   {
-    path: 'my-playlist-arti-detail',
-    loadChildren: () => import('./pages/my-playlist-arti-detail/my-playlist-arti-detail.module').then( m => m.MyPlaylistArtiDetailPageModule)
+    path: 'update-user-playlist',
+    loadChildren: () => import('./pages/update-user-playlist/update-user-playlist.module').then( m => m.UpdateUserPlaylistPageModule)
   }
 ];
 
