@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
-import { NavController } from '@ionic/angular';
+import { NavController, Platform, IonRouterOutlet } from '@ionic/angular';
 import { NavigationExtras } from '@angular/router';
+import { Plugins } from '@capacitor/core';
+const { App } = Plugins;
 
 @Component({
   selector: 'app-aarti-list',
@@ -13,8 +15,16 @@ export class AartiListPage implements OnInit {
 
   constructor(
     private navController: NavController,
-    private dataService: DataService
-  ) { }
+    private dataService: DataService,
+    private platform: Platform,
+  private routerOutlet: IonRouterOutlet
+  ) { 
+    this.platform.backButton.subscribeWithPriority(-1, () => {
+      if (!this.routerOutlet.canGoBack()) {
+        App.exitApp();
+      }
+    });
+  }
 
   ngOnInit() {
     fetch('./assets/data/aarti-data.json').then(res => res.json())
