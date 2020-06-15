@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PopoverController } from '@ionic/angular';
+import { PopoverController, NavController } from '@ionic/angular';
 import { FirebaseDbService } from 'src/app/services/firebase-db.service';
 import { DataService } from 'src/app/services/data.service';
 
@@ -25,7 +25,8 @@ export class ReorderPopoverComponent implements OnInit {
   constructor(
     private popovercntrl: PopoverController,
     private dbService: FirebaseDbService,
-    private dataService: DataService
+    private dataService: DataService,
+    private navController: NavController
   ) { }
 
   ngOnInit() {
@@ -66,7 +67,7 @@ export class ReorderPopoverComponent implements OnInit {
       for (let i = 0; i < this.srNoList.length; i++) {
         if (this.playlistName == this.srNoList[i].playlist_name) {
           flag = true;
-          console.log("Playlist already created. Please create playlist with different name.");
+          this.dbService.showToast("Playlist already created. Please create playlist with different name.");
           break;
         }
       }
@@ -122,7 +123,7 @@ export class ReorderPopoverComponent implements OnInit {
           for (let i = 0; i < this.srCheck.length; i++) {
             if (this.pId == this.srCheck[i].playlist_id) {
               flag1 = true;
-              console.log("You have already created same playlist,with name " + this.srCheck[i].playlist_name);
+              this.dbService.showToast("You have already created same playlist,with name " + this.srCheck[i].playlist_name);
             }
           }
           if(flag1 == false) {
@@ -153,7 +154,9 @@ export class ReorderPopoverComponent implements OnInit {
     }
     this.dbService.insertIntoPlaylist(this.playlistId, this.playlistString);
     this.dbService.insertIntoUserPlaylist(this.playlistId, this.playlistName, this.srNo);
-    console.log("Inserted into both table successfully");
+    //console.log("Inserted into both table successfully");
+    this.dbService.showToast("Playlist created successfully");
+    this.navController.navigateForward('my-playlist');
   }
   secondInsertion() {
     //console.log("no auto gen.take playlist id ,insert same id,with playlist name & srno into userplaylist");
@@ -161,7 +164,9 @@ export class ReorderPopoverComponent implements OnInit {
     // console.log(this.playlistName);
     // console.log(this.srNo);
     this.dbService.insertIntoUserPlaylist(this.pId, this.playlistName, this.srNo);
-    console.log("Inserted into user playlist successfully");
+    //console.log("Inserted into user playlist successfully");
+    this.dbService.showToast("Playlist created successfully");
+    this.navController.navigateForward('my-playlist');
   }
 
 
