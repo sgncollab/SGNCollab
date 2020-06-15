@@ -113,6 +113,7 @@ export class LoginRegisterPage implements OnInit {
         this.dbService.createUser(this.srNo, this.signUpValidate.value.userName, (this.signUpValidate.value.code + this.signUpValidate.value.mobNo));
         this.rememberme();
         this.appComponent.viewMenu(this.signUpValidate.value.userName);
+        //this.dataService.setLoggedInUserData( this.regResult[i].sr_no);
         this.navCtrl.navigateForward('aarti-list');
       }
     } catch (e) {
