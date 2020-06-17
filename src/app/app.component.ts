@@ -45,6 +45,7 @@ export class AppComponent implements OnInit {
           playlist_id: value.payload.doc.data()['playlist_id'],
           playlist_name: value.payload.doc.data()['playlist_name'],
           sr_no: value.payload.doc.data()['sr_no']
+          
         }
       });
     });

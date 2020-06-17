@@ -14,8 +14,11 @@
     <preference name="ScrollEnabled" value="false" />
     <preference name="android-minSdkVersion" value="19" />
     <preference name="BackupWebStorage" value="none" />
-    <preference name="SplashMaintainAspectRatio" value="true" />
-    <preference name="FadeSplashScreenDuration" value="300" />
+    <preference name="SplashMaintainAspectRatio" value="false" />
+    <preference name="ShowSplashScreen" value="true" />
+    <preference name="ShowSplashScreenSpinner" value="false" />
+    <preference name="FadeSplashScreen" value="true" />
+    <preference name="FadeSplashScreenDuration" value="2000" />
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="2000" />
@@ -37,12 +40,12 @@
         <splash density="land-xhdpi" src="resources/android/splash/splashimg-xhdpi.png" />
         <splash density="land-xxhdpi" src="resources/android/splash/splashimg-xxhdpi.png" />
         <splash density="land-xxxhdpi" src="resources/android/splash/splashimg-xxxhdpi.png" />
-        <splash density="port-ldpi" src="resources/android/splash/drawable-port-ldpi-screen.png" />
-        <splash density="port-mdpi" src="resources/android/splash/drawable-port-mdpi-screen.png" />
-        <splash density="port-hdpi" src="resources/android/splash/drawable-port-hdpi-screen.png" />
-        <splash density="port-xhdpi" src="resources/android/splash/drawable-port-xhdpi-screen.png" />
-        <splash density="port-xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.png" />
-        <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
+        <splash density="port-ldpi" src="resources/android/splash/splashimg-ldpi.png" />
+        <splash density="port-mdpi" src="resources/android/splash/splashimg-mdpi.png" />
+        <splash density="port-hdpi" src="resources/android/splash/splashimg-hdpi.png" />
+        <splash density="port-xhdpi" src="resources/android/splash/splashimg-xhdpi.png" />
+        <splash density="port-xxhdpi" src="resources/android/splash/splashimg-xxhdpi.png" />
+        <splash density="port-xxxhdpi" src="resources/android/splash/splashimg-xxxhdpi.png" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
