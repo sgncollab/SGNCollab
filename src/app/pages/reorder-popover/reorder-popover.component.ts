@@ -30,7 +30,6 @@ export class ReorderPopoverComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-   
     this.dbService.fetchUserPlaylist().subscribe((data) => {
       this.userPlaylist = data.map(value => {
         return {
@@ -53,6 +52,7 @@ export class ReorderPopoverComponent implements OnInit {
       console.log(this.playlist);
     });
     this.srNo = this.dataService.getLoggedInUserData();
+    console.log(this.srNo);
   }
   onDone() {
     let flag = false;
@@ -126,15 +126,16 @@ export class ReorderPopoverComponent implements OnInit {
               this.dbService.showToast("You have already created same playlist,with name " + this.srCheck[i].playlist_name);
             }
           }
-          if(flag1 == false) {
-            console.log("playlist is present,but not created by the same user(logged in)");
-            this.secondInsertion();
-          }
+          
+        }
+        if(flag1 == false) {
+          console.log("playlist is present,but not created by the same user(logged in)");
+          this.secondInsertion();
         }
       }
     }
     if (flag == false) {
-      console.log("first time insertion ");
+      console.log("first time insertion");
       this.firstInsertion();
     }
   }
