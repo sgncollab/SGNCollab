@@ -12,6 +12,7 @@ export class CreatePlaylistPage implements OnInit {
   private data: any;
   private selectedItems = [];
   checkedbtn = true;
+  currentPage = "createplaylist";
   
 
   constructor(
@@ -25,17 +26,17 @@ export class CreatePlaylistPage implements OnInit {
         .then(json => {
           this.data = json;
         });
+        this.dataService.setPresentPage(this.currentPage);
   }
 
   getItem(e: any, marathiTitle: string) {
     if (e.target.checked) {
       this.selectedItems.push(marathiTitle);
       this.checkedbtn = false;
-      //console.log(this.selectedItems.length);
     }
     else {
       this.selectedItems = this.selectedItems.filter(item => item != marathiTitle);
-      //console.log(this.selectedItems.length);
+      
     }
     if(this.selectedItems.length == 0 ){
       this.checkedbtn = true;

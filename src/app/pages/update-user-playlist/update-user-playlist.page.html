@@ -10,7 +10,7 @@
 <ion-content>
   <ion-list>
     <ion-item *ngFor="let item of data">
-      <input type="checkbox" slot="end" (change)="getItem($event,item)">{{item.marathiTitle}}
+      <input type="checkbox" slot="end" [(ngModel)]="item.isChecked">{{item.marathiTitle}}
     </ion-item>
     <ion-button (click)="onNext()" id="rightButton">Next</ion-button>
   </ion-list>

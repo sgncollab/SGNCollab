@@ -44,8 +44,7 @@ export class AppComponent implements OnInit {
           id: value.payload.doc.id,
           playlist_id: value.payload.doc.data()['playlist_id'],
           playlist_name: value.payload.doc.data()['playlist_name'],
-          sr_no: value.payload.doc.data()['sr_no']
-          
+          sr_no: value.payload.doc.data()['sr_no']  
         }
       });
     });
@@ -123,7 +122,6 @@ export class AppComponent implements OnInit {
     let count = 0 ;
     if(index == 1){
       this.srNo = this.dataService.getLoggedInUserData();
-     // console.log(this.srNo);
       for (let i = 0; i < this.userPlaylist.length; i++) {
             if (this.srNo == this.userPlaylist[i].sr_no) {
               count++;
@@ -133,7 +131,6 @@ export class AppComponent implements OnInit {
             
             this.navController.navigateForward('error-page');
             this.dbService.showToast("You have alredy created five playlist");
-            //console.log("count is more");
           }
     }
   }

@@ -17,7 +17,8 @@ export class AartiReorderPage implements OnInit {
   userPlaylist = [];
   playlistName: string ="";
   srNo: any;
-  currentPage = "";
+  dataPage = "";
+  item=[];
 
   constructor(
     private dataService: DataService,
@@ -27,14 +28,10 @@ export class AartiReorderPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    //this.currentPage = ('aarti-reorder');
-    fetch('./assets/data/aarti-data.json').then(res => res.json())
-      .then(json => {
-        this.data = json;
-      });
+    this.dataPage = this.dataService.getPresentPage();
     this.selectedItems = this.dataService.getAarti();
-    //console.log(this.selectedItems);
-
+    console.log("selected items="+this.selectedItems)
+    this.item =this.dataService.getSelectedPlaylistItem();
     this.dbService.fetchUserPlaylist().subscribe((data) => {
       this.userPlaylist = data.map(value => {
         return {
@@ -44,7 +41,6 @@ export class AartiReorderPage implements OnInit {
           sr_no: value.payload.doc.data()['sr_no']
         }
       });
-      //console.log(this.userPlaylist);
     });
     
     this.srNo = this.dataService.getLoggedInUserData();
@@ -56,33 +52,25 @@ export class AartiReorderPage implements OnInit {
     event.detail.complete(); //need to see
   }
 
+  
   async presentPopover(ev) {
-
-    const popover = await this.popovercntrl.create({
-      component: ReorderPopoverComponent,
-      cssClass: 'my-custom-class',
-      event: ev,
-      translucent: true
-    });
-    return await popover.present();
-
-    // if( this.item != null){
-    //   const popover = await this.popovercntrl.create({
-    //     component: UpdatePopoverComponent,
-    //     cssClass: 'my-custom-class',
-    //     event: ev,
-    //     translucent: true
-    //   });
-    //   return await popover.present();
-    // }else{
-    //   const popover = await this.popovercntrl.create({
-    //     component: ReorderPopoverComponent,
-    //     cssClass: 'my-custom-class',
-    //     event: ev,
-    //     translucent: true
-    //   });
-    //   return await popover.present();
-    // }
+    if(this.dataPage == "myplaylist"){
+      const popover = await this.popovercntrl.create({
+        component: UpdatePopoverComponent,
+        cssClass: 'my-custom-class',
+        event: ev,
+        translucent: true
+      });
+      return await popover.present();
+    }else{
+      const popover = await this.popovercntrl.create({
+        component: ReorderPopoverComponent,
+        cssClass: 'my-custom-class',
+        event: ev,
+        translucent: true
+      });
+      return await popover.present();
+    } 
   }
 }
 

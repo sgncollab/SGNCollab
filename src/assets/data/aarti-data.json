@@ -1,6 +1,8 @@
 [
     {
         "aartiId" :"a",
+
+        "isChecked" : false, 
     
         "englishTitle":"Sukhakarta-Dukhaharta",
     
@@ -13,6 +15,8 @@
 {
     "aartiId":"b",
 
+    "isChecked" : false, 
+
     "englishTitle":"Lavathavati Vikrala",
 
     "marathiTitle":"लवथवती विक्राळा",
@@ -23,6 +27,8 @@
 },
 {
     "aartiId":"c",
+
+    "isChecked" : false, 
 
     "englishTitle":"Durge Durghat Bhari",
 
@@ -35,6 +41,8 @@
 
 {
     "aartiId":"d",
+    
+    "isChecked" : false, 
 
     "englishTitle":"Dattachi Aarti",
 

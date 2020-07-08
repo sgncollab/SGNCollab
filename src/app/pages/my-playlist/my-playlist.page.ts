@@ -17,11 +17,21 @@ export class MyPlaylistPage implements OnInit {
   listid = [];
   artiJson = [];
   fetchArti=[];
+  currentPage = "myplaylist";
 
   constructor(private dbService: FirebaseDbService,private loadingController:LoadingController, private dataService: DataService, private navCtrl: NavController) { }
 
+  doRefresh(event) {
+    console.log('Begin async operation');
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      event.target.complete();
+    }, 2000);
+  }
   ngOnInit() {
    // this.loadPlaylist();
+   this.dataService.setPresentPage(this.currentPage);
     this.dbService.fetchUserPlaylist().subscribe((data) => {
       this.result = data.map(value => {
         return {
@@ -31,6 +41,7 @@ export class MyPlaylistPage implements OnInit {
           sr_no: value.payload.doc.data()['sr_no']
         }
       });
+      this.dataService.setAllUserPlaylist(this.result);
       this.userDetail();
     });
 
@@ -42,6 +53,7 @@ export class MyPlaylistPage implements OnInit {
           playlist_str: value.payload.doc.data()['playlist']
         }
       });
+      this.dataService.setListPlaylist(this.listResult);
       this.playlistDetail();
     });
     fetch('./assets/data/aarti-data.json').then(res => res.json())
@@ -59,7 +71,6 @@ export class MyPlaylistPage implements OnInit {
         this.data.push(this.result[i]);
       }
     }
-    console.log(this.data);
   }
 
   playlistDetail() {
@@ -70,7 +81,7 @@ export class MyPlaylistPage implements OnInit {
         }
       }
     }
-    //   console.log(this.listid);
+    
     // this.stringCheck()
     //this.data = this.data.filter(item => item.playlist_id == this.listResult[i].playlist_id);
     // var filteredKeywords = this.listResult.filter((word) => this.data.some( word.playlist_id == this.data.playlist_id));
@@ -82,22 +93,21 @@ export class MyPlaylistPage implements OnInit {
 
   stringCheck(pId) {
     let str = "";
-    console.log(this.listid);
+    
     for (let i = 0; i < this.listid.length; i++) {
       if (pId == this.listid[i].playlist_id) {
         str = this.listid[i].playlist_str;
-        console.log(str)
          this.fetchArti = [];
         for (let k = 0; k < str.length; k++) {
           let key = str.charAt(k)
-          console.log(key);
+          
           for (let a = 0; a < this.artiJson.length; a++) {
             if (key == this.artiJson[a].aartiId) {
               this.fetchArti.push(this.artiJson[a])
             }
           }
         }
-        console.log(this.fetchArti);
+        this.dataService.setPlaylistString(str);
         this.dataService.setmyPlaylistArtilist(this.fetchArti);
         this.navCtrl.navigateForward('my-playlist-aartilist');
         break;
@@ -106,15 +116,10 @@ export class MyPlaylistPage implements OnInit {
   }
 
 updatePlaylist(item){
+let selecteditem = [item]
 this.stringCheck(item.playlist_id);
-  let navigationExtras: NavigationExtras = {
-    queryParams: {
-        item: JSON.stringify(item),
-        aarti: JSON.stringify(this.fetchArti)
-
-    }
-};
-this.navCtrl.navigateForward(['update-user-playlist'], navigationExtras );
+this.dataService.setSelectedPlaylistItem(selecteditem);
+this.navCtrl.navigateForward('update-user-playlist');
 }
 
   deletePlaylist(item) {
@@ -137,6 +142,9 @@ this.navCtrl.navigateForward(['update-user-playlist'], navigationExtras );
       this.dbService.deleteUserPlaylist(item.id)
     }
     this.dbService.showToast(item.playlist_name + " "+" Deleted!")
+  }
+  options(){
+    this.dbService.showToast("show options")
   }
 
 }

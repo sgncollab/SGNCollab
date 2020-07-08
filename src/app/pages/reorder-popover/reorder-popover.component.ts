@@ -86,8 +86,6 @@ export class ReorderPopoverComponent implements OnInit {
 
   createPlaylist() {
     this.playlistName = this.dataService.getPlaylistName();
-    console.log(this.playlistName);
-    console.log(this.srNo);
     let flag = false;
     let flag1 = false;
     let count = 0;

@@ -20,6 +20,7 @@ export class AartiDetailsPage implements OnInit {
   ngOnInit() {
     this.aartiData = this.dataService.getData();
     this.data = this.dataService.getmyPlaylistArtilist();
+    console.log(this.data);
   }
 
   async onNextPrev(identifier) {
