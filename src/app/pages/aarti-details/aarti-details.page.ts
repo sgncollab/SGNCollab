@@ -11,6 +11,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 export class AartiDetailsPage implements OnInit {
   aartiData: any;
   private data: any;
+  private aartiDetail:any;
 
   constructor(
     private dataService: DataService,
@@ -21,6 +22,7 @@ export class AartiDetailsPage implements OnInit {
     this.aartiData = this.dataService.getData();
     this.data = this.dataService.getmyPlaylistArtilist();
     console.log(this.data);
+    this.aartiDetail=this.aartiData.marathiAarti.split("@")
   }
 
   async onNextPrev(identifier) {
