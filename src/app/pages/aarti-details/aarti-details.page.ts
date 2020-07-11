@@ -11,6 +11,8 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 export class AartiDetailsPage implements OnInit {
   aartiData: any;
   private data: any;
+  lang = false;
+  language="";
 
   constructor(
     private dataService: DataService,
@@ -21,6 +23,7 @@ export class AartiDetailsPage implements OnInit {
     this.aartiData = this.dataService.getData();
     this.data = this.dataService.getmyPlaylistArtilist();
     console.log(this.data);
+    this.lang = this.dataService.getLang()
   }
 
   async onNextPrev(identifier) {

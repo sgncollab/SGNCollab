@@ -9,11 +9,17 @@
 
 <ion-content>
   <ion-card>
-    <ion-item>
+    <ion-item *ngIf="!lang">
       {{ aartiData.marathiTitle }}
     </ion-item>
-    <ion-item>
+    <ion-item *ngIf ="lang">
+      {{ aartiData.englishTitle }}
+    </ion-item>
+    <ion-item *ngIf="!lang">
       {{ aartiData.marathiAarti }}
+    </ion-item>
+    <ion-item *ngIf="lang">
+      {{ aartiData.englishAarti }}
     </ion-item>
     <ion-button (click)="onNextPrev('prev')">
       <ion-icon name="caret-back-outline"></ion-icon>Prev

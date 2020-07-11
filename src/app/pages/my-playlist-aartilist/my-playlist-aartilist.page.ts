@@ -11,14 +11,19 @@ import { NavigationExtras } from '@angular/router';
 export class MyPlaylistAartilistPage implements OnInit {
 
   myList = [];
+  lang = false;
 
   constructor(private dataService: DataService, private navController: NavController) { }
 
   ngOnInit() {
     this.myList = this.dataService.getmyPlaylistArtilist();
   }
+  displayLang() {
+    this.lang = !this.lang;
+  }
 
   openAartiDetails(item, index) {
+    this.dataService.setLang(this.lang)
     this.dataService.setIndex(index);
     this.dataService.setData(item);
     this.navController.navigateForward(['aarti-details']);

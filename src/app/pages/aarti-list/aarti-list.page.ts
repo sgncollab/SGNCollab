@@ -12,6 +12,7 @@ const { App } = Plugins;
 })
 export class AartiListPage implements OnInit {
  data: any;
+ lang = false;
 
   constructor(
     private navController: NavController,
@@ -32,8 +33,11 @@ export class AartiListPage implements OnInit {
         this.data = json;
       });
   }                                    
-
+  displayLang() {
+    this.lang = !this.lang;
+  }
   openAartiDetails(item, index) {
+    this.dataService.setLang(this.lang)
     this.dataService.setIndex(index);
     this.dataService.setData(item);
     this.dataService.setmyPlaylistArtilist(this.data);

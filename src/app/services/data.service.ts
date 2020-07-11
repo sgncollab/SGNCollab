@@ -16,8 +16,16 @@ export class DataService {
   private userPlaylist =[];
   private listPlaylist =[];
   private presentPage ="";
+  private lang:boolean;
 
   constructor() { }
+
+  setLang(lang){
+    this.lang = lang;
+  }
+  getLang(){
+    return this.lang;
+  }
 
   setPresentPage(presentPage){
     this.presentPage = presentPage
