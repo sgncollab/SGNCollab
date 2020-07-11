@@ -62,7 +62,7 @@ export class AppComponent implements OnInit {
       },
       {
         title: 'Search Playlist',
-        url: 'home',
+        url: 'search-playlist',
         icon: 'search'
       },
       {
@@ -96,7 +96,7 @@ export class AppComponent implements OnInit {
       },
       {
         title: 'Search Playlist',
-        url: 'home',
+        url: 'search-playlist',
         icon: 'search'
       },
       {
@@ -119,6 +119,9 @@ export class AppComponent implements OnInit {
   
   }
   demo(index) {
+    if(index == 6){
+      this.logout();
+    }
     let count = 0 ;
     if(index == 1){
       this.srNo = this.dataService.getLoggedInUserData();
@@ -127,7 +130,7 @@ export class AppComponent implements OnInit {
             if (this.srNo == this.userPlaylist[i].sr_no) {
               count++;
             }
-          } console.log(count);
+          } //console.log(count);
           if(count >= 5){
             
             this.navController.navigateForward('error-page');
@@ -136,4 +139,10 @@ export class AppComponent implements OnInit {
           }
     }
   }
+
+  logout(){
+      console.log("logout");
+      localStorage.clear();
+  }
+  
 }

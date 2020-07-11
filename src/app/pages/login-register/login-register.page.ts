@@ -178,7 +178,6 @@ export class LoginRegisterPage implements OnInit {
     if (this.isChecked) {
       localStorage.setItem('username', this.signUpValidate.value.userName);
       localStorage.setItem('mobno', this.signUpValidate.value.mobNo);
-
     }
   }
   checkView(identifier) {

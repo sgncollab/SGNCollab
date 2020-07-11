@@ -11,6 +11,7 @@ export class DataService {
   private loggedInUser: any;
   private playlistName:any;
   private myplaylistartilist =[]
+  private playlistString;
 
   constructor() { }
 
@@ -54,5 +55,12 @@ export class DataService {
   }
   getmyPlaylistArtilist(){
     return this.myplaylistartilist;
+  }
+
+  setPlaylistString(string){
+    this.playlistString = string;
+  }
+  getPlaylistString(){
+    return this.playlistString;
   }
 }

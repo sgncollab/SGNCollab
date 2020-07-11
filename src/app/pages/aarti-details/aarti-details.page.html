@@ -7,8 +7,35 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-card>
+<ion-content class="background">
+  <div class="card">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title style="text-align: center;">{{ aartiData.marathiTitle }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content style="color: black;">
+        {{ aartiData.marathiAarti }}
+        <ion-button (click)="onNextPrev('prev')">
+          <ion-icon name="caret-back-outline"></ion-icon>Prev
+        </ion-button>
+        <ion-button (click)="onNextPrev('next')" style="float: right;">Next
+          <ion-icon name="caret-forward-outline"></ion-icon>
+        </ion-button>
+      </ion-card-content>
+
+
+
+
+
+    </ion-card>
+
+  </div>
+
+</ion-content>
+
+<!-- <ion-content class="background">
+  <ion-card style="margin-top: 100px;" >
+    <ion-card-content style="box-sizing: content-box ;">
     <ion-item>
       {{ aartiData.marathiTitle }}
     </ion-item>
@@ -18,8 +45,9 @@
     <ion-button (click)="onNextPrev('prev')">
       <ion-icon name="caret-back-outline"></ion-icon>Prev
     </ion-button>
-    <ion-button (click)="onNextPrev('next')" class="rightButton">Next
+    <ion-button (click)="onNextPrev('next')" style="float: right;">Next
       <ion-icon name="caret-forward-outline"></ion-icon>
     </ion-button>
+  </ion-card-content>
   </ion-card>
-</ion-content>
+</ion-content> -->
