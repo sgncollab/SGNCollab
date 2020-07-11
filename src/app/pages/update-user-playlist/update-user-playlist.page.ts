@@ -9,10 +9,10 @@ import { ActivatedRoute, NavigationExtras } from '@angular/router';
   styleUrls: ['./update-user-playlist.page.scss'],
 })
 export class UpdateUserPlaylistPage implements OnInit {
-data=[];
-private selectedItems = [];
+data=[]; 
 item=[];
 aarti=[];
+playlistStr = "";
 
   constructor(private dataService:DataService,private navCtrl:NavController,private route:ActivatedRoute ) { }
 
@@ -20,32 +20,33 @@ aarti=[];
     fetch('./assets/data/aarti-data.json').then(res => res.json())
     .then(json => {
       this.data = json;
-    });
-    this.route.queryParams.subscribe(params => {
-      this.item = JSON.parse(params["item"]);
-      this.aarti = JSON.parse(params["aarti"])
-  });
-    console.log(this.item)
-    console.log(this.aarti)
+      this.datacheck()
+    });  
+  this.item = this.dataService.getSelectedPlaylistItem();
+ this.playlistStr = this.dataService.getPlaylistString();
   }
-
-  getItem(e: any, marathiTitle: string) {
-    if (e.target.checked) {
-      this.selectedItems.push(marathiTitle);
-    }
-    else {
-      this.selectedItems = this.selectedItems.filter(item => item != marathiTitle);
-    }
-  }
-
-  onNext() {
-    this.dataService.setAarti(this.selectedItems);
-    let navigationExtras: NavigationExtras = {
-      queryParams: {
-          item: JSON.stringify(this.item)
+datacheck(){
+  for (let k = 0; k < this.playlistStr.length; k++) {
+    let key = this.playlistStr.charAt(k)
+   for(let i = 0; i < this.data.length; i++){
+      if(key == this.data[i].aartiId){
+        this.data[i].isChecked = true;
       }
-  };
-  this.navCtrl.navigateForward(['aarti-reorder'], navigationExtras );
+  }
+   }
+}
+  
+  onNext() {
+  let selectedItems = [];
+  for(let j=0;j < this.data.length ; j++){
+    if(this.data[j].isChecked == true){
+      selectedItems.push(this.data[j]);
+    }else{
+           selectedItems = selectedItems.filter(item => item != this.data[j]);
+        }
+  }
+    this.dataService.setAarti(selectedItems);
+    this.navCtrl.navigateForward('aarti-reorder');
   }
 
 }

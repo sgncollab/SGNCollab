@@ -1,3 +1,15 @@
-<p>
-  update-popover works!
-</p>
+<ion-content>
+  <ion-item lines="none">
+    <ion-label> Playlist Name</ion-label>
+  </ion-item>
+  <ion-item >
+    <ion-input placeholder="My Playlist" [(ngModel)]="playlistName" ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-button (click)="onClose()">
+      <ion-icon name="close-outline"></ion-icon>
+    </ion-button>
+    <ion-button (click)="onDone()" slot="end">Update</ion-button>
+  </ion-item>
+</ion-content>

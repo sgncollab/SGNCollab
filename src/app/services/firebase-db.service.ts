@@ -41,8 +41,10 @@ export class FirebaseDbService {
     return this.firestore.collection(this.collectionName).snapshotChanges();
   }
 
-  updatePlaylist(uPid, record) {
+  updatePlaylist(uPid, playlistId, playlistName, srNo) {
     this.collectionName = "user_playlist";
+    var record ={ 'playlist_id': playlistId, 'playlist_name': playlistName, 'sr_no': srNo }
+    
     return this.firestore.doc(this.collectionName + '/' + uPid).update(record);
   }
   deleteUserPlaylist(uPid) {
@@ -57,6 +59,7 @@ export class FirebaseDbService {
   
   insertIntoPlaylist(playlistId, playlistString) {
     this.collectionName = 'playlist';
+    console.log("inserted");
     var playlistData = { 'playlist': playlistString, 'playlist_id': playlistId }
     //this.insertIntoPlaylist(playlistId,name,srNo)
     return this.firestore.collection(this.collectionName).add(playlistData);

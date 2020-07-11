@@ -11,10 +11,20 @@ export class DataService {
   private loggedInUser: any;
   private playlistName:any;
   private myplaylistartilist =[]
-  private playlistString;
+  private playlistStr="";
+  private selectedPlaylist = [];
+  private userPlaylist =[];
+  private listPlaylist =[];
+  private presentPage ="";
 
   constructor() { }
 
+  setPresentPage(presentPage){
+    this.presentPage = presentPage
+  }
+  getPresentPage(){
+    return this.presentPage;
+  }
   setData(data) {
     this.aartiData = data;
   }
@@ -57,10 +67,29 @@ export class DataService {
     return this.myplaylistartilist;
   }
 
-  setPlaylistString(string){
-    this.playlistString = string;
+  setPlaylistString(str){
+    this.playlistStr = str;
   }
+
   getPlaylistString(){
-    return this.playlistString;
+    return this.playlistStr;
+  }
+  setSelectedPlaylistItem(selectedPlaylist){
+    this.selectedPlaylist = selectedPlaylist;
+  }
+  getSelectedPlaylistItem(){
+    return this.selectedPlaylist;
+  }
+  setAllUserPlaylist(userPlaylist){
+  this.userPlaylist = userPlaylist;
+  }
+  getAllUserPlaylist(){
+    return this.userPlaylist;
+  }
+  setListPlaylist(listPlaylist){
+    this.listPlaylist = listPlaylist
+  }
+  getListPlaylist(){
+    return this.listPlaylist;
   }
 }

@@ -16,6 +16,7 @@ export class SearchPlaylistPage implements OnInit {
   userPlaylist = [];
   playlistString = [];
   fetchAarti = [];
+  noItemFound = false;
 
   constructor(
     private dbService: FirebaseDbService,
@@ -53,7 +54,8 @@ export class SearchPlaylistPage implements OnInit {
   }
   search() {
     this.fetchSearch = [];
-    let flag;
+    let flag=false;
+
     //let count = 0;
     for (let i = 0; i < this.playlist.length; i++) {
       if (this.searchPlaylist == this.playlist[i].playlist_id) {
@@ -70,6 +72,12 @@ export class SearchPlaylistPage implements OnInit {
         }
       } //console.log(count);
       //console.log(this.fetchSearch);
+    }
+    if(this.fetchSearch.length == 0){
+      this.noItemFound =true;
+    }
+    else{
+      this.noItemFound =false;
     }
     // if (flag == false){
     //   this.dbService.showToast("Playlist Not Found, Please check code");

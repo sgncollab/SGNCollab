@@ -8,6 +8,7 @@ import { AartiReorderPageRoutingModule } from './aarti-reorder-routing.module';
 
 import { AartiReorderPage } from './aarti-reorder.page';
 import { ReorderPopoverComponent } from '../reorder-popover/reorder-popover.component';
+import { UpdatePopoverComponent } from '../update-popover/update-popover.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,7 @@ import { ReorderPopoverComponent } from '../reorder-popover/reorder-popover.comp
     IonicModule,
     AartiReorderPageRoutingModule,
   ],
-  entryComponents:[ReorderPopoverComponent],
-  declarations: [AartiReorderPage , ReorderPopoverComponent]
+  entryComponents:[ReorderPopoverComponent,UpdatePopoverComponent],
+  declarations: [AartiReorderPage , ReorderPopoverComponent, UpdatePopoverComponent]
 })
 export class AartiReorderPageModule {}

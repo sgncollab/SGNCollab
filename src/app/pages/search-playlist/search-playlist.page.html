@@ -9,7 +9,7 @@
 
 <ion-content>
   <ion-searchbar placeholder="Search Playlist" inputmode="numeric" [(ngModel)]="searchPlaylist" 
-  (ionChange)="search()">
+  (click)="search()">
   </ion-searchbar>
   <div *ngIf="fetchSearch.length > 0; else noItems">
   <ion-list *ngFor ="let item of fetchSearch;index as i">
@@ -18,7 +18,7 @@
     </ion-item>
   </ion-list>
 </div>
-<ng-template #noItems>
+<ng-template *ngIf = "this.noItemFound" #noItems>
   <ion-item>
     No items found!
   </ion-item>
