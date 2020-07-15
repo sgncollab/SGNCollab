@@ -109,6 +109,10 @@ export class ReorderPopoverComponent implements OnInit {
          this.pId = this.playlist[i].playlist_id
         console.log(this.pId);
 
+        // this.srCheck = this.userPlaylist.filter(srno => this.srNo == this.userPlaylist.sr_no);
+        // console.log(this.srCheck);
+        
+
         for (let i = 0; i < this.userPlaylist.length; i++) {
           if (this.srNo == this.userPlaylist[i].sr_no) {
             count++;

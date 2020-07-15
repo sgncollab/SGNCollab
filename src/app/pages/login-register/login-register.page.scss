@@ -10,9 +10,15 @@
   }
   ion-content.background{
 
-    --background: url(../../../assets/images/bg2.jpeg)0 0/100% 100% no-repeat ;
+    --background: url(../../../assets/images/bg.png)0 0/100% 100% no-repeat ;
 }
-
+.g{
+ color: #3b5998;
+ background-color: #3b5998;
+ border-radius: 15px;
+ height: 95%;
+ width:95%;
+}
 .buttons-action{
     margin-left:5px;
 }

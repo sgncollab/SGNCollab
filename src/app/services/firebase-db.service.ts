@@ -76,6 +76,7 @@ export class FirebaseDbService {
       message: message,
       duration: 3000,
       color: 'primary',
+      position:'middle',
     }).then(toastData => toastData.present());
   }
 }

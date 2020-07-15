@@ -13,6 +13,7 @@ export class AartiDetailsPage implements OnInit {
   private data: any;
   lang = false;
   language="";
+  private aartiDetail:any;
 
   constructor(
     private dataService: DataService,
@@ -24,6 +25,7 @@ export class AartiDetailsPage implements OnInit {
     this.data = this.dataService.getmyPlaylistArtilist();
     console.log(this.data);
     this.lang = this.dataService.getLang()
+    this.aartiDetail=this.aartiData.marathiAarti.split("@")
   }
 
   async onNextPrev(identifier) {
