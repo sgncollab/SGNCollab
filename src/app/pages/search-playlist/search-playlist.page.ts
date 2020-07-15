@@ -17,6 +17,7 @@ export class SearchPlaylistPage implements OnInit {
   playlistString = [];
   fetchAarti = [];
   noItemFound = false;
+  currentPage = "search-playlist"
 
   constructor(
     private dbService: FirebaseDbService,
@@ -25,6 +26,7 @@ export class SearchPlaylistPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.dataService.setPresentPage(this.currentPage);
     this.dbService.fetchUserPlaylist().subscribe((data) => {
       this.userPlaylist = data.map(value => {
         return {
@@ -34,7 +36,7 @@ export class SearchPlaylistPage implements OnInit {
           sr_no: value.payload.doc.data()['sr_no']
         }
       });
-      console.log(this.userPlaylist);
+      //console.log(this.userPlaylist);
     });
     this.dbService.fetchPlaylist().subscribe((data) => {
       this.playlist = data.map(value => {
@@ -44,7 +46,7 @@ export class SearchPlaylistPage implements OnInit {
           playlist_string: value.payload.doc.data()['playlist']
         }
       });
-      console.log(this.playlist);
+     // console.log(this.playlist);
     });
 
     fetch('./assets/data/aarti-data.json').then(res => res.json())
@@ -55,8 +57,6 @@ export class SearchPlaylistPage implements OnInit {
   search() {
     this.fetchSearch = [];
     let flag=false;
-
-    //let count = 0;
     for (let i = 0; i < this.playlist.length; i++) {
       if (this.searchPlaylist == this.playlist[i].playlist_id) {
         flag = true;
@@ -67,11 +67,9 @@ export class SearchPlaylistPage implements OnInit {
     if (flag == true) {
       for (let i = 0; i < this.userPlaylist.length; i++) {
         if (playlistId == this.userPlaylist[i].playlist_id) {
-          //count++;
           this.fetchSearch.push(this.userPlaylist[i]);
         }
-      } //console.log(count);
-      //console.log(this.fetchSearch);
+      } 
     }
     if(this.fetchSearch.length == 0){
       this.noItemFound =true;
@@ -79,28 +77,24 @@ export class SearchPlaylistPage implements OnInit {
     else{
       this.noItemFound =false;
     }
-    // if (flag == false){
-    //   this.dbService.showToast("Playlist Not Found, Please check code");
-    // }
+    if(this.searchPlaylist.toString() == ""){
+      this.noItemFound = false;
+    }
   }
 
   getString(pId) {
-    //console.log(this.playlistString);
     let str = "";
     for (let i = 0; i < this.playlistString.length; i++) {
       str = this.playlistString[i].playlist_string
-      //console.log(str)
       this.fetchAarti = [];
       for (let k = 0; k < str.length; k++) {
         let key = str.charAt(k)
-        //console.log(key);
         for (let a = 0; a < this.data.length; a++) {
           if (key == this.data[a].aartiId) {
             this.fetchAarti.push(this.data[a])
           }
         }
       }
-      //console.log(this.fetchAarti)
       this.dataService.setmyPlaylistArtilist(this.fetchAarti)
       this.navController.navigateForward('search-playlist-aartilist')
     }

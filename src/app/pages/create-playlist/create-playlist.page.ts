@@ -14,6 +14,7 @@ export class CreatePlaylistPage implements OnInit {
   checkedbtn = true;
   currentPage = "createplaylist";
   
+  
 
   constructor(
     private dataService: DataService,

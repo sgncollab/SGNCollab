@@ -25,6 +25,7 @@ export class LoginRegisterPage implements OnInit {
   view: string = "registerView";
   display = false;
   ext: any;
+  someAutoFormattedInput = "";
  
 
   constructor(
@@ -43,6 +44,7 @@ export class LoginRegisterPage implements OnInit {
     this.code = this.signUpValidate.controls['code'];
     this.userName = this.signUpValidate.controls['userName'];
     this.mobNo = this.signUpValidate.controls['mobNo'];
+    
   }
 
   ionViewWillEnter() {
@@ -99,6 +101,9 @@ export class LoginRegisterPage implements OnInit {
 
   registerUser() {
     var flag = false;
+    this.someAutoFormattedInput = this.signUpValidate.value.userName ;
+    console.log(this.someAutoFormattedInput);
+
     try {
       if (this.regResult.length > 0 && this.regResult != undefined) {
         for (let i = 0; i < this.regResult.length; i++) {

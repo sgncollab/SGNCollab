@@ -59,6 +59,18 @@ const routes: Routes = [
   {
     path: 'search-playlist-aartilist',
     loadChildren: () => import('./pages/search-playlist-aartilist/search-playlist-aartilist.module').then( m => m.SearchPlaylistAartilistPageModule)
+  },
+  {
+    path: 'feedback',
+    loadChildren: () => import('./pages/feedback/feedback.module').then( m => m.FeedbackPageModule)
+  },
+  {
+    path: 'settings',
+    loadChildren: () => import('./pages/settings/settings.module').then( m => m.SettingsPageModule)
+  },
+  {
+    path: 'about-us',
+    loadChildren: () => import('./pages/about-us/about-us.module').then( m => m.AboutUsPageModule)
   }
 
 ];

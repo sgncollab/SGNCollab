@@ -8,28 +8,22 @@
 </ion-header>
 
 <ion-content>
-  <ion-searchbar placeholder="Search Playlist" inputmode="numeric" [(ngModel)]="searchPlaylist" 
-  (click)="search()">
+  <ion-searchbar debounce="500"  placeholder="Search Playlist" inputmode="numeric" [(ngModel)]="searchPlaylist" 
+  (ionChange)="search()">
   </ion-searchbar>
-  <div *ngIf="fetchSearch.length > 0; else noItems">
+  <div *ngIf="fetchSearch.length > 0; else noItems"> 
   <ion-list *ngFor ="let item of fetchSearch;index as i">
     <ion-item (click)="getString(item.playlist_id)">
       <ion-label color="primary">{{ item.playlist_name }}</ion-label>
     </ion-item>
   </ion-list>
-</div>
-<ng-template *ngIf = "this.noItemFound" #noItems>
-  <ion-item>
+ </div> 
+<!-- <ng-template *ngIf = "this.noItemFound" > -->
+  <ion-item *ngIf = "this.noItemFound" >
     No items found!
   </ion-item>
-</ng-template>
+<!-- </ng-template> -->
 </ion-content>
   
   
-  <!-- 
-    <ion-list *ngFor="let item of fetchAarti; index as i">
-    <ion-item (click)="openAartiDetails(item,i)">
-      <ion-label color="secondary">{{item.marathiTitle}}</ion-label>
-    </ion-item>
-  </ion-list> -->
-
+  

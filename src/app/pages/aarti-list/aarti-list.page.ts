@@ -15,6 +15,7 @@ export class AartiListPage implements OnInit {
   isItemAvailable = true;
   searchAarti:string = "";
   copyData=[]
+  currentPage = "aarti-list"
 
   constructor(
     private navController: NavController,
@@ -37,7 +38,7 @@ export class AartiListPage implements OnInit {
         this.data = json;
         this.copyData =json;
       });
-      
+      this.dataService.setPresentPage(this.currentPage);
   }
 
   reasignData(){

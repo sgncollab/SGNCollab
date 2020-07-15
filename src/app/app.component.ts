@@ -16,7 +16,9 @@ export class AppComponent implements OnInit {
   public appPages = [];
   srNo: any;
   userPlaylist: any = [];
-  
+  dataPage = "";
+  currentPage = "app-component"
+
   //public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
   constructor(
@@ -24,7 +26,7 @@ export class AppComponent implements OnInit {
     private splashScreen: SplashScreen,
     private dataService: DataService,
     private dbService: FirebaseDbService,
-    private navController : NavController,
+    private navController: NavController,
     private statusBar: StatusBar
   ) {
     this.initializeApp();
@@ -44,103 +46,128 @@ export class AppComponent implements OnInit {
           id: value.payload.doc.id,
           playlist_id: value.payload.doc.data()['playlist_id'],
           playlist_name: value.payload.doc.data()['playlist_name'],
-          sr_no: value.payload.doc.data()['sr_no']  
+          sr_no: value.payload.doc.data()['sr_no']
         }
       });
     });
+    
+    
   }
-  
- viewMenu(name){
-   
-   if(name.toLowerCase() == "guest"){
-     this.username = name;
-    this.appPages = [
-      {
-        title: 'HomePage',
-        url: 'aarti-list',
-        icon: 'home'
-      },
-      {
-        title: 'Search Playlist',
-        url: 'search-playlist',
-        icon: 'search'
-      },
-      {
-        title: 'Feedback',
-        url: 'home',
-        icon: 'create'
-      },
-      {
-        title: 'Settings',
-        url: 'home',
-        icon: 'settings'
-      }
-    ];
-   } else {
-    this.username = name ;
-    this.appPages = [
-      {
-        title: 'HomePage',
-        url: 'aarti-list',
-        icon: 'home'
-      },
-      {
-        title: 'Create Playlist',
-        url: 'create-playlist',
-        icon: 'add'
-      },
-      {
-        title: 'My Playlist',
-        url: 'my-playlist',
-        icon: 'musical-notes'
-      },
-      {
-        title: 'Search Playlist',
-        url: 'search-playlist',
-        icon: 'search'
-      },
-      {
-        title: 'Feedback',
-        url: 'home',
-        icon: 'create'
-      },
-      {
-        title: 'Settings',
-        url: 'home',
-        icon: 'settings'
-      },
-      {
-        title: 'Logout',
-        url: 'login-register',
-        icon: 'exit'
-      }
-    ];
-   }
-  
+
+  viewMenu(name) {
+
+    if (name.toLowerCase() == "guest") {
+      this.username = name;
+      this.appPages = [
+        {
+          title: 'HomePage',
+          url: 'aarti-list',
+          icon: 'home'
+        },
+        {
+          title: 'Search Playlist',
+          url: 'search-playlist',
+          icon: 'search'
+        },
+        {
+          title: 'Feedback',
+          url: 'feedback',
+          icon: 'create'
+        },
+        {
+          title: 'Settings',
+          url: 'settings',
+          icon: 'settings'
+        },
+        {
+          title: 'About us',
+          url: 'about-us',
+          icon: 'information-circle'
+        }
+      ];
+    } else {
+      this.username = name;
+      this.appPages = [
+        {
+          title: 'HomePage',
+          url: 'aarti-list',
+          icon: 'home'
+        },
+        {
+          title: 'Create Playlist',
+          url: 'create-playlist',
+          icon: 'add'
+        },
+        {
+          title: 'My Playlist',
+          url: 'my-playlist',
+          icon: 'musical-notes'
+        },
+        {
+          title: 'Search Playlist',
+          url: 'search-playlist',
+          icon: 'search'
+        },
+        {
+          title: 'Feedback',
+          url: 'feedback',
+          icon: 'create'
+        },
+        {
+          title: 'Settings',
+          url: 'settings',
+          icon: 'settings'
+        },
+        {
+          title: 'About us',
+          url: 'about-us',
+          icon: 'information-circle'
+        },
+        {
+          title: 'Logout',
+          url: 'login-register',
+          icon: 'exit'
+        }
+      ];
+    }
+
   }
   demo(index) {
-    if(index == 6){
+    this.dataPage = this.dataService.getPresentPage();
+    //console.log(this.dataPage);
+    if (index == 7) {
       this.logout();
     }
-    let count = 0 ;
-    if(index == 1){
+    let count = 0;
+    if (index == 1) {
       this.srNo = this.dataService.getLoggedInUserData();
       for (let i = 0; i < this.userPlaylist.length; i++) {
-            if (this.srNo == this.userPlaylist[i].sr_no) {
-              count++;
-            }
-          } //console.log(count);
-          if(count >= 5){
-            
-            this.navController.navigateForward('error-page');
-            this.dbService.showToast("You have alredy created five playlist");
-          }
+        if (this.srNo == this.userPlaylist[i].sr_no) {
+          count++;
+        }
+      } 
+      if (count >= 5) {
+        this.navController.navigateForward(this.dataPage);
+        this.dbService.showToast("You have alredy created five playlist.");
+      }
+    }
+    if (index == 2) {
+      this.srNo = this.dataService.getLoggedInUserData();
+      for (let i = 0; i < this.userPlaylist.length; i++) {
+        if (this.srNo == this.userPlaylist[i].sr_no) {
+          count++;
+        }
+      } 
+      if (count < 1) {
+        this.navController.navigateForward(this.dataPage);
+        this.dbService.showToast("Please create a playlist!");
+      }
     }
   }
 
-  logout(){
-      console.log("logout");
-      localStorage.clear();
+  logout() {
+    console.log("logout");
+    localStorage.clear();
   }
-  
+
 }
