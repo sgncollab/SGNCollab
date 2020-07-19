@@ -62,7 +62,7 @@ export class AppComponent implements OnInit {
       {
         title: 'All Aarti List',
         url: 'aarti-list',
-        icon: 'list-outline'
+        icon: 'list'
         
       },
       {

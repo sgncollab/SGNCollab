@@ -23,11 +23,11 @@
 
   <ion-card class="content">
     <div style="background-color:aliceblue;border-radius: 6px;"> 
-      <ion-segment>
-        <ion-segment-button (click)="checkView('loginView')">
+      <ion-segment value ="Login">
+        <ion-segment-button value="Login" (click)="checkView('loginView')">
           <b>Login</b>
         </ion-segment-button>
-        <ion-segment-button (click)="checkView('registerView')">
+        <ion-segment-button value="Register"  (click)="checkView('registerView')">
           <b>Register</b>
         </ion-segment-button>
       </ion-segment>
