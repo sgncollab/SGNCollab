@@ -58,7 +58,7 @@ export class AppComponent implements OnInit {
       {
         title: 'All Aarti List',
         url: 'aarti-list',
-        icon: 'list-outline'
+        icon: 'list'
         
       },
       {
@@ -81,7 +81,7 @@ export class AppComponent implements OnInit {
     this.username = name ;
     this.appPages = [
       {
-        title: 'HomePage',
+        title: 'Homepage',
         url: 'aarti-list',
         icon: 'home'
       },

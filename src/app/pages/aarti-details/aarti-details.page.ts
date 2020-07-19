@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 import { ToastController } from '@ionic/angular';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { FirebaseDbService } from 'src/app/services/firebase-db.service';
 
 @Component({
   selector: 'app-aarti-details',
@@ -17,6 +18,7 @@ export class AartiDetailsPage implements OnInit {
 
   constructor(
     private dataService: DataService,
+    private dbService: FirebaseDbService,
     private toastController: ToastController
   ) { }
 
@@ -41,7 +43,7 @@ export class AartiDetailsPage implements OnInit {
             message: 'No aarti available',
             duration: 2000,
             color: 'primary',
-            position: 'bottom'
+            position: 'middle'
           });
           toast.present();
         }
@@ -55,7 +57,7 @@ export class AartiDetailsPage implements OnInit {
             message: 'No next aarti available',
             duration: 2000,
             color: 'primary',
-            position: 'bottom'
+            position: 'middle'
           });
           toast.present();
         }
@@ -67,9 +69,9 @@ export class AartiDetailsPage implements OnInit {
       else {
         const toast = await this.toastController.create({
           message: 'No next aarti available',
-          duration: 2000,
+          duration: 1000,
           color: 'primary',
-          position: 'bottom'
+          position: 'middle'
         });
         toast.present();
       }

@@ -74,7 +74,7 @@ export class FirebaseDbService {
   showToast(message: string) {
     this.toastCtrl.create({
       message: message,
-      duration: 3000,
+      duration: 1000,
       color: 'primary',
       position:'middle',
     }).then(toastData => toastData.present());
