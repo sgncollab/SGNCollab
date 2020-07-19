@@ -11,6 +11,8 @@ const { App } = Plugins;
   styleUrls: ['./aarti-list.page.scss'],
 })
 export class AartiListPage implements OnInit {
+ 
+ lang = false;
   data: any=[];
   isItemAvailable = true;
   searchAarti:string = "";
@@ -38,9 +40,11 @@ export class AartiListPage implements OnInit {
         this.data = json;
         this.copyData =json;
       });
-      this.dataService.setPresentPage(this.currentPage);
+  }                                    
+  displayLang() {
+    this.lang = !this.lang;
   }
-
+      
   reasignData(){
  this.copyData=this.data
   }
@@ -57,6 +61,7 @@ export class AartiListPage implements OnInit {
   }
 
   openAartiDetails(item, index) {
+    this.dataService.setLang(this.lang)
     this.dataService.setIndex(index);
     this.dataService.setData(item);
     this.dataService.setmyPlaylistArtilist(this.data);

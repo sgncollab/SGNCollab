@@ -13,6 +13,7 @@ export class CreatePlaylistPage implements OnInit {
   private selectedItems = [];
   checkedbtn = true;
   currentPage = "createplaylist";
+  lang = false;
   
   
 
@@ -29,6 +30,9 @@ export class CreatePlaylistPage implements OnInit {
         });
         this.dataService.setPresentPage(this.currentPage);
   }
+  displayLang() {
+    this.lang = !this.lang;
+  }
 
   getItem(e: any, marathiTitle: string) {
     if (e.target.checked) {
@@ -37,7 +41,6 @@ export class CreatePlaylistPage implements OnInit {
     }
     else {
       this.selectedItems = this.selectedItems.filter(item => item != marathiTitle);
-      
     }
     if(this.selectedItems.length == 0 ){
       this.checkedbtn = true;

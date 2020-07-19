@@ -26,6 +26,7 @@ export class LoginRegisterPage implements OnInit {
   display = false;
   ext: any;
   someAutoFormattedInput = "";
+  currentPage  = "login-register";
  
 
   constructor(
@@ -198,6 +199,11 @@ export class LoginRegisterPage implements OnInit {
 
   displayMenu(identifier){
     this.appComponent.viewMenu("guest");
-    this.navCtrl.navigateRoot('aarti-list');
+    if(identifier == "search"){
+      this.navCtrl.navigateRoot('search-playlist');
+    }else{
+      this.navCtrl.navigateRoot('aarti-list');
+    }
+    
   }
 }

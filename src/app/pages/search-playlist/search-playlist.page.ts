@@ -96,7 +96,7 @@ export class SearchPlaylistPage implements OnInit {
         }
       }
       this.dataService.setmyPlaylistArtilist(this.fetchAarti)
-      this.navController.navigateForward('search-playlist-aartilist')
+      this.navController.navigateForward('my-playlist-aartilist')
     }
   }
 }

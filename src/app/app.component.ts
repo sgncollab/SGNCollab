@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   public appPages = [];
   srNo: any;
   userPlaylist: any = [];
-  dataPage = "";
+  dataPage = "aarti-list";
   currentPage = "app-component"
 
   //public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
@@ -53,84 +53,85 @@ export class AppComponent implements OnInit {
     
     
   }
-
-  viewMenu(name) {
-
-    if (name.toLowerCase() == "guest") {
-      this.username = name;
-      this.appPages = [
-        {
-          title: 'HomePage',
-          url: 'aarti-list',
-          icon: 'home'
-        },
-        {
-          title: 'Search Playlist',
-          url: 'search-playlist',
-          icon: 'search'
-        },
-        {
-          title: 'Feedback',
-          url: 'feedback',
-          icon: 'create'
-        },
-        {
-          title: 'Settings',
-          url: 'settings',
-          icon: 'settings'
-        },
-        {
-          title: 'About us',
-          url: 'about-us',
-          icon: 'information-circle'
-        }
-      ];
-    } else {
-      this.username = name;
-      this.appPages = [
-        {
-          title: 'HomePage',
-          url: 'aarti-list',
-          icon: 'home'
-        },
-        {
-          title: 'Create Playlist',
-          url: 'create-playlist',
-          icon: 'add'
-        },
-        {
-          title: 'My Playlist',
-          url: 'my-playlist',
-          icon: 'musical-notes'
-        },
-        {
-          title: 'Search Playlist',
-          url: 'search-playlist',
-          icon: 'search'
-        },
-        {
-          title: 'Feedback',
-          url: 'feedback',
-          icon: 'create'
-        },
-        {
-          title: 'Settings',
-          url: 'settings',
-          icon: 'settings'
-        },
-        {
-          title: 'About us',
-          url: 'about-us',
-          icon: 'information-circle'
-        },
-        {
-          title: 'Logout',
-          url: 'login-register',
-          icon: 'exit'
-        }
-      ];
-    }
-
+  
+ viewMenu(name){
+   
+   if(name.toLowerCase() == "guest"){
+     this.username = "Guest";
+    this.appPages = [
+      {
+        title: 'All Aarti List',
+        url: 'aarti-list',
+        icon: 'list-outline'
+        
+      },
+      {
+        title: 'Search Playlist',
+        url: 'search-playlist',
+        icon: 'search'
+      },
+      {
+        title: 'Feedback',
+        url: 'home',
+        icon: 'create'
+      },
+      {
+        title: 'Settings',
+        url: 'home',
+        icon: 'settings'
+      },
+      {
+        title: 'About us',
+        url: 'about-us',
+        icon: 'information-circle'
+      }
+    ];
+   } else {
+    this.username = name ;
+    this.appPages = [
+      {
+        title: 'Homepage',
+        url: 'aarti-list',
+        icon: 'home'
+      },
+      {
+        title: 'Create Playlist',
+        url: 'create-playlist',
+        icon: 'add'
+      },
+      {
+        title: 'My Playlist',
+        url: 'my-playlist',
+        icon: 'musical-notes'
+      },
+      {
+        title: 'Search Playlist',
+        url: 'search-playlist',
+        icon: 'search'
+      },
+      {
+        title: 'Feedback',
+        url: 'feedback',
+        icon: 'create'
+      },
+      {
+        title: 'Settings',
+        url: 'settings',
+        icon: 'settings'
+      },
+      {
+        title: 'About us',
+        url: 'about-us',
+        icon: 'information-circle'
+      },
+      {
+        title: 'Logout',
+        url: 'login-register',
+        icon: 'exit'
+      }
+    ];
+   }
+  
   }
   demo(index) {
     this.dataPage = this.dataService.getPresentPage();
@@ -148,7 +149,7 @@ export class AppComponent implements OnInit {
       } 
       if (count >= 5) {
         this.navController.navigateForward(this.dataPage);
-        this.dbService.showToast("You have alredy created five playlist.");
+        this.dbService.showToast("You have already created five playlist.");
       }
     }
     if (index == 2) {

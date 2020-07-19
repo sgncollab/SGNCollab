@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseDbService } from 'src/app/services/firebase-db.service';
 import { DataService } from 'src/app/services/data.service';
-import { NavController, LoadingController } from '@ionic/angular';
+import { NavController, LoadingController, PopoverController, ActionSheetController } from '@ionic/angular';
 import { NavigationExtras } from '@angular/router';
+import { PopoverOptionsComponent } from '../popover-options/popover-options.component';
 
 @Component({
   selector: 'app-my-playlist',
@@ -19,7 +20,7 @@ export class MyPlaylistPage implements OnInit {
   fetchArti=[];
   currentPage = "my-playlist";
 
-  constructor(private dbService: FirebaseDbService,private loadingController:LoadingController, private dataService: DataService, private navCtrl: NavController) { }
+  constructor(private dbService: FirebaseDbService,public actionSheetController: ActionSheetController,private popoverController:PopoverController,private loadingController:LoadingController, private dataService: DataService, private navCtrl: NavController) { }
 
   doRefresh(event) {
     console.log('Begin async operation');
@@ -143,8 +144,54 @@ this.navCtrl.navigateForward('update-user-playlist');
     }
     this.dbService.showToast(item.playlist_name + " "+" Deleted!")
   }
-  options(){
-    this.dbService.showToast("show options")
+  // options(){
+  //   this.dbService.showToast("show options")
+  // }
+  async presentPopover(ev: any) {
+    const popover = await this.popoverController.create({
+      component: PopoverOptionsComponent,
+      cssClass: 'my-custom-class',
+      event: ev,
+      translucent: true
+    });
+    popover.style.cssText = '--min-width: 150px; --max-width: 200px;';
+    return await popover.present();
   }
 
+  async presentActionSheet(item) {
+    const actionSheet = await this.actionSheetController.create({
+      cssClass: 'my-custom-class',
+      buttons: [{
+        text: 'Delete',
+        role: 'destructive',
+        icon: 'trash',
+        handler: () => {
+          this.deletePlaylist(item)
+          console.log('Delete clicked');
+        }
+      }, {
+        text: 'Edit',
+        icon: 'pencil',
+        handler: () => {
+          this.updatePlaylist(item)
+          console.log('Edit clicked');
+        }
+      },{
+        text: 'Share',
+        icon: 'share-social-outline',
+        handler: () => {
+          this.updatePlaylist(item)
+          console.log('Share clicked');
+        }
+      }, {
+        text: 'Cancel',
+        icon: 'close',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      }]
+    });
+    await actionSheet.present();
+  }
 }

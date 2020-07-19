@@ -8,13 +8,17 @@
 </ion-header>
 
 <ion-content>
+  <ion-item>
+    <ion-label>MARATHI</ion-label>
+    <ion-toggle (click)="displayLang()"></ion-toggle>
+    <ion-label>ENGLISH</ion-label>
+  </ion-item>
   <ion-list>
     <ion-item *ngFor="let item of data">
-      <!-- {{item.marathiTitle}}
-      <ion-checkbox mode="ios" slot="end" [(ngModel)]= item.isChecked>
-        </ion-checkbox> -->
-       <input type="checkbox"  slot="end" mode="ios" (change)="getItem($event,item)">
-        {{item.marathiTitle}} 
+
+    <ion-item  *ngIf="!lang"> <input type="checkbox"  slot="end" mode="ios"  (change)="getItem($event,item)">{{item.marathiTitle}}</ion-item>   
+    <ion-item *ngIf="lang"> <input type="checkbox"  slot="end" mode="ios"   (change)="getItem($event,item)">{{item.englishTitle}}</ion-item> 
+        
     </ion-item>
      <ion-button (click)="onNext()" id="rightButton" [disabled]="checkedbtn" >Next</ion-button>
   </ion-list>
