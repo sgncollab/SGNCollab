@@ -52,13 +52,23 @@ const routes: Routes = [
   {
     path: 'update-user-playlist',
     loadChildren: () => import('./pages/update-user-playlist/update-user-playlist.module').then(m => m.UpdateUserPlaylistPageModule)
-  },  {
+  },
+  {
     path: 'search-playlist',
     loadChildren: () => import('./pages/search-playlist/search-playlist.module').then( m => m.SearchPlaylistPageModule)
   },
+  
   {
-    path: 'search-playlist-aartilist',
-    loadChildren: () => import('./pages/search-playlist-aartilist/search-playlist-aartilist.module').then( m => m.SearchPlaylistAartilistPageModule)
+    path: 'feedback',
+    loadChildren: () => import('./pages/feedback/feedback.module').then( m => m.FeedbackPageModule)
+  },
+  {
+    path: 'settings',
+    loadChildren: () => import('./pages/settings/settings.module').then( m => m.SettingsPageModule)
+  },
+  {
+    path: 'about-us',
+    loadChildren: () => import('./pages/about-us/about-us.module').then( m => m.AboutUsPageModule)
   }
 
 ];

@@ -17,6 +17,7 @@ export class AartiListPage implements OnInit {
   isItemAvailable = true;
   searchAarti:string = "";
   copyData=[]
+  currentPage = "aarti-list"
 
   constructor(
     private navController: NavController,

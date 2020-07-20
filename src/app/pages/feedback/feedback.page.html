@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>logo </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="background">
+  <ion-card style="margin-top: 70px; height:450px;">
+    <ion-title style="margin-top: 10px; text-align: center;">FEEDBACK FORM</ion-title>
+    <!-- <ion-card-header style="text-align: center; color:black ;">Feedback Form</ion-card-header> -->
+    <ion-card-content>
+      <ion-item style="padding-bottom: 10px;">
+        <ion-input type="text" placeholder="Your Name" [(ngModel)]="someAutoFormattedInput"
+          (ionChange)="onAutoFormatChanged()"> </ion-input>
+      </ion-item>
+      <ion-item style="margin:15px auto;">
+        <ion-input type="email" placeholder="Your Email" [(ngModel)]="someAutoFormattedEmail"
+          (ionChange)="onAutoFormatChanged()"> </ion-input>
+      </ion-item>
+      <ion-textarea placeholder="Your Feedback" [(ngModel)]="someAutoFormattedFeedback"
+        (ionChange)="onAutoFormatChanged()"> </ion-textarea>
+      <div>
+        <ion-button expand="full" fill="solid" color="primary" style="text-transform:none;font-size:20px; 
+        margin-top: 15px;"
+          shape="round" >
+          Submit</ion-button>
+        </div>
+      
+
+
+
+
+    </ion-card-content>
+  </ion-card>
+  <!-- <ion-item>
+    <ion-textarea placeholder="Enter your text"[(ngModel)]="someAutoFormattedInput" (ionChange)="onAutoFormatChanged()"></ion-textarea>
+  </ion-item> -->
+
+</ion-content>

@@ -54,7 +54,7 @@ export class AartiReorderPage implements OnInit {
 
   
   async presentPopover(ev) {
-    if(this.dataPage == "myplaylist"){
+    if(this.dataPage == "my-playlist"){
       const popover = await this.popovercntrl.create({
         component: UpdatePopoverComponent,
         cssClass: 'my-custom-class',

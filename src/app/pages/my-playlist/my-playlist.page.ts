@@ -18,7 +18,7 @@ export class MyPlaylistPage implements OnInit {
   listid = [];
   artiJson = [];
   fetchArti=[];
-  currentPage = "myplaylist";
+  currentPage = "my-playlist";
 
   constructor(private dbService: FirebaseDbService,public actionSheetController: ActionSheetController,private popoverController:PopoverController,private loadingController:LoadingController, private dataService: DataService, private navCtrl: NavController) { }
 
