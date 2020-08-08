@@ -7,14 +7,14 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="background">
   <ion-searchbar debounce="500"  placeholder="Search Playlist" inputmode="numeric" [(ngModel)]="searchPlaylist" 
   (ionChange)="search()">
   </ion-searchbar>
   <div *ngIf="fetchSearch.length > 0; else noItems"> 
   <ion-list *ngFor ="let item of fetchSearch;index as i">
-    <ion-item (click)="getString(item.playlist_id)">
-      <ion-label color="primary">{{ item.playlist_name }}</ion-label>
+    <ion-item  (click)="getString(item.playlist_id)">
+      <ion-label >{{ item.playlist_name }}</ion-label>
     </ion-item>
   </ion-list>
  </div> 

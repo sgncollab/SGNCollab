@@ -24,7 +24,7 @@ export class LoginRegisterPage implements OnInit {
   isChecked: boolean;
   view: string = "registerView";
   display = false;
-  ext: any;
+  ext: any = "+91";
   someAutoFormattedInput = "";
   currentPage  = "login-register";
  
@@ -38,7 +38,7 @@ export class LoginRegisterPage implements OnInit {
     private dataService: DataService
   ) {
     this.signUpValidate = formBuilder.group({
-      userName: ['', Validators.compose([Validators.required, Validators.minLength(4), Validators.pattern('^[a-zA-Z]+$')])],
+      userName: ['', Validators.compose([Validators.required, Validators.minLength(4), Validators.pattern('^[a-zA-Z]+$')])], 
       code: ['', Validators.compose([Validators.required])],
       mobNo: ['', Validators.compose([Validators.required, Validators.minLength(10), Validators.pattern('[0-9]{10}')])]
     });
@@ -102,9 +102,6 @@ export class LoginRegisterPage implements OnInit {
 
   registerUser() {
     var flag = false;
-    this.someAutoFormattedInput = this.signUpValidate.value.userName ;
-    console.log(this.someAutoFormattedInput);
-
     try {
       if (this.regResult.length > 0 && this.regResult != undefined) {
         for (let i = 0; i < this.regResult.length; i++) {
@@ -119,7 +116,6 @@ export class LoginRegisterPage implements OnInit {
         this.dbService.createUser(this.srNo, this.signUpValidate.value.userName, (this.signUpValidate.value.code + this.signUpValidate.value.mobNo));
         this.rememberme();
         this.appComponent.viewMenu(this.signUpValidate.value.userName);
-
         //let serialNo = this.dataService.setLoggedInUserData(this.srNo);
         let serialNo = this.srNo;
         //console.log(serialNo);
@@ -140,7 +136,7 @@ export class LoginRegisterPage implements OnInit {
     try {
       if (this.regResult.length > 0 && this.regResult != undefined) {
         for (let i = 0; i < this.regResult.length; i++) {
-          if (this.userNameLog == this.regResult[i].name) {
+          if (this.userNameLog.toLowerCase() == this.regResult[i].name) {
             count++;
             usernameCount.push(this.regResult[i]);
           }
@@ -153,6 +149,7 @@ export class LoginRegisterPage implements OnInit {
                 this.dbService.showToast("Login Successful!");
                 this.rememberMe();
                 this.dataService.setLoggedInUserData( usernameCount[i].sr_no);
+                this.dataService.setLoggedInUsername( usernameCount[i].name);
                 this.appComponent.viewMenu(usernameCount[i].name);
                 this.navCtrl.navigateRoot('aarti-list');
                 break;
@@ -204,6 +201,5 @@ export class LoginRegisterPage implements OnInit {
     }else{
       this.navCtrl.navigateRoot('aarti-list');
     }
-    
   }
 }

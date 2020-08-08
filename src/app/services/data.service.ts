@@ -17,6 +17,7 @@ export class DataService {
   private listPlaylist =[];
   private presentPage ="";
   private lang:boolean;
+  private username;
 
   constructor() { }
 
@@ -59,6 +60,14 @@ export class DataService {
   }
   getLoggedInUserData() {
     return this.loggedInUser;
+  }
+
+  setLoggedInUsername(username){
+     this.username = username;
+  }
+
+  getLoggedInUsername(){
+    return this.username;
   }
 
   setPlaylistName(name){

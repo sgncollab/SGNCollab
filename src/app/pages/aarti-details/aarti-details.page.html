@@ -9,20 +9,28 @@
 
 <ion-content>
   <ion-card scrollY="false">
-    <ion-item *ngIf="!lang" text-center no-lines>
-      {{ aartiData.marathiTitle }}
-    </ion-item>
-    <ion-item *ngIf ="lang" text-center no-lines >
-      {{ aartiData.englishTitle }}
-    </ion-item>
-    <ion-item-divider></ion-item-divider>
-    <ion-item *ngIf="!lang" class="splitData" text-center no-lines>
-      {{ aartiData.marathiAarti }}
-    </ion-item>
-    <ion-item *ngIf="lang" class="splitData" text-center no-lines>
-      {{ aartiData.englishAarti }}
-    </ion-item>
+    <ion-item-divider style="min-height: 8vh;">
+        <ion-item *ngIf ="lang"  lines="none" >
+          {{ aartiData.englishTitle }}
+        </ion-item>
+        <ion-item *ngIf="!lang"  lines="none" style="padding-left: 22vw;">
+          {{ aartiData.marathiTitle }}
+        </ion-item>
+   
+      
+    </ion-item-divider>
     
+    
+      <div style="padding-left: 14vw;">
+        <ion-item *ngIf="!lang" class="splitData" text-center no-lines style="padding-top: 10px;">
+          {{ aartiData.marathiAarti }}
+        </ion-item>
+      </div>
+      <div style="padding-left: 15px;">
+        <ion-item *ngIf="lang" class="splitData" text-center no-lines style="padding-top: 10px;">
+          {{ aartiData.englishAarti }}
+        </ion-item>
+      </div>
 </ion-card>
 </ion-content>
 <ion-footer>

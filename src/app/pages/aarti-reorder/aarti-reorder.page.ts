@@ -19,6 +19,8 @@ export class AartiReorderPage implements OnInit {
   srNo: any;
   dataPage = "";
   item=[];
+  //lang = false;
+  selectedLang;
 
   constructor(
     private dataService: DataService,
@@ -28,9 +30,11 @@ export class AartiReorderPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.selectedLang = this.dataService.getLang();
+    console.log(this.selectedLang);
     this.dataPage = this.dataService.getPresentPage();
     this.selectedItems = this.dataService.getAarti();
-    console.log("selected items="+this.selectedItems)
+    //console.log("selected items="+this.selectedItems)
     this.item =this.dataService.getSelectedPlaylistItem();
     this.dbService.fetchUserPlaylist().subscribe((data) => {
       this.userPlaylist = data.map(value => {
@@ -45,11 +49,14 @@ export class AartiReorderPage implements OnInit {
     
     this.srNo = this.dataService.getLoggedInUserData();
   }
+  // displayLang() {
+  //   this.lang = !this.lang;
+  // }
 
   reorderItems(event) {
     let itemToMove = this.selectedItems.splice(event.detail.from, 1)[0];
     this.selectedItems.splice(event.detail.to, 0, itemToMove);
-    event.detail.complete(); //need to see
+    event.detail.complete(); 
   }
 
   

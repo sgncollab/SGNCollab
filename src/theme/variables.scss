@@ -6,6 +6,14 @@
    #rightButton{
     float: right;
 }
+ion-popover {
+  div.popover-content {
+       top: 45% !important;
+       left: 12.5% !important;
+       width: 270px;
+      //transform: translate(-50%, -50%) !important;
+}
+}
 
   /** primary **/
   --ion-color-primary: #3b5998;
@@ -150,6 +158,8 @@
     --ion-color-light-shade: #1e2023;
     --ion-color-light-tint: #383a3e;
   }
+
+  
 
   /*
    * iOS Dark Theme

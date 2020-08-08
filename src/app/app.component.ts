@@ -14,12 +14,11 @@ export class AppComponent implements OnInit {
   public selectedIndex = 0;
   username: any;
   public appPages = [];
-  srNo: any;
+  srNo:any;
   userPlaylist: any = [];
   dataPage = "aarti-list";
   currentPage = "app-component"
 
-  //public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
   constructor(
     private platform: Platform,
@@ -49,15 +48,18 @@ export class AppComponent implements OnInit {
           sr_no: value.payload.doc.data()['sr_no']
         }
       });
+      if(this.srNo != ""){
+        
+      }
     });
+    
     
     
   }
   
  viewMenu(name){
-   
    if(name.toLowerCase() == "guest"){
-     this.username = "Guest";
+    this.username = "Guest";
     this.appPages = [
       {
         title: 'All Aarti List',
@@ -72,18 +74,23 @@ export class AppComponent implements OnInit {
       },
       {
         title: 'Feedback',
-        url: 'home',
+        url: 'feedback',
         icon: 'create'
       },
       {
         title: 'Settings',
-        url: 'home',
+        url: 'settings',
         icon: 'settings'
       },
       {
         title: 'About us',
         url: 'about-us',
         icon: 'information-circle'
+      },
+      {
+        title: 'Login',
+        url: 'login-register',
+        icon: 'enter'
       }
     ];
    } else {
@@ -130,38 +137,41 @@ export class AppComponent implements OnInit {
         icon: 'exit'
       }
     ];
-   }
+   
   
+   }
   }
   demo(index) {
     this.dataPage = this.dataService.getPresentPage();
     //console.log(this.dataPage);
-    if (index == 7) {
-      this.logout();
-    }
-    let count = 0;
-    if (index == 1) {
-      this.srNo = this.dataService.getLoggedInUserData();
-      for (let i = 0; i < this.userPlaylist.length; i++) {
-        if (this.srNo == this.userPlaylist[i].sr_no) {
-          count++;
-        }
-      } 
-      if (count >= 5) {
-        this.navController.navigateForward(this.dataPage);
-        this.dbService.showToast("You have already created five playlist.");
+    if(this.username.toLowerCase() != "guest"){
+      if (index == 7) {
+        this.logout();
       }
-    }
-    if (index == 2) {
-      this.srNo = this.dataService.getLoggedInUserData();
-      for (let i = 0; i < this.userPlaylist.length; i++) {
-        if (this.srNo == this.userPlaylist[i].sr_no) {
-          count++;
+      let count = 0;
+      if (index == 1) {
+        this.srNo = this.dataService.getLoggedInUserData();
+        for (let i = 0; i < this.userPlaylist.length; i++) {
+          if (this.srNo == this.userPlaylist[i].sr_no) {
+            count++;
+          }
+        } 
+        if (count >= 5) {
+          this.navController.navigateForward(this.dataPage);
+          this.dbService.showToast("You have already created five playlist.");
         }
-      } 
-      if (count < 1) {
-        this.navController.navigateForward(this.dataPage);
-        this.dbService.showToast("Please create a playlist!");
+      }
+      if (index == 2) {
+        this.srNo = this.dataService.getLoggedInUserData();
+        for (let i = 0; i < this.userPlaylist.length; i++) {
+          if (this.srNo == this.userPlaylist[i].sr_no) {
+            count++;
+          }
+        } 
+        if (count < 1) {
+          this.navController.navigateForward(this.dataPage);
+          this.dbService.showToast("Please create a playlist!");
+        }
       }
     }
   }
@@ -170,5 +180,4 @@ export class AppComponent implements OnInit {
     console.log("logout");
     localStorage.clear();
   }
-
 }
