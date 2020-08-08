@@ -24,10 +24,19 @@ export class LoginRegisterPage implements OnInit {
   isChecked: boolean;
   view: string = "registerView";
   display = false;
+<<<<<<< HEAD
   ext: any = "+91";
+=======
+<<<<<<< HEAD
+  ext: any ="+91";
+  
+=======
+  ext: any;
+>>>>>>> 17fe7c8d29645062fb348b3f9065ec6bf32de442
   someAutoFormattedInput = "";
   currentPage  = "login-register";
  
+>>>>>>> e85ea3190735376584448fda1953958f3e1cec90
 
   constructor(
     private menu: MenuController,
@@ -66,6 +75,7 @@ export class LoginRegisterPage implements OnInit {
         }
       });
       this.items = this.result;
+      
     });
 
     this.dbService.fetchUsers().subscribe((data) => {
