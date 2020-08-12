@@ -24,7 +24,7 @@
     <ion-list class="bg-transparent" *ngFor="let item of copyData;index as i">
       <ion-item style="--inner-padding-start:23vw; font-size:3vh;font-weight:300;border:1px solid lightgray;border-radius:4vh;margin-left:7vw;margin-right:7vw;"
         *ngIf="!lang" (click)="openAartiDetails(item,i)">{{item.marathiTitle}} </ion-item>
-      <ion-item style="--inner-padding-start:18vw;  font-size:3vh;font-weight:300" *ngIf="lang"
+      <ion-item style="--inner-padding-start:18vw;  font-size:3vh;font-weight:300;border:1px solid lightgray;border-radius:4vh;margin-left:7vw;margin-right:7vw;" *ngIf="lang"
         (click)="openAartiDetails(item,i)">{{item.englishTitle}}</ion-item>
     </ion-list>
   </div>
