@@ -4,6 +4,9 @@ import { FirebaseDbService } from 'src/app/services/firebase-db.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DataService } from 'src/app/services/data.service';
 import { AppComponent } from 'src/app/app.component';
+// import * as utf8 from 'crypto-js/enc-utf8';
+// import * as AES from 'crypto-js/aes';
+import {Md5} from 'ts-md5/dist/md5';
 
 @Component({
   selector: 'app-login-register',
@@ -24,10 +27,13 @@ export class LoginRegisterPage implements OnInit {
   isChecked: boolean;
   view: string = "registerView";
   display = false;
-  ext: any = "+91";
+  ext: any ="+91";
   someAutoFormattedInput = "";
   currentPage  = "login-register";
- 
+  encryptedKey:any;
+  key:any;
+  countryCode:any;
+
   constructor(
     private menu: MenuController,
     public formBuilder: FormBuilder,
@@ -41,9 +47,10 @@ export class LoginRegisterPage implements OnInit {
       code: ['', Validators.compose([Validators.required])],
       mobNo: ['', Validators.compose([Validators.required, Validators.minLength(10), Validators.pattern('[0-9]{10}')])]
     });
-    this.code = this.signUpValidate.controls['code'];
-    this.userName = this.signUpValidate.controls['userName'];
-    this.mobNo = this.signUpValidate.controls['mobNo']; 
+    // this.code = this.signUpValidate.controls['code'];
+    // this.userName = this.signUpValidate.controls['userName'];
+    // this.mobNo = this.signUpValidate.controls['mobNo'];
+    
   }
 
   ionViewWillEnter() {
@@ -60,11 +67,12 @@ export class LoginRegisterPage implements OnInit {
         return {
           id: value.payload.doc.id,
           code: value.payload.doc.data()['code'],
-          country: value.payload.doc.data()['country']
+          country: value.payload.doc.data()['country'],
+          selected: value.payload.doc.data()['selected']
         }
       });
       this.items = this.result;
-      
+      this.countryCode = this.items[1].code
     });
 
     this.dbService.fetchUsers().subscribe((data) => {
@@ -101,10 +109,19 @@ export class LoginRegisterPage implements OnInit {
 
   registerUser() {
     var flag = false;
+    this.someAutoFormattedInput = this.signUpValidate.value.userName ;
+    console.log(this.someAutoFormattedInput);
+    this.code = this.signUpValidate.value.code
+    this.mobNo = this.signUpValidate.value.mobNo
+    let mob = this.code + this.mobNo
+    console.log("input register"+ mob);
+    mob =  Md5.hashStr(mob);
+    console.log("converted register"+mob);
+
     try {
       if (this.regResult.length > 0 && this.regResult != undefined) {
         for (let i = 0; i < this.regResult.length; i++) {
-          if (this.regResult[i].mobile_no == (this.signUpValidate.value.code + this.signUpValidate.value.mobNo)) {
+          if (this.regResult[i].mobile_no == mob ) {
             flag = true;
             this.dbService.showToast("User with this mobile number already exists");
             break;
@@ -112,9 +129,14 @@ export class LoginRegisterPage implements OnInit {
         }
       }
       if (flag == false) {
-        this.dbService.createUser(this.srNo, this.signUpValidate.value.userName, (this.signUpValidate.value.code + this.signUpValidate.value.mobNo));
+       // this.encryptedKey = Md5.hashStr(this.signUpValidate.value.code + this.signUpValidate.value.mobNo);
+        // this.encryptedKey=AES.encrypt(this.signUpValidate.value.code + this.signUpValidate.value.mobNo,"")
+        this.dbService.createUser(this.srNo, this.signUpValidate.value.userName, mob);
         this.rememberme();
         this.appComponent.viewMenu(this.signUpValidate.value.userName);
+
+        console.log("registered"+ mob)
+
         //let serialNo = this.dataService.setLoggedInUserData(this.srNo);
         let serialNo = this.srNo;
         //console.log(serialNo);
@@ -130,7 +152,12 @@ export class LoginRegisterPage implements OnInit {
     let count = 0;
     let flag = false;
     let usernameCount = [];
-    
+    let mno =( this.countryCode + this.mobNoLog)
+    console.log(this.countryCode)
+    console.log(this.mobNoLog)
+    console.log("logininput"+ mno)
+    mno = Md5.hashStr(mno);
+    console.log("converted login " +mno)
 
     try {
       if (this.regResult.length > 0 && this.regResult != undefined) {
@@ -143,7 +170,10 @@ export class LoginRegisterPage implements OnInit {
         if (count >= 1) {
           if (usernameCount.length > 0 && usernameCount != undefined) {
             for (let i = 0; i < usernameCount.length; i++) {
-              if ((this.ext + this.mobNoLog) == usernameCount[i].mobile_no) {
+              // this.key =  usernameCount[i].mobile_no;
+              // console.log(this.key)
+              // this.decryptedKey=AES.decrypt(usernameCount[i].mobile_no, "").toString(utf8);
+              if ( mno == usernameCount[i].mobile_no) {
                 flag = true;
                 this.dbService.showToast("Login Successful!");
                 this.rememberMe();
@@ -201,4 +231,6 @@ export class LoginRegisterPage implements OnInit {
       this.navCtrl.navigateRoot('aarti-list');
     }
   }
+
+ 
 }

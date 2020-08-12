@@ -50,9 +50,10 @@ export class AartiListPage implements OnInit {
   displayLang() {
     this.lang = !this.lang;
   }
-
-  reasignData() {
-    this.copyData = this.data
+  
+      
+  reasignData(){
+ this.copyData=this.data
   }
 
   searchList(ev: CustomEvent) {
