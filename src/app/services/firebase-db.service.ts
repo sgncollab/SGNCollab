@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
 import { ToastController } from '@ionic/angular';
+//import  { EmailJSResponseStatus } from 'emailjs-com';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,8 @@ export class FirebaseDbService {
 
   constructor(
     private firestore: AngularFirestore,
-    private toastCtrl: ToastController
+    private toastCtrl: ToastController,
+    
   ) { }
 
   createUser(srNo, userName, mobNo) {
@@ -76,7 +78,11 @@ export class FirebaseDbService {
       message: message,
       duration: 1000,
       color: 'primary',
-      position:'middle',
+      position:'bottom',
     }).then(toastData => toastData.present());
   }
+
+  
+
+
 }

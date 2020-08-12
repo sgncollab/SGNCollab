@@ -1,54 +1,21 @@
-ion-toggle {
-    width: 70px !important;
-    height: 50px !important;
-    --background: #000;
-    --background-checked: #7a49a5;
-  
-    --handle-background: #7a49a5;
-    --handle-background-checked: #000;
-    zoom: 0.8;
-  }
-  ion-toggle::before {
-    position: absolute;
-  
-    top: 16px;
-    left: 10px;
-  
-    content: "ON";
-  
-    color: white;
-    font-size: 15px;
-  
-    z-index: 1;
-  }
-  ion-toggle::after {
-    position: absolute;
-  
-    top: 16px;
-    left: 10px;
-  
-    content: "ON";
-  
-    color: white;
-    font-size: 15px;
-  
-    z-index: 1;
+ion-content.background{
+
+    --background: url(../../../assets/images/app-bg-light.png)0 0/100% 100% no-repeat ;
+}
+
+.segment{
+    height: 6vh;
+    width:50vw;
+    margin-left:13vh;
+    margin-top:0vh;
+}
+
+.segment-button{
+    margin: 0.5vh 0.5vw;  
+}
+
+.bg-transparent {
+    background: transparent;
   }
 
-// .toggle 
-// {
-//       border-radius: 6px !important;
-//       width: 70px !important;
-//       height: 50px !important;
-//       top: 4px !important;
-// --handle-background :rgb(50, 103, 219);
-// --handle-background-checked	: yes;
-// --handle-border-radius:6px	;
-// --handle-box-shadow:2px;
-// --handle-height	:50px;
-// --handle-max-height:50px	;
-// --handle-spacing:3px;
-// --handle-width:70px ;
-// }
-
-
+  

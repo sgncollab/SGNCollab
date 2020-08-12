@@ -39,7 +39,7 @@ export class ReorderPopoverComponent implements OnInit {
           sr_no: value.payload.doc.data()['sr_no']
         }
       });
-    console.log(this.userPlaylist);
+    //console.log(this.userPlaylist);
     });
     this.dbService.fetchPlaylist().subscribe((data) => {
       this.playlist = data.map(value => {
@@ -49,10 +49,10 @@ export class ReorderPopoverComponent implements OnInit {
           playlist_name: value.payload.doc.data()['playlist']
         }
       });
-      console.log(this.playlist);
+      //console.log(this.playlist);
     });
     this.srNo = this.dataService.getLoggedInUserData();
-    console.log(this.srNo);
+    //console.log(this.srNo);
   }
   onDone() {
     let flag = false;

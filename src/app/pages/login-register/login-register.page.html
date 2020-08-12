@@ -37,7 +37,7 @@
           <div class="ion-padding">
             <ion-item style="border-radius: 5px;">
               <ion-icon name="person-sharp"></ion-icon>
-              <ion-input type="text" placeholder="Username" [(ngModel)]="userNameLog"
+              <ion-input class="ion-text-capitalize" type="text" placeholder="First Name" [(ngModel)]="userNameLog"
                 style="padding-left:10px !important;background-color:white;font-size: 15px; color: black; margin-left:10px;font-family:'Nunito,sans-serif'">
               </ion-input>
             </ion-item><br>
@@ -45,7 +45,7 @@
               <ion-icon name="call-sharp"></ion-icon>
               <ion-select style="font-size: 15px; font-family:'Nunito,sans-serif'" placeholder="Ext" [(ngModel)]="countryCode" [selectedText]="countryCode">
                 <ion-label> Select Country Code</ion-label>
-                <ion-select-option *ngFor="let item of items">{{item.code}} </ion-select-option>
+                <ion-select-option *ngFor="let item of items">{{item.code}}</ion-select-option>
               </ion-select>
               <ion-input type="Number" placeholder="Mobile Number" [(ngModel)]="mobNoLog"
                 style="padding-left:10px !important;background-color:white; font-size: 15px; color: black; font-family:'Nunito,sans-serif'">
@@ -66,10 +66,10 @@
       </div>
       <div *ngIf="display">
         <form [formGroup]="signUpValidate">
-          <div class="ion-padding">
+          <div class="ion-padding" >
             <ion-item style="border-radius: 5px;">
               <ion-icon name="person-sharp"></ion-icon>
-              <ion-input type="text" placeholder="Username" formControlName="userName"
+              <ion-input class="ion-text-capitalize" type="text" placeholder="First Name" formControlName="userName"
                 style="padding-left:10px !important;background-color:white;font-size: 15px; color: black; margin-left:10px;font-family:'Nunito,sans-serif'">
               </ion-input>
             </ion-item><br>
@@ -102,87 +102,90 @@
     </div>
   </ion-card>
 
-  <!-- <div class="content">
-    <div style="background-color:aliceblue;border-radius: 6px;"> 
-      <ion-segment>
-        <ion-segment-button (click)="checkView('loginView')">
-          <b>Login</b>
-        </ion-segment-button>
-        <ion-segment-button (click)="checkView('registerView')">
-          <b>Register</b>
-        </ion-segment-button>
-      </ion-segment>
-    </div>
-    <div style="background-color: white;border-radius: 6px;">
-      <div *ngIf="!display">
-          <div class="ion-padding">
-            <ion-item style="border-radius: 5px;">
-              <ion-icon name="person-sharp"></ion-icon>
-              <ion-input type="text" placeholder="Username" [(ngModel)]="userNameLog"
-                style="padding-left:10px !important;background-color:white;font-size: 15px; color: black; margin-left:10px;font-family:'Nunito,sans-serif'">
-              </ion-input>
-            </ion-item><br>
-            <ion-item style="border-radius: 5px;">
-              <ion-icon name="call-sharp"></ion-icon>
-              <ion-select style="font-size: 15px; font-family:'Nunito,sans-serif'" placeholder="Ext" [(ngModel)]="ext">
-                <ion-label> Select Country Code</ion-label>
-                <ion-select-option *ngFor="let item of items" >{{item.code}} </ion-select-option>
-              </ion-select>
-              <ion-input type="Number" placeholder="Mobile Number" [(ngModel)]="mobNoLog"
-                style="padding-left:10px !important;background-color:white; font-size: 15px; color: black; font-family:'Nunito,sans-serif'">
-              </ion-input>
-            </ion-item>
-          </div>
-        <div style=" margin-left: 15px;  margin-bottom: 10px;">
-          <ion-row>
-            <ion-checkbox [(ngModel)]="isChecked"></ion-checkbox>
-            <ion-label>
-              <p style="font-size: 14px; color: black; margin-left: 5px;">Remember Me</p>
-            </ion-label>
-          </ion-row>
-        </div>
-        <ion-button  expand="full" fill="solid" color="primary"
-          style="text-transform:none;font-size: 15px;" shape="round" (click)="login()">
-          Login</ion-button>
-      </div>
-      <div *ngIf="display">
-        <form [formGroup]="signUpValidate">
-          <div class="ion-padding">
-            <ion-item style="border-radius: 5px;">
-              <ion-icon name="person-sharp"></ion-icon>
-              <ion-input type="text" placeholder="Username" formControlName="userName" 
-                style="padding-left:10px !important;background-color:white;font-size: 15px; color: black; margin-left:10px;font-family:'Nunito,sans-serif'">
-              </ion-input>
-            </ion-item><br>
-            <ion-item style="border-radius: 5px;">
-              <ion-icon name="call-sharp"></ion-icon>
-              <ion-select style="font-size: 15px; font-family:'Nunito,sans-serif'" placeholder="Ext"
-                formControlName="code">
-                <ion-label> Select Country Code</ion-label>
-                <ion-select-option *ngFor="let item of items">{{item.code}} </ion-select-option>
-              </ion-select>
-              <ion-input type="Number" placeholder="Mobile Number" formControlName="mobNo"
-                style="padding-left:10px !important;background-color:white; font-size: 15px; color: black; font-family:'Nunito,sans-serif'">
-              </ion-input>
-            </ion-item>
-          </div>
-        </form>
-        <div style=" margin-left: 15px;  margin-bottom: 10px;">
-          <ion-row>
-            <ion-checkbox [(ngModel)]="isChecked"></ion-checkbox>
-            <ion-label>
-              <p style="font-size: 14px; color: black; margin-left: 5px;">Remember Me</p>
-            </ion-label>
-          </ion-row>
-        </div>
-
-        <ion-button [disabled]="!signUpValidate.valid" expand="full" fill="solid" color="primary"
-          (click)="registerUser()" style="text-transform:none;font-size: 15px;" shape="round">
-          Register</ion-button>
-      </div>
-    </div>
-  </div> -->
+  
 </ion-content>
+
+<!-- Working code -->
+<!-- <ion-card class="content">
+  <div style="background-color:aliceblue;border-radius: 6px;"> 
+    <ion-segment value ="Login">
+      <ion-segment-button value="Login" (click)="checkView('loginView')">
+        <b>Login</b>
+      </ion-segment-button>
+      <ion-segment-button value="Register"  (click)="checkView('registerView')">
+        <b>Register</b>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  <div >
+    <div *ngIf="!display">
+        <div class="ion-padding">
+          <ion-item style="border-radius: 5px;">
+            <ion-icon name="person-sharp"></ion-icon>
+            <ion-input type="text" placeholder="Username" [(ngModel)]="userNameLog"
+              style="padding-left:10px !important;background-color:white;font-size: 15px; color: black; margin-left:10px;font-family:'Nunito,sans-serif'">
+            </ion-input>
+          </ion-item><br>
+          <ion-item style="border-radius: 5px;">
+            <ion-icon name="call-sharp"></ion-icon>
+            <ion-select style="font-size: 15px; font-family:'Nunito,sans-serif'" placeholder="Ext" [(ngModel)]="ext">
+              <ion-label> Select Country Code</ion-label>
+              <ion-select-option *ngFor="let item of items" >{{item.code}} </ion-select-option>
+            </ion-select>
+            <ion-input type="Number" placeholder="Mobile Number" [(ngModel)]="mobNoLog"
+              style="padding-left:10px !important;background-color:white; font-size: 15px; color: black; font-family:'Nunito,sans-serif'">
+            </ion-input>
+          </ion-item>
+        </div>
+      <div style=" margin-left: 15px;  margin-bottom: 10px;">
+        <ion-row>
+          <ion-checkbox [(ngModel)]="isChecked"></ion-checkbox>
+          <ion-label>
+            <p style="font-size: 14px; color: black; margin-left: 5px;">Remember Me</p>
+          </ion-label>
+        </ion-row>
+      </div>
+      <ion-button  expand="full" fill="solid" color="primary"
+        style="text-transform:none;font-size: 15px; margin: 10px;" shape="round" (click)="login()">
+        Login</ion-button>
+    </div>
+    <div *ngIf="display">
+      <form [formGroup]="signUpValidate">
+        <div class="ion-padding" >
+          <ion-item style="border-radius: 5px;">
+            <ion-icon name="person-sharp"></ion-icon>
+            <ion-input type="text" placeholder="Username" formControlName="userName"
+              style="padding-left:10px !important;background-color:white;font-size: 15px; color: black; margin-left:10px;font-family:'Nunito,sans-serif'">
+            </ion-input>
+          </ion-item><br>
+          <ion-item style="border-radius: 5px;">
+            <ion-icon name="call-sharp"></ion-icon>
+            <ion-select style="font-size: 15px; font-family:'Nunito,sans-serif'" placeholder="Ext"
+              formControlName="code">
+              <ion-label> Select Country Code</ion-label>
+              <ion-select-option *ngFor="let item of items">{{item.code}} </ion-select-option>
+            </ion-select>
+            <ion-input type="Number" placeholder="Mobile Number" formControlName="mobNo"
+              style="padding-left:10px !important;background-color:white; font-size: 15px; color: black; font-family:'Nunito,sans-serif'">
+            </ion-input>
+          </ion-item>
+        </div>
+      </form>
+      <div style=" margin-left: 15px;  margin-bottom: 10px;">
+        <ion-row>
+          <ion-checkbox [(ngModel)]="isChecked"></ion-checkbox>
+          <ion-label>
+            <p style="font-size: 14px; color: black; margin-left: 5px;">Remember Me</p>
+          </ion-label>
+        </ion-row>
+      </div>
+
+      <ion-button [disabled]="!signUpValidate.valid" expand="full" fill="solid" color="primary"
+        (click)="registerUser()" style="text-transform:none;font-size: 15px; margin: 10px;" shape="round">
+        Register</ion-button>
+    </div>
+  </div>
+</ion-card> -->
 
 
 

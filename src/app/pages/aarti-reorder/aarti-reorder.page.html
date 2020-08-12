@@ -9,13 +9,41 @@
 
 <ion-content>
   <ion-list>
+    <ion-item *ngIf="!selectedLang">
     <ion-reorder-group (ionItemReorder)="reorderItems($event)" disabled="false">
       <ion-item *ngFor="let item of selectedItems">
-        {{item.marathiTitle}}
-        <ion-reorder slot="end"></ion-reorder>
+        {{item.marathiTitle}}<ion-reorder slot="end"></ion-reorder>
       </ion-item>
     </ion-reorder-group>
+  </ion-item>
   </ion-list>
+  <ion-list>
+    <ion-item *ngIf="selectedLang">
+      <ion-reorder-group (ionItemReorder)="reorderItems($event)" disabled="false">
+        <ion-item *ngFor="let item of selectedItems">
+          {{item.englishTitle}}<ion-reorder slot="end"></ion-reorder>
+        </ion-item>
+      </ion-reorder-group>
+    </ion-item>
+  </ion-list>
+
   <ion-button (click)="presentPopover($event)" id="rightButton">Next</ion-button>
   
 </ion-content>
+
+<!-- <ion-item *ngFor="let item of selectedItems">
+  <ion-item *ngIf="!selectedLang">{{item.marathiTitle}}<ion-reorder slot="end"></ion-reorder></ion-item>
+  <ion-item *ngIf="selectedLang">{{item.englishTitle}}<ion-reorder slot="end"></ion-reorder></ion-item>
+</ion-item> -->
+
+
+<!--working code
+   <ion-list>
+  <ion-reorder-group (ionItemReorder)="reorderItems($event)" disabled="false">
+    <ion-item *ngFor="let item of selectedItems">
+      {{item.marathiTitle}}
+      <ion-reorder slot="end"></ion-reorder>
+    </ion-item>
+  </ion-reorder-group>
+</ion-list>
+<ion-button (click)="presentPopover($event)" id="rightButton">Next</ion-button> -->

@@ -14,8 +14,6 @@ export class CreatePlaylistPage implements OnInit {
   checkedbtn = true;
   currentPage = "createplaylist";
   lang = false;
-  
-  
 
   constructor(
     private dataService: DataService,
@@ -32,6 +30,7 @@ export class CreatePlaylistPage implements OnInit {
   }
   displayLang() {
     this.lang = !this.lang;
+    this.selectedItems = [];
   }
 
   getItem(e: any, marathiTitle: string) {
@@ -47,7 +46,9 @@ export class CreatePlaylistPage implements OnInit {
     }
   }
   onNext() {
+    this.dataService.setLang(this.lang);
     this.dataService.setAarti(this.selectedItems);
+    //console.log(this.selectedItems);
     this.navController.navigateForward('aarti-reorder');
   }
 }
