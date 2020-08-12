@@ -87,7 +87,7 @@ export class AppComponent implements OnInit {
       }
     ];
    } else {
-    this.username = name ;
+    this.username = name;
     this.appPages = [
       {
         title: 'Homepage',
@@ -131,11 +131,12 @@ export class AppComponent implements OnInit {
       }
     ];
    }
-  
+ 
   }
+ 
   demo(index) {
     this.dataPage = this.dataService.getPresentPage();
-    //console.log(this.dataPage);
+    
     if (index == 7) {
       this.logout();
     }

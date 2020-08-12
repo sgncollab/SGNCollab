@@ -31,9 +31,11 @@
     "angularfire2": "^5.4.2",
     "cordova-android": "8.1.0",
     "cordova-plugin-email-composer": "^0.9.2",
-    "core-js": "^2.5.4",
+    "core-js": "^2.5.0",
+    "crypto-js": "^4.0.0",
     "firebase": "^7.14.4",
     "rxjs": "~6.5.1",
+    "ts-md5": "^1.2.7",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
   },
