@@ -23,11 +23,11 @@
 
   <ion-card class="content">
     <div style="background-color:aliceblue;border-radius: 6px;"> 
-      <ion-segment value ="Login">
-        <ion-segment-button value="Login" (click)="checkView('loginView')">
+      <ion-segment mode="ios" value ="Login" >
+        <ion-segment-button style="height:6vh;" value="Login" (click)="checkView('loginView')">
           <b>Login</b>
         </ion-segment-button>
-        <ion-segment-button value="Register"  (click)="checkView('registerView')">
+        <ion-segment-button style="height:6vh;" value="Register"  (click)="checkView('registerView')">
           <b>Register</b>
         </ion-segment-button>
       </ion-segment>
@@ -101,9 +101,10 @@
       </div>
     </div>
   </ion-card>
-
-  
 </ion-content>
+
+
+
 
 <!-- Working code -->
 <!-- <ion-card class="content">

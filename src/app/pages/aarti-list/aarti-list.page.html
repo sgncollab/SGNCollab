@@ -6,43 +6,34 @@
     <ion-title>Home</ion-title>
   </ion-toolbar>
 </ion-header>
-<header>
-  <ion-searchbar autocomplete="on" placeholder="Search Aarti"  [(ngModel)]="searchAarti"
-    (ionChange)="searchList($event)"></ion-searchbar>
-</header>
-<ion-segment mode="ios" class=“checkbox-circle” value="all" class="segment" color="dark" (click)="displayLang()" >
-  <ion-segment-button value="all" style="zoom:1;font-weight: 600;" class="segment-button">
-    मराठी
-  </ion-segment-button>
-  <ion-segment-button value="favorites" style="zoom:1.1;font-weight: 600;" class="segment-button">
-    English
-  </ion-segment-button>
-</ion-segment>
-<ion-content>
-  
-  <!-- <ion-item-divider sticky>
-      <ion-item-divider>
-        <ion-item>
-          <ion-label>MARATHI</ion-label>
-          <ion-toggle (click)="displayLang()"></ion-toggle>
-          <ion-label>ENGLISH</ion-label>
-        </ion-item>
-      </ion-item-divider>
-  </ion-item-divider> -->
-  <ion-list  class="bg-transparent" *ngFor="let item of copyData;index as i">
-    <ion-item style="--inner-padding-start:23vw; padding-right:3vw;font-size:3vh;font-weight:300" *ngIf="!lang" (click)="openAartiDetails(item,i)">{{item.marathiTitle}} </ion-item>
-    <ion-item style="--inner-padding-start:18vw; padding-right:3vw; font-size:3vh;font-weight:300"*ngIf="lang" (click)="openAartiDetails(item,i)">{{item.englishTitle}}</ion-item>
-  </ion-list>
+
+<ion-content class="background">
+  <ion-searchbar autocomplete="on" placeholder="Search Aarti" [(ngModel)]="searchAarti" (ionChange)="searchList($event)"
+    style="border-radius:35px;">
+  </ion-searchbar>
+
+  <ion-segment mode="ios" class="segment" color="dark" (click)="displayLang()">
+    <ion-segment-button value="all" style="zoom:1;font-weight: 600;" class="segment-button">
+      मराठी
+    </ion-segment-button>
+    <ion-segment-button value="favorites" style="zoom:1.1;font-weight: 600;" class="segment-button">
+      English
+    </ion-segment-button>
+  </ion-segment>
+  <div style="margin-top: 6vh;">
+    <ion-list class="bg-transparent" *ngFor="let item of copyData;index as i">
+      <ion-item style="--inner-padding-start:23vw; font-size:3vh;font-weight:300;border:1px solid lightgray;border-radius:4vh;margin-left:7vw;margin-right:7vw;"
+        *ngIf="!lang" (click)="openAartiDetails(item,i)">{{item.marathiTitle}} </ion-item>
+      <ion-item style="--inner-padding-start:18vw;  font-size:3vh;font-weight:300" *ngIf="lang"
+        (click)="openAartiDetails(item,i)">{{item.englishTitle}}</ion-item>
+    </ion-list>
+  </div>
 </ion-content>
 
-    <!-- <ion-list *ngFor="let item of copyData;index as i" >
+<!-- <ion-list *ngFor="let item of copyData;index as i" >
       <ion-item (click)="openAartiDetails(item,i)">
         <ion-label color="secondary">
           {{ item.englishTitle }}
         </ion-label>
       </ion-item>
-
-    
-    
- 
 </ion-content> -->

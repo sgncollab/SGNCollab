@@ -24,20 +24,10 @@ export class LoginRegisterPage implements OnInit {
   isChecked: boolean;
   view: string = "registerView";
   display = false;
-<<<<<<< HEAD
   ext: any = "+91";
-=======
-<<<<<<< HEAD
-  ext: any ="+91";
-  
-=======
-  ext: any;
->>>>>>> 17fe7c8d29645062fb348b3f9065ec6bf32de442
   someAutoFormattedInput = "";
   currentPage  = "login-register";
  
->>>>>>> e85ea3190735376584448fda1953958f3e1cec90
-
   constructor(
     private menu: MenuController,
     public formBuilder: FormBuilder,
@@ -53,8 +43,7 @@ export class LoginRegisterPage implements OnInit {
     });
     this.code = this.signUpValidate.controls['code'];
     this.userName = this.signUpValidate.controls['userName'];
-    this.mobNo = this.signUpValidate.controls['mobNo'];
-    
+    this.mobNo = this.signUpValidate.controls['mobNo']; 
   }
 
   ionViewWillEnter() {

@@ -88,7 +88,7 @@ export class AppComponent implements OnInit {
         icon: 'information-circle'
       },
       {
-        title: 'Login',
+        title: 'Register',
         url: 'login-register',
         icon: 'enter'
       }
