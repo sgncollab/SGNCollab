@@ -9,35 +9,9 @@
 
 <ion-content class="background">
 <ion-list style="margin: 10px; border-radius: 6px;" *ngFor="let item of data;index as i">
-  <div>
-    <table>
-      <tr>
-        <th><ion-label>ID</ion-label></th>
-        <th><ion-label>Playlist Name</ion-label></th>
-      </tr>
-      <tr>
-        <td> <ion-note color="#3b5998">{{item.playlist_id}}</ion-note></td>
-        <td><ion-note color="#3b5998"> {{item.playlist_name}}</ion-note></td>
-        
-      </tr>
-    </table>
-    <!-- <ion-row>
-      <ion-col size="2">
-      </ion-col>
-      <ion-col size="4">
-        <ion-label>ID</ion-label>
-
-        <ion-note color="#3b5998">{{item.playlist_id}}</ion-note>
-      </ion-col>
-      <ion-col size="6">
-        <ion-label>Playlist Name</ion-label>
-        <ion-note color="#3b5998"> {{item.playlist_name}}</ion-note>
-      </ion-col>
-    </ion-row> -->
-    
-    
-  </div>
-  <!-- <ion-row>
+  
+  
+  <ion-row>
     <ion-col  size="1" >
     </ion-col>
     <ion-col size="9"  (click)="stringCheck(item.playlist_id)">
@@ -56,7 +30,7 @@
     <ion-col  size="1" >
 
     </ion-col>
-  </ion-row> -->
+  </ion-row>
   
 </ion-list>
 <!-- presentPopover(ev: any)presentActionSheet(item) -->

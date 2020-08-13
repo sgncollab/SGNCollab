@@ -12,7 +12,7 @@ export class CreatePlaylistPage implements OnInit {
   private data: any;
   private selectedItems = [];
   checkedbtn = true;
-  currentPage = "createplaylist";
+  currentPage = "create-playlist";
   lang = false;
 
   constructor(

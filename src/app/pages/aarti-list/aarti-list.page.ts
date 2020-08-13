@@ -18,7 +18,7 @@ export class AartiListPage implements OnInit {
   isItemAvailable = true;
   searchAarti: string = "";
   copyData = []
-  currentPage = "aarti-list"
+  currentPage = "aarti-list";
   
 
   constructor(
@@ -43,9 +43,18 @@ export class AartiListPage implements OnInit {
         this.data = json;
         this.copyData = json;
       });
+      this.dataService.setPresentPage(this.currentPage);
   }
   
+  checkLang(identifier){
+    if(identifier == "marathi"){
+      this.lang = true;
+    }
+    if(identifier == "english"){
+      this.lang = false;
+    }
 
+  }
 
   displayLang() {
     this.lang = !this.lang;

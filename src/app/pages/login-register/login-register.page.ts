@@ -29,7 +29,7 @@ export class LoginRegisterPage implements OnInit {
   display = false;
   ext: any ="+91";
   someAutoFormattedInput = "";
-  currentPage  = "login-register";
+  //currentPage  = "login-register";
   encryptedKey:any;
   key:any;
   countryCode:any;
@@ -231,6 +231,4 @@ export class LoginRegisterPage implements OnInit {
       this.navCtrl.navigateRoot('aarti-list');
     }
   }
-
- 
 }

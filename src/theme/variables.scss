@@ -14,7 +14,18 @@ ion-popover {
       //transform: translate(-50%, -50%) !important;
 }
 }
-
+.searchbar-input.sc-ion-searchbar-md {
+  padding-left: 55px;
+  padding-right: 55px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border-radius: 6vh;
+  background-position: left 8px center;
+  height: auto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30px;
+}
   /** primary **/
   --ion-color-primary: #3b5998;
   --ion-color-primary-rgb: 56, 128, 255;
