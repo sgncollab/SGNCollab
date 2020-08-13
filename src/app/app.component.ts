@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   public appPages = [];
   srNo:any;
   userPlaylist: any = [];
-  dataPage = "aarti-list";
+  dataPage = "";
   currentPage = "app-component"
 
 
@@ -48,9 +48,9 @@ export class AppComponent implements OnInit {
           sr_no: value.payload.doc.data()['sr_no']
         }
       });
-      if(this.srNo != ""){
+      // if(this.srNo != ""){
         
-      }
+      // }
     });
     
     
@@ -142,7 +142,8 @@ export class AppComponent implements OnInit {
    }
   }
  
-  demo(index) {
+  sideMenuClick(index) {
+    //console.log(this.dataPage);
     this.dataPage = this.dataService.getPresentPage();
     //console.log(this.dataPage);
     if(this.username.toLowerCase() != "guest"){
