@@ -7,35 +7,42 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-segment mode="ios" value="मराठी" class="segment" color="medium" (click)="displayLang()" >
-    <ion-segment-button value="मराठी" style="zoom:1;font-weight: 600;" class="segment-button">
-      मराठी
-    </ion-segment-button>
-    <ion-segment-button value="English" style="zoom:1.1;font-weight: 600;" class="segment-button">
-      English
-    </ion-segment-button>
-  </ion-segment>
-  <ion-list  *ngFor="let item of data" >
-    <ion-item  *ngIf="!lang">
-    <input type ="checkbox" slot="end" mode="ios"  (change)="getItem($event,item)">{{item.marathiTitle}}
-    </ion-item>
-    <ion-item  *ngIf="lang">
-      <input type="checkbox" slot="end" mode="ios" (change)="getItem($event,item)">{{item.englishTitle}}
+<ion-content class="background">
+  
+    <ion-list class="bg-transparent">
+      <ion-item *ngFor="let item of data" style="--inner-padding-start:22vw; font-size:3vh;font-weight:300;border:1px solid lightgray;border-radius:1vh;margin-left:7vw;margin-right:7vw; margin-bottom: 1vh;">
+        <input type="checkbox" slot="end" mode="ios" (change)="getItem($event,item)">{{item.marathiTitle}}
       </ion-item>
+      <ion-button (click)="onNext()" id="rightButton" [disabled]="checkedbtn">Next</ion-button>
     </ion-list>
+
+  
     
-     <ion-button (click)="onNext()" id="rightButton" [disabled]="checkedbtn" >Next</ion-button>
  
+  
 </ion-content>
 
 
 
-<!--working code
-   <ion-list>
-  <ion-item *ngFor="let item of data">
-  <input type="checkbox"  slot="end" mode="ios"  (change)="getItem($event,item)">{{item.marathiTitle}}
+
+
+
+<!-- toggle working code
+   <ion-segment mode="ios" value="मराठी" class="segment" color="medium" (click)="displayLang()" >
+  <ion-segment-button value="मराठी" style="zoom:1;font-weight: 600;" class="segment-button">
+    मराठी
+  </ion-segment-button>
+  <ion-segment-button value="English" style="zoom:1.1;font-weight: 600;" class="segment-button">
+    English
+  </ion-segment-button>
+</ion-segment>
+<ion-list  *ngFor="let item of data" >
+  <ion-item  *ngIf="!lang">
+  <input type ="checkbox" slot="end" mode="ios"  (change)="getItem($event,item)">{{item.marathiTitle}}
   </ion-item>
-   <ion-button (click)="onNext()" id="rightButton" [disabled]="checkedbtn" >Next</ion-button>
-</ion-list>
- -->
+  <ion-item  *ngIf="lang">
+    <input type="checkbox" slot="end" mode="ios" (change)="getItem($event,item)">{{item.englishTitle}}
+    </ion-item>
+  </ion-list>
+  
+   <ion-button (click)="onNext()" id="rightButton" [disabled]="checkedbtn" >Next</ion-button> -->
