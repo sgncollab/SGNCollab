@@ -28,10 +28,10 @@ export class CreatePlaylistPage implements OnInit {
         });
         this.dataService.setPresentPage(this.currentPage);
   }
-  displayLang() {
-    this.lang = !this.lang;
-    this.selectedItems = [];
-  }
+  // displayLang() {
+  //   this.lang = !this.lang;
+  //   this.selectedItems = [];
+  // }
 
   getItem(e: any, marathiTitle: string) {
     if (e.target.checked) {
@@ -46,7 +46,7 @@ export class CreatePlaylistPage implements OnInit {
     }
   }
   onNext() {
-    this.dataService.setLang(this.lang);
+    //this.dataService.setLang(this.lang);
     this.dataService.setAarti(this.selectedItems);
     //console.log(this.selectedItems);
     this.navController.navigateForward('aarti-reorder');

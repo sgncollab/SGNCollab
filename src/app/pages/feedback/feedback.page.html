@@ -6,29 +6,29 @@
     <ion-title>logo</ion-title>
   </ion-toolbar>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
-<script type="text/javascript">
-   (function(){
+  <script type="text/javascript">
+    (function () {
       emailjs.init("user_bfpYBxcMyOSkR0oaHUcZB");
-   })();
-</script>
+    })();
+  </script>
 </ion-header>
 
 <ion-content class="background">
-  <ion-card style="margin-top: 70px; height:450px;width:320px;padding-top:40px;margin-left: 20px;">
- <ion-text color="primary" style="text-align: center;">
-   <h3 style="margin-top:0px">Feedback Form</h3>
- </ion-text>
-    <ion-card-content style="padding-top:40px;">
+  <ion-card style="margin-top: 15vh; height:66vh;width:85vw;padding-top:3vh;margin-left: 7vw;">
+    <ion-text color="primary" style="text-align: center;">
+      <h3 style="margin-top:0px">Feedback Form</h3>
+    </ion-text>
+    <ion-card-content style="padding-top:8vh;">
       <ion-item style="padding-bottom: 10px;">
-        <ion-input type="text" placeholder="Your Name" [(ngModel)]="user_name"
-          (ionChange)="onAutoFormatChanged()"> </ion-input>
+        <ion-input type="text" placeholder="Your Name" [(ngModel)]="user_name" (ionChange)="onAutoFormatChanged()">
+        </ion-input>
       </ion-item>
       <ion-item style="margin:15px auto;">
-        <ion-input type="email" placeholder="Your Email" style="font:revert"[(ngModel)]="user_email"
-          > </ion-input>
+        <ion-input type="email" placeholder="Your Email" style="font:revert" [(ngModel)]="user_email"> </ion-input>
       </ion-item>
-      <ion-textarea placeholder="Your Feedback" [(ngModel)]="user_feedback"
-        (ionChange)="onAutoFormatChanged()"> </ion-textarea>
+      <ion-textarea maxLength="300" placeholder="Your Feedback" [(ngModel)]="user_feedback"
+        (ionChange)="onAutoFormatChanged()">
+      </ion-textarea>
       <div>
         <ion-button expand="full" fill="solid" color="primary" style="text-transform:none;font-size:20px; 
         margin-top: 15px;" shape="round" (click)="sendEmail()">
@@ -36,8 +36,4 @@
       </div>
     </ion-card-content>
   </ion-card>
-  <!-- <ion-item>
-    <ion-textarea placeholder="Enter your text"[(ngModel)]="someAutoFormattedInput" (ionChange)="onAutoFormatChanged()"></ion-textarea>
-  </ion-item> -->
-
 </ion-content>

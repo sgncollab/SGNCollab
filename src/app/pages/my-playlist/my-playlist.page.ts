@@ -161,9 +161,10 @@ this.navCtrl.navigateForward('update-user-playlist');
   async presentActionSheet(item) {
     const actionSheet = await this.actionSheetController.create({
       cssClass: 'my-custom-class',
+      mode:'ios',
       buttons: [{
         text: 'Delete',
-        role: 'destructive',
+        // role: 'destructive',
         icon: 'trash',
         handler: () => {
           this.deletePlaylist(item)

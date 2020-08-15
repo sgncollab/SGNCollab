@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header >
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
@@ -7,24 +7,24 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="background">
-  <ion-searchbar class="card"autocomplete="on" placeholder="Search Aarti" [(ngModel)]="searchAarti" (ionChange)="searchList($event)">
-  </ion-searchbar>
-<div>
-  <ion-segment mode="ios" value="मराठी" class="segment"  (click)="displayLang()">
-    <ion-segment-button value="मराठी" style="zoom:1;font-weight: 600;" class="segment-button" (click)="checkLang('marathi')">
-      मराठी
-    </ion-segment-button>
-    <ion-segment-button value="English" style="zoom:1.1;font-weight: 600;" class="segment-button" (click)="checkLang('english')">
-      English
-    </ion-segment-button>
-  </ion-segment>
-</div>
-  <div style="margin-top: 6vh;">
-    <ion-list class="bg-transparent" *ngFor="let item of copyData;index as i">
-      <ion-item style="--inner-padding-start:22vw; font-size:3vh;font-weight:300;border:1px solid lightgray;border-radius:4vh;margin-left:7vw;margin-right:7vw;"
+<ion-content class="background" >
+    <ion-searchbar slot="fixed" autocomplete="on" placeholder="Search Aarti" [(ngModel)]="searchAarti" (ionChange)="searchList($event)">
+    </ion-searchbar>
+    <ion-segment  slot="fixed" mode="ios" value="मराठी" class="segment"  (click)="displayLang()">
+      <ion-segment-button value="मराठी" style="zoom:1;font-weight: 600;" class="segment-button" (click)="checkLang('marathi')">
+        मराठी
+      </ion-segment-button >
+      <ion-segment-button value="English" style="zoom:1.1;font-weight: 600;" class="segment-button" (click)="checkLang('english')">
+        English
+      </ion-segment-button>
+    </ion-segment>
+  <div style="margin-top: 14vh;"  >
+    <ion-list class="bg-transparent" *ngFor="let item of copyData;index as i" >
+      <ion-item style="--inner-padding-start:22vw; font-size:3vh;font-weight:300;border:1px solid lightgray;
+      border-radius:2vh;margin-left:7vw;margin-right:7vw;"
         *ngIf="!lang" (click)="openAartiDetails(item,i)">{{item.marathiTitle}} </ion-item>
-      <ion-item style="--inner-padding-start:18vw;  font-size:3vh;font-weight:300;border:1px solid lightgray;border-radius:4vh;margin-left:7vw;margin-right:7vw;" *ngIf="lang"
+      <ion-item style="--inner-padding-start:18vw;  font-size:3vh;font-weight:300;border:1px solid lightgray;
+      border-radius:2vh;margin-left:7vw;margin-right:7vw;" *ngIf="lang"
         (click)="openAartiDetails(item,i)">{{item.englishTitle}}</ion-item>
     </ion-list>
   </div>
