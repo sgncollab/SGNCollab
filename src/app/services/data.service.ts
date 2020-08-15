@@ -18,6 +18,7 @@ export class DataService {
   private presentPage ="";
   private lang:boolean;
   private username;
+  private Rmno=0;
 
   constructor() { }
 
@@ -108,5 +109,11 @@ export class DataService {
   }
   getListPlaylist(){
     return this.listPlaylist;
+  }
+  setRegisteredMobNo(mNo){
+  this.Rmno=mNo;
+  }
+  getRegisteredMobNo(){
+    return this.Rmno
   }
 }

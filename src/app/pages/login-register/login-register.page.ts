@@ -114,6 +114,7 @@ export class LoginRegisterPage implements OnInit {
     this.code = this.signUpValidate.value.code
     this.mobNo = this.signUpValidate.value.mobNo
     let mob = this.code + this.mobNo
+    this.dataService.setRegisteredMobNo(mob);
     console.log("input register"+ mob);
     mob =  Md5.hashStr(mob);
     console.log("converted register"+mob);
@@ -141,7 +142,7 @@ export class LoginRegisterPage implements OnInit {
         let serialNo = this.srNo;
         //console.log(serialNo);
         this.dataService.setLoggedInUserData(serialNo);
-        this.navCtrl.navigateForward('aarti-list');
+        this.navCtrl.navigateForward('otp');//aarti-list
       }
     } catch (e) {
       this.dbService.showToast(e);

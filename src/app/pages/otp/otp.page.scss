@@ -1,0 +1,74 @@
+ion-content {
+
+    --background: url(../../../assets/images/app-bg-light.png)no-repeat top center/cover fixed, #000 ;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+ion-toolbar {
+    --background: transparent;
+}
+// ion-content.background{
+//     --background: url(../../../assets/images/app-bg-light.png)0 0/100% 100% no-repeat ;
+// }
+// .logo{
+   
+//     width:35vw;
+//     position:absolute;
+//     // top:20%;
+//     // transform:translateY(-40%);
+//     left: 0;
+//     right: 0;
+//     margin:0 auto;
+// }
+
+.card {
+    margin: 0 auto;
+
+    .header {
+        height: 160px;
+
+        .avatar {
+            width: 160px;
+            height: 160px;
+            position: relative;
+            margin: 0 auto;
+
+            img {
+                display: block;
+                border-radius: 50%;
+                position: absolute;
+                bottom: calc(-1*(80px + 4px));
+                border: 8px solid #3b5998;
+                background-color: #fff;
+            }
+        }
+    }
+}
+
+.card-body {
+    background-color: #ffffff;
+    padding: 30px;
+    height: calc(100vh - (200px + 56px));
+    border-radius: 5vh;
+    margin:2vh;
+    overflow: hidden;
+
+    .user-meta {
+        padding-top: 40px;
+
+        .playername {
+            font-size: 24px;
+            font-weight: 600;
+            color: #303940;
+        }
+
+        .country {
+            font-size: 90%;
+            color: #949ea6;
+            text-transform: uppercase;
+            margin: 0 auto;
+        }
+    }
+}
