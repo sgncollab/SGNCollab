@@ -7,38 +7,36 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-card scrollY="false">
-    <ion-item-divider style="min-height: 8vh;">
-        <ion-item *ngIf ="lang"  lines="none" >
-          {{ aartiData.englishTitle }}
-        </ion-item>
-        <ion-item *ngIf="!lang"  lines="none" style="padding-left: 22vw;">
-          {{ aartiData.marathiTitle }}
-        </ion-item>
-   
-      
-    </ion-item-divider>
-    
-    
-    
-      <div style="padding-left: 14vw;">
-        <ion-item *ngIf="!lang" class="splitData" text-center no-lines style="padding-top: 10px;">
-          {{ aartiData.marathiAarti }}
-        </ion-item>
-      </div>
-      <div style="padding-left: 15px;">
-        <ion-item *ngIf="lang" class="splitData" text-center no-lines style="padding-top: 10px;">
-          {{ aartiData.englishAarti }}
-        </ion-item>
-      </div>
-</ion-card>
-</ion-content>
-<ion-footer>
-  <ion-button (click)="onNextPrev('prev')">
+<section>
+    <ion-card class="cat_1">
+      <ion-item-divider style="min-height: 8vh;">
+          <ion-item *ngIf ="lang"  lines="none" >
+            {{ aartiData.englishTitle }}
+          </ion-item>
+          <ion-item *ngIf="!lang"  lines="none" style="padding-left: 22vw;">
+            {{ aartiData.marathiTitle }}
+          </ion-item>
+      </ion-item-divider>
+        <div style="padding-left: 14vw;">
+            <ion-item *ngIf="!lang" class="splitData" text-center no-lines style="padding-top: 10px;">
+              {{ aartiData.marathiAarti }}
+            </ion-item>
+        </div>
+         <div style="padding-left: 15px;"> 
+          <ion-item *ngIf="lang" class="splitData" text-center no-lines style="padding-top: 10px;">
+            {{ aartiData.englishAarti }}
+          </ion-item>
+         </div> 
+  </ion-card>
+  <ion-button (click)="onNextPrev('prev')" style="margin-left:3vw">
     <ion-icon name="caret-back-outline"></ion-icon>Prev
   </ion-button>
   <ion-button  (click)="onNextPrev('next')" style="float: right;">Next
     <ion-icon name="caret-forward-outline"></ion-icon>
   </ion-button>
-</ion-footer>
+  <section>
+    
+      
+    
+
+

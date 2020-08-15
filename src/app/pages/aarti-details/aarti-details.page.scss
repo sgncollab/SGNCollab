@@ -10,3 +10,34 @@ ion-card {
   .splitData {
     white-space: pre-line;
   }
+  section{
+    display: inline-block;
+    width: 95%;
+    //height: 77%;
+    //padding-top: 3vh;
+  }
+  .cat_1 {
+    float: left;
+  }
+  .cat_1{  background: #ffffff;
+    height: 80vh;
+    overflow: auto;
+    width: 100%;
+    
+}
+
+
+  // ion-card {
+  //   //max-height: 100%;
+  //   display: flex;
+  //   flex-direction: column;
+  //   height:78vh;
+  // }
+  
+  // ion-list {
+  //   overflow: hidden;
+  //   overflow-y: auto;
+  //   ::-webkit-scrollbar {
+  //     display: none;
+  //   }
+  // }

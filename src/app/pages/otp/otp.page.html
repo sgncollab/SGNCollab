@@ -5,5 +5,14 @@
 </ion-header>
 
 <ion-content>
-  <ng-otp-input  (onInputChange)="onOtpChange($event)"  [config]="{length:4,allowNumbersOnly:true}"></ng-otp-input>
+  <div style="margin-top:5vh;">
+    <ng-otp-input  (onInputChange)="onOtpChange($event)"  [config]="{length:4,allowNumbersOnly:true}"></ng-otp-input>
+  </div>
+  <div>
+    <ion-button>Add</ion-button>
+    <ion-button>Cancel</ion-button>
+  </div>
+    
+  </ion-item>
+  
 </ion-content>
