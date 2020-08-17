@@ -4,6 +4,7 @@ import { FirebaseDbService } from 'src/app/services/firebase-db.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DataService } from 'src/app/services/data.service';
 import { AppComponent } from 'src/app/app.component';
+import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 // import * as utf8 from 'crypto-js/enc-utf8';
 // import * as AES from 'crypto-js/aes';
 import {Md5} from 'ts-md5/dist/md5';
@@ -40,6 +41,7 @@ export class LoginRegisterPage implements OnInit {
     private navCtrl: NavController,
     private dbService: FirebaseDbService,
     private appComponent : AppComponent,
+    private screenOrientation: ScreenOrientation,
     private dataService: DataService
   ) {
     this.signUpValidate = formBuilder.group({
@@ -52,9 +54,15 @@ export class LoginRegisterPage implements OnInit {
     // this.mobNo = this.signUpValidate.controls['mobNo'];
     
   }
+  
+  
 
   ionViewWillEnter() {
     this.menu.enable(false);
+    console.log(this.screenOrientation.type); // logs the current orientation, example: 'landscape'
+
+  // set to landscape
+    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
   }
   ionViewDidLeave() {
     this.menu.enable(true);
@@ -62,6 +70,8 @@ export class LoginRegisterPage implements OnInit {
 
 
   ngOnInit() {
+   
+
     this.dbService.getCountryCode().subscribe((data) => {
       this.result = data.map(value => {
         return {

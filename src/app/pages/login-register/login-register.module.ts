@@ -8,6 +8,8 @@ import { LoginRegisterPageRoutingModule } from './login-register-routing.module'
 
 import { LoginRegisterPage } from './login-register.page';
 
+import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -16,6 +18,7 @@ import { LoginRegisterPage } from './login-register.page';
     ReactiveFormsModule,
     LoginRegisterPageRoutingModule
   ],
-  declarations: [LoginRegisterPage]
+  declarations: [LoginRegisterPage],
+  providers:[ScreenOrientation]
 })
 export class LoginRegisterPageModule {}
