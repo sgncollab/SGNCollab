@@ -4,6 +4,7 @@ import { ToastController } from '@ionic/angular';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { FirebaseDbService } from 'src/app/services/firebase-db.service';
 
+
 @Component({
   selector: 'app-aarti-details',
   templateUrl: './aarti-details.page.html',
@@ -13,23 +14,67 @@ export class AartiDetailsPage implements OnInit {
   aartiData: any;
   private data: any;
   lang = false;
-  language="";
-  private aartiDetail:any;
+  language = "";
+  private aartiDetail: any;
+  smallFont="2vh";
+  fontSize:number =2;
+  upperLimit= false;
+  lowerLimit = false;
 
   constructor(
     private dataService: DataService,
     private dbService: FirebaseDbService,
-    private toastController: ToastController
-  ) { }
+    private toastController: ToastController,
+    
+  ) {}
+
+  ionViewDidLeave(){
+    this.smallFont = "2vh"; 
+  }
+    
 
   ngOnInit() {
     this.aartiData = this.dataService.getData();
     this.data = this.dataService.getmyPlaylistArtilist();
     console.log(this.data);
     this.lang = this.dataService.getLang()
-    this.aartiDetail=this.aartiData.marathiAarti.split("@")
+    this.aartiDetail = this.aartiData.marathiAarti.split("@")
+    //console.log(this.rangeVal);
   }
+  change(identifier){
+    if(identifier == "plus")
+    {
+      this.lowerLimit = false;
+      if(this.fontSize == 4){
+      this.upperLimit = true;
+      }
+      else{
+      this.upperLimit = false;
+      //console.log("plus clicked")
+      this.fontSize = this.fontSize + 1;
+      this.smallFont= (this.fontSize) + 'vh';
+      console.log(this.fontSize)
+      }
+    }
+    else if(identifier == "minus")
+    {
+      this.upperLimit = false;
+      if(this.fontSize == 2){
+        this.lowerLimit = true;
+        }
+        else{
+          this.lowerLimit = false;
+          //console.log("minus clicked")
+          this.fontSize = this.fontSize - 1;
+          this.smallFont= (this.fontSize) + 'vh';
+          console.log(this.fontSize)
 
+        }
+      
+    }
+
+
+  }
   async onNextPrev(identifier) {
     let index: any;
 

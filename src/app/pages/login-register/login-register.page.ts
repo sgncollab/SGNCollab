@@ -4,9 +4,8 @@ import { FirebaseDbService } from 'src/app/services/firebase-db.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DataService } from 'src/app/services/data.service';
 import { AppComponent } from 'src/app/app.component';
-// import * as utf8 from 'crypto-js/enc-utf8';
-// import * as AES from 'crypto-js/aes';
 import {Md5} from 'ts-md5/dist/md5';
+import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 
 @Component({
   selector: 'app-login-register',
@@ -40,21 +39,24 @@ export class LoginRegisterPage implements OnInit {
     private navCtrl: NavController,
     private dbService: FirebaseDbService,
     private appComponent : AppComponent,
-    private dataService: DataService
+    private dataService: DataService,
+    private screenOrientation: ScreenOrientation
   ) {
     this.signUpValidate = formBuilder.group({
       userName: ['', Validators.compose([Validators.required, Validators.minLength(4), Validators.pattern('^[a-zA-Z]+$')])], 
       code: ['', Validators.compose([Validators.required])],
       mobNo: ['', Validators.compose([Validators.required, Validators.minLength(10), Validators.pattern('[0-9]{10}')])]
     });
-    // this.code = this.signUpValidate.controls['code'];
-    // this.userName = this.signUpValidate.controls['userName'];
-    // this.mobNo = this.signUpValidate.controls['mobNo'];
+    // this.code = this.signUpValidate.value.code;
+    // this.userNameLog = this.signUpValidate.value.userName;
+    // this.mobNoLog = this.signUpValidate.value.mobNo;
+    
     
   }
 
   ionViewWillEnter() {
     this.menu.enable(false);
+    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
   }
   ionViewDidLeave() {
     this.menu.enable(true);
@@ -62,6 +64,7 @@ export class LoginRegisterPage implements OnInit {
 
 
   ngOnInit() {
+    console.log(this.screenOrientation.type);
     this.dbService.getCountryCode().subscribe((data) => {
       this.result = data.map(value => {
         return {
@@ -108,6 +111,7 @@ export class LoginRegisterPage implements OnInit {
   }
 
   registerUser() {
+    //console.log(this.code, this.userNameLog,this.mobNoLog);
     var flag = false;
     this.someAutoFormattedInput = this.signUpValidate.value.userName ;
     console.log(this.someAutoFormattedInput);
@@ -132,7 +136,7 @@ export class LoginRegisterPage implements OnInit {
        // this.encryptedKey = Md5.hashStr(this.signUpValidate.value.code + this.signUpValidate.value.mobNo);
         // this.encryptedKey=AES.encrypt(this.signUpValidate.value.code + this.signUpValidate.value.mobNo,"")
         this.dbService.createUser(this.srNo, this.signUpValidate.value.userName, mob);
-        this.rememberme();
+        this.rememberMe('register');
         this.appComponent.viewMenu(this.signUpValidate.value.userName);
 
         console.log("registered"+ mob)
@@ -176,7 +180,7 @@ export class LoginRegisterPage implements OnInit {
               if ( mno == usernameCount[i].mobile_no) {
                 flag = true;
                 this.dbService.showToast("Login Successful!");
-                this.rememberMe();
+                this.rememberMe('login');
                 this.dataService.setLoggedInUserData( usernameCount[i].sr_no);
                 this.dataService.setLoggedInUsername( usernameCount[i].name);
                 this.appComponent.viewMenu(usernameCount[i].name);
@@ -199,19 +203,26 @@ export class LoginRegisterPage implements OnInit {
     }
   }
 
-  rememberMe() {
-    if (this.isChecked) {
-      localStorage.setItem('username', this.userNameLog);
-      localStorage.setItem('mobno', this.mobNoLog);
-      localStorage.setItem('extno', this.ext);
+  rememberMe(identifier) {
+    if(identifier == "login"){
+      if (this.isChecked) {
+        localStorage.setItem('username', this.userNameLog);
+        localStorage.setItem('mobno', this.mobNoLog);
+        localStorage.setItem('extno', this.ext);
+        
+      }
+    }
+    else if(identifier){
+      if(identifier == "register"){
+        if (this.isChecked) {
+              localStorage.setItem('username', this.signUpValidate.value.userName);
+              localStorage.setItem('mobno', this.signUpValidate.value.mobNo);
+              localStorage.setItem('extno',this.signUpValidate.value.code);
+            }
+      }
     }
   }
-  rememberme() {
-    if (this.isChecked) {
-      localStorage.setItem('username', this.signUpValidate.value.userName);
-      localStorage.setItem('mobno', this.signUpValidate.value.mobNo);
-    }
-  }
+  
   checkView(identifier) {
     //this.display = false;
     if (identifier == "loginView") {
