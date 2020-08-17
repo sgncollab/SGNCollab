@@ -1,18 +1,66 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-title>otp</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
-<ion-content>
-  <div style="margin-top:5vh;">
-    <ng-otp-input  (onInputChange)="onOtpChange($event)"  [config]="{length:4,allowNumbersOnly:true}"></ng-otp-input>
+<!-- <ion-content class="background">
+  <div class="logo">
+    <img style="border-radius: 4vh;"src="(../../../assets/images/icon2.png">
   </div>
-  <div>
-    <ion-button>Add</ion-button>
-    <ion-button>Cancel</ion-button>
-  </div>
+  
+  <ion-card mode="ios"class="bg-transparent"  style="margin-top:10vh;height: 70vh;">
     
-  </ion-item>
+     <img class ="logo" style="border-radius: 4vh;"src="(../../../assets/images/icon2.png"> 
+    <ion-text color="primary" style="text-align: center;">
+      <h4>One Time Password</h4>
+    </ion-text>
+
+    <ion-text color="primary" style="text-align: center;">
+      <h4> Enter OTP sent to</h4>
+      <p style="align-items: center;"> {{RegisteredNo}}</p>
+    </ion-text>
+   <div style="margin-top: 5vh;">
+    <ng-otp-input  style="text-align: center;"(onInputChange)="onOtpChange($event)"  [config]="{length:4,allowNumbersOnly:true}"></ng-otp-input>
+   </div>
+  </ion-card>
+</ion-content> -->
+<!-- 
+<ion-header translucent no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="light">
+        <ion-icon slot="start" name="ios-arrow-back"></ion-icon>
+        OTP
+      </ion-button>
+    </ion-buttons>
+    <ion-title>&nbsp;</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" src="../../assets/checkmark-filled.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons> 
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content fullscreen="true" slot="fixed" >
+  <div class="card">
+    <div class="header">
+      <div class="avatar">
+        <img src="../../../assets/images/icon2.png" alt="Logo">
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="user-meta ion-text-center">
+        <h3 class="playername">One Time Password</h3>
+        <h5 class="country">Enter OTP sent to</h5>
+        <ion-label style="margin-top: 2vh;">{{RegisteredNo}}</ion-label>        
+      </div>
+      <div style="margin-top: 5vh;">
+        <ng-otp-input  style="text-align: center;"(onInputChange)="onOtpChange($event)"  [config]="{length:4,allowNumbersOnly:true}"></ng-otp-input>
+       </div>
+      
+    </div>
+  </div>
   
 </ion-content>

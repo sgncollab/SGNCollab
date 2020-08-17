@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-otp',
@@ -8,13 +9,14 @@ import { NavController } from '@ionic/angular';
 })
 export class OtpPage implements OnInit {
 randomNo:number;
-  constructor(private navCtrl: NavController,) { }
+RegisteredNo= 9989342356;
+  constructor(private navCtrl: NavController,private dataService: DataService) { }
 
   ngOnInit() {
     this.randomNo = Math.floor(1000 + Math.random() * 9000);
     alert(this.randomNo);
     localStorage.setItem('randomNo',this.randomNo.toString());
-    
+    this.RegisteredNo= this.dataService.getRegisteredMobNo();
   }
 
   onOtpChange(event){

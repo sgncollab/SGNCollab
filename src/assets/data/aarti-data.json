@@ -4,9 +4,9 @@
 
         "isChecked" : false, 
     
-        "englishTitle":"Sukhakarta-Dukhaharta",
+        "englishTitle":"Ganpatichi Aarti",
     
-        "marathiTitle":"सुखकर्ता-दुःखहर्ता",
+        "marathiTitle":"गणपतीची आरती",
 
         "englishAarti":"Sukhakarta Dukhaharta Varta Vighnachi।\nNurvi Purvi Prema Kripa Jayachi।\nSarvangi Sundara Uti Shendurachi।\nKanthi Jhalake Maala Muktaphalanchi॥\n\nJai Deva Jai Deva Jai Mangalamurti।\nDarshanamatre Manakamana Purati॥\n\nRatnakhachita Phara Tuja Gaurikumara।\nChandanachi Uti Kumkumkeshara।\nHire Jadita Mukuta Shobhato Bara।\nRunjhunati Nupure Charni Ghagaria॥\n\nJai Deva Jai Deva Jai Mangalamurti।\nDarshanamatre Manakamana Purati॥\n\nLambodara Pitambara Phanivara Bandhana।\nSarala Sonda Vakratunda Trinayana।\nDaasa Ramacha Vaata Pahe Sadana।\nSankati Pavave NirvaniRakshave Suravaravandana॥\n\nJai Deva Jai Deva Jai Mangalamurti।\nDarshanamatre Manakamana Purati॥",
     
@@ -46,141 +46,138 @@
 
     "englishTitle":"Dattachi Aarti",
 
-    "marathiTitle":"त्रिगुणात्मक त्रैमूर्ती",
+    "marathiTitle":"दत्ताची आरती",
 
-    "englishAarti":"",
-
-    "marathiAarti":"त्रिगुणात्मक त्रैमूर्ती दत्त हा जाणा।\nत्रिगुणी अवतार त्रैलोक्यराणा।\nनेती नेती शब्द न ये अनुमाना।\nसुरवर मुनिजन योगी समाधि न ये ध्याना॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥\n\nसबाह्य अभ्यंतरी तू एक दत्त।\nअभाग्यासी कैसी न कळे ही मात।\nपराही परतली तेथे कैचा हेत।\nजन्ममरणाचा पुरलासे अन्त॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥\n\nदत्त येऊनियां ऊभा ठाकला।\nसद्भावे साष्टांगे प्रणिपात केला।\nप्रसन्न होऊनी आशीर्वाद दिधला।\nजन्ममरणाचा फेरा चुकविला॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥\n\nदत्त दत्त ऐसे लागले ध्यान।\nहरपलें मन झालें उन्मन।\nमी तू पणाची झाली बोळवण।\nएका जनार्दनी श्रीदत्तध्यान॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥"
-},
-{
-    "aartiId":"d",
-    
-    "isChecked" : false, 
-
-    "englishTitle":"Dattachi Aarti",
-
-    "marathiTitle":"त्रिगुणात्मक त्रैमूर्ती",
-
-    "englishAarti":"",
+    "englishAarti":"Trigunatmaka traimurti datta ha jana |\nTriguni avatara trailokyarana |\nNeti neti shabda na ye anumana | \nAkhand samadhi dhyana munijana || 1 ||\nJai dev jai dev jai shri gurudatta |\nAarti ovalita harali bhavachinta ||\nSabahya abhyantari tu ek datta |\nAbhagyasi kaisi na kale hi maata |\nParahi paratali kaicha ha heta |\nJanmamaranacha puralase anta || 2 ||\nJai dev jai dev jai shri gurudatta |\nAarti ovalita harali bhavachinta ||\nDatta yeuniya ubha thakala |\nSashtangana muni pranipata kela |\nPrasanna houni ashirwada didhala |\nJanmamaranacha phera chukavila || 3 ||\nJai dev jai dev jai shri gurudatta |\nAarti ovalita harali bhavachinta ||\nDatta datta aise lagale dhyana |\nHarapale mana jhale unmana |\nMi tu panachi jhali bolavana |\nEka janardani shri datta dhyana || 4 ||\nJai dev jai dev jai shri gurudatta |\nAarti ovalita harali  bhavachinta ||",
 
     "marathiAarti":"त्रिगुणात्मक त्रैमूर्ती दत्त हा जाणा।\nत्रिगुणी अवतार त्रैलोक्यराणा।\nनेती नेती शब्द न ये अनुमाना।\nसुरवर मुनिजन योगी समाधि न ये ध्याना॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥\n\nसबाह्य अभ्यंतरी तू एक दत्त।\nअभाग्यासी कैसी न कळे ही मात।\nपराही परतली तेथे कैचा हेत।\nजन्ममरणाचा पुरलासे अन्त॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥\n\nदत्त येऊनियां ऊभा ठाकला।\nसद्भावे साष्टांगे प्रणिपात केला।\nप्रसन्न होऊनी आशीर्वाद दिधला।\nजन्ममरणाचा फेरा चुकविला॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥\n\nदत्त दत्त ऐसे लागले ध्यान।\nहरपलें मन झालें उन्मन।\nमी तू पणाची झाली बोळवण।\nएका जनार्दनी श्रीदत्तध्यान॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥"
 },
+
 {
-    "aartiId":"d",
+    "aartiId":"e",
     
     "isChecked" : false, 
 
-    "englishTitle":"Dattachi Aarti",
+    "englishTitle":"Aarti Kacheshwaranchi",
 
-    "marathiTitle":"त्रिगुणात्मक त्रैमूर्ती",
+    "marathiTitle":"आरती कचेश्वरांची",
 
-    "englishAarti":"",
+    "englishAarti":"Jai kacheshwara yogirajaya sadguru acharya |\nPremane ovalu aarti tujala guruvarya ||\nBhuk tahanene |\nKanthi praan ale |\nTapsamarthya panas lavle |\nIndrache aasan dalmalale |\nVarshati jaldhara || 1 || \nJai kacheshwara yogirajaya sadguru acharya |\nPremane ovalu aarti tujala guruvarya ||\nChakanasi shahu tav darshanasi aale |\nShraddha bhaktine tujasi pujiyele |\nKacheshwaranchya krupa prasade |\nRajyalakshmine tayas varile |\nKele satkarya || 2 ||\nJai kacheshwara yogirajaya sadguru acharya |\nPremane ovalu aarti tujala guruvarya ||\nShahu rajasi anugrah didhla |\nRajgurucha to maan prapt zala |\nVirakt sadhuvrutti tumchi |\nAarakti nach sampattichi |\nTyagi aishwarya || 3 ||\nJai kacheshwara yogirajaya sadguru acharya |\nPremane ovalu aarti tujala guruvarya ||",
 
-    "marathiAarti":"त्रिगुणात्मक त्रैमूर्ती दत्त हा जाणा।\nत्रिगुणी अवतार त्रैलोक्यराणा।\nनेती नेती शब्द न ये अनुमाना।\nसुरवर मुनिजन योगी समाधि न ये ध्याना॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥\n\nसबाह्य अभ्यंतरी तू एक दत्त।\nअभाग्यासी कैसी न कळे ही मात।\nपराही परतली तेथे कैचा हेत।\nजन्ममरणाचा पुरलासे अन्त॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥\n\nदत्त येऊनियां ऊभा ठाकला।\nसद्भावे साष्टांगे प्रणिपात केला।\nप्रसन्न होऊनी आशीर्वाद दिधला।\nजन्ममरणाचा फेरा चुकविला॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥\n\nदत्त दत्त ऐसे लागले ध्यान।\nहरपलें मन झालें उन्मन।\nमी तू पणाची झाली बोळवण।\nएका जनार्दनी श्रीदत्तध्यान॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥"
+    "marathiAarti":"जय कचेश्वरा योगीराजया सदगुरु आचार्या ।\nप्रेमाने ओवाळू आरती तुजला गुरुवर्या  ।। धृ ।।  \nभूक तहानेने । \nकंठी प्राण आले ।\nतपसामर्थ्य पणास लावले ।\nइंद्राचे आसन डळमळले ।\nवर्षति जलधारा ।। १ ।।\nजय कचेश्वरा योगीराजया सदगुरु आचार्या ।\nप्रेमाने ओवाळू आरती तुजला गुरुवर्या  ।। धृ ।।  \nचाकणासी शाहू तव दर्शनासी आले ।\nश्रद्धा भक्तीने तुजसि पुजियेले ।\nकचेश्वरांच्या कृपा प्रसादे ।\nराज्यलक्ष्मीने तयास वरिले ।\nकेले सत्कार्या ।। २ ।।\nजय कचेश्वरा योगीराजया सदगुरु आचार्या ।\nप्रेमाने ओवाळू आरती तुजला गुरुवर्या  ।। धृ ।।  \nशाहू राजासी अनुग्रह दिधला ।\nराजगुरुचा तो मान प्राप्त झाला ।\nविरक्त साधुवृत्ती तुमची ।\nआरक्ती नच संपत्तीची ।\nत्यागी ऐश्वर्या ।। ३ ।।\nजय कचेश्वरा योगीराजया सदगुरु आचार्या ।\nप्रेमाने ओवाळू आरती तुजला गुरुवर्या  ।। धृ ।। "
 },
+
 {
-    "aartiId":"d",
+    "aartiId":"f",
     
     "isChecked" : false, 
 
-    "englishTitle":"Dattachi Aarti",
+    "englishTitle":"Ambecha Dhava",
 
-    "marathiTitle":"त्रिगुणात्मक त्रैमूर्ती",
+    "marathiTitle":"अंबेचा धावा ",
 
-    "englishAarti":"",
+    "englishAarti":"Jay jagadambe ambabai dhav jani aata | Ambe dhaav jani aata |\nYa sansaari shramalo bhari vari bhav chinta || 1 ||\nRatrandin mi kashta soshile saukhya muli naahi | Maate saukhya muli nahi |\nTav sevela antarlo mi mhanuni shiksha hi || 2 ||\nRog kashta ani dukkha dainya he lagalese pathi | Ambe lagalese pathi |\nTav smaranane paltil saare kari krupa drushti || 3 ||\nKaam krodh he daitya matale chhalati maj faar | Ambe chhalati maj faar |\nRagaduni paaya tali tayancha kari tu sanhaar || 4 ||\nPrapanchache oze vaahile kashtuni ahoratri | Ambe kashtuni ahoratri |\nTujhya krupevin vaaya gele maj kalale anti || 5 ||\nMhanuni ambe padar pasarito dhav jani aata | Ambe dhav jani aata |\nVinamra bhave aai thevito tav charani matha || 6 ||\nAshtaputra naam tumche shobhatase tumha | Aai shobhatase tumha |\nDin balake amhi tumchi sambhali amha || 7 ||\nTav svarupacha mahima gaata pavasi amhala | Ambe pavasi amhala |\nSakal manorath puravuni amuche deshi saukhyla || 8 ||\nPaapi amangal apradhi mi kaay karu aata | Ambe kaay karu aata |\nPatit paavan tujha mhanavito mag kaichi chinta || 9 ||\nDas tujha mi kari prarthana joduniya kar | Ambe joduniya kar |\nVisar na vhava tav charanacha hachi dei var || 10 ||",
 
-    "marathiAarti":"त्रिगुणात्मक त्रैमूर्ती दत्त हा जाणा।\nत्रिगुणी अवतार त्रैलोक्यराणा।\nनेती नेती शब्द न ये अनुमाना।\nसुरवर मुनिजन योगी समाधि न ये ध्याना॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥\n\nसबाह्य अभ्यंतरी तू एक दत्त।\nअभाग्यासी कैसी न कळे ही मात।\nपराही परतली तेथे कैचा हेत।\nजन्ममरणाचा पुरलासे अन्त॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥\n\nदत्त येऊनियां ऊभा ठाकला।\nसद्भावे साष्टांगे प्रणिपात केला।\nप्रसन्न होऊनी आशीर्वाद दिधला।\nजन्ममरणाचा फेरा चुकविला॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥\n\nदत्त दत्त ऐसे लागले ध्यान।\nहरपलें मन झालें उन्मन।\nमी तू पणाची झाली बोळवण।\nएका जनार्दनी श्रीदत्तध्यान॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥"
+    "marathiAarti":"जय जगदंबे अंबाबाई धाव जणी आता । अंबे धाव जणी आता ।\nया संसारी श्रमलो भारी वारी भव चिंता ।। १ ।।\nरात्रंदिन मी कष्ट सोशिले सौख्य मुळी नाही । माते सौख्य मुळी नाही । \nतव सेवेला अंतरलो मी म्हणूनी शिक्षा ही ।। २ ।।\nरोग  कष्ट  आणी दुःख दैन्य हे लागलेसे पाठी । अंबे लागलेसे पाठी । \nतव स्मरणाने पळतील सारे करी कृपा दृष्टी ।। ३ ।।\nकाम क्रोध हे दैत्य मातले छळती मज फार । अंबे छळती मज फार । \nरगडूनी पायातळी तयांचा करी तू संहार ।। ४ ।।\nप्रपंचाचे ओझे वाहिले कष्टुनि अहोरात्री । अंबे कष्टुनि अहोरात्री । \nतुझ्या कृपेवीण वाया गेले मज कळले अंती ।। ५ ।।\nम्हणूनी अंबे पदर पसरितो धाव जणी आता । अंबे धाव जणी आता । \nविनम्र भावे आई ठेवितो तव चरणी माथा ।। ६ ।।\nअष्टपुत्रा नाम तुमचे शोभतसे तुम्हा । आई शोभतसे तुम्हा । \nदीन बालके आम्ही तुमची सांभाळी आम्हा ।। ७ ।।\nतव स्वरूपाचा महिमा गाता पावसी आम्हाला ।\nअंबे पावसी आम्हाला । \nसकल मनोरथ पुरवुनी आमुचे देशी सौख्याला ।। ८ ।।\nपी अमंगल अपराधी मी काय करू आता । अंबे काय करू आता ।\nपतित पावने तुझा म्हणवितो मग कैची चिंता ।। ९ ।।\nदास तुझा मी करी प्रार्थना जोडूनिया कर । अंबे जोडूनिया कर । \nविसर न व्हावा तव चरणांचा हाची देई वर ।। १० ।। "
 },
+
 {
-    "aartiId":"d",
+    "aartiId":"g",
     
     "isChecked" : false, 
 
-    "englishTitle":"Dattachi Aarti",
+    "englishTitle":"Bhavanichi Aarti",
 
-    "marathiTitle":"त्रिगुणात्मक त्रैमूर्ती",
+    "marathiTitle":" भवानीची आरती ",
 
-    "englishAarti":"",
+    "englishAarti":"Jai jai bhavani, manaramani, mata puravasini |\nChavada bhivananchi, swamini, mahishasur-mardini |\nJai jai bhavani ||\nNesuni patav, pivala, haar shobhato gala |\nHati gheuniya, trishula, bhali kumkum tila || 1 ||\nAngi levuniya, kacholi, var motyachi jali |\nHrudayi shobhatase, padakamali, kanthi he garsoli || 2 ||\nPaayi ghagariya, ghulghul, naki muktafal |\nMatha kuntal he, kural, nayanihi kajal || 3 ||\nSinhavari baisun, hindasi ranorani |\nTujala vinavito, nishidin, gosavi nandan || 4 ||",
 
-    "marathiAarti":"त्रिगुणात्मक त्रैमूर्ती दत्त हा जाणा।\nत्रिगुणी अवतार त्रैलोक्यराणा।\nनेती नेती शब्द न ये अनुमाना।\nसुरवर मुनिजन योगी समाधि न ये ध्याना॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥\n\nसबाह्य अभ्यंतरी तू एक दत्त।\nअभाग्यासी कैसी न कळे ही मात।\nपराही परतली तेथे कैचा हेत।\nजन्ममरणाचा पुरलासे अन्त॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥\n\nदत्त येऊनियां ऊभा ठाकला।\nसद्भावे साष्टांगे प्रणिपात केला।\nप्रसन्न होऊनी आशीर्वाद दिधला।\nजन्ममरणाचा फेरा चुकविला॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥\n\nदत्त दत्त ऐसे लागले ध्यान।\nहरपलें मन झालें उन्मन।\nमी तू पणाची झाली बोळवण।\nएका जनार्दनी श्रीदत्तध्यान॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥"
+    "marathiAarti":"जय जय भवानी, मनरामणी, माता पूरवासिनी ।\nचवदा भुवनांची, स्वामिनी, महिषासुर-मर्दिनी ।\nजय जय भवानी ।। धृ ।।\nनेसूनि पाटाव, पिवळा, हार शोभतो गळा ।\nहाती घेऊनिया त्रिशूळा, भाळी कुंकुम टिळा ।। १ ।।\nअंगी लेवूनिया, काचोळी, वर मोत्याची जाळी ।\nहृदयी शोभतसे, पदकमळी, कंठी हे गरसोळी ।। २ ।।\nपायी घागरिया, घुळघुळ, नाकी मुक्ताफळ ।\nमाथा कुंतल हे, कुरळ, नयनीही काजळ ।। ३ ।।\nसिंहावरी बैसून, हिंडसी रानोरानी ।\nतुजला विनवितो, निशिदिन, गोसावी नंदन ।। ४ ।। "
 },
+
 {
-    "aartiId":"d",
+    "aartiId":"h",
     
     "isChecked" : false, 
 
-    "englishTitle":"Dattachi Aarti",
+    "englishTitle":" Dnyandevachi Aarti",
 
-    "marathiTitle":"त्रिगुणात्मक त्रैमूर्ती",
+    "marathiTitle":" ज्ञानदेवाची आरती ",
 
-    "englishAarti":"",
+    "englishAarti":"Aarti dnyanaraja | Mahakaivalyateja |\nSeviti sadhusant | Manu vedhala majha ||\nLopale dnyan jagi | Heet nenati koni |\nAvatar pandurang | Naam thevile dnyani || 1 ||\nAarti dnyanaraja | Mahakaivalyateja |\nSeviti sadhusant | Manu vedhala majha ||\nKanakache taat kari | Ubhya gopika naari |\nNarada tumbarahi | Saam gayan kari || 2 ||\nAarti dnyanaraja | Mahakaivalyateja |\nSeviti sadhusant | Manu vedhala majha ||\nPrakata gruhya bole | Vishwa brahmachi kele | \nRama janardani | Paayi mastak thevile || 3 ||\nAarti dnyanaraja | Mahakaivalyateja |\nSeviti sadhusant | Manu vedhala majha || ",
 
-    "marathiAarti":"त्रिगुणात्मक त्रैमूर्ती दत्त हा जाणा।\nत्रिगुणी अवतार त्रैलोक्यराणा।\nनेती नेती शब्द न ये अनुमाना।\nसुरवर मुनिजन योगी समाधि न ये ध्याना॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥\n\nसबाह्य अभ्यंतरी तू एक दत्त।\nअभाग्यासी कैसी न कळे ही मात।\nपराही परतली तेथे कैचा हेत।\nजन्ममरणाचा पुरलासे अन्त॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥\n\nदत्त येऊनियां ऊभा ठाकला।\nसद्भावे साष्टांगे प्रणिपात केला।\nप्रसन्न होऊनी आशीर्वाद दिधला।\nजन्ममरणाचा फेरा चुकविला॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥\n\nदत्त दत्त ऐसे लागले ध्यान।\nहरपलें मन झालें उन्मन।\nमी तू पणाची झाली बोळवण।\nएका जनार्दनी श्रीदत्तध्यान॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥"
+    "marathiAarti":"आरती ज्ञानराजा । महाकैवल्यतेजा ।\nसेविती साधुसंत । मनु वेधला माझा ।। \nलोपले ज्ञान जगी । हित नेणती कोणी ।\nअवतार पांडुरंग । नाम ठेविले ज्ञानी ।। १ ।।\nआरती ज्ञानराजा । महाकैवल्यतेजा ।\nसेविती साधुसंत । मनु वेधला माझा ।।\nकनकाचे ताट करी । उभ्या गोपिका नारी ।\nनारद तुंबरही । साम गायन करी ।। २ ।।\nआरती ज्ञानराजा । महाकैवल्यतेजा ।\nसेविती साधुसंत । मनु वेधला माझा ।। \nप्रकट गृह्य बोले । विश्व ब्रह्मची केले ।\nरामा जनार्दनी । पायी मस्तक ठेविले ।। ३ ।। \nआरती ज्ञानराजा । महाकैवल्यतेजा ।\nसेविती साधुसंत । मनु वेधला माझा ।। "
 },
+
+
 {
-    "aartiId":"d",
+    "aartiId":"i",
     
     "isChecked" : false, 
 
-    "englishTitle":"Dattachi Aarti",
+    "englishTitle":"Shri Durga Devichi Aarti",
 
-    "marathiTitle":"त्रिगुणात्मक त्रैमूर्ती",
+    "marathiTitle":" श्री दुर्गा देवीची आरती ",
 
-    "englishAarti":"",
+    "englishAarti":"Durge durghat bhari tujavin sansari |\nAnathanathe ambe karuna vistari |\nVari vari janma maranate vari  |\nHari padalo aata sankat nivari || 1 ||\nJai devi jai devi jai mahishasuramathini |\nSuravara ishwara varade taraka sanjivani ||\nTribhuvana bhuvani pahata tuja aisi nahi |\nChari shramale parantu na bolave kahi |\nSahi vivad karita padalo pravahi |\nTe tu bhaktalagi pavasi lavalahi || 2 ||\nJai devi jai devi jai mahishasuramathini |\nSuravara ishwara varade taraka sanjivani ||\nPrasanna vadane prasanna hosi nijadasa |\nKleshampasuni sodavi todi bhavapasha |\nAmbe tujvachun kon purvila asha |\nNarahari tallina jhala padapankajalesha || 3 ||\nJai devi jai devi jai mahishasuramathini |\nSuravara ishwara varade taraka sanjivani ||",
 
-    "marathiAarti":"त्रिगुणात्मक त्रैमूर्ती दत्त हा जाणा।\nत्रिगुणी अवतार त्रैलोक्यराणा।\nनेती नेती शब्द न ये अनुमाना।\nसुरवर मुनिजन योगी समाधि न ये ध्याना॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥\n\nसबाह्य अभ्यंतरी तू एक दत्त।\nअभाग्यासी कैसी न कळे ही मात।\nपराही परतली तेथे कैचा हेत।\nजन्ममरणाचा पुरलासे अन्त॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥\n\nदत्त येऊनियां ऊभा ठाकला।\nसद्भावे साष्टांगे प्रणिपात केला।\nप्रसन्न होऊनी आशीर्वाद दिधला।\nजन्ममरणाचा फेरा चुकविला॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥\n\nदत्त दत्त ऐसे लागले ध्यान।\nहरपलें मन झालें उन्मन।\nमी तू पणाची झाली बोळवण।\nएका जनार्दनी श्रीदत्तध्यान॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥"
+    "marathiAarti":"दुर्गे दुर्घट भारी तुजविण संसारी ।\nअनाथ नाथे अंबे करुणा विस्तारी ।\nवारी वारी जन्म मरणाते वारी ।\nहारी पडलो आता संकट निवारी ।। १ ।।\nजय देवी जय देवी जय महिषासुरमथिनी |\nसुरवर ईश्वर वरदे तारक संजीवनी ||\nत्रिभुवन भुवनी पाहता तुज ऐसी नाही ।\nचारी श्रमले परंतु न बोलवे काही ।\nसाही विवाद करिता पडले प्रवाही ।\nते तू भक्तालागी पावसि लवलाही ।। २ ।।\nजय देवी जय देवी जय महिषासुरमथिनी |\nसुरवर ईश्वर वरदे तारक संजीवनी ||\nप्रसन्न वदने प्रसन्न होसी निजदासा।\nक्लेशांपासुनि सोडवि तोडी भवपाशा।\nअंबे तुजवाचून कोण पुरविल आशा।\nनरहरी तल्लिन झाला पदपंकजलेशा ।। ३ ।।\nजय देवी जय देवी जय महिषासुरमथिनी |\nसुरवर ईश्वर वरदे तारक संजीवनी ||\n"
 },
+
 {
-    "aartiId":"d",
+    "aartiId":"j",
     
     "isChecked" : false, 
 
-    "englishTitle":"Dattachi Aarti",
+    "englishTitle":" Guruvarchi Aarti",
 
-    "marathiTitle":"त्रिगुणात्मक त्रैमूर्ती",
+    "marathiTitle":" गुरुवारची आरती  ",
 
-    "englishAarti":"",
+    "englishAarti":"Aarti sadgururayachi | Karito sadbhave sachi |\nTan man arpuni ho gurula | Preme ovalu tyala |\nPanchaprananchya vati | Lavuni netranchya pati |\nMan he sthir karuni paha | Reva tiri sadguru ha |\nDusara dev nase aisa, dusara dev nase aisa |\nBhaktajananchya puravi asha | Toduni Taki |\nSaunskruti pasha | Dharu ho kas amhi yachi | \nAse hi kamdhenu amuchi |\nAarti sadgururayachi | Karito sadbhave sachi || 1 ||\nDhyan te ramya ki disate | Dhari jo hati dandate |\nBhali bhasmachya resha | Shobhati teen paha kaisha |\nKatipari kar to jhalakatase | Kaupina ramya kiti bhase |\nKamandalu to hi vaunshacha | Hati shobhatase sacha |\nVidhiharihar ha traimurti, vidhiharihar ha traimurti |Dattachi aise | Majala bhase |\nManmani tavase | Murti manharani sachi |\nAse hi kamdhenu amuchi |\nAarti sadgururayachi | Karito sadbhave sachi || 2 ||\nDayalu kititari mi sangu | Vani hota ase pangu |\nKeval dhyanacha bhanu | Tayache guun kiti varnu |\nSwami vasudevaraya | Satat mi sharana tujhe paya |\nVasudev kari aarti | Didhali sadguru ne sphurti |\nSwami sadgururayachi, swami sadgururayachi |\nKarita aarti | Duradin jati |\nSudin bhasati | Paha prachiti |\nSatta sarvahi sadguruchi |\nAse hi kamdhenu amuchi |\nAarti sadgururayachi | Karito sadbhave sachi || 3 ||",
 
-    "marathiAarti":"त्रिगुणात्मक त्रैमूर्ती दत्त हा जाणा।\nत्रिगुणी अवतार त्रैलोक्यराणा।\nनेती नेती शब्द न ये अनुमाना।\nसुरवर मुनिजन योगी समाधि न ये ध्याना॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥\n\nसबाह्य अभ्यंतरी तू एक दत्त।\nअभाग्यासी कैसी न कळे ही मात।\nपराही परतली तेथे कैचा हेत।\nजन्ममरणाचा पुरलासे अन्त॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥\n\nदत्त येऊनियां ऊभा ठाकला।\nसद्भावे साष्टांगे प्रणिपात केला।\nप्रसन्न होऊनी आशीर्वाद दिधला।\nजन्ममरणाचा फेरा चुकविला॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥\n\nदत्त दत्त ऐसे लागले ध्यान।\nहरपलें मन झालें उन्मन।\nमी तू पणाची झाली बोळवण।\nएका जनार्दनी श्रीदत्तध्यान॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥"
+    "marathiAarti":"आरती सद्गुरुरायाची । करितो सद्भावे साची ।\nतन मन अर्पूनि हो गुरूला । प्रेमे ओवाळू त्याला ।\nपंचप्राणांच्या वाती । लावुनी नेत्रांच्या पाती ।\nमन हे स्थिर करुनि पहा । रेवा तीरी सद्गुरू हा ।\nदुसरा देव नसे ऐसा,दुसरा देव नसे ऐसा ।\nभक्ताजणांच्या । पुरवी आशा । \nतोडुनी टाकी । संस्कृती पाशा । \nधरू हो कास आम्ही याची । असे ही कामधेनू आमुची ।\nआरती सद्गुरुरायाची । करितो सद्भावे साची ।। १ ।।\nध्यान ते रम्य किती दिसते । धरी जो हाती दंडाते ।\nभाळी भस्माच्या रेषा । शोभती तीन पहा कैशा ।\nकटिपरी करतो झळकतसे । कौपिन रम्य किती भासे ।\nकमंडलू तो ही वंशाचा । हाती शोभतसे साचा ।\nविधीहरी हर हा त्रैमूर्ति, विधीहरी हर हा त्रैमूर्ति ।\nदत्ताची ऐसे । मजला भासे ।\nमन मनी तवसे । \nमूर्ती मन हरणीसाची । असे ही कामधेनू आमुची । \nआरती सद्गुरुरायाची । करितो सद्भावे साची ।। २ ।।\nदयाळू कितीतरी मी सांगू । वाणी होत असे पंगू ।\nकेवळ ध्यानाचा भानू । तयाचे गुण किती वर्णू ।\nस्वामी वासुदेवराया । सतत मी शरण तुझे पाया ।\nवासुदेव करी आरती । दिधली सद्गुरूने स्फूर्ती ।\nस्वामी सद्गुरूरायाची, स्वामी सद्गुरूरायाची ।\nकरिता आरती । दूर दिन जाती ।\nसुदिन भासती । पहा प्रचिती । \nसत्ता सर्वही सद्गुरूची । असे ही कामधेनू आमुची । \nआरती सद्गुरुरायाची । करितो सद्भावे साची ।। ३ ।। "
 },
+
 {
-    "aartiId":"d",
+    "aartiId":"k",
     
     "isChecked" : false, 
 
-    "englishTitle":"Dattachi Aarti",
+    "englishTitle":" Kolhapuri Devichi Aarti",
 
-    "marathiTitle":"त्रिगुणात्मक त्रैमूर्ती",
+    "marathiTitle":" कोल्हापुरी देवीची आरती ",
 
-    "englishAarti":"",
+    "englishAarti":"Kolhapuri devi tu rahivas kela |\nMaruni daitya daanav dharma sthapiyala |\nDeva suravara anand jahla |\nSakalahi miluni yeti bhetila || 1 ||\nJay devi jay devi jay mahalakshmi |\nAarti ovalu sharana aahe mi ||\nChausashta yogini rati sevesi |\nAdsashta teerthe yeti mahimesi |\nManav sakalik yeti snanasi |\nTyanchi sarvahi paape jati bhangasi || 2 ||\nJay devi jay devi jay mahalakshmi |\nAarti ovalu sharana aahe mi ||\nAvtar purna dharila devine |\nTrikal pujan hoto sanmane |\nPruthvivari varta keli brahmyane |\nKrushnasut ha vinavi bhakti bhavane || 3 ||\nJay devi jay devi jay mahalakshmi |\nAarti ovalu sharana aahe mi || ",
 
-    "marathiAarti":"त्रिगुणात्मक त्रैमूर्ती दत्त हा जाणा।\nत्रिगुणी अवतार त्रैलोक्यराणा।\nनेती नेती शब्द न ये अनुमाना।\nसुरवर मुनिजन योगी समाधि न ये ध्याना॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥\n\nसबाह्य अभ्यंतरी तू एक दत्त।\nअभाग्यासी कैसी न कळे ही मात।\nपराही परतली तेथे कैचा हेत।\nजन्ममरणाचा पुरलासे अन्त॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥\n\nदत्त येऊनियां ऊभा ठाकला।\nसद्भावे साष्टांगे प्रणिपात केला।\nप्रसन्न होऊनी आशीर्वाद दिधला।\nजन्ममरणाचा फेरा चुकविला॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥\n\nदत्त दत्त ऐसे लागले ध्यान।\nहरपलें मन झालें उन्मन।\nमी तू पणाची झाली बोळवण।\nएका जनार्दनी श्रीदत्तध्यान॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥"
+    "marathiAarti":"कोल्हापुरी देवी तू रहिवास केला ।\nमारुनि दैत्यदानवधर्म स्थापीला ।\nदेव सुरवरा आनंद जाहला ।\nसकळही मिळुनी येती भेटीला ।। १ ।।\nजय देवी जय देवी जय महालक्ष्मी ।\nआरती ओवाळू शरण आहे मी ।।\nचौसष्ट योगिनी रात्री सेवेसी ।\nअडसष्ट तीर्थे येती महिमेसी ।\nमानव सकळिक येती स्नानासी ।\nत्यांची सर्वही पापे जाती भंगासी ।। २ ।।\nजय देवी जय देवी जय महालक्ष्मी ।\nआरती ओवाळू शरण आहे मी ।।\nअवतार पूर्ण धरिला देवीने ।\nत्रिकाळ पूजन होतो सन्माने ।\nपृथ्वीवरी वार्ता गेली महीमेने ।\nकृष्णसुत हा विनवी भक्ती भावाने ।। ३ ।।\nजय देवी जय देवी जय महालक्ष्मी ।\nआरती ओवाळू शरण आहे मी ।। "
 },
+
 {
-    "aartiId":"d",
+    "aartiId":"l",
     
     "isChecked" : false, 
 
-    "englishTitle":"Dattachi Aarti",
+    "englishTitle":" Mahalakshmichi Aarti",
 
-    "marathiTitle":"त्रिगुणात्मक त्रैमूर्ती",
+    "marathiTitle":" महालक्ष्मीची आरती",
 
-    "englishAarti":"",
+    "englishAarti":"Jai devi jai devi jay mahalakshmi |\nVasasi vyapkarupe tu sthulsukshmi ||\nKarvirpurvasini survarmunimata |\nPurharvardayini murharpriyakanta |\nKamalakare jathari janmavila dhata | \nSahastravadani bhudhar na pure gun gata || 1 ||\nMatuling gada khetak ravikirani |\nJhalake hatakvati piuyushraspani |\nManikrasna surangvasna mrugnayani |\nShashikarvadana rajas madanachi janani || 2 ||\nTara shakti agamya shivbhajaka gauri |\nSankhya mhanti prakruti nirgun nirdhari |\nGayatri nijbhija nigamagam sari |\nPragate padmavati nijadhamachari || 3 ||\nAmrut bharite sarite aghdurite vari |\nMari durghat asura bhav dustar tari |\nVari mayapatal pranmat parivari |\nHe rup chidrup tadrup davi nirdhari || 4 ||\nChaturanane kuschitkarmachya oli |\nLihilya astil mate majhe nijbhali |\nPusoni charanatali padsumane kshali |\nMukteshwar naagar kshirsagarbali || 5 ||",
 
-    "marathiAarti":"त्रिगुणात्मक त्रैमूर्ती दत्त हा जाणा।\nत्रिगुणी अवतार त्रैलोक्यराणा।\nनेती नेती शब्द न ये अनुमाना।\nसुरवर मुनिजन योगी समाधि न ये ध्याना॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥\n\nसबाह्य अभ्यंतरी तू एक दत्त।\nअभाग्यासी कैसी न कळे ही मात।\nपराही परतली तेथे कैचा हेत।\nजन्ममरणाचा पुरलासे अन्त॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥\n\nदत्त येऊनियां ऊभा ठाकला।\nसद्भावे साष्टांगे प्रणिपात केला।\nप्रसन्न होऊनी आशीर्वाद दिधला।\nजन्ममरणाचा फेरा चुकविला॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥\n\nदत्त दत्त ऐसे लागले ध्यान।\nहरपलें मन झालें उन्मन।\nमी तू पणाची झाली बोळवण।\nएका जनार्दनी श्रीदत्तध्यान॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥"
+    "marathiAarti":"जय देवी जय देवी जय महालक्ष्मी ।\nवससी व्यापकरूपे तू स्थूलसूक्ष्मी ।। धृ ।।\nकरविरपुरवासिनी सुरवारमुनिमाता । \nपुरहरवरदायिनी मुरहरप्रियकांता ।\nकमलाकारे जठरी जन्माविला धाता । \nसहस्त्रवदनी भूधर न पुरे गुण गाता  ।। १ ।।\nमातुलिंग गदा खेटक रविकिरणी । \nझळके हाटकवाटी पीयूषरसपाणी ।\nमाणिकरसना सुरंगवसना मृगनयनी । \nशशीकरवदना राजस मदनाची जननी ।। २ ।।\nतारा शक्ति अगम्या शिवभजका गौरी । \nसांख्य म्हणती प्रकृति निर्गुण निर्धारी ।\nगायत्री निजबीजा निगमागम सारी ।\nप्रगटे पद्मावती निजधर्मचारी ।। ३ ।। \nअमृत भरिते सरिते अघदुरिते वारी । \nमारी दुर्घट असुरा भव दुस्तर तारी ।\nवारी मायापटल प्रणमत परिवारी । \nहे रूप चिदृप तदृप दावी निर्धारी ।। ४ ।।\nचतुरानने कुश्चितकर्माच्या ओळी । \nलिहिल्या असतील माते माझे निजभाळी ।\nपुसोनि चरणातळी पदसुमने क्षाळी । \nमुक्तेश्वर नागर क्षिरसागरबाळी।। ५ ।।"
 },
+
 {
-    "aartiId":"d",
+    "aartiId":"m",
     
     "isChecked" : false, 
 
-    "englishTitle":"Dattachi Aarti",
+    "englishTitle":" Marutichi Aarti",
 
-    "marathiTitle":"त्रिगुणात्मक त्रैमूर्ती",
+    "marathiTitle":"  मारुतीची आरती",
 
-    "englishAarti":"",
+    "englishAarti":"Satrane uddane hunkar vadani |\nKari dalmal bhumandal sindhujal gagani |\nKadadile brahmand dhake tribhuvani |\nSurvar nar nishachar tya jhalya palni || 1 ||\nJay dev jay dev jay hanumanta |\nTumcheni prasade na bhi krutanta ||\nDumdumli patale uthila pratishabd |\nThartharila dharnidhar manila khed |\nKadkadile parvat uduganucched |\nRami ramdasa shakticha shodh || 2 ||\nJay dev jay dev jay hanumanta |\nTumcheni prasade na bhi krutanta ||",
 
-    "marathiAarti":"त्रिगुणात्मक त्रैमूर्ती दत्त हा जाणा।\nत्रिगुणी अवतार त्रैलोक्यराणा।\nनेती नेती शब्द न ये अनुमाना।\nसुरवर मुनिजन योगी समाधि न ये ध्याना॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥\n\nसबाह्य अभ्यंतरी तू एक दत्त।\nअभाग्यासी कैसी न कळे ही मात।\nपराही परतली तेथे कैचा हेत।\nजन्ममरणाचा पुरलासे अन्त॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥\n\nदत्त येऊनियां ऊभा ठाकला।\nसद्भावे साष्टांगे प्रणिपात केला।\nप्रसन्न होऊनी आशीर्वाद दिधला।\nजन्ममरणाचा फेरा चुकविला॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥\n\nदत्त दत्त ऐसे लागले ध्यान।\nहरपलें मन झालें उन्मन।\nमी तू पणाची झाली बोळवण।\nएका जनार्दनी श्रीदत्तध्यान॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥"
+    "marathiAarti":"सत्राणे उड्डाणे हुंकार वदनी । \nकरि डळमळ भूमंडळ सिंधूजळ गगनी ।\nकडाडिले ब्रह्माण्ड धाके त्रिभुवनी ।\nसुरवर नर निशाचर त्या झाल्या पळणी ।। १ ।।\nजय देव जय देव जय हनुमंता ।\nतुमचेनी प्रसादे न भी कृतांता ।। \nदुमदुमली पाताळे उठिला प्रतिशब्द ।\nथरथरिला धरणीधर मनिला खेद ।\nकडकडिले पर्वत उडुगणउच्छेद ।\nरामी रामदासा शक्तीचा शोध ।। २ ।।\nजय देव जय देव जय हनुमंता ।\nतुमचेनी प्रसादे न भी कृतांता ।। "
 }
 
 ]
