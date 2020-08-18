@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/login-register',
+    redirectTo: '/splashscreen',
     pathMatch: 'full'
   },
   {
@@ -77,7 +77,12 @@ const routes: Routes = [
   {
     path: 'otp',
     loadChildren: () => import('./pages/otp/otp.module').then( m => m.OtpPageModule)
+  },
+  {
+    path: 'splashscreen',
+    loadChildren: () => import('./pages/splashscreen/splashscreen.module').then( m => m.SplashscreenPageModule)
   }
+
 
 
 ];

@@ -16,8 +16,6 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
     LoginRegisterPageRoutingModule,
   ],
   declarations: [LoginRegisterPage],
-  providers:[ScreenOrientation],
- 
-  
+  providers:[ScreenOrientation]
 })
 export class LoginRegisterPageModule {}

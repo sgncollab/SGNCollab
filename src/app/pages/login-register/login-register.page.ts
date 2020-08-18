@@ -4,8 +4,10 @@ import { FirebaseDbService } from 'src/app/services/firebase-db.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DataService } from 'src/app/services/data.service';
 import { AppComponent } from 'src/app/app.component';
-import {Md5} from 'ts-md5/dist/md5';
 import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
+// import * as utf8 from 'crypto-js/enc-utf8';
+// import * as AES from 'crypto-js/aes';
+import {Md5} from 'ts-md5/dist/md5';
 
 @Component({
   selector: 'app-login-register',
@@ -40,8 +42,8 @@ export class LoginRegisterPage implements OnInit {
     private navCtrl: NavController,
     private dbService: FirebaseDbService,
     private appComponent : AppComponent,
-    private dataService: DataService,
-    private screenOrientation: ScreenOrientation
+    private screenOrientation: ScreenOrientation,
+    private dataService: DataService
   ) {
     this.signUpValidate = formBuilder.group({
       userName: ['', Validators.compose([Validators.required, Validators.minLength(4), Validators.pattern('^[a-zA-Z]+$')])], 
@@ -54,9 +56,14 @@ export class LoginRegisterPage implements OnInit {
     
     
   }
+  
+  
 
   ionViewWillEnter() {
     this.menu.enable(false);
+    console.log(this.screenOrientation.type); // logs the current orientation, example: 'landscape'
+
+  // set to landscape
     this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
   }
   ionViewDidLeave() {
@@ -67,6 +74,8 @@ export class LoginRegisterPage implements OnInit {
   ngOnInit() {
     this.demo =true;
     console.log(this.screenOrientation.type);
+   
+
     this.dbService.getCountryCode().subscribe((data) => {
       this.result = data.map(value => {
         return {
@@ -214,35 +223,7 @@ export class LoginRegisterPage implements OnInit {
     }
   }
 
-  RememberMe(identifier,$event) {
-    
-    if(identifier == "login"){
-      
-      if (this.isChecked) {
-       // console.log('bind');
-       
-        
-        localStorage.setItem('username', this.userNameLog);
-        localStorage.setItem('mobno', this.mobNoLog);
-        localStorage.setItem('extno', this.ext);
-        
-      }
-    }
-    else if(identifier){
-      
-      if(identifier == "register"){
-        if (this.isChecked) {
-          
-             
-              
-              localStorage.setItem('username', this.signUpValidate.value.userName);
-              localStorage.setItem('mobno', this.signUpValidate.value.mobNo);
-              localStorage.setItem('extno',this.signUpValidate.value.code);
-            }
-            
-      }
-    }
-  }
+  
   rememberMe(identifier,e){
     if(identifier == "login"){
       console.log(e.currentTarget.checked)

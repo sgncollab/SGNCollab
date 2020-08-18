@@ -104,7 +104,7 @@ export class AartiDetailsPage implements OnInit {
             duration: 2000,
             color: 'primary',
             position: 'top',
-            cssClass:'cssAccept1',
+            cssClass:'cssAccept',
           });
           toast.present();
         }
@@ -119,7 +119,7 @@ export class AartiDetailsPage implements OnInit {
           duration: 1000,
           color: 'primary',
           position: 'top',
-          cssClass:'cssAccept1',
+          cssClass:'cssAccept',
         });
         toast.present();
       }
