@@ -13,10 +13,12 @@ data=[];
 item=[];
 aarti=[];
 playlistStr = "";
+currentPage = "update-user-playlist";
 
   constructor(private dataService:DataService,private navCtrl:NavController,private route:ActivatedRoute ) { }
 
   ngOnInit() {
+    this.dataService.setPresentPage(this.currentPage);
     fetch('./assets/data/aarti-data.json').then(res => res.json())
     .then(json => {
       this.data = json;

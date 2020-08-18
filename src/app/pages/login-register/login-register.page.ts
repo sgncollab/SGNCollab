@@ -28,10 +28,11 @@ export class LoginRegisterPage implements OnInit {
   display = false;
   ext: any ="+91";
   someAutoFormattedInput = "";
-  //currentPage  = "login-register";
   encryptedKey:any;
   key:any;
   countryCode:any;
+   demo=false
+  
 
   constructor(
     private menu: MenuController,
@@ -64,6 +65,7 @@ export class LoginRegisterPage implements OnInit {
 
 
   ngOnInit() {
+    this.demo =true;
     console.log(this.screenOrientation.type);
     this.dbService.getCountryCode().subscribe((data) => {
       this.result = data.map(value => {
@@ -108,6 +110,14 @@ export class LoginRegisterPage implements OnInit {
     this.userNameLog = localStorage.getItem('username');
     this.mobNoLog = localStorage.getItem('mobno');
     this.ext = localStorage.getItem('extno'); 
+    if(this.userNameLog != null && this.userNameLog != undefined){
+      this.demo =true;
+      
+
+    }
+    else{
+      this.demo =false;
+    }
   }
 
   registerUser() {
@@ -137,7 +147,7 @@ export class LoginRegisterPage implements OnInit {
        // this.encryptedKey = Md5.hashStr(this.signUpValidate.value.code + this.signUpValidate.value.mobNo);
         // this.encryptedKey=AES.encrypt(this.signUpValidate.value.code + this.signUpValidate.value.mobNo,"")
         this.dbService.createUser(this.srNo, this.signUpValidate.value.userName, mob);
-        this.rememberMe('register');
+        //this.rememberMe('register');
         this.appComponent.viewMenu(this.signUpValidate.value.userName);
 
         console.log("registered"+ mob)
@@ -181,7 +191,7 @@ export class LoginRegisterPage implements OnInit {
               if ( mno == usernameCount[i].mobile_no) {
                 flag = true;
                 this.dbService.showToast("Login Successful!");
-                this.rememberMe('login');
+                //this.rememberMe('login');
                 this.dataService.setLoggedInUserData( usernameCount[i].sr_no);
                 this.dataService.setLoggedInUsername( usernameCount[i].name);
                 this.appComponent.viewMenu(usernameCount[i].name);
@@ -204,9 +214,14 @@ export class LoginRegisterPage implements OnInit {
     }
   }
 
-  rememberMe(identifier) {
+  RememberMe(identifier,$event) {
+    
     if(identifier == "login"){
+      
       if (this.isChecked) {
+       // console.log('bind');
+       
+        
         localStorage.setItem('username', this.userNameLog);
         localStorage.setItem('mobno', this.mobNoLog);
         localStorage.setItem('extno', this.ext);
@@ -214,12 +229,45 @@ export class LoginRegisterPage implements OnInit {
       }
     }
     else if(identifier){
+      
       if(identifier == "register"){
         if (this.isChecked) {
+          
+             
+              
               localStorage.setItem('username', this.signUpValidate.value.userName);
               localStorage.setItem('mobno', this.signUpValidate.value.mobNo);
               localStorage.setItem('extno',this.signUpValidate.value.code);
             }
+            
+      }
+    }
+  }
+  rememberMe(identifier,e){
+    if(identifier == "login"){
+      console.log(e.currentTarget.checked)
+      if(e.currentTarget.checked){
+        
+        localStorage.setItem('username', this.userNameLog);
+        localStorage.setItem('mobno', this.mobNoLog);
+        localStorage.setItem('extno', this.ext);
+      }
+      else{
+        this.demo=false;
+        localStorage.clear();
+      }
+    }
+    else if(identifier == "register"){
+      console.log(e.currentTarget.checked)
+      if(e.currentTarget.checked){
+        this.demo =true;
+              localStorage.setItem('username', this.signUpValidate.value.userName);
+              localStorage.setItem('mobno', this.signUpValidate.value.mobNo);
+              localStorage.setItem('extno',this.signUpValidate.value.code);
+      }
+      else{
+        this.demo=false;
+        localStorage.clear();
       }
     }
   }

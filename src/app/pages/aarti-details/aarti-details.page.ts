@@ -36,7 +36,7 @@ export class AartiDetailsPage implements OnInit {
   ngOnInit() {
     this.aartiData = this.dataService.getData();
     this.data = this.dataService.getmyPlaylistArtilist();
-    console.log(this.data);
+   // console.log(this.data);
     this.lang = this.dataService.getLang()
     this.aartiDetail = this.aartiData.marathiAarti.split("@")
     //console.log(this.rangeVal);
@@ -53,7 +53,7 @@ export class AartiDetailsPage implements OnInit {
       //console.log("plus clicked")
       this.fontSize = this.fontSize + 1;
       this.smallFont= (this.fontSize) + 'vh';
-      console.log(this.fontSize)
+      //console.log(this.fontSize)
       }
     }
     else if(identifier == "minus")
@@ -67,7 +67,7 @@ export class AartiDetailsPage implements OnInit {
           //console.log("minus clicked")
           this.fontSize = this.fontSize - 1;
           this.smallFont= (this.fontSize) + 'vh';
-          console.log(this.fontSize)
+          //console.log(this.fontSize)
 
         }
       
@@ -88,7 +88,8 @@ export class AartiDetailsPage implements OnInit {
             message: 'No aarti available',
             duration: 2000,
             color: 'primary',
-            position: 'middle'
+            position: 'top',
+            cssClass:'cssAccept',
           });
           toast.present();
         }
@@ -102,7 +103,8 @@ export class AartiDetailsPage implements OnInit {
             message: 'No next aarti available',
             duration: 2000,
             color: 'primary',
-            position: 'middle'
+            position: 'top',
+            cssClass:'cssAccept1',
           });
           toast.present();
         }
@@ -116,7 +118,8 @@ export class AartiDetailsPage implements OnInit {
           message: 'No next aarti available',
           duration: 1000,
           color: 'primary',
-          position: 'middle'
+          position: 'top',
+          cssClass:'cssAccept1',
         });
         toast.present();
       }

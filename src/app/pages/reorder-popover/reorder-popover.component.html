@@ -1,13 +1,13 @@
 <ion-content >
     <ion-item lines="none">
       <ion-icon name="musical-notes-outline"></ion-icon>
-      <ion-label style="padding-left: 5px;">Enter Playlist Name</ion-label>
+      <ion-label style="padding-left: 5px;" >Enter Playlist Name</ion-label>
     </ion-item>
     <ion-item lines="none">
       <ion-input placeholder="My Playlist" class="ion-text-capitalize" [(ngModel)]="playlistName" style="padding-left:5px !important;"></ion-input>  <!--  -->
     </ion-item>
     <ion-item style="--inner-padding-end:10px;"  >
-      <ion-button (click)="onDone()"  slot="end" style="margin:5px; text-transform:none!important; height:4vh;" strong="true" >Create</ion-button>
+      <ion-button (click)="onCreate()"  slot="end" style="margin:5px; text-transform:none!important; height:4vh;" strong="true" >Create</ion-button>
       <ion-button (click)="onClose()" slot="end" color="danger" style="margin: 2px; text-transform:none!important; height:4vh; " strong="true"> Cancel</ion-button>
       </ion-item>
       

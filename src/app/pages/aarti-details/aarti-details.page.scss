@@ -1,3 +1,7 @@
+section.background{
+  --background: url(../../../assets/images/app-bg-light.png)0 0/100% 100% no-repeat ;
+}
+
 .list-md {
     padding: 0px!important;
     height: 6vh
@@ -13,6 +17,7 @@ ion-card {
   section{
     display: inline-block;
     width: 95%;
+    --background: url(../../../assets/images/app-bg-light.png)0 0/100% 100% no-repeat ;
     //height: 77%;
     //padding-top: 3vh;
   }
@@ -26,5 +31,10 @@ ion-card {
     
 }
 
+.toastAfterHeader{
+  position: fixed;
+  bottom:96px;
+  }
 
   
+

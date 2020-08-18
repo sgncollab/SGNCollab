@@ -10,10 +10,17 @@ ion-popover {
   div.popover-content {
        top: 45% !important;
        width: 85vw;
-      // left: 12.5% !important;
-      //transform: translate(-50%, -50%) !important;
 }
 }
+
+ion-toast.cssAccept {
+          transform: translateY(82vh) !important;
+}
+ion-toast.cssAccept1 {
+  transform: translateY(82vh) !important;
+}
+
+
 .searchbar-input.sc-ion-searchbar-md {
   padding-left: 55px;
   padding-right: 55px;

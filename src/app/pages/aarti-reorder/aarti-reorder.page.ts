@@ -30,8 +30,8 @@ export class AartiReorderPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.selectedLang = this.dataService.getLang();
-    console.log(this.selectedLang);
+    // this.selectedLang = this.dataService.getLang();
+    // console.log(this.selectedLang);
     this.dataPage = this.dataService.getPresentPage();
     this.selectedItems = this.dataService.getAarti();
     //console.log("selected items="+this.selectedItems)
@@ -59,9 +59,25 @@ export class AartiReorderPage implements OnInit {
     event.detail.complete(); 
   }
 
+  // async presentPopover(ev){
+  //   const popover = await this.popovercntrl.create({
+  //           component: ReorderPopoverComponent,
+  //           cssClass: 'my-custom-class',
+  //           event: ev,
+  //           translucent: true
+  //         });
+  //         return await popover.present();
+  //       } 
+      
+
+    
+
+  
   
   async presentPopover(ev) {
+    console.log(this.dataPage);
     if(this.dataPage == "my-playlist"){
+      
       const popover = await this.popovercntrl.create({
         component: UpdatePopoverComponent,
         cssClass: 'my-custom-class',
@@ -69,7 +85,7 @@ export class AartiReorderPage implements OnInit {
         translucent: true
       });
       return await popover.present();
-    }else{
+    }else {
       const popover = await this.popovercntrl.create({
         component: ReorderPopoverComponent,
         cssClass: 'my-custom-class',

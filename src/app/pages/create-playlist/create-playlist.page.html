@@ -15,8 +15,9 @@
     <ion-list class="bg-transparent"  >
       <ion-item *ngFor="let item of data" style=" font-size:3vh;font-weight:300;
       border:1px solid lightgray;border-radius:2vh;margin-left:2vw;margin-right:2vw; margin-bottom:2vh;">
-      <!-- <ion-checkbox slot="end" mode="ios" (change)="getItem($event,item)"><ion-label>{{item.marathiTitle}}</ion-label></ion-checkbox> -->
-        <input type="checkbox" class="circle" slot="end" mode="ios" (change)="getItem($event,item)">{{item.marathiTitle}}
+      <label>{{item.marathiTitle}}</label>
+      <ion-checkbox slot="end" mode="ios" (ionChange)="getItem($event,item)"></ion-checkbox>
+        <!-- <input type="checkbox" class="circle" slot="end" mode="ios" (change)="getItem($event,item)">{{item.marathiTitle}} -->
       </ion-item>
     </ion-list>
   </ion-card>

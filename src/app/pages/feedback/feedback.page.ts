@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
+import { Toast } from '@capacitor/core';
+import { FirebaseDbService } from 'src/app/services/firebase-db.service';
 
 
 @Component({
@@ -17,7 +19,7 @@ export class FeedbackPage implements OnInit {
 
   constructor(
     private dataService: DataService,
-    //private emailjs:EmailJSResponseStatus
+    private dbService: FirebaseDbService,
     
   ) { }
 
@@ -40,6 +42,7 @@ export class FeedbackPage implements OnInit {
   }
 
   public sendEmail() {
+    
     var templateParams = {
       user_name: this.user_name,
       user_email: this.user_email,
@@ -48,10 +51,35 @@ export class FeedbackPage implements OnInit {
     emailjs.send('feedback_service', 'feedback_form', templateParams)
       .then(function (response) {
         console.log('SUCCESS!', response.status, response.text);
+        //this.toastMessage("success");
+        
+        
       }, function (error) {
         console.log('FAILED...', error);
+        //this.toastMessage("error");
       });
+      this.user_name = "";
+      this.user_email = "";
+      this.user_feedback = "";
+
+      
+      
+
+      
+
   }
+  
+
+  // toastMessage(identifier){
+  //   if(identifier == "success"){
+  //     this.dbService.showToast("Thank you for your responce!");    
+  //   }
+  //   else if(identifier == "error"){
+  //     this.dbService.showToast("Failed..Please try again later!");
+
+  //   }
+  // }
+  
 }
 
 

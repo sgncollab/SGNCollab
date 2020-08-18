@@ -54,31 +54,37 @@ export class ReorderPopoverComponent implements OnInit {
     this.srNo = this.dataService.getLoggedInUserData();
     //console.log(this.srNo);
   }
-  onDone() {
+  onCreate() {
     let flag = false;
     let count = 0;
-    for (let i = 0; i < this.userPlaylist.length; i++) {
-      if (this.srNo == this.userPlaylist[i].sr_no) {
-        count++;
-        this.srNoList.push(this.userPlaylist[i]);
-      }
-    }
-    if (count >= 1) {
-      for (let i = 0; i < this.srNoList.length; i++) {
-        if (this.playlistName == this.srNoList[i].playlist_name) {
-          flag = true;
-          this.dbService.showToast("Playlist already created. Please create playlist with different name.");
-          break;
+    if(this.playlistName != null && this.playlistName != ""){
+      for (let i = 0; i < this.userPlaylist.length; i++) {
+        if (this.srNo == this.userPlaylist[i].sr_no) {
+          count++;
+          this.srNoList.push(this.userPlaylist[i]);
         }
       }
+      if (count >= 1) {
+          for (let i = 0; i < this.srNoList.length; i++) {
+            if (this.playlistName == this.srNoList[i].playlist_name) {
+              flag = true;
+              this.dbService.showToast("Playlist already created. Please create playlist with different name.");
+              break;
+            }
+          }
+      }
+      if (flag == false) {
+        console.log("Playlist name accepted!");
+        this.dataService.setPlaylistName(this.playlistName);
+        this.onClose();
+        this.createPlaylist();
+      }
     }
-    if (flag == false) {
-      console.log("Playlist name accepted!");
-      this.dataService.setPlaylistName(this.playlistName);
-      this.onClose();
-      this.createPlaylist();
+    else{
+      this.dbService.showToast("Please Enter Playlist Name");
 
     }
+    
   }
   onClose() {
     this.popovercntrl.dismiss();
