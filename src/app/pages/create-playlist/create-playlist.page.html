@@ -12,11 +12,11 @@
     <ion-text color="primary" style="text-align: center;">
       <h4>Select Aartis</h4>
     </ion-text>
-    <ion-list class="bg-transparent"  >
+    <ion-list class="bg-transparent" >
       <ion-item *ngFor="let item of data" style=" font-size:3vh;font-weight:300;
       border:1px solid lightgray;border-radius:2vh;margin-left:2vw;margin-right:2vw; margin-bottom:2vh;">
       <label>{{item.marathiTitle}}</label>
-      <ion-checkbox slot="end" mode="ios" (ionChange)="getItem($event,item)"></ion-checkbox>
+      <ion-checkbox slot="end" mode="ios" (ionChange)="getItem($event,item)" [(ngModel)] ="item.isChecked"></ion-checkbox>
         <!-- <input type="checkbox" class="circle" slot="end" mode="ios" (change)="getItem($event,item)">{{item.marathiTitle}} -->
       </ion-item>
     </ion-list>

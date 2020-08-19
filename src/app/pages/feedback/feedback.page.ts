@@ -54,15 +54,15 @@ export class FeedbackPage implements OnInit {
      emailjs.send('feedback_service', 'feedback_form', templateParams)
       .then( async function (response) {
         console.log('SUCCESS!', response.status, response.text);
-        // alert("Email sent successfully!");
-        const toast = await this.toastController.create({
-          message: 'SUCCESS!',
-          duration: 2000,
-          color: 'primary',
-          position: 'top',
-          cssClass:'cssAccept',
-        });
-        toast.present();
+         alert("Email sent successfully!");
+        // const toast = await this.toastController.create({
+        //   message: 'SUCCESS!',
+        //   duration: 2000,
+        //   color: 'primary',
+        //   position: 'top',
+        //   cssClass:'cssAccept',
+        // });
+        // toast.present();
       },
         
         

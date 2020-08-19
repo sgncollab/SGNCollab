@@ -176,6 +176,7 @@ export class ReorderPopoverComponent implements OnInit {
     //console.log("Inserted into user playlist successfully");
     this.dbService.showToast("Playlist created successfully");
     this.navController.navigateForward('my-playlist');
+   
   }
 
 

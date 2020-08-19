@@ -35,7 +35,7 @@ export class AartiReorderPage implements OnInit {
     this.dataPage = this.dataService.getPresentPage();
     this.selectedItems = this.dataService.getAarti();
     //console.log("selected items="+this.selectedItems)
-    this.item =this.dataService.getSelectedPlaylistItem();
+   // this.item =this.dataService.getSelectedPlaylistItem();
     this.dbService.fetchUserPlaylist().subscribe((data) => {
       this.userPlaylist = data.map(value => {
         return {
@@ -76,7 +76,7 @@ export class AartiReorderPage implements OnInit {
   
   async presentPopover(ev) {
     console.log(this.dataPage);
-    if(this.dataPage == "my-playlist"){
+    if(this.dataPage == "update-user-playlist"){
       
       const popover = await this.popovercntrl.create({
         component: UpdatePopoverComponent,

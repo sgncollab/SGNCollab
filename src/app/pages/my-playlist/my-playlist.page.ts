@@ -17,10 +17,10 @@ export class MyPlaylistPage implements OnInit {
   srno: any;
   listid = [];
   artiJson = [];
-  fetchArti=[];
+  fetchArti = [];
   currentPage = "my-playlist";
 
-  constructor(private dbService: FirebaseDbService,public actionSheetController: ActionSheetController,private popoverController:PopoverController,private loadingController:LoadingController, private dataService: DataService, private navCtrl: NavController) { }
+  constructor(private dbService: FirebaseDbService, public actionSheetController: ActionSheetController, private popoverController: PopoverController, private loadingController: LoadingController, private dataService: DataService, private navCtrl: NavController) { }
 
   doRefresh(event) {
     console.log('Begin async operation');
@@ -31,8 +31,7 @@ export class MyPlaylistPage implements OnInit {
     }, 2000);
   }
   ngOnInit() {
-   // this.loadPlaylist();
-   this.dataService.setPresentPage(this.currentPage);
+    this.dataService.setPresentPage(this.currentPage);
     this.dbService.fetchUserPlaylist().subscribe((data) => {
       this.result = data.map(value => {
         return {
@@ -66,7 +65,7 @@ export class MyPlaylistPage implements OnInit {
 
   userDetail() {
     this.srno = this.dataService.getLoggedInUserData();
-    this.data =[];
+    this.data = [];
     for (let i = 0; i < this.result.length; i++) {
       if (this.srno == this.result[i].sr_no) {
         this.data.push(this.result[i]);
@@ -82,7 +81,7 @@ export class MyPlaylistPage implements OnInit {
         }
       }
     }
-    
+
     // this.stringCheck()
     //this.data = this.data.filter(item => item.playlist_id == this.listResult[i].playlist_id);
     // var filteredKeywords = this.listResult.filter((word) => this.data.some( word.playlist_id == this.data.playlist_id));
@@ -94,14 +93,14 @@ export class MyPlaylistPage implements OnInit {
 
   stringCheck(pId) {
     let str = "";
-    
+
     for (let i = 0; i < this.listid.length; i++) {
       if (pId == this.listid[i].playlist_id) {
         str = this.listid[i].playlist_str;
-         this.fetchArti = [];
+        this.fetchArti = [];
         for (let k = 0; k < str.length; k++) {
           let key = str.charAt(k)
-          
+
           for (let a = 0; a < this.artiJson.length; a++) {
             if (key == this.artiJson[a].aartiId) {
               this.fetchArti.push(this.artiJson[a])
@@ -110,48 +109,50 @@ export class MyPlaylistPage implements OnInit {
         }
         this.dataService.setPlaylistString(str);
         this.dataService.setmyPlaylistArtilist(this.fetchArti);
+        this.dataService.setPresentPage("my-playlist-aartilist");
         this.navCtrl.navigateForward('my-playlist-aartilist');
         break;
       }
     }
   }
 
-updatePlaylist(item){
-let selecteditem = [item]
-this.stringCheck(item.playlist_id);
-this.dataService.setSelectedPlaylistItem(selecteditem);
-this.navCtrl.navigateForward('update-user-playlist');
-}
+  updatePlaylist(item) {
+    let selecteditem = [item]
+    this.stringCheck(item.playlist_id);
+    this.dataService.setSelectedPlaylistItem(selecteditem);
+    this.dataService.setPresentPage("update-user-playlist");
+    this.navCtrl.navigateForward('update-user-playlist');
+  }
 
   deletePlaylist(item) {
     let count = 0;
-    let id ="";
-    for (let i=0 ;i<this.result.length;i++){
-      if(item.playlist_id == this.result[i].playlist_id){
+    let id = "";
+    for (let i = 0; i < this.result.length; i++) {
+      if (item.playlist_id == this.result[i].playlist_id) {
         count++;
       }
     }
-    for(let j=0;j< this.listResult.length;j++){
-      if(this.listResult[j].playlist_id == item.playlist_id){
+    for (let j = 0; j < this.listResult.length; j++) {
+      if (this.listResult[j].playlist_id == item.playlist_id) {
         id = this.listResult[j].id;
       }
     }
-    if(count > 1){
+    if (count > 1) {
       this.dbService.deleteUserPlaylist(item.id)
-    }else {
+    } else {
       this.dbService.deletePlaylist(id)
       this.dbService.deleteUserPlaylist(item.id)
     }
-    this.dbService.showToast(item.playlist_name + " "+" Deleted!")
+    this.dbService.showToast(item.playlist_name + " " + " Deleted!")
   }
   // options(){
   //   this.dbService.showToast("show options")
   // }
-  
+
   async presentActionSheet(item) {
     const actionSheet = await this.actionSheetController.create({
       cssClass: 'my-custom-class',
-      mode:'ios',
+      mode: 'ios',
       buttons: [{
         text: 'Delete',
         // role: 'destructive',
@@ -167,7 +168,7 @@ this.navCtrl.navigateForward('update-user-playlist');
           this.updatePlaylist(item)
           console.log('Edit clicked');
         }
-      },{
+      }, {
         text: 'Share',
         icon: 'share-social-outline',
         handler: () => {
