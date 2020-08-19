@@ -11,10 +11,7 @@ const routes: Routes = [
     path: 'login-register',
     loadChildren: () => import('./pages/login-register/login-register.module').then(m => m.LoginRegisterPageModule)
   },
-  {
-    path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule)
-  },
+  
   {
     path: 'folder/:id',
     loadChildren: () => import('./folder/folder.module').then(m => m.FolderPageModule)

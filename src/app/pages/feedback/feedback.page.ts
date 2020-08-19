@@ -3,6 +3,7 @@ import { DataService } from 'src/app/services/data.service';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 import { Toast } from '@capacitor/core';
 import { FirebaseDbService } from 'src/app/services/firebase-db.service';
+import { ToastController } from '@ionic/angular';
 
 
 @Component({
@@ -16,12 +17,14 @@ export class FeedbackPage implements OnInit {
   user_email = "";
   user_feedback = "";
   contact_number;
+  data: string;
 
   constructor(
     private dataService: DataService,
     private dbService: FirebaseDbService,
+    private toastController: ToastController,
     
-  ) { }
+  ) {this.data = ''; }
 
   ngOnInit() {
     (function(){
@@ -41,22 +44,33 @@ export class FeedbackPage implements OnInit {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
-  public sendEmail() {
+  sendEmail() {
     
     var templateParams = {
       user_name: this.user_name,
       user_email: this.user_email,
       user_feedback: this.user_feedback
     };
-    emailjs.send('feedback_service', 'feedback_form', templateParams)
-      .then(function (response) {
+     emailjs.send('feedback_service', 'feedback_form', templateParams)
+      .then( async function (response) {
         console.log('SUCCESS!', response.status, response.text);
-        //this.toastMessage("success");
+        // alert("Email sent successfully!");
+        const toast = await this.toastController.create({
+          message: 'SUCCESS!',
+          duration: 2000,
+          color: 'primary',
+          position: 'top',
+          cssClass:'cssAccept',
+        });
+        toast.present();
+      },
         
         
-      }, function (error) {
-        console.log('FAILED...', error);
-        //this.toastMessage("error");
+        
+       function (error) {
+        //console.log('FAILED...', error);
+        alert("FAILED!"+error);
+        
       });
       this.user_name = "";
       this.user_email = "";

@@ -13,7 +13,7 @@ import { UpdatePopoverComponent } from '../update-popover/update-popover.compone
 })
 export class AartiReorderPage implements OnInit {
   private data: any;
-  private selectedItems = [];
+  selectedItems = [];
   userPlaylist = [];
   playlistName: string ="";
   srNo: any;

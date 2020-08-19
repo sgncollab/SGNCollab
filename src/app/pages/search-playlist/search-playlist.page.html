@@ -11,7 +11,7 @@
   <ion-searchbar debounce="500"  placeholder="Search Playlist" inputmode="numeric" [(ngModel)]="searchPlaylist" 
   (ionChange)="search()">
   </ion-searchbar>
-  <div *ngIf="fetchSearch.length > 0; else noItems"> 
+  <div *ngIf="fetchSearch.length > 0;"> 
   <ion-list class="bg-transparent"  *ngFor ="let item of fetchSearch;index as i">
     <ion-item style="--inner-padding-start:22vw; font-size:3vh;font-weight:300;border:1px solid lightgray;
     border-radius:2vh;margin-left:7vw;margin-right:7vw;" 

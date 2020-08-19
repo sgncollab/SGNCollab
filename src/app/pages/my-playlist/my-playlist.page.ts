@@ -3,7 +3,7 @@ import { FirebaseDbService } from 'src/app/services/firebase-db.service';
 import { DataService } from 'src/app/services/data.service';
 import { NavController, LoadingController, PopoverController, ActionSheetController } from '@ionic/angular';
 import { NavigationExtras } from '@angular/router';
-import { PopoverOptionsComponent } from '../popover-options/popover-options.component';
+
 
 @Component({
   selector: 'app-my-playlist',
@@ -147,17 +147,7 @@ this.navCtrl.navigateForward('update-user-playlist');
   // options(){
   //   this.dbService.showToast("show options")
   // }
-  async presentPopover(ev: any) {
-    const popover = await this.popoverController.create({
-      component: PopoverOptionsComponent,
-      cssClass: 'my-custom-class',
-      event: ev,
-      translucent: true
-    });
-    popover.style.cssText = '--min-width: 150px; --max-width: 200px;';
-    return await popover.present();
-  }
-
+  
   async presentActionSheet(item) {
     const actionSheet = await this.actionSheetController.create({
       cssClass: 'my-custom-class',

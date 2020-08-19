@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./create-playlist.page.scss'],
 })
 export class CreatePlaylistPage implements OnInit {
-  private data: any;
+   data: any;
   private selectedItems = [];
   checkedbtn = true;
   currentPage = "create-playlist";
