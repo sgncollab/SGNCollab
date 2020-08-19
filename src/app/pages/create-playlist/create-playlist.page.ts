@@ -9,13 +9,12 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./create-playlist.page.scss'],
 })
 export class CreatePlaylistPage implements OnInit {
-   data: any;
+  data: any;
   private selectedItems = [];
   checkedbtn = true;
   currentPage = "create-playlist";
   lang = false;
   
-
   constructor(
     private dataService: DataService,
     private navController: NavController,
@@ -28,6 +27,7 @@ export class CreatePlaylistPage implements OnInit {
           this.data = json;
         });
         this.dataService.setPresentPage(this.currentPage);
+        
   }
   // displayLang() {
   //   this.lang = !this.lang;

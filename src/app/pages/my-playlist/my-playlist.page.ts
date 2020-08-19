@@ -31,6 +31,7 @@ export class MyPlaylistPage implements OnInit {
     }, 2000);
   }
   ngOnInit() {
+   
    // this.loadPlaylist();
    this.dataService.setPresentPage(this.currentPage);
     this.dbService.fetchUserPlaylist().subscribe((data) => {
@@ -62,6 +63,7 @@ export class MyPlaylistPage implements OnInit {
         this.artiJson = json;
       });
   }
+  
 
 
   userDetail() {

@@ -28,14 +28,19 @@ export class AartiReorderPage implements OnInit {
     private dbService: FirebaseDbService,
     private route: ActivatedRoute
   ) { }
+  // ionViewDidLeave(){
+  //   this.selectedItems = [];
+  // }
 
   ngOnInit() {
+    
     // this.selectedLang = this.dataService.getLang();
     // console.log(this.selectedLang);
     this.dataPage = this.dataService.getPresentPage();
     this.selectedItems = this.dataService.getAarti();
     //console.log("selected items="+this.selectedItems)
-    this.item =this.dataService.getSelectedPlaylistItem();
+    // this.item =this.dataService.getSelectedPlaylistItem();
+    // console.log(this.item);
     this.dbService.fetchUserPlaylist().subscribe((data) => {
       this.userPlaylist = data.map(value => {
         return {
@@ -58,7 +63,6 @@ export class AartiReorderPage implements OnInit {
     this.selectedItems.splice(event.detail.to, 0, itemToMove);
     event.detail.complete(); 
   }
-
   // async presentPopover(ev){
   //   const popover = await this.popovercntrl.create({
   //           component: ReorderPopoverComponent,
@@ -68,16 +72,9 @@ export class AartiReorderPage implements OnInit {
   //         });
   //         return await popover.present();
   //       } 
-      
-
-    
-
-  
-  
   async presentPopover(ev) {
-    console.log(this.dataPage);
-    if(this.dataPage == "my-playlist"){
-      
+    //console.log(this.dataPage);
+    if(this.dataPage == "update-user-playlist"){
       const popover = await this.popovercntrl.create({
         component: UpdatePopoverComponent,
         cssClass: 'my-custom-class',
@@ -85,7 +82,7 @@ export class AartiReorderPage implements OnInit {
         translucent: true
       });
       return await popover.present();
-    }else {
+    }else  {
       const popover = await this.popovercntrl.create({
         component: ReorderPopoverComponent,
         cssClass: 'my-custom-class',

@@ -165,6 +165,7 @@ export class ReorderPopoverComponent implements OnInit {
     this.dbService.insertIntoUserPlaylist(this.playlistId, this.playlistName, this.srNo);
     //console.log("Inserted into both table successfully");
     this.dbService.showToast("Playlist created successfully");
+    console.log(this.selectedItems);
     this.navController.navigateForward('my-playlist');
   }
   secondInsertion() {

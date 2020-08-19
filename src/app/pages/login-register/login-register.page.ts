@@ -5,8 +5,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DataService } from 'src/app/services/data.service';
 import { AppComponent } from 'src/app/app.component';
 import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
-// import * as utf8 from 'crypto-js/enc-utf8';
-// import * as AES from 'crypto-js/aes';
 import {Md5} from 'ts-md5/dist/md5';
 
 @Component({
@@ -33,9 +31,8 @@ export class LoginRegisterPage implements OnInit {
   encryptedKey:any;
   key:any;
   countryCode:any;
-   demo=false
+  rememberChecked=false
   
-
   constructor(
     private menu: MenuController,
     public formBuilder: FormBuilder,
@@ -50,32 +47,20 @@ export class LoginRegisterPage implements OnInit {
       code: ['', Validators.compose([Validators.required])],
       mobNo: ['', Validators.compose([Validators.required, Validators.minLength(10), Validators.pattern('[0-9]{10}')])]
     });
-    // this.code = this.signUpValidate.value.code;
-    // this.userNameLog = this.signUpValidate.value.userName;
-    // this.mobNoLog = this.signUpValidate.value.mobNo;
-    
-    
   }
-  
-  
 
   ionViewWillEnter() {
     this.menu.enable(false);
-    console.log(this.screenOrientation.type); // logs the current orientation, example: 'landscape'
-
-  // set to landscape
-    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+    console.log(this.screenOrientation.type); // log the current orientation, example: 'landscape'
+    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);  // set to landscape
   }
   ionViewDidLeave() {
     this.menu.enable(true);
   }
 
-
   ngOnInit() {
-    this.demo =true;
-    console.log(this.screenOrientation.type);
-   
-
+    this.rememberChecked =true;
+    //console.log(this.screenOrientation.type);
     this.dbService.getCountryCode().subscribe((data) => {
       this.result = data.map(value => {
         return {
@@ -98,11 +83,9 @@ export class LoginRegisterPage implements OnInit {
           sr_no: value.payload.doc.data()['sr_no']
         }
       });
-      //console.log(this.regResult);
-      // handle null and undefined case
       
       if (this.regResult.length > 0 && this.regResult != undefined) {
-        let oldSrNo = 1, newSrNo = 0;  //change naming convention
+        let oldSrNo = 1, newSrNo = 0;  
         for (var i = 0; i < this.regResult.length; i++) {
           newSrNo = this.regResult[i].sr_no;
           if (newSrNo > oldSrNo) {
@@ -115,22 +98,19 @@ export class LoginRegisterPage implements OnInit {
       this.srNo = 1;
     }
     });
-    
+
     this.userNameLog = localStorage.getItem('username');
     this.mobNoLog = localStorage.getItem('mobno');
     this.ext = localStorage.getItem('extno'); 
     if(this.userNameLog != null && this.userNameLog != undefined){
-      this.demo =true;
-      
-
+      this.rememberChecked =true;
     }
     else{
-      this.demo =false;
+      this.rememberChecked =false;
     }
   }
 
   registerUser() {
-    //console.log(this.code, this.userNameLog,this.mobNoLog);
     var flag = false;
     this.someAutoFormattedInput = this.signUpValidate.value.userName ;
     console.log(this.someAutoFormattedInput);
@@ -234,20 +214,20 @@ export class LoginRegisterPage implements OnInit {
         localStorage.setItem('extno', this.ext);
       }
       else{
-        this.demo=false;
+        this.rememberChecked=false;
         localStorage.clear();
       }
     }
     else if(identifier == "register"){
       console.log(e.currentTarget.checked)
       if(e.currentTarget.checked){
-        this.demo =true;
+        this.rememberChecked =true;
               localStorage.setItem('username', this.signUpValidate.value.userName);
               localStorage.setItem('mobno', this.signUpValidate.value.mobNo);
               localStorage.setItem('extno',this.signUpValidate.value.code);
       }
       else{
-        this.demo=false;
+        this.rememberChecked=false;
         localStorage.clear();
       }
     }
