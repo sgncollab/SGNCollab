@@ -9,30 +9,35 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./create-playlist.page.scss'],
 })
 export class CreatePlaylistPage implements OnInit {
-  data: any;
-  private selectedItems = [];
+   data= [];
+  selectedItems = [];
   checkedbtn = true;
   currentPage = "create-playlist";
   lang = false;
   
   constructor(
     private dataService: DataService,
-    private navController: NavController,
-    private form: FormsModule
+    private navController: NavController
   ) { }
 
   ngOnInit() {
+    console.log("create playlist");
       fetch('./assets/data/aarti-data.json').then(res => res.json())
         .then(json => {
           this.data = json;
+
         });
         this.dataService.setPresentPage(this.currentPage);
-        
-  }
+        this.selectedItems = [];
+        }
   // displayLang() {
   //   this.lang = !this.lang;
   //   this.selectedItems = [];
   // }
+
+ ionViewWillEnter(){
+   this.data.filter(value => value.isChecked=false)
+ }
 
   getItem(e: any, marathiTitle: string) {
     if (e.target.checked) {
@@ -49,6 +54,7 @@ export class CreatePlaylistPage implements OnInit {
   onNext() {
     //this.dataService.setLang(this.lang);
     this.dataService.setAarti(this.selectedItems);
+    this.selectedItems = [];
     //console.log(this.selectedItems);
     this.navController.navigateForward('aarti-reorder');
   }

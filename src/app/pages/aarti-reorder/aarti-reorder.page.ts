@@ -39,8 +39,7 @@ export class AartiReorderPage implements OnInit {
     this.dataPage = this.dataService.getPresentPage();
     this.selectedItems = this.dataService.getAarti();
     //console.log("selected items="+this.selectedItems)
-    // this.item =this.dataService.getSelectedPlaylistItem();
-    // console.log(this.item);
+   // this.item =this.dataService.getSelectedPlaylistItem();
     this.dbService.fetchUserPlaylist().subscribe((data) => {
       this.userPlaylist = data.map(value => {
         return {
@@ -73,8 +72,9 @@ export class AartiReorderPage implements OnInit {
   //         return await popover.present();
   //       } 
   async presentPopover(ev) {
-    //console.log(this.dataPage);
+    console.log(this.dataPage);
     if(this.dataPage == "update-user-playlist"){
+      
       const popover = await this.popovercntrl.create({
         component: UpdatePopoverComponent,
         cssClass: 'my-custom-class',

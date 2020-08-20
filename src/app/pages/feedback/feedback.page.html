@@ -30,7 +30,8 @@
       (ionChange)="onAutoFormatChanged()" required>
     </ion-textarea>
     <div>
-      <ion-button expand="full" fill="solid" color="primary" style="text-transform:none;font-size:20px; 
+      <!-- <button [disabled]="!name || !surname || !username">Save</button> -->
+      <ion-button [disabled]="!user_name || !user_email || !user_feedback" expand="full" fill="solid" color="primary" style="text-transform:none;font-size:20px; 
       margin-top: 15px;" shape="round" (click)="sendEmail()">
         Submit</ion-button>
     </div>

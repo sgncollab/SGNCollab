@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
-import { NavController, NavParams } from '@ionic/angular';
-import { ActivatedRoute, NavigationExtras } from '@angular/router';
+import { NavController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-update-user-playlist',
@@ -15,7 +15,7 @@ aarti=[];
 playlistStr = "";
 currentPage = "update-user-playlist";
 
-  constructor(private dataService:DataService,private navCtrl:NavController,private route:ActivatedRoute ) { }
+  constructor(private dataService:DataService,private navCtrl:NavController ) { }
 
   ngOnInit() {
     this.dataService.setPresentPage(this.currentPage);

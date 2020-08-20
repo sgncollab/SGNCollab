@@ -40,7 +40,7 @@
     "emailjs": "^3.3.0",
     "emailjs-com": "^2.4.1",
     "es6-promise-plugin": "^4.2.2",
-    "firebase": "^7.14.4",
+    "firebase": "^7.18.0",
     "ng-otp-input": "^1.7.1",
     "rxjs": "~6.5.1",
     "rxjs-compat": "^6.6.2",
