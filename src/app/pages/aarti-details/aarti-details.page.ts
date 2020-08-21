@@ -16,68 +16,53 @@ export class AartiDetailsPage implements OnInit {
   lang = false;
   language = "";
   private aartiDetail: any;
-  smallFont="2vh";
-  fontSize:number =2;
-  upperLimit= false;
+  smallFont = "2vh";
+  fontSize: number = 2;
+  upperLimit = false;
   lowerLimit = false;
 
   constructor(
     private dataService: DataService,
     private dbService: FirebaseDbService,
     private toastController: ToastController,
-    
-  ) {}
+  ) { }
 
-  ionViewDidLeave(){
-    this.smallFont = "2vh"; 
+  ionViewDidLeave() {
+    this.smallFont = "2vh";
   }
-    
 
   ngOnInit() {
     this.aartiData = this.dataService.getData();
     this.data = this.dataService.getmyPlaylistArtilist();
-   // console.log(this.data);
     this.lang = this.dataService.getLang()
     this.aartiDetail = this.aartiData.marathiAarti.split("@")
-    //console.log(this.rangeVal);
   }
-  change(identifier){
-    if(identifier == "plus")
-    {
+  changeFont(identifier) {
+    if (identifier == "plus") {
       this.lowerLimit = false;
-      if(this.fontSize == 4){
-      this.upperLimit = true;
+      if (this.fontSize == 4) {
+        this.upperLimit = true;
       }
-      else{
-      this.upperLimit = false;
-      //console.log("plus clicked")
-      this.fontSize = this.fontSize + 1;
-      this.smallFont= (this.fontSize) + 'vh';
-      //console.log(this.fontSize)
+      else {
+        this.upperLimit = false;
+        this.fontSize = this.fontSize + 0.5;
+        this.smallFont = (this.fontSize) + 'vh';
       }
     }
-    else if(identifier == "minus")
-    {
+    else if (identifier == "minus") {
       this.upperLimit = false;
-      if(this.fontSize == 2){
+      if (this.fontSize == 2) {
         this.lowerLimit = true;
-        }
-        else{
-          this.lowerLimit = false;
-          //console.log("minus clicked")
-          this.fontSize = this.fontSize - 1;
-          this.smallFont= (this.fontSize) + 'vh';
-          //console.log(this.fontSize)
-
-        }
-      
+      }
+      else {
+        this.lowerLimit = false;
+        this.fontSize = this.fontSize - 0.5;
+        this.smallFont = (this.fontSize) + 'vh';
+      }
     }
-
-
   }
   async onNextPrev(identifier) {
     let index: any;
-
     try {
       index = this.dataService.getIndex();
       if (identifier == 'prev') {
@@ -89,7 +74,7 @@ export class AartiDetailsPage implements OnInit {
             duration: 2000,
             color: 'primary',
             position: 'top',
-            cssClass:'cssAccept',
+            cssClass: 'cssAccept',
           });
           toast.present();
         }
@@ -104,7 +89,7 @@ export class AartiDetailsPage implements OnInit {
             duration: 2000,
             color: 'primary',
             position: 'top',
-            cssClass:'cssAccept',
+            cssClass: 'cssAccept',
           });
           toast.present();
         }
@@ -119,7 +104,7 @@ export class AartiDetailsPage implements OnInit {
           duration: 1000,
           color: 'primary',
           position: 'top',
-          cssClass:'cssAccept',
+          cssClass: 'cssAccept',
         });
         toast.present();
       }

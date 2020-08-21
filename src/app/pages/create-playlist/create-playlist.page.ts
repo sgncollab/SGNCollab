@@ -15,13 +15,13 @@ export class CreatePlaylistPage implements OnInit {
   currentPage = "create-playlist";
   lang = false;
   
-
   constructor(
     private dataService: DataService,
     private navController: NavController
   ) { }
 
   ngOnInit() {
+    console.log("create playlist");
       fetch('./assets/data/aarti-data.json').then(res => res.json())
         .then(json => {
           this.data = json;

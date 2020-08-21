@@ -61,6 +61,7 @@ export class MyPlaylistPage implements OnInit {
         this.artiJson = json;
       });
   }
+  
 
 
   userDetail() {

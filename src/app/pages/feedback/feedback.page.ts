@@ -5,7 +5,6 @@ import { Toast } from '@capacitor/core';
 import { FirebaseDbService } from 'src/app/services/firebase-db.service';
 import { ToastController } from '@ionic/angular';
 
-
 @Component({
   selector: 'app-feedback',
   templateUrl: './feedback.page.html',
@@ -45,16 +44,15 @@ export class FeedbackPage implements OnInit {
   }
 
   sendEmail() {
-    
     var templateParams = {
       user_name: this.user_name,
       user_email: this.user_email,
       user_feedback: this.user_feedback
     };
      emailjs.send('feedback_service', 'feedback_form', templateParams)
-      .then( async function (response) {
+      .then(  function (response) {
         console.log('SUCCESS!', response.status, response.text);
-         alert("Email sent successfully!");
+        alert("Email sent successfully!");
         // const toast = await this.toastController.create({
         //   message: 'SUCCESS!',
         //   duration: 2000,
@@ -64,9 +62,6 @@ export class FeedbackPage implements OnInit {
         // });
         // toast.present();
       },
-        
-        
-        
        function (error) {
         //console.log('FAILED...', error);
         alert("FAILED!"+error);
@@ -75,25 +70,7 @@ export class FeedbackPage implements OnInit {
       this.user_name = "";
       this.user_email = "";
       this.user_feedback = "";
-
-      
-      
-
-      
-
   }
-  
-
-  // toastMessage(identifier){
-  //   if(identifier == "success"){
-  //     this.dbService.showToast("Thank you for your responce!");    
-  //   }
-  //   else if(identifier == "error"){
-  //     this.dbService.showToast("Failed..Please try again later!");
-
-  //   }
-  // }
-  
 }
 
 

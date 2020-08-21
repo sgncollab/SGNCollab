@@ -4,37 +4,36 @@
       <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title>Logo</ion-title>
-    <ion-button [disabled]="lowerLimit" slot="end" (click)="change('minus')">-</ion-button>
-    <ion-button [disabled]="upperLimit" slot="end" (click)="change('plus')">+</ion-button>
+    <ion-button [disabled]="lowerLimit" slot="end" (click)="changeFont('minus')">-</ion-button>
+    <ion-button [disabled]="upperLimit" slot="end" (click)="changeFont('plus')">+</ion-button>
   </ion-toolbar>
 </ion-header>
-
 
   <section>
     <ion-card class="cat_1">
       <ion-item-divider sticky style="min-height: 8vh;">
           <ion-item *ngIf ="lang"  lines="none" style="padding-left: 16vw;" >
-            <h4>{{ aartiData.englishTitle }}</h4>
+            <h4>{{aartiData.englishTitle}}</h4>
           </ion-item>
           <ion-item *ngIf="!lang" lines="none" style="padding-left: 22vw;">
-            <h4>{{ aartiData.marathiTitle }}</h4>
+            <h4>{{aartiData.marathiTitle}}</h4>
           </ion-item>
       </ion-item-divider>
         <div style="padding-left: 14vw;">
             <ion-item *ngIf="!lang" lines="none"  class="splitData"  text-center no-lines style="padding-top: 10px;" [style.font-size]=smallFont>
-              {{ aartiData.marathiAarti }}
+              {{aartiData.marathiAarti}}
             </ion-item>
         </div>
          <div style="padding-left: 15px;"> 
           <ion-item *ngIf="lang" lines="none" class="splitData" text-center no-lines style="padding-top: 10px;" [style.font-size]=smallFont>
-            {{ aartiData.englishAarti }}
+            {{aartiData.englishAarti}}
           </ion-item>
          </div> 
   </ion-card>
   <ion-button (click)="onNextPrev('prev')" style="margin-left:3vw">
     <ion-icon name="caret-back-outline"></ion-icon>Prev
   </ion-button>
-  <ion-button  (click)="onNextPrev('next')" style="float: right;">Next
+  <ion-button  (click)="onNextPrev('next')" style="float:right;">Next
     <ion-icon name="caret-forward-outline"></ion-icon>
   </ion-button>
 </section>
