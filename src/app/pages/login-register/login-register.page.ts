@@ -145,7 +145,7 @@ export class LoginRegisterPage implements OnInit {
         let serialNo = this.srNo;
         //console.log(serialNo);
         this.dataService.setLoggedInUserData(serialNo);
-        this.navCtrl.navigateForward('otp');//aarti-list
+        this.navCtrl.navigateForward('aarti-list');//otp
       }
     } catch (e) {
       this.dbService.showToast(e);
