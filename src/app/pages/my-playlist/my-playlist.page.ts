@@ -3,7 +3,7 @@ import { FirebaseDbService } from 'src/app/services/firebase-db.service';
 import { DataService } from 'src/app/services/data.service';
 import { NavController, LoadingController, PopoverController, ActionSheetController } from '@ionic/angular';
 import { NavigationExtras } from '@angular/router';
-
+import { Clipboard } from '@ionic-native/clipboard/ngx';
 
 @Component({
   selector: 'app-my-playlist',
@@ -20,7 +20,7 @@ export class MyPlaylistPage implements OnInit {
   fetchArti = [];
   currentPage = "my-playlist";
 
-  constructor(private dbService: FirebaseDbService, public actionSheetController: ActionSheetController, private popoverController: PopoverController, private loadingController: LoadingController, private dataService: DataService, private navCtrl: NavController) { }
+  constructor(private dbService: FirebaseDbService,private clipboard: Clipboard, public actionSheetController: ActionSheetController, private popoverController: PopoverController, private loadingController: LoadingController, private dataService: DataService, private navCtrl: NavController) { }
 
   doRefresh(event) {
     console.log('Begin async operation');
@@ -63,7 +63,7 @@ export class MyPlaylistPage implements OnInit {
   }
   
 
-
+ 
   userDetail() {
     this.srno = this.dataService.getLoggedInUserData();
     this.data = [];
@@ -110,7 +110,6 @@ export class MyPlaylistPage implements OnInit {
         }
         this.dataService.setPlaylistString(str);
         this.dataService.setmyPlaylistArtilist(this.fetchArti);
-        this.dataService.setPresentPage("my-playlist-aartilist");
         this.navCtrl.navigateForward('my-playlist-aartilist');
         break;
       }
@@ -121,9 +120,20 @@ export class MyPlaylistPage implements OnInit {
     let selecteditem = [item]
     this.stringCheck(item.playlist_id);
     this.dataService.setSelectedPlaylistItem(selecteditem);
-    this.dataService.setPresentPage("update-user-playlist");
     this.navCtrl.navigateForward('update-user-playlist');
   }
+  copyData(item){
+    this.clipboard.copy('Hello world');
+
+    // this.clipboard.paste().then(
+    //   (resolve: string) => {
+    //      alert(resolve);
+    //    },
+    //    (reject: string) => {
+    //      alert('Error: ' + reject);
+    //    }
+    //  );
+   }
 
   deletePlaylist(item) {
     let count = 0;
@@ -173,7 +183,7 @@ export class MyPlaylistPage implements OnInit {
         text: 'Share',
         icon: 'share-social-outline',
         handler: () => {
-          this.updatePlaylist(item)
+          this.copyData(item)
           console.log('Share clicked');
         }
       }, {
@@ -188,3 +198,5 @@ export class MyPlaylistPage implements OnInit {
     await actionSheet.present();
   }
 }
+
+// this.clipboard.clear();

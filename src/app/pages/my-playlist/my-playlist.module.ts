@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { MyPlaylistPageRoutingModule } from './my-playlist-routing.module';
 
 import { MyPlaylistPage } from './my-playlist.page';
+import { Clipboard } from '@ionic-native/clipboard/ngx';
 //import { PopoverOptionsComponent } from '../popover-options/popover-options.component';
 
 @NgModule({
@@ -18,6 +19,7 @@ import { MyPlaylistPage } from './my-playlist.page';
   ],
   
   //entryComponents:[PopoverOptionsComponent],
-  declarations: [MyPlaylistPage]
+  declarations: [MyPlaylistPage],
+  providers:[Clipboard]
 })
 export class MyPlaylistPageModule {}
