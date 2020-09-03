@@ -77,16 +77,7 @@ export class AppComponent implements OnInit {
         url: 'feedback',
         icon: 'create'
       },
-      {
-        title: 'Settings',
-        url: 'settings',
-        icon: 'settings'
-      },
-      {
-        title: 'About us',
-        url: 'about-us',
-        icon: 'information-circle'
-      },
+    
       {
         title: 'Register',
         url: 'login-register',
@@ -121,16 +112,7 @@ export class AppComponent implements OnInit {
         url: 'feedback',
         icon: 'create'
       },
-      {
-        title: 'Settings',
-        url: 'settings',
-        icon: 'settings'
-      },
-      {
-        title: 'About us',
-        url: 'about-us',
-        icon: 'information-circle'
-      },
+     
       {
         title: 'Logout',
         url: 'login-register',
@@ -183,3 +165,14 @@ export class AppComponent implements OnInit {
     localStorage.clear();
   }
 }
+
+// {
+//   title: 'Settings',
+//   url: 'settings',
+//   icon: 'settings'
+// },
+// {
+//   title: 'About us',
+//   url: 'about-us',
+//   icon: 'information-circle'
+// },
