@@ -54,7 +54,7 @@
           </div>
         <div style=" margin-left: 15px;  margin-bottom: 10px;">
           <ion-row>
-            <ion-checkbox checked="rememberChecked" (ionChange)="rememberMe('login',$event)"></ion-checkbox>
+            <ion-checkbox  [(ngModel)]="rememberChecked"  (ionChange)="rememberMe('login',$event)"></ion-checkbox>
             <!-- <ion-checkbox [(ngModel)]="isChecked" (click)="rememberMe('login',$event)"></ion-checkbox> -->
             <ion-label>
               <p style="font-size: 14px; color: black; margin-left: 5px;">Remember Me</p>
@@ -89,7 +89,7 @@
         </form>
         <div style=" margin-left: 15px;  margin-bottom: 10px;">
           <ion-row>
-            <ion-checkbox  (ionChange)="rememberMe('register',$event)"></ion-checkbox>
+            <ion-checkbox (ionChange)="rememberMe('register',$event)"></ion-checkbox>
             <ion-label>
               <p style="font-size: 14px; color: black; margin-left: 5px;">Remember Me</p>
             </ion-label>
