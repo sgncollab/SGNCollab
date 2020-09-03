@@ -59,7 +59,7 @@ export class LoginRegisterPage implements OnInit {
   }
 
   ngOnInit() {
-    this.rememberChecked =true;
+    //this.rememberChecked =false;
     //console.log(this.screenOrientation.type);
     this.dbService.getCountryCode().subscribe((data) => {
       this.result = data.map(value => {
@@ -106,7 +106,7 @@ export class LoginRegisterPage implements OnInit {
       this.rememberChecked =true;
     }
     else{
-      this.rememberChecked =false;
+      this.rememberChecked = false;
     }
   }
 
@@ -206,7 +206,7 @@ export class LoginRegisterPage implements OnInit {
   
   rememberMe(identifier,e){
     if(identifier == "login"){
-      console.log(e.currentTarget.checked)
+      //console.log(e.currentTarget.checked)
       if(e.currentTarget.checked){
         
         localStorage.setItem('username', this.userNameLog);
