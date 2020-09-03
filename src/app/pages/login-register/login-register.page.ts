@@ -135,7 +135,7 @@ export class LoginRegisterPage implements OnInit {
       if (flag == false) {
        // this.encryptedKey = Md5.hashStr(this.signUpValidate.value.code + this.signUpValidate.value.mobNo);
         // this.encryptedKey=AES.encrypt(this.signUpValidate.value.code + this.signUpValidate.value.mobNo,"")
-        this.dbService.createUser(this.srNo, this.signUpValidate.value.userName, mob);
+        this.dbService.createUser(this.srNo, this.signUpValidate.value.userName.toLowerCase(), mob);
         //this.rememberMe('register');
         this.appComponent.viewMenu(this.signUpValidate.value.userName);
 
