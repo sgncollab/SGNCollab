@@ -48,9 +48,6 @@ export class AppComponent implements OnInit {
           sr_no: value.payload.doc.data()['sr_no']
         }
       });
-      // if(this.srNo != ""){
-        
-      // }
     });
     
     
@@ -129,7 +126,7 @@ export class AppComponent implements OnInit {
     this.dataPage = this.dataService.getPresentPage();
     //console.log(this.dataPage);
     if(this.username.toLowerCase() != "guest"){
-      if (index == 7) {
+      if (index == 5) {
         this.logout();
       }
       let count = 0;
