@@ -1,0 +1,80 @@
+<ion-content>
+  <div>
+    <ion-row style="height: 70px;">
+      <!-- <img src="(../../../assets/images/img.png"> -->
+    </ion-row>
+  </div>
+  <div style="margin-top: 10px;">
+    <ion-row style="justify-content: center;">
+      <ion-col size="1">
+      </ion-col>
+      <ion-col size="5">
+        <img  class="g" (click)="displayMenu('search')" src="(../../../assets/images/2.png">
+      </ion-col>
+      <ion-col size="5">
+        <img class="g" style="float: right;" (click)="displayMenu('display')" src="(../../../assets/images/1.png">       
+      </ion-col>
+      <ion-col size="1">
+      </ion-col>
+    </ion-row>
+  </div>
+  <ion-card>
+    <ion-segment mode="ios" value ="Login" >
+      <ion-segment-button style="height:6vh;" value="Login" (click)="checkView('loginView')">
+        <b>Login</b>
+      </ion-segment-button>
+      <ion-segment-button style="height:6vh;" value="Register"  (click)="checkView('registerView')">
+        <b>Register</b>
+      </ion-segment-button>
+    </ion-segment>
+    <div *ngIf="display">
+      <form [formGroup]="validations_form">
+        <ion-item lines="full">
+          <ion-icon name="person-sharp"></ion-icon>
+          <ion-input type="text" placeholder="Username" formControlName="username" class="form-controll" required ></ion-input>
+        </ion-item>
+        <div class="validation-errors">
+          <ng-container *ngFor="let validation of validation_messages.username">
+            <div class="error-message" *ngIf="validations_form.get('username').hasError(validation.type) && (validations_form.get('username').dirty || validations_form.get('username').touched)">
+              {{ validation.message }}
+            </div>
+          </ng-container>
+        </div>
+        <ion-item>
+          <ion-label>Set Your Pin</ion-label>
+          <ng-otp-input  (onInputChange)="onOtpChange($event)" [config]="{length:4,allowNumbersOnly:true}"></ng-otp-input>
+        </ion-item>
+        
+        
+        
+      </form>
+
+      <!-- <div class="ion-padding">
+        <form [formGroup]= "registrationForm" (ngSubmit)="submit()">
+          <ion-list>
+            <ion-item>
+              <ion-icon name="person-sharp"></ion-icon>
+              <ion-input inputmode="text" formControlName="username" placeholder="Username"></ion-input>
+            </ion-item>
+            
+            <div *ngFor="let error of errorMessages.username">
+              <ng-container *ngIf="username.hasError(error.type) && (username.dirty || username.touched)">
+                <small class="error-message">{{error.message}}</small>
+              </ng-container>
+            </div>
+          </ion-list> 
+          <ion-button [disabled]="!registrationForm.valid" type="submit" expand="block">Submit <ion-icon slot="end"
+            name="create">
+          </ion-icon>
+        </ion-button>
+        </form>
+      </div> -->
+    </div>
+
+    <div *ngIf="!display">
+      <p>Login View</p>
+
+    </div>
+    
+  </ion-card>
+</ion-content>

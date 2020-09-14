@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/splashscreen',
+    redirectTo: '/registration-login',
     pathMatch: 'full'
   },
   {
@@ -78,7 +78,12 @@ const routes: Routes = [
   {
     path: 'splashscreen',
     loadChildren: () => import('./pages/splashscreen/splashscreen.module').then( m => m.SplashscreenPageModule)
+  },
+  {
+    path: 'registration-login',
+    loadChildren: () => import('./registration-login/registration-login.module').then( m => m.RegistrationLoginPageModule)
   }
+
 
 
 
