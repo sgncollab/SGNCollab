@@ -44,9 +44,10 @@
           <ion-label>Set Your Pin</ion-label>
           <ng-otp-input  (onInputChange)="onOtpChange($event)" [config]="{length:4,allowNumbersOnly:true}"></ng-otp-input>
         </ion-item>
-        
-        
-        
+        <ion-button [disabled]="!registrationForm.valid" type="submit" expand="block">Submit <ion-icon slot="end"
+          name="create">
+        </ion-icon>
+      </ion-button>
       </form>
 
       <!-- <div class="ion-padding">
