@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UsernameValidator } from '../validators/username'
 import { FirebaseDbService } from 'src/app/services/firebase-db.service';
+import { EmptyError } from 'rxjs';
 
 
 @Component({
@@ -14,8 +15,27 @@ export class RegistrationLoginPage implements OnInit {
   validations_form: FormGroup;
   username:any="";
   regResult:any;
+  passwordToggle= 'eye';
+  showpass=false
   
-
+  isActiveToggleTextPassword: Boolean = true;
+  public toggleTextPassword(): void{
+      this.isActiveToggleTextPassword = (this.isActiveToggleTextPassword==true)?false:true;
+      this.showpass= !this.showpass;
+      if(this.passwordToggle == 'eye'){
+        this.passwordToggle='eye-off';
+      }else{
+        this.passwordToggle = 'eye';
+      }
+  }
+  public getType() {
+    return this.isActiveToggleTextPassword ? 'password' : 'number';
+}
+tcknOnInputChange(e){        
+  e.detail.keyup(function() {
+     e.detail.value(this.value.match(/[0-9]*/));
+  });
+}
   constructor(private formBuilder: FormBuilder,private dbService: FirebaseDbService) {
   }
   ngOnInit() {

@@ -35,6 +35,11 @@
       <ion-item>
         <ion-icon name="chevron-forward-outline"></ion-icon>
         <ion-input  (ionChange)="pinInput($event)" type="number" style="-webkit-text-security:disc" placeholder="Create PIN"></ion-input>
+       
+      </ion-item>
+      <ion-item>
+        <ion-input [type]="getType()" maxlength="4" pattern="[0-9]{4}" required (ionChange)="tcknOnInputChange($e)" ></ion-input>
+        <ion-icon [name]="passwordToggle" item-right (click)="toggleTextPassword()"></ion-icon>
       </ion-item>
       <ion-item>
         <ion-button (click)="register()">Register</ion-button>
