@@ -32,10 +32,15 @@
         <ion-icon name="person-sharp"></ion-icon>
         <ion-input type="text" placeholder="Username" class="ion-text-capitalize" (ionChange)="onChange($event)"></ion-input>
       </ion-item>
+      <span *ngIf= "uName" style="color: red;">Username is required</span>
+      <span *ngIf= "length" style="color: red;">pl.check the length</span>
+      <span *ngIf="uNameExist" style="color: red;">username already taken</span>
+       
       <ion-item>
         <ion-icon name="chevron-forward-outline"></ion-icon>
         <ion-input  (ionChange)="pinInput($event)" type="number" style="-webkit-text-security:disc" placeholder="Create PIN"></ion-input>
       </ion-item>
+      
       <ion-item>
         <ion-button (click)="register()">Register</ion-button>
       </ion-item>

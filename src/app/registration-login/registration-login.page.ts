@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { UsernameValidator } from '../validators/username'
 import { FirebaseDbService } from 'src/app/services/firebase-db.service';
-
 
 @Component({
   selector: 'app-registration-login',
@@ -12,9 +10,10 @@ import { FirebaseDbService } from 'src/app/services/firebase-db.service';
 export class RegistrationLoginPage implements OnInit {
   display =false;
   validations_form: FormGroup;
-  username:any="";
   regResult:any;
-  
+  uName=false;
+  length=false;
+  uNameExist=false;
 
   constructor(private formBuilder: FormBuilder,private dbService: FirebaseDbService) {
   }
@@ -44,16 +43,21 @@ export class RegistrationLoginPage implements OnInit {
     }
   }
   onChange(e){
+     this.uName=false;
+     this.length=false;
     //console.log(e.detail.value)
     if(e.detail.value == "" || e.detail.value == undefined)
     {
-      console.log("username is required");
+      this.uName=true;
+      //console.log("username is required");
     }
     else if(e.detail.value.length < 4 || e.detail.value.length > 30){
-      console.log("pl.check the length");
+      this.length=true;
+      //console.log("pl.check the length");
     }
     else{
       console.log("Username is valid")
+      this.uNameExist=false;
       let flag = this.regResult.filter(value=>{
         if(value.name==e.detail.value){
           return true;
@@ -61,13 +65,14 @@ export class RegistrationLoginPage implements OnInit {
         return false;
       })
       console.log(flag);
+      
       if(flag.length == 0 ){
         console.log("register");
       }else{
+        this.uNameExist=true;
         console.log("username already taken!")
       }
     }
-    
   }
   
   register(){
