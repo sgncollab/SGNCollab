@@ -83,10 +83,6 @@ const routes: Routes = [
     path: 'registration-login',
     loadChildren: () => import('./registration-login/registration-login.module').then( m => m.RegistrationLoginPageModule)
   }
-
-
-
-
 ];
 
 @NgModule({

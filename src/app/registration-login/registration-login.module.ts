@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 //import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { NgOtpInputModule } from  'ng-otp-input';
 
@@ -12,7 +12,7 @@ import { RegistrationLoginPage } from './registration-login.page';
 @NgModule({
   imports: [
     CommonModule,
-    //FormsModule,
+    FormsModule,
     IonicModule,
     ReactiveFormsModule,
     RegistrationLoginPageRoutingModule,
