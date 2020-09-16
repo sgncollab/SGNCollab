@@ -16,10 +16,10 @@ export class FirebaseDbService {
     
   ) { }
 
-  createUser(srNo, userName, mobNo) {
+  createUser(srNo, userName, pin) {
     this.collectionName = 'users';
     //console.log(this.collectionName);
-    var userData = { 'sr_no': srNo, 'name': userName, 'mobile_no': mobNo }
+    var userData = { 'sr_no': srNo, 'name': userName, 'pin': pin }
     return this.firestore.collection(this.collectionName).add(userData);
   }
 
