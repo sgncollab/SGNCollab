@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, MenuController } from '@ionic/angular';
 import { FirebaseDbService } from 'src/app/services/firebase-db.service';
+import {Md5} from 'ts-md5/dist/md5';
+import { AppComponent } from 'src/app/app.component';
+import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 
 @Component({
   selector: 'app-registration-login',
@@ -16,7 +19,7 @@ export class RegistrationLoginPage implements OnInit {
   showpass = false
   display = false;
   createPIN: number;
-  confirmPIN: number;
+  confirmPIN: any;
   username: any;
   srNo = 1;
   pinMatched = false;
@@ -32,7 +35,11 @@ export class RegistrationLoginPage implements OnInit {
   enterPIN;
   uvalid=false;
 
-  constructor(private dbService: FirebaseDbService, private navCtrl: NavController,) {
+  constructor(private menu: MenuController,
+     private screenOrientation: ScreenOrientation,
+     private dbService: FirebaseDbService,
+     private appComponent : AppComponent,
+      private navCtrl: NavController,) {
   }
 
   ngOnInit() {
@@ -61,6 +68,15 @@ export class RegistrationLoginPage implements OnInit {
       }
     })
 
+  }
+
+  ionViewWillEnter() {
+    this.menu.enable(false);
+    console.log(this.screenOrientation.type); // log the current orientation, example: 'landscape'
+    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);  // set to landscape
+  }
+  ionViewDidLeave() {
+    this.menu.enable(true);
   }
 
   uNameValidation(e) {
@@ -151,9 +167,12 @@ export class RegistrationLoginPage implements OnInit {
     this.regError = false;
     //console.log(this.createPIN)
     //console.log(this.confirmPIN);
+     let pin = Md5.hashStr(this.confirmPIN);
     if (this.username != "" && this.createPIN != null && this.confirmPIN != null && this.username != undefined &&
       this.createPIN != undefined && this.confirmPIN != undefined && this.pinMatched == true) {
-      this.dbService.createUser(this.srNo, this.username.toLowerCase(), this.confirmPIN)
+      this.dbService.createUser(this.srNo, this.username.toLowerCase(), pin)
+      this.appComponent.viewMenu(this.username);
+
       this.navCtrl.navigateForward('aarti-list');
     }
     else {
@@ -200,6 +219,15 @@ export class RegistrationLoginPage implements OnInit {
 
   public getType() {
     return this.isActiveToggleTextPassword ? 'password' : 'number';
+  }
+  
+  displayMenu(identifier){
+    this.appComponent.viewMenu("guest");
+    if(identifier == "search"){
+      this.navCtrl.navigateRoot('search-playlist');
+    }else{
+      this.navCtrl.navigateRoot('aarti-list');
+    }
   }
 }
 
