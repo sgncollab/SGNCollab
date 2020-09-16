@@ -9,55 +9,73 @@
       <ion-col size="1">
       </ion-col>
       <ion-col size="5">
-        <img  class="g" (click)="displayMenu('search')" src="(../../../assets/images/2.png">
+        <img class="g" (click)="displayMenu('search')" src="(../../../assets/images/2.png">
       </ion-col>
       <ion-col size="5">
-        <img class="g" style="float: right;" (click)="displayMenu('display')" src="(../../../assets/images/1.png">       
+        <img class="g" style="float: right;" (click)="displayMenu('display')" src="(../../../assets/images/1.png">
       </ion-col>
       <ion-col size="1">
       </ion-col>
     </ion-row>
   </div>
   <ion-card>
-    <ion-segment mode="ios" value ="Login" >
+    <ion-segment mode="ios" value="Login">
       <ion-segment-button style="height:6vh;" value="Login" (click)="checkView('loginView')">
         <b>Login</b>
       </ion-segment-button>
-      <ion-segment-button style="height:6vh;" value="Register"  (click)="checkView('registerView')">
+      <ion-segment-button style="height:6vh;" value="Register" (click)="checkView('registerView')">
         <b>Register</b>
       </ion-segment-button>
     </ion-segment>
     <div *ngIf="display">
+      <!-- Username -->
       <ion-item>
         <ion-icon name="person-sharp"></ion-icon>
-        <ion-input type="text" placeholder="Username" class="ion-text-capitalize" (ionChange)="onChange($event)"></ion-input>
+        <ion-input type="text" [(ngModel)]="username" placeholder="Username" class="ion-text-capitalize"
+        (ionChange)="uNameValidation($event)"></ion-input>
       </ion-item>
-      <!-- <ion-item>
-        <ion-icon name="chevron-forward-outline"></ion-icon>
-        <ion-input  (ionChange)="pinInput($event)" type="number" style="-webkit-text-security:disc" placeholder="Create PIN"></ion-input>
-       
-      </ion-item> -->
+      <span *ngIf="uName" class="errorMsg">Username is required</span>
+      <span *ngIf="length" class="errorMsg">Username should atlest contain 4 characters</span>
+      <span *ngIf="uNameExist" class="errorMsg">username already taken</span>
+
+      <!-- Create PIN -->
       <ion-item>
-        <ion-input placeholder="Create PIN" [type]="getType()" maxlength="4" pattern="[0-9]{4}" required  ></ion-input>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+        <ion-input [type]="getType()" maxlength="4" pattern="[0-9]{4}" required placeholder="Create PIN"
+          [(ngModel)]="createPIN" (ionChange)="createPinInput($event)"></ion-input>
         <ion-icon [name]="passwordToggle" item-right (click)="toggleTextPassword()"></ion-icon>
       </ion-item>
+      <span *ngIf="pin1" class="errorMsg">PIN is required</span>
+      <span *ngIf="pinLength" class="errorMsg">Please enter 4 digit pin</span>
+
+      <!-- Confirm PIN -->
       <ion-item>
-        <ion-input placeholder="Confirm PIN"  [type]="getType()" maxlength="4" pattern="[0-9]{4}" required  ></ion-input>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+        <ion-input [type]="getType()" maxlength="4" pattern="[0-9]{4}" required placeholder="Confirm PIN"
+          [(ngModel)]="confirmPIN" (ionChange)="confirmPinInput($event)"></ion-input>
         <!-- <ion-icon [name]="passwordToggle" item-right (click)="toggleTextPassword()"></ion-icon> -->
       </ion-item>
-      <ion-item>
-        <ion-button (click)="register()">Register</ion-button>
+      <span *ngIf="pin2" class="errorMsg">PIN is required</span>
+      <span *ngIf="match" class="errorMsg">PIN does not match</span>
+     
+
+      <ion-item *ngIf="disabled">
+        <ion-button (click)="register()" disabled="true">Register</ion-button>
+      </ion-item>
+      <ion-item *ngIf="!disabled">
+        <ion-button (click)="register()" disabled="false">Register</ion-button>
       </ion-item>
     </div>
 
     <div *ngIf="!display">
       <ion-item>
         <ion-icon name="person-sharp"></ion-icon>
-        <ion-input class="ion-text-capitalize" type="text" placeholder="Username" ></ion-input>
+        <ion-input class="ion-text-capitalize" type="text" placeholder="Username"></ion-input>
       </ion-item>
       <ion-item>
         <ion-icon name="chevron-forward-outline"></ion-icon>
-        <ion-input [(ngModel)]="pinNumber" type="number" style="-webkit-text-security:disc" placeholder="Enter PIN"></ion-input>
+        <ion-input [(ngModel)]="pinNumber" type="number" style="-webkit-text-security:disc" placeholder="Enter PIN">
+        </ion-input>
       </ion-item>
       <ion-item>
         <ion-button>Login</ion-button>
@@ -66,3 +84,8 @@
   </ion-card>
 </ion-content>
 
+<!-- <ion-item>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+        <ion-input  (ionChange)="pinInput($event)" type="number" style="-webkit-text-security:disc" placeholder="Create PIN" [(ngModel)]="createPIN"></ion-input>
+        <ion-icon [name]="passwordToggle" item-right (click)="toggleTextPassword()"></ion-icon>
+      </ion-item> -->
