@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { FirebaseDbService } from 'src/app/services/firebase-db.service';
+import {Md5} from 'ts-md5/dist/md5';
 
 @Component({
   selector: 'app-registration-login',
@@ -151,6 +152,7 @@ export class RegistrationLoginPage implements OnInit {
     this.regError = false;
     //console.log(this.createPIN)
     //console.log(this.confirmPIN);
+  
     if (this.username != "" && this.createPIN != null && this.confirmPIN != null && this.username != undefined &&
       this.createPIN != undefined && this.confirmPIN != undefined && this.pinMatched == true) {
       this.dbService.createUser(this.srNo, this.username.toLowerCase(), this.confirmPIN)
@@ -166,18 +168,28 @@ export class RegistrationLoginPage implements OnInit {
     console.log(this.enterUName,this.enterPIN);
     let flag = this.regResult.filter(value =>{
       if(this.enterUName.toLowerCase() == value.name){
-        console.log("username present");
+        console.log(value.name,value.sr_no,value.pin);
+        if(this.enterPIN == value.pin){
+          console.log("pin matched");
+        }
+        else{
+          console.log("please check your PIN")
+        }
+        //console.log("username present");
         return true;
+        
       }
       return false;
     })
     if(flag == false){
       console.log("please check your username");
     }
-
-    
-
+    else if(flag == true){
+    this.enterPIN = Md5.hashStr(this.enterPIN);
+    console.log(this.enterPIN);
+    }
   }
+  
 
 
   checkView(identifier) {
