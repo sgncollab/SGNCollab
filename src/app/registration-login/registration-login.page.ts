@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { FirebaseDbService } from 'src/app/services/firebase-db.service';
 
-
 @Component({
   selector: 'app-registration-login',
   templateUrl: './registration-login.page.html',
@@ -20,16 +19,20 @@ export class RegistrationLoginPage implements OnInit {
   confirmPIN: number;
   username: any;
   srNo = 1;
-  pinMatched=false;
+  pinMatched = false;
   pin1 = false;
   pin2 = false;
   pinLength = false;
-  match =false;
-  disabled =true;
-  
+  match = false;
+  pinValid = false;
+  regError = false;
+  disabled = true;
   isActiveToggleTextPassword: Boolean = true;
+  enterUName;
+  enterPIN;
+  uvalid=false;
 
-  constructor(private dbService: FirebaseDbService,private navCtrl: NavController,) {
+  constructor(private dbService: FirebaseDbService, private navCtrl: NavController,) {
   }
 
   ngOnInit() {
@@ -44,7 +47,7 @@ export class RegistrationLoginPage implements OnInit {
       });
       console.log(this.regResult);
       if (this.regResult.length > 0 && this.regResult != undefined) {
-        let oldSrNo = 1, newSrNo = 0;  
+        let oldSrNo = 1, newSrNo = 0;
         for (var i = 0; i < this.regResult.length; i++) {
           newSrNo = this.regResult[i].sr_no;
           if (newSrNo > oldSrNo) {
@@ -52,18 +55,19 @@ export class RegistrationLoginPage implements OnInit {
           }
           this.srNo = oldSrNo + 1;
         }
-    }
-    else if (this.regResult.length == 0) {
-      this.srNo = 1;
-    }
+      }
+      else if (this.regResult.length == 0) {
+        this.srNo = 1;
+      }
     })
-    
+
   }
 
   uNameValidation(e) {
     this.uName = false;
     this.length = false;
-    this.uNameExist =false;
+    this.uNameExist = false;
+    this.pinValid = false;
 
     //console.log(e.detail.value)
     if (e.detail.value == "" || e.detail.value == undefined) {
@@ -74,8 +78,13 @@ export class RegistrationLoginPage implements OnInit {
       this.length = true;
       //console.log("pl.check the length");
     }
+    // else if (e.detail.value.match("[a-zA-Z0-9]")) {
+
+    // }
     else {
       //console.log("Username is valid")
+      
+
       let flag = this.regResult.filter(value => {
         if (value.name == e.detail.value.toLowerCase()) {
           return true;
@@ -83,13 +92,13 @@ export class RegistrationLoginPage implements OnInit {
         return false;
       })
       //console.log(flag);
-
       if (flag.length == 0) {
-        this.uNameExist =false;
-       // console.log("register");
+        this.uNameExist = false;
+        this.uvalid=true;
+        // console.log("register");
       }
-       else {
-        this.uNameExist =true;
+      else {
+        this.uNameExist = true;
         //console.log("username already taken!")
       }
     }
@@ -98,6 +107,7 @@ export class RegistrationLoginPage implements OnInit {
   createPinInput(e) {
     this.pin1 = false;
     this.pinLength = false;
+    this.pinValid = false;
     //console.log(e.detail.value);
     if (e.detail.value == "" || e.detail.value == undefined) {
       this.pin1 = true;
@@ -109,20 +119,21 @@ export class RegistrationLoginPage implements OnInit {
     }
     else {
       //console.log("pin is valid");
+      this.pinValid = true;
     }
   }
   confirmPinInput(e) {
-    this.pin2 =false;
+    this.pin2 = false;
     this.match = false;
-    this.disabled =true;
-   
+    this.disabled = true;
+
     if (e.detail.value == "" || e.detail.value == undefined) {
       this.pin2 = true;
       //console.log("pin is required");
     }
     else if (this.confirmPIN == this.createPIN) {
       this.pinMatched = true;
-      this.disabled =false;
+      this.enableRegister();
       //console.log("pin matched");
     }
     else {
@@ -131,26 +142,43 @@ export class RegistrationLoginPage implements OnInit {
       //console.log("pin does not match!")
     }
   }
-  
-  
-
+  enableRegister() {
+    if (this.uvalid && this.pinValid  && this.pinMatched == true) {
+      this.disabled = false;
+    }
+  }
   register() {
+    this.regError = false;
     //console.log(this.createPIN)
     //console.log(this.confirmPIN);
-    if (this.username != "" && this.createPIN != null && this.confirmPIN != null && this.username != undefined && 
-    this.createPIN != undefined && this.confirmPIN != undefined && this.pinMatched == true) {
-      this.dbService.createUser(this.srNo, this.username.toLowerCase(),this.confirmPIN )
+    if (this.username != "" && this.createPIN != null && this.confirmPIN != null && this.username != undefined &&
+      this.createPIN != undefined && this.confirmPIN != undefined && this.pinMatched == true) {
+      this.dbService.createUser(this.srNo, this.username.toLowerCase(), this.confirmPIN)
       this.navCtrl.navigateForward('aarti-list');
     }
-    else{
-      console.log("Please enter all the details")
+    else {
+      this.regError = true;
+      //console.log("Please enter all the details")
+    }
+  }
+
+  login(){
+    console.log(this.enterUName,this.enterPIN);
+    let flag = this.regResult.filter(value =>{
+      if(this.enterUName.toLowerCase() == value.name){
+        console.log("username present");
+        return true;
+      }
+      return false;
+    })
+    if(flag == false){
+      console.log("please check your username");
     }
 
-
-
+    
 
   }
-  
+
 
   checkView(identifier) {
     if (identifier == "loginView") {

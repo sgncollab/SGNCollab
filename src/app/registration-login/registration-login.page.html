@@ -27,12 +27,14 @@
         <b>Register</b>
       </ion-segment-button>
     </ion-segment>
+
+    <!-- Registration -->
     <div *ngIf="display">
       <!-- Username -->
       <ion-item>
         <ion-icon name="person-sharp"></ion-icon>
         <ion-input type="text" [(ngModel)]="username" placeholder="Username" class="ion-text-capitalize"
-        (ionChange)="uNameValidation($event)"></ion-input>
+          (ionChange)="uNameValidation($event)"></ion-input>
       </ion-item>
       <span *ngIf="uName" class="errorMsg">Username is required</span>
       <span *ngIf="length" class="errorMsg">Username should atlest contain 4 characters</span>
@@ -41,8 +43,8 @@
       <!-- Create PIN -->
       <ion-item>
         <ion-icon name="chevron-forward-outline"></ion-icon>
-        <ion-input [type]="getType()" maxlength="4" pattern="[0-9]{4}" required placeholder="Create PIN"
-          [(ngModel)]="createPIN" (ionChange)="createPinInput($event)"></ion-input>
+        <ion-input [type]="getType()" placeholder="Create PIN" [(ngModel)]="createPIN"
+          (ionChange)="createPinInput($event)"></ion-input>
         <ion-icon [name]="passwordToggle" item-right (click)="toggleTextPassword()"></ion-icon>
       </ion-item>
       <span *ngIf="pin1" class="errorMsg">PIN is required</span>
@@ -51,34 +53,49 @@
       <!-- Confirm PIN -->
       <ion-item>
         <ion-icon name="chevron-forward-outline"></ion-icon>
-        <ion-input [type]="getType()" maxlength="4" pattern="[0-9]{4}" required placeholder="Confirm PIN"
-          [(ngModel)]="confirmPIN" (ionChange)="confirmPinInput($event)"></ion-input>
+        <ion-input [type]="getType()" placeholder="Confirm PIN" [(ngModel)]="confirmPIN"
+          (ionChange)="confirmPinInput($event)"></ion-input>
         <!-- <ion-icon [name]="passwordToggle" item-right (click)="toggleTextPassword()"></ion-icon> -->
       </ion-item>
       <span *ngIf="pin2" class="errorMsg">PIN is required</span>
       <span *ngIf="match" class="errorMsg">PIN does not match</span>
-     
 
-      <ion-item *ngIf="disabled">
-        <ion-button (click)="register()" disabled="true">Register</ion-button>
-      </ion-item>
-      <ion-item *ngIf="!disabled">
-        <ion-button (click)="register()" disabled="false">Register</ion-button>
-      </ion-item>
+      <!-- Remember me -->
+      <div style=" margin-left: 15px;  margin-bottom: 10px;">
+        <ion-row>
+          <ion-checkbox></ion-checkbox>
+          <ion-label>
+            <p style="font-size: 14px; color: black; margin-left: 5px;">Remember Me</p>
+          </ion-label>
+        </ion-row>
+        <ion-button float="right" *ngIf="disabled" (click)="register()" disabled="true">Register</ion-button>
+        <ion-button *ngIf="!disabled" (click)="register()" disabled="false">Register</ion-button>
+      </div>
+      <span *ngIf=regError class="errorMsg">Please enter username</span>
     </div>
 
+    <!-- Login -->
     <div *ngIf="!display">
       <ion-item>
         <ion-icon name="person-sharp"></ion-icon>
-        <ion-input class="ion-text-capitalize" type="text" placeholder="Username"></ion-input>
+        <ion-input class="ion-text-capitalize" type="text" placeholder="Username" [(ngModel)]="enterUName"></ion-input>
       </ion-item>
       <ion-item>
         <ion-icon name="chevron-forward-outline"></ion-icon>
-        <ion-input [(ngModel)]="pinNumber" type="number" style="-webkit-text-security:disc" placeholder="Enter PIN">
-        </ion-input>
+        <ion-input [type]="getType()" placeholder="Enter PIN" [(ngModel)]="enterPIN"
+          ></ion-input>
+        <ion-icon [name]="passwordToggle" item-right (click)="toggleTextPassword()"></ion-icon>
       </ion-item>
+      <div style=" margin-left: 15px;  margin-bottom: 10px;">
+        <ion-row>
+          <ion-checkbox></ion-checkbox>
+          <ion-label>
+            <p style="font-size: 14px; color: black; margin-left: 5px;">Remember Me</p>
+          </ion-label>
+        </ion-row>
+      </div>
       <ion-item>
-        <ion-button>Login</ion-button>
+        <ion-button (click)="login()">Login</ion-button>
       </ion-item>
     </div>
   </ion-card>
