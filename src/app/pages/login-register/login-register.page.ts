@@ -208,10 +208,9 @@ export class LoginRegisterPage implements OnInit {
     if(identifier == "login"){
       //console.log(e.currentTarget.checked)
       if(e.currentTarget.checked){
-        
-        localStorage.setItem('username', this.userNameLog);
-        localStorage.setItem('mobno', this.mobNoLog);
-        localStorage.setItem('extno', this.ext);
+        // localStorage.setItem('username', this.userNameLog);
+        // localStorage.setItem('mobno', this.mobNoLog);
+        // localStorage.setItem('extno', this.ext);
       }
       else{
         this.rememberChecked=false;
@@ -222,9 +221,9 @@ export class LoginRegisterPage implements OnInit {
       console.log(e.currentTarget.checked)
       if(e.currentTarget.checked){
         this.rememberChecked =true;
-              localStorage.setItem('username', this.signUpValidate.value.userName);
-              localStorage.setItem('mobno', this.signUpValidate.value.mobNo);
-              localStorage.setItem('extno',this.signUpValidate.value.code);
+              // localStorage.setItem('username', this.signUpValidate.value.userName);
+              // localStorage.setItem('mobno', this.signUpValidate.value.mobNo);
+              // localStorage.setItem('extno',this.signUpValidate.value.code);
       }
       else{
         this.rememberChecked=false;

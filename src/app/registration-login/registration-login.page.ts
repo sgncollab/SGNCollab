@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, MenuController } from '@ionic/angular';
 import { FirebaseDbService } from 'src/app/services/firebase-db.service';
-import {Md5} from 'ts-md5/dist/md5';
+import { Md5 } from 'ts-md5/dist/md5';
+import { AppComponent } from 'src/app/app.component';
+import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 
 @Component({
   selector: 'app-registration-login',
@@ -17,7 +19,7 @@ export class RegistrationLoginPage implements OnInit {
   showpass = false
   display = false;
   createPIN: number;
-  confirmPIN: number;
+  confirmPIN: any;
   username: any;
   srNo = 1;
   pinMatched = false;
@@ -31,9 +33,17 @@ export class RegistrationLoginPage implements OnInit {
   isActiveToggleTextPassword: Boolean = true;
   enterUName;
   enterPIN;
-  uvalid=false;
+  loginPin =false;
+  loginUname =false;
+  rememberChecked =false;
+  hideConfirmPin =true;
 
-  constructor(private dbService: FirebaseDbService, private navCtrl: NavController,) {
+  constructor(
+    private menu: MenuController,
+    private screenOrientation: ScreenOrientation,
+    private dbService: FirebaseDbService,
+    private appComponent: AppComponent,
+    private navCtrl: NavController,) {
   }
 
   ngOnInit() {
@@ -46,7 +56,7 @@ export class RegistrationLoginPage implements OnInit {
           sr_no: value.payload.doc.data()['sr_no']
         }
       });
-      console.log(this.regResult);
+
       if (this.regResult.length > 0 && this.regResult != undefined) {
         let oldSrNo = 1, newSrNo = 0;
         for (var i = 0; i < this.regResult.length; i++) {
@@ -61,7 +71,24 @@ export class RegistrationLoginPage implements OnInit {
         this.srNo = 1;
       }
     })
+    // getting remember me values if checked
+    this.enterUName = localStorage.getItem('username');
+    this.enterPIN   = localStorage.getItem('pin');
+    if(this.enterUName != "" && this.enterUName != undefined){
+      this.rememberChecked = true;
+    }
+    else{
+      this.rememberChecked =false;
+    }
+  }
 
+  ionViewWillEnter() {
+    this.menu.enable(false);
+    console.log(this.screenOrientation.type); // log the current orientation, example: 'landscape'
+    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);  // set to landscape
+  }
+  ionViewDidLeave() {
+    this.menu.enable(true);
   }
 
   uNameValidation(e) {
@@ -79,13 +106,8 @@ export class RegistrationLoginPage implements OnInit {
       this.length = true;
       //console.log("pl.check the length");
     }
-    // else if (e.detail.value.match("[a-zA-Z0-9]")) {
-
-    // }
     else {
       //console.log("Username is valid")
-      
-
       let flag = this.regResult.filter(value => {
         if (value.name == e.detail.value.toLowerCase()) {
           return true;
@@ -95,7 +117,6 @@ export class RegistrationLoginPage implements OnInit {
       //console.log(flag);
       if (flag.length == 0) {
         this.uNameExist = false;
-        this.uvalid=true;
         // console.log("register");
       }
       else {
@@ -109,6 +130,7 @@ export class RegistrationLoginPage implements OnInit {
     this.pin1 = false;
     this.pinLength = false;
     this.pinValid = false;
+    this.hideConfirmPin = true;
     //console.log(e.detail.value);
     if (e.detail.value == "" || e.detail.value == undefined) {
       this.pin1 = true;
@@ -120,13 +142,15 @@ export class RegistrationLoginPage implements OnInit {
     }
     else {
       //console.log("pin is valid");
-      this.pinValid = true;
+     this.pinValid = true;
+     this.hideConfirmPin = false;
     }
   }
   confirmPinInput(e) {
     this.pin2 = false;
     this.match = false;
     this.disabled = true;
+    
 
     if (e.detail.value == "" || e.detail.value == undefined) {
       this.pin2 = true;
@@ -134,7 +158,8 @@ export class RegistrationLoginPage implements OnInit {
     }
     else if (this.confirmPIN == this.createPIN) {
       this.pinMatched = true;
-      this.enableRegister();
+        this.enableRegister();
+      //this.disabled = false;
       //console.log("pin matched");
     }
     else {
@@ -144,18 +169,17 @@ export class RegistrationLoginPage implements OnInit {
     }
   }
   enableRegister() {
-    if (this.uvalid && this.pinValid  && this.pinMatched == true) {
-      this.disabled = false;
-    }
+      if (this.pinValid && this.pinMatched == true) {
+        this.disabled = false;
+      }
   }
   register() {
     this.regError = false;
-    //console.log(this.createPIN)
-    //console.log(this.confirmPIN);
-  
+    let pin = Md5.hashStr(this.confirmPIN);
     if (this.username != "" && this.createPIN != null && this.confirmPIN != null && this.username != undefined &&
       this.createPIN != undefined && this.confirmPIN != undefined && this.pinMatched == true) {
-      this.dbService.createUser(this.srNo, this.username.toLowerCase(), this.confirmPIN)
+      this.dbService.createUser(this.srNo, this.username.toLowerCase(), pin)
+      this.appComponent.viewMenu(this.username);
       this.navCtrl.navigateForward('aarti-list');
     }
     else {
@@ -164,34 +188,50 @@ export class RegistrationLoginPage implements OnInit {
     }
   }
 
-  login(){
-    console.log(this.enterUName,this.enterPIN);
-    let flag = this.regResult.filter(value =>{
-      if(this.enterUName.toLowerCase() == value.name){
-        console.log(value.name,value.sr_no,value.pin);
-        if(this.enterPIN == value.pin){
-          console.log("pin matched");
+  login() {
+    this.loginPin =false;
+    this.loginUname =false;
+    let flag = this.regResult.filter(value => {
+      if (this.enterUName.toLowerCase() == value.name) {
+        //console.log(value.name, value.sr_no, value.pin);
+        if (Md5.hashStr(this.enterPIN) == value.pin) {
+          //console.log("pin matched");
+          this.navCtrl.navigateForward('aarti-list');
+          this.appComponent.viewMenu(this.enterUName);
         }
-        else{
-          console.log("please check your PIN")
+        else {
+          this.loginPin = true;
+          //console.log("Please check your PIN")
         }
-        //console.log("username present");
         return true;
-        
       }
       return false;
     })
-    if(flag == false){
-      console.log("please check your username");
-    }
-    else if(flag == true){
-    this.enterPIN = Md5.hashStr(this.enterPIN);
-    console.log(this.enterPIN);
+    if (flag == false) {
+      this.loginUname = true;
+      //console.log("Please check your username");
     }
   }
-  
-
-
+  rememberMe(identifier,e){
+    if(identifier == "register"){
+      if(e.currentTarget.checked){
+        localStorage.setItem('username',this.username);
+        localStorage.setItem('pin',this.confirmPIN);
+      }
+      else {
+       localStorage.clear();
+      }
+    }
+    else if(identifier == "login"){
+      if(e.currentTarget.checked){
+        localStorage.setItem('username',this.enterUName);
+        localStorage.setItem('pin',this.enterPIN);
+      }
+      else{
+        localStorage.clear();
+      }
+    }
+  }
   checkView(identifier) {
     if (identifier == "loginView") {
       this.display = false;
@@ -212,6 +252,15 @@ export class RegistrationLoginPage implements OnInit {
 
   public getType() {
     return this.isActiveToggleTextPassword ? 'password' : 'number';
+  }
+
+  displayMenu(identifier) {
+    this.appComponent.viewMenu("guest");
+    if (identifier == "search") {
+      this.navCtrl.navigateRoot('search-playlist');
+    } else {
+      this.navCtrl.navigateRoot('aarti-list');
+    }
   }
 }
 

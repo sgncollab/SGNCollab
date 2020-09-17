@@ -77,7 +77,7 @@ export class AppComponent implements OnInit {
     
       {
         title: 'Register',
-        url: 'login-register',
+        url: 'registration-login',
         icon: 'enter'
       }
     ];
@@ -112,7 +112,7 @@ export class AppComponent implements OnInit {
      
       {
         title: 'Logout',
-        url: 'login-register',
+        url: 'registration-login',
         icon: 'exit'
       }
     ];
