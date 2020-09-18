@@ -6,6 +6,7 @@ import { NgOtpInputModule } from  'ng-otp-input';
 import { RegistrationLoginPageRoutingModule } from './registration-login-routing.module';
 import { RegistrationLoginPage } from './registration-login.page';
 import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
+import {ForgotPinPopoverComponent} from '../forgot-pin-popover/forgot-pin-popover.component'
 
 @NgModule({
   imports: [
@@ -14,9 +15,11 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
     IonicModule,
     ReactiveFormsModule,
     RegistrationLoginPageRoutingModule,
-    NgOtpInputModule
+    NgOtpInputModule,
+    
   ],
-  declarations: [RegistrationLoginPage],
+  entryComponents:[ForgotPinPopoverComponent],
+  declarations: [RegistrationLoginPage,ForgotPinPopoverComponent],
   providers:[ScreenOrientation]
 })
 export class RegistrationLoginPageModule {}

@@ -53,17 +53,8 @@ export class FeedbackPage implements OnInit {
       .then(  function (response) {
         console.log('SUCCESS!', response.status, response.text);
         alert("Email sent successfully!");
-        // const toast = await this.toastController.create({
-        //   message: 'SUCCESS!',
-        //   duration: 2000,
-        //   color: 'primary',
-        //   position: 'top',
-        //   cssClass:'cssAccept',
-        // });
-        // toast.present();
       },
        function (error) {
-        //console.log('FAILED...', error);
         alert("FAILED!"+error);
         
       });

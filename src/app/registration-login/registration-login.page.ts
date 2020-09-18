@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, MenuController } from '@ionic/angular';
+import { NavController, MenuController, PopoverController } from '@ionic/angular';
 import { FirebaseDbService } from 'src/app/services/firebase-db.service';
 import { Md5 } from 'ts-md5/dist/md5';
 import { AppComponent } from 'src/app/app.component';
 import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
+import {ForgotPinPopoverComponent} from '../forgot-pin-popover/forgot-pin-popover.component'
 
 @Component({
   selector: 'app-registration-login',
@@ -43,7 +44,17 @@ export class RegistrationLoginPage implements OnInit {
     private screenOrientation: ScreenOrientation,
     private dbService: FirebaseDbService,
     private appComponent: AppComponent,
-    private navCtrl: NavController,) {
+    private navCtrl: NavController,
+    private popovercntrl: PopoverController) {
+  }
+  async presentPopover(ev){
+    const popover = await this.popovercntrl.create({
+      component: ForgotPinPopoverComponent,
+      cssClass: 'my-custom-class',
+      event: ev,
+      translucent: true
+    });
+    return await popover.present();
   }
 
   ngOnInit() {
@@ -131,20 +142,21 @@ export class RegistrationLoginPage implements OnInit {
     this.pinLength = false;
     this.pinValid = false;
     this.hideConfirmPin = true;
-    //console.log(e.detail.value);
-    if (e.detail.value == "" || e.detail.value == undefined) {
-      this.pin1 = true;
-      //console.log("pin is required");
-    }
-    else if (e.detail.value.length != 4) {
-      this.pinLength = true;
-      //console.log("please enter 4 digit pin");
-    }
-    else {
-      //console.log("pin is valid");
-     this.pinValid = true;
-     this.hideConfirmPin = false;
-    }
+    
+      //console.log(e.detail.value);
+       if (e.detail.value == "" || e.detail.value == undefined) {
+        this.pin1 = true;
+        //console.log("pin is required");
+      }
+      else if (e.detail.value.length != 4) {
+        this.pinLength = true;
+        //console.log("please enter 4 digit pin");
+      }
+      else {
+        //console.log("pin is valid");
+       this.pinValid = true;
+       this.hideConfirmPin = false;
+      }
   }
   confirmPinInput(e) {
     this.pin2 = false;
@@ -169,23 +181,41 @@ export class RegistrationLoginPage implements OnInit {
     }
   }
   enableRegister() {
-      if (this.pinValid && this.pinMatched == true) {
+      if (this.pinValid && this.pinMatched == true ) {
         this.disabled = false;
       }
   }
   register() {
-    this.regError = false;
-    let pin = Md5.hashStr(this.confirmPIN);
-    if (this.username != "" && this.createPIN != null && this.confirmPIN != null && this.username != undefined &&
-      this.createPIN != undefined && this.confirmPIN != undefined && this.pinMatched == true) {
-      this.dbService.createUser(this.srNo, this.username.toLowerCase(), pin)
-      this.appComponent.viewMenu(this.username);
-      this.navCtrl.navigateForward('aarti-list');
+    if(this.confirmPIN == this.createPIN){
+      console.log(this.confirmPIN);
+      if(this.username == "" || this.username == undefined){
+        console.log("please enter usename");
+      }
+      else{
+        console.log("register")
+        let pin = Md5.hashStr(this.confirmPIN);
+        this.dbService.createUser(this.srNo, this.username.toLowerCase(), pin);
+        this.appComponent.viewMenu(this.username);
+        this.navCtrl.navigateForward('aarti-list');
+      }
+
     }
-    else {
-      this.regError = true;
-      //console.log("Please enter all the details")
+    else{
+      console.log("Check the pin ")
     }
+
+    // this.regError = false;
+    // let pin = Md5.hashStr(this.confirmPIN);
+    // if (this.username != "" && this.createPIN != null && this.confirmPIN != null && this.username != undefined &&
+    //   this.createPIN != undefined && this.confirmPIN != undefined && this.pinMatched == true) {
+    //   this.dbService.createUser(this.srNo, this.username.toLowerCase(), pin)
+    //   this.appComponent.viewMenu(this.username);
+    //   this.navCtrl.navigateForward('aarti-list');
+    // }
+    // else {
+    //   this.regError = true;
+    //   //console.log("Please enter all the details")
+    // }
   }
 
   login() {
@@ -263,6 +293,7 @@ export class RegistrationLoginPage implements OnInit {
     }
   }
 }
+
 
 // tcknOnInputChange(e){        
 //   // e.detail.keyup(function() {
