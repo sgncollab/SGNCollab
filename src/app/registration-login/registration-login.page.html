@@ -1,4 +1,4 @@
-<ion-content>
+<ion-content class="background">
   <div>
     <ion-row style="height: 70px;">
       <!-- <img src="(../../../assets/images/img.png"> -->
@@ -64,7 +64,7 @@
       
 
       <!-- Remember me -->
-      <div style=" margin-left: 15px;  margin-bottom: 10px;">
+      <div style=" margin-left: 15px; margin-top: 10px; margin-bottom: 10px;">
         <ion-row>
           <ion-checkbox (ionChange)="rememberMe('register',$event)"></ion-checkbox>
           <ion-label>
@@ -91,15 +91,16 @@
         <ion-icon [name]="passwordToggle" item-right (click)="toggleTextPassword()"></ion-icon>
       </ion-item>
       <span *ngIf="loginPin" class="errorMsg">Please check your PIN</span>
-      <div style=" margin-left: 15px;  margin-bottom: 10px;">
+      <div style=" margin-left: 15px; margin-top: 10px; margin-bottom: 10px;">
         <ion-row>
           <ion-checkbox [(ngModel)]="rememberChecked" (ionChange)="rememberMe('login',$event)"></ion-checkbox>
           <ion-label>
             <p style="font-size: 14px; color: black; margin-left: 5px;">Remember Me</p>
+            
           </ion-label>
-          
+         <ion-label style="margin-left: 17vh;"><p><a  (click)="presentPopover($event)">Forgot PIN</a></p></ion-label> 
         </ion-row>
-        <p><a float="right" (click)="presentPopover($event)">Forgot PIN</a></p>
+       
       </div>
       
         <ion-button expand="full" fill="solid" color="primary" (click)="login()"
