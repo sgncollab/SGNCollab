@@ -5,6 +5,7 @@ import { Md5 } from 'ts-md5/dist/md5';
 import { AppComponent } from 'src/app/app.component';
 import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 import {ForgotPinPopoverComponent} from '../forgot-pin-popover/forgot-pin-popover.component'
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-registration-login',
@@ -45,7 +46,8 @@ export class RegistrationLoginPage implements OnInit {
     private dbService: FirebaseDbService,
     private appComponent: AppComponent,
     private navCtrl: NavController,
-    private popovercntrl: PopoverController) {
+    private popovercntrl: PopoverController,
+    private dataService: DataService) {
   }
   async presentPopover(ev){
     const popover = await this.popovercntrl.create({
@@ -196,6 +198,8 @@ export class RegistrationLoginPage implements OnInit {
         let pin = Md5.hashStr(this.confirmPIN);
         this.dbService.createUser(this.srNo, this.username.toLowerCase(), pin);
         this.appComponent.viewMenu(this.username);
+        let serialNo = this.srNo;
+        this.dataService.setLoggedInUserData(serialNo);
         this.navCtrl.navigateForward('aarti-list');
       }
 
@@ -226,6 +230,8 @@ export class RegistrationLoginPage implements OnInit {
         //console.log(value.name, value.sr_no, value.pin);
         if (Md5.hashStr(this.enterPIN) == value.pin) {
           //console.log("pin matched");
+          this.dataService.setLoggedInUserData(value.sr_no);
+          this.dataService.setLoggedInUsername(value.name);
           this.navCtrl.navigateForward('aarti-list');
           this.appComponent.viewMenu(this.enterUName);
         }

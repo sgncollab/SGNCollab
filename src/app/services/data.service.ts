@@ -19,8 +19,16 @@ export class DataService {
   private lang:boolean;
   private username;
   private Rmno=0;
+   resetname:any;
 
   constructor() { }
+
+  setResetUname(resetname){
+   this.resetname = resetname;
+  }
+  getResetUname(){
+    return this.resetname;
+  }
 
   setLang(lang){
     this.lang = lang;
@@ -116,4 +124,5 @@ export class DataService {
   getRegisteredMobNo(){
     return this.Rmno
   }
+  
 }

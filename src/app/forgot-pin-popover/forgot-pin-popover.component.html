@@ -1,10 +1,13 @@
 <ion-content>
+  <ion-item lines="none">
+    <ion-input type="email" class="ion-text-capitalize" placeholder="Enter your Username" [(ngModel)]="to_name"></ion-input>
+  </ion-item>
   
   <ion-item lines="none">
-    <ion-input type="email" placeholder="Enter your email" [(ngModel)]="to_email"></ion-input>
+    <ion-input type="email" placeholder="Enter your Email" [(ngModel)]="to_email"></ion-input>
   </ion-item>
   <ion-item>
     <ion-button (click)="onSubmit()"(click)="resetEmail()">Submit</ion-button>
   </ion-item>
-  <a href="ionicapp://">Open my app</a>
+  <!-- <a href="ionicapp://">Open my app</a> -->
 </ion-content>
