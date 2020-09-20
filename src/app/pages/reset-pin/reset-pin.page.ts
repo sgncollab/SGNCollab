@@ -23,6 +23,9 @@ export class ResetPinPage implements OnInit {
   Uname;
   id;
   sr_no;
+  isActiveToggleTextPassword :Boolean = true;
+  showpass = false
+  passwordToggle ='eye';
 
   constructor(
     private navCtrl: NavController,
@@ -103,6 +106,19 @@ export class ResetPinPage implements OnInit {
     })
     this.dbService.updatePin(this.id,this.sr_no,this.Uname,Md5.hashStr(this.confirmPIN));
     this.navCtrl.navigateForward('registration-login');
+  }
+
+  public getType() {
+    return this.isActiveToggleTextPassword ? 'password' : 'number';
+  }
+  public toggleTextPassword(): void {
+    this.isActiveToggleTextPassword = (this.isActiveToggleTextPassword == true) ? false : true;
+    this.showpass = !this.showpass;
+    if (this.passwordToggle == 'eye') {
+      this.passwordToggle = 'eye-off';
+    } else {
+      this.passwordToggle = 'eye';
+    }
   }
 
 }

@@ -7,7 +7,8 @@
     <span *ngIf="otpLength">please enter 4 digit pin</span>
     <div [hidden]=match>
       <ion-item>
-        <ion-input placeholder="Reset PIN" (ionChange)="resetPin($event)" [(ngModel)]=resetPIN></ion-input>
+        <ion-input [type]="getType()" placeholder="Reset PIN" (ionChange)="resetPin($event)" [(ngModel)]=resetPIN></ion-input>
+        <ion-icon [name]="passwordToggle" item-right (click)="toggleTextPassword()"></ion-icon>
       </ion-item>
       <ion-item>
         <ion-input placeholder="confirm PIN" (ionChange)="confirmResetPin($event)" [(ngModel)]=confirmPIN></ion-input>

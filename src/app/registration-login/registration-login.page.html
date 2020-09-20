@@ -1,10 +1,6 @@
-<ion-content>
-  <div>
-    <ion-row style="height: 70px;">
-      <!-- <img src="(../../../assets/images/img.png"> -->
-    </ion-row>
-  </div>
-  <div style="margin-top: 10px;">
+<ion-content class="background">
+  
+  <div style="margin-top: 16vh;">
     <ion-row style="justify-content: center;">
       <ion-col size="1">
       </ion-col>
@@ -52,7 +48,7 @@
 
       <!-- Confirm PIN -->
       <div [hidden]="hideConfirmPin">
-        <ion-item >
+        <ion-item>
           <ion-icon name="chevron-forward-outline"></ion-icon>
           <ion-input [type]="getType()" placeholder="Confirm PIN" [(ngModel)]="confirmPIN"
             (ionChange)="confirmPinInput($event)"></ion-input>
@@ -61,10 +57,10 @@
         <span *ngIf="pin2" class="errorMsg">PIN is required</span>
         <span *ngIf="match" class="errorMsg">PIN does not match</span>
       </div>
-      
+
 
       <!-- Remember me -->
-      <div style=" margin-left: 15px;  margin-bottom: 10px;">
+      <div style="margin-left: 15px; margin-bottom: 10px;margin-top:1vh">
         <ion-row>
           <ion-checkbox (ionChange)="rememberMe('register',$event)"></ion-checkbox>
           <ion-label>
@@ -91,21 +87,18 @@
         <ion-icon [name]="passwordToggle" item-right (click)="toggleTextPassword()"></ion-icon>
       </ion-item>
       <span *ngIf="loginPin" class="errorMsg">Please check your PIN</span>
-      <div style=" margin-left: 15px;  margin-bottom: 10px;">
+      <div style=" margin-left: 15px;  margin-bottom: 10px; margin-top:1vh">
         <ion-row>
           <ion-checkbox [(ngModel)]="rememberChecked" (ionChange)="rememberMe('login',$event)"></ion-checkbox>
           <ion-label>
             <p style="font-size: 14px; color: black; margin-left: 5px;">Remember Me</p>
           </ion-label>
-          
+          <p float="right"><a (click)="presentPopover($event)">Forgot PIN</a></p>
         </ion-row>
-        <p><a float="right" (click)="presentPopover($event)">Forgot PIN</a></p>
       </div>
-      
-        <ion-button expand="full" fill="solid" color="primary" (click)="login()"
-          style="text-transform:none;font-size: 15px; margin: 10px;" shape="round">Login</ion-button>
-      
+
+      <ion-button expand="full" fill="solid" color="primary" (click)="login()"
+        style="text-transform:none;font-size: 15px; margin: 10px;" shape="round">Login</ion-button>
     </div>
   </ion-card>
 </ion-content>
-
