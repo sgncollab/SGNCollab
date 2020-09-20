@@ -1,0 +1,23 @@
+<ion-content>
+  
+  <ion-card style=margin-top:36vh;>
+    <ion-item>
+      <ion-input placeholder="Enter OTP"  (ionChange)="resetOtp($event)"></ion-input>
+    </ion-item>
+    <span *ngIf="otpLength">please enter 4 digit pin</span>
+    <div [hidden]=match>
+      <ion-item>
+        <ion-input placeholder="Reset PIN" (ionChange)="resetPin($event)" [(ngModel)]=resetPIN></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="confirm PIN" (ionChange)="confirmResetPin($event)" [(ngModel)]=confirmPIN></ion-input>
+      </ion-item>
+    
+    </div>
+    <ion-item>
+      <ion-button [disabled]="enableRegister"(click)="onSubmit()"> Submit</ion-button>
+    </ion-item>
+  </ion-card>
+    
+
+</ion-content>
