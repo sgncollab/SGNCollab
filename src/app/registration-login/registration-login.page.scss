@@ -1,6 +1,28 @@
-ion-content .background{
-    --background: url(../../assets/images/app-bg-light.png)0 0/100% 100% no-repeat ;
-}
+// ion-content.background{
+//     --background: url(../../assets/images/app-bg-light.png)0 0/100% 100% no-repeat ;
+// }
+
 .errorMsg{
     color:red;
 }
+ion-popover {
+    div.popover-content {
+         top: 50% !important;
+         left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+  }
+  }
+  .g{
+    color: #3b5998;
+    background-color: #3b5998;
+    border-radius: 3vh;
+    height: 95%;
+    width:95%;
+   }
+//    .content{
+//     position: fixed;
+//     margin-top: 40px;
+//     margin-left: 30px;
+//     margin-right: 30px;
+//     border-radius: 5px;
+// }

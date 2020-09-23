@@ -39,6 +39,9 @@ export class RegistrationLoginPage implements OnInit {
   loginUname =false;
   rememberChecked =false;
   hideConfirmPin =true;
+  pinone;
+  pintwo;
+  pinLen=false;
 
   constructor(
     private menu: MenuController,
@@ -144,8 +147,9 @@ export class RegistrationLoginPage implements OnInit {
     this.pinLength = false;
     this.pinValid = false;
     this.hideConfirmPin = true;
+    this.disabled = true;
     
-      //console.log(e.detail.value);
+
        if (e.detail.value == "" || e.detail.value == undefined) {
         this.pin1 = true;
         //console.log("pin is required");
@@ -158,35 +162,43 @@ export class RegistrationLoginPage implements OnInit {
         //console.log("pin is valid");
        this.pinValid = true;
        this.hideConfirmPin = false;
+       this.pinone = e.detail.value;
+       if(this.pinone == this.pintwo){
+        this.disabled = false;
+      }
+      
       }
   }
   confirmPinInput(e) {
     this.pin2 = false;
-    this.match = false;
     this.disabled = true;
+    this.pinLen = false;
+    this.match =false;
     
 
     if (e.detail.value == "" || e.detail.value == undefined) {
       this.pin2 = true;
       //console.log("pin is required");
     }
-    else if (this.confirmPIN == this.createPIN) {
-      this.pinMatched = true;
-        this.enableRegister();
-      //this.disabled = false;
-      //console.log("pin matched");
+    else if (e.detail.value.length != 4) {
+      this.pinLen =true;
+      //console.log("Please enter 4 digit pin")
     }
     else {
-      this.match = true;
-      this.pinMatched = false;
-      //console.log("pin does not match!")
-    }
-  }
-  enableRegister() {
-      if (this.pinValid && this.pinMatched == true ) {
+       this.match = false;
+      // this.pinMatched = false;
+      //pin valid
+      this.pintwo = e.detail.value;
+      if(this.pinone == this.pintwo){
         this.disabled = false;
       }
+      else{
+        this.match =true;
+      }
+      
+    }
   }
+  
   register() {
     if(this.confirmPIN == this.createPIN){
       console.log(this.confirmPIN);

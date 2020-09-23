@@ -1,13 +1,32 @@
 <ion-content>
+  <ion-text color="primary">
+    <h5 style="margin-top:2vh;margin-bottom:0vh;margin-left:4vw">Reset Your PIN</h5>
+  </ion-text>
+  <ion-label>
+    <p style="margin-left:4vw;margin-top:1vh;margin-bottom:0.5vh;">Submit your username and email address,we will send
+      you an OTP to reset your pin </p>
+  </ion-label>
+
   <ion-item lines="none">
-    <ion-input type="email" class="ion-text-capitalize" placeholder="Enter your Username" [(ngModel)]="to_name"></ion-input>
+    <ion-input type="text" class="ion-text-capitalize" placeholder="Username*"
+      (ionChange)="inputCheck($event,'username')" [(ngModel)]="to_name" required></ion-input>
   </ion-item>
+  <span *ngIf="emptyuname" class="errorMsg">Username is required</span>
+  <span *ngIf="uvalid"  class="errorMsg">Username is not valid</span>
+
+  <ion-item lines="none">
+    <ion-input type="email" placeholder="Email*" [(ngModel)]="to_email" (ionChange)="inputCheck($event,'email')"
+      pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})" required></ion-input>
+  </ion-item>
+  <span *ngIf="emptyemail"  class="errorMsg">Email is required</span>
+  <span *ngIf="emailvalid"  class="errorMsg">Please enter valid email</span>
+
+<ion-item>
+  <ion-button size="small" (click)="onSubmit()" (click)="resetEmail()"
+    style="margin-left:3vw; margin-bottom:2vh;margin-top:1.5vh;">Get OTP</ion-button>
+  <ion-button size="small" (click)="onClose()" color="danger"
+    style="margin-left: 29vw; margin-bottom:2vh;margin-top:1.5vh;">Cancel</ion-button>
+  <span *ngIf="emptysubmit" style="color: brown;">Please,enter the details!</span>
+</ion-item>
   
-  <ion-item lines="none">
-    <ion-input type="email" placeholder="Enter your Email" [(ngModel)]="to_email"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-button (click)="onSubmit()"(click)="resetEmail()">Submit</ion-button>
-  </ion-item>
-  <!-- <a href="ionicapp://">Open my app</a> -->
 </ion-content>

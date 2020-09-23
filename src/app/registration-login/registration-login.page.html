@@ -14,7 +14,7 @@
       </ion-col>
     </ion-row>
   </div>
-  <ion-card>
+  <ion-card class="content">
     <ion-segment mode="ios" value="Login">
       <ion-segment-button style="height:6vh;" value="Login" (click)="checkView('loginView')">
         <b>Login</b>
@@ -34,7 +34,7 @@
       </ion-item>
       <span *ngIf="uName" class="errorMsg">Username is required</span>
       <span *ngIf="length" class="errorMsg">Username should atlest contain 4 characters</span>
-      <span *ngIf="uNameExist" class="errorMsg">username already taken</span>
+      <span *ngIf="uNameExist" class="errorMsg">Username already taken</span>
 
       <!-- Create PIN -->
       <ion-item>
@@ -55,12 +55,13 @@
           <!-- <ion-icon [name]="passwordToggle" item-right (click)="toggleTextPassword()"></ion-icon> -->
         </ion-item>
         <span *ngIf="pin2" class="errorMsg">PIN is required</span>
+        <span *ngIf="pinLen" class="errorMsg">Please enter 4 digit PIN</span>
         <span *ngIf="match" class="errorMsg">PIN does not match</span>
       </div>
 
 
       <!-- Remember me -->
-      <div style="margin-left: 15px; margin-bottom: 10px;margin-top:1vh">
+      <div style=" margin-left: 15px; margin-top: 10px; margin-bottom: 10px;">
         <ion-row>
           <ion-checkbox (ionChange)="rememberMe('register',$event)"></ion-checkbox>
           <ion-label>
@@ -87,14 +88,15 @@
         <ion-icon [name]="passwordToggle" item-right (click)="toggleTextPassword()"></ion-icon>
       </ion-item>
       <span *ngIf="loginPin" class="errorMsg">Please check your PIN</span>
-      <div style=" margin-left: 15px;  margin-bottom: 10px; margin-top:1vh">
+      <div style=" margin-left: 15px; margin-top: 10px; margin-bottom: 10px;">
         <ion-row>
           <ion-checkbox [(ngModel)]="rememberChecked" (ionChange)="rememberMe('login',$event)"></ion-checkbox>
           <ion-label>
             <p style="font-size: 14px; color: black; margin-left: 5px;">Remember Me</p>
           </ion-label>
-          <p float="right"><a (click)="presentPopover($event)">Forgot PIN</a></p>
+         <ion-label style="margin-left: 17vh;"><p><a (click)="presentPopover($event)">Forgot PIN</a></p></ion-label> 
         </ion-row>
+       
       </div>
 
       <ion-button expand="full" fill="solid" color="primary" (click)="login()"

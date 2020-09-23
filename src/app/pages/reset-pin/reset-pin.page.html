@@ -1,24 +1,36 @@
 <ion-content>
-  
+  <!-- <div>
+    <ion-row>
+      <ion-col size="3"></ion-col>
+      <ion-col size="6"><img src="../../../assets/images/final.png"></ion-col>
+      <ion-col size="3"></ion-col>
+    </ion-row>
+  </div> -->
   <ion-card style=margin-top:36vh;>
     <ion-item>
-      <ion-input placeholder="Enter OTP"  (ionChange)="resetOtp($event)"></ion-input>
+      <ion-input placeholder="Enter OTP" (ionChange)="resetOtp($event)"></ion-input>
     </ion-item>
     <span *ngIf="otpLength">please enter 4 digit pin</span>
     <div [hidden]=match>
       <ion-item>
-        <ion-input [type]="getType()" placeholder="Reset PIN" (ionChange)="resetPin($event)" [(ngModel)]=resetPIN></ion-input>
+        <ion-input [type]="getType()" placeholder="Reset PIN" (ionChange)="resetPin($event,'reset')"
+          [(ngModel)]=resetPIN></ion-input>
         <ion-icon [name]="passwordToggle" item-right (click)="toggleTextPassword()"></ion-icon>
       </ion-item>
+      <span *ngIf="pinReq">PIN required</span>
+      <span *ngIf="pinLen">Please enter 4 digit pin</span>
       <ion-item>
-        <ion-input placeholder="confirm PIN" (ionChange)="confirmResetPin($event)" [(ngModel)]=confirmPIN></ion-input>
+        <ion-input [type]="getType()" placeholder="confirm PIN" (ionChange)="resetPin($event,'confirm')"
+          [(ngModel)]=confirmPIN></ion-input>
       </ion-item>
-    
+      <span *ngIf="pinreq">PIN required</span>
+      <span *ngIf="pinlen">Please enter 4 digit pin</span>
+
     </div>
     <ion-item>
-      <ion-button [disabled]="enableRegister"(click)="onSubmit()"> Submit</ion-button>
+      <ion-button [disabled]="enableRegister" (click)="onSubmit()">Submit</ion-button>
     </ion-item>
   </ion-card>
-    
+
 
 </ion-content>

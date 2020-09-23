@@ -3,6 +3,7 @@ import { NavController, MenuController, PopoverController } from '@ionic/angular
 import { FirebaseDbService } from 'src/app/services/firebase-db.service';
 import { DataService } from 'src/app/services/data.service';
 import { Md5 } from 'ts-md5/dist/md5';
+import { UpdateUserPlaylistPageRoutingModule } from '../update-user-playlist/update-user-playlist-routing.module';
 
 @Component({
   selector: 'app-reset-pin',
@@ -23,9 +24,15 @@ export class ResetPinPage implements OnInit {
   Uname;
   id;
   sr_no;
-  isActiveToggleTextPassword :Boolean = true;
+  isActiveToggleTextPassword: Boolean = true;
   showpass = false
-  passwordToggle ='eye';
+  passwordToggle = 'eye';
+  pinone = false;
+  pintwo = false;
+  pinReq = false;
+  pinLen = false;
+  pinreq = false;
+  pinlen = false;
 
   constructor(
     private navCtrl: NavController,
@@ -47,6 +54,7 @@ export class ResetPinPage implements OnInit {
   }
   resetOtp(e) {
     this.otpLength = false;
+    this.enableRegister = true;
     //console.log(e.detail.value);
     if (e.detail.value == "" || e.detail.value == undefined) {
       console.log("enter otp");
@@ -60,52 +68,75 @@ export class ResetPinPage implements OnInit {
       if (e.detail.value == localStorage.getItem('resetPin')) {
         this.match = false;
         console.log("Matched");
+
       }
       else {
-
         console.log("Please check OTP");
       }
     }
   }
-  resetPin(e) {
-    this.pin1 = false;
-    if (e.detail.value == "" || e.detail.value == undefined) {
-      this.pin1 = true
+  resetPin(e, identifier) {
+    this.enableRegister = true;
+    this.pinReq = false;
+    this.pinLen = false;
+    this.pinreq = false;
+    this.pinlen = false;
+
+    if (identifier == 'reset') {
+      if (e.detail.value == "" || e.detail.value == undefined) {
+        this.pinReq = true;
+        //console.log("pin required")
+      }
+      else if (e.detail.value.length != 4) {
+        this.pinLen = true;
+        //console.log("pin should be 4 digit only")
+      }
+      else {
+        //console.log("pin is valid")
+        this.pinone = e.detail.value
+        if (this.pinone == this.pintwo) {
+          this.enableRegister = false;
+        }
+      }
     }
-    else if (e.detail.value.length != 4) {
-      this.pinLength = true;
+    else if (identifier == 'confirm') {
+      if (e.detail.value == "" || e.detail.value == undefined) {
+        this.pinreq = true;
+        //console.log("pin req.")
+      }
+      else if (e.detail.value.length != 4) {
+        this.pinlen = true;
+        //console.log("pin should be 4 digit only")
+      }
+      else {
+        //console.log("pin is valid")
+        this.pintwo = e.detail.value
+        if (this.pinone == this.pintwo) {
+          this.enableRegister = false;
+        }
+      }
+    }
+  }
+  
+  onSubmit() {
+    console.log(this.pinone, this.confirmPIN)
+    if (this.pinone == this.confirmPIN) {
+      this.Uname = this.dataService.getResetUname();
+      this.regResult.filter(value => {
+        if (this.Uname == value.name) {
+          console.log(value.name)
+          this.id = value.id;
+          this.sr_no = value.sr_no;
+        }
+      })
+      this.dbService.updatePin(this.id, this.sr_no, this.Uname, Md5.hashStr(this.confirmPIN));
+      this.navCtrl.navigateForward('registration-login');
     }
     else {
-      //pin valid
-    }
-
-  }
-  confirmResetPin(e) {
-    console.log(this.resetPIN, this.confirmPIN)
-    this.enableRegister = true;
-    this.pin2 = false;
-    if (e.detail.value == "" || e.detail.value == undefined) {
-      this.pin2 = true
-    }
-    else if (this.resetPIN == this.confirmPIN) {
-      this.enableRegister = false;
+      console.log("check PIN")
     }
 
 
-  }
-  onSubmit() {
-    //update pin in database and navigate to login page
-    this.Uname = this.dataService.getResetUname();
-    this.regResult.filter(value => {
-      if (this.Uname == value.name) {
-        console.log(value.name)
-        this.id = value.id;
-        this.sr_no = value.sr_no;
-        
-      }
-    })
-    this.dbService.updatePin(this.id,this.sr_no,this.Uname,Md5.hashStr(this.confirmPIN));
-    this.navCtrl.navigateForward('registration-login');
   }
 
   public getType() {
