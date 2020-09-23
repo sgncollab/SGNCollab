@@ -16,7 +16,7 @@ export class AartiDetailsPage implements OnInit {
   lang = false;
   language = "";
   private aartiDetail: any;
-  smallFont = "2vh";
+  smallFont = "2.5vh";
   fontSize: number = 2;
   upperLimit = false;
   lowerLimit = false;
@@ -28,7 +28,7 @@ export class AartiDetailsPage implements OnInit {
   ) { }
 
   ionViewDidLeave() {
-    this.smallFont = "2vh";
+    this.smallFont = "2.5vh";
   }
 
   ngOnInit() {

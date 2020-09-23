@@ -33,6 +33,7 @@ export class ResetPinPage implements OnInit {
   pinLen = false;
   pinreq = false;
   pinlen = false;
+  otpCheck = false;
 
   constructor(
     private navCtrl: NavController,
@@ -55,6 +56,7 @@ export class ResetPinPage implements OnInit {
   resetOtp(e) {
     this.otpLength = false;
     this.enableRegister = true;
+    this.otpCheck =false;
     //console.log(e.detail.value);
     if (e.detail.value == "" || e.detail.value == undefined) {
       console.log("enter otp");
@@ -71,6 +73,7 @@ export class ResetPinPage implements OnInit {
 
       }
       else {
+        this.otpCheck =true;
         console.log("Please check OTP");
       }
     }

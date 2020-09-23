@@ -42,6 +42,9 @@ export class RegistrationLoginPage implements OnInit {
   pinone;
   pintwo;
   pinLen=false;
+  create= false;
+  confirm = false;
+  pinnotmatch =false;
 
   constructor(
     private menu: MenuController,
@@ -88,9 +91,9 @@ export class RegistrationLoginPage implements OnInit {
       }
     })
     // getting remember me values if checked
-    this.enterUName = localStorage.getItem('username');
-    this.enterPIN   = localStorage.getItem('pin');
-    if(this.enterUName != "" && this.enterUName != undefined){
+    console.log(this.enterUName = localStorage.getItem('username'));
+    console.log(this.enterPIN   = localStorage.getItem('pin'));
+    if(this.enterUName != null && this.enterUName != undefined){
       this.rememberChecked = true;
     }
     else{
@@ -100,8 +103,9 @@ export class RegistrationLoginPage implements OnInit {
 
   ionViewWillEnter() {
     this.menu.enable(false);
-    console.log(this.screenOrientation.type); // log the current orientation, example: 'landscape'
+    //console.log(this.screenOrientation.type); // log the current orientation, example: 'landscape'
     this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);  // set to landscape
+    
   }
   ionViewDidLeave() {
     this.menu.enable(true);
@@ -112,6 +116,7 @@ export class RegistrationLoginPage implements OnInit {
     this.length = false;
     this.uNameExist = false;
     this.pinValid = false;
+    this.disabled = true;
 
     //console.log(e.detail.value)
     if (e.detail.value == "" || e.detail.value == undefined) {
@@ -133,6 +138,10 @@ export class RegistrationLoginPage implements OnInit {
       //console.log(flag);
       if (flag.length == 0) {
         this.uNameExist = false;
+        this.registerEnable();
+        // if(this.pinone == this.pintwo == undefined && this.pinone == this.pintwo ){
+        //   this.disabled = false;
+        // }
         // console.log("register");
       }
       else {
@@ -146,8 +155,10 @@ export class RegistrationLoginPage implements OnInit {
     this.pin1 = false;
     this.pinLength = false;
     this.pinValid = false;
-    this.hideConfirmPin = true;
+    this.hideConfirmPin=true;
     this.disabled = true;
+    this.create = false;
+    this.pinnotmatch = false;
     
 
        if (e.detail.value == "" || e.detail.value == undefined) {
@@ -164,8 +175,18 @@ export class RegistrationLoginPage implements OnInit {
        this.hideConfirmPin = false;
        this.pinone = e.detail.value;
        if(this.pinone == this.pintwo){
-        this.disabled = false;
+         this.create =true;
+         this.confirm = true;
+         this.registerEnable();
+       // this.disabled = false;
       }
+      else{
+        if(this.pintwo != undefined){
+          this.pinnotmatch= true;
+        }
+        
+      }
+      
       
       }
   }
@@ -174,6 +195,8 @@ export class RegistrationLoginPage implements OnInit {
     this.disabled = true;
     this.pinLen = false;
     this.match =false;
+    this.confirm = false;
+    this.pinnotmatch =false;
     
 
     if (e.detail.value == "" || e.detail.value == undefined) {
@@ -190,47 +213,57 @@ export class RegistrationLoginPage implements OnInit {
       //pin valid
       this.pintwo = e.detail.value;
       if(this.pinone == this.pintwo){
-        this.disabled = false;
+        this.confirm = true;
+        this.create =true;
+        this.registerEnable();
+        //this.disabled = false;
       }
       else{
-        this.match =true;
+        
+          this.pinnotmatch= true;
+        
+        
       }
       
     }
   }
+
+  registerEnable(){
+    if(this.uNameExist == false && this.create == true && this.confirm == true){
+      this.disabled = false;
+    }
+  }
+  
   
   register() {
-    if(this.confirmPIN == this.createPIN){
-      console.log(this.confirmPIN);
-      if(this.username == "" || this.username == undefined){
-        console.log("please enter usename");
-      }
-      else{
-        console.log("register")
+    console.log("register")
         let pin = Md5.hashStr(this.confirmPIN);
         this.dbService.createUser(this.srNo, this.username.toLowerCase(), pin);
         this.appComponent.viewMenu(this.username);
         let serialNo = this.srNo;
         this.dataService.setLoggedInUserData(serialNo);
+        this.dataService.setLoggedInUsername(this.username);
         this.navCtrl.navigateForward('aarti-list');
-      }
 
-    }
-    else{
-      console.log("Check the pin ")
-    }
+    // if(this.confirmPIN == this.createPIN){
+    //   console.log(this.confirmPIN);
+    //   if(this.username == "" || this.username == undefined){
+    //     console.log("please enter usename");
+    //   }
+      
+    //   else{
+    //     console.log("register")
+    //     let pin = Md5.hashStr(this.confirmPIN);
+    //     this.dbService.createUser(this.srNo, this.username.toLowerCase(), pin);
+    //     this.appComponent.viewMenu(this.username);
+    //     let serialNo = this.srNo;
+    //     this.dataService.setLoggedInUserData(serialNo);
+    //     this.navCtrl.navigateForward('aarti-list');
+    //   }
 
-    // this.regError = false;
-    // let pin = Md5.hashStr(this.confirmPIN);
-    // if (this.username != "" && this.createPIN != null && this.confirmPIN != null && this.username != undefined &&
-    //   this.createPIN != undefined && this.confirmPIN != undefined && this.pinMatched == true) {
-    //   this.dbService.createUser(this.srNo, this.username.toLowerCase(), pin)
-    //   this.appComponent.viewMenu(this.username);
-    //   this.navCtrl.navigateForward('aarti-list');
     // }
-    // else {
-    //   this.regError = true;
-    //   //console.log("Please enter all the details")
+    // else{
+    //   console.log("Check the pin ")
     // }
   }
 
@@ -267,6 +300,7 @@ export class RegistrationLoginPage implements OnInit {
         localStorage.setItem('pin',this.confirmPIN);
       }
       else {
+        this.rememberChecked = false;
        localStorage.clear();
       }
     }
@@ -276,6 +310,7 @@ export class RegistrationLoginPage implements OnInit {
         localStorage.setItem('pin',this.enterPIN);
       }
       else{
+        this.rememberChecked =false;
         localStorage.clear();
       }
     }
@@ -313,8 +348,4 @@ export class RegistrationLoginPage implements OnInit {
 }
 
 
-// tcknOnInputChange(e){        
-//   // e.detail.keyup(function() {
-//   //    e.detail.value(this.value.match(/[0-9]*/));
-//   // });
-// }
+

@@ -18,6 +18,8 @@ export class AppComponent implements OnInit {
   userPlaylist: any = [];
   dataPage = "";
   currentPage = "app-component"
+  // enterUName
+  // enterPIN
 
 
   constructor(
@@ -49,7 +51,8 @@ export class AppComponent implements OnInit {
         }
       });
     });
-    
+    // console.log(this.enterUName = localStorage.getItem('username'));
+    // console.log(this.enterPIN   = localStorage.getItem('pin'));
     
     
   }
