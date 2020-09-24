@@ -27,13 +27,16 @@ export class ResetPinPage implements OnInit {
   isActiveToggleTextPassword: Boolean = true;
   showpass = false
   passwordToggle = 'eye';
-  pinone = false;
-  pintwo = false;
+  pinone;
+  pintwo;
   pinReq = false;
   pinLen = false;
   pinreq = false;
   pinlen = false;
   otpCheck = false;
+  otpnull = false;
+  inputOTP;
+  pinnotmatch = false;
 
   constructor(
     private navCtrl: NavController,
@@ -53,29 +56,42 @@ export class ResetPinPage implements OnInit {
       });
     })
   }
-  resetOtp(e) {
-    this.otpLength = false;
-    this.enableRegister = true;
-    this.otpCheck =false;
-    //console.log(e.detail.value);
-    if (e.detail.value == "" || e.detail.value == undefined) {
-      console.log("enter otp");
-    }
-    else if (e.detail.value.length != 4) {
-      this.otpLength = true;
-      //console.log("please enter 4 digit pin");
+  // resetOtp(e) {
+  //   this.otpLength = false;
+  //   this.enableRegister = true;
+  //   this.otpCheck =false;
+  //   this.match = true;
+  //   this.otpnull = false;
+  //   //console.log(e.detail.value);
+  //   if (e.detail.value == "" || e.detail.value == undefined) {
+  //     this.otpnull = true;
+  //     //console.log("enter otp");
+  //   }
+  //   // else if (e.detail.value.length > 4) {
+
+  //   //   //this.otpLength = true;
+  //   //   //console.log("please enter 4 digit pin");
+  //   // }
+  //   else {
+  //     if (e.detail.value == localStorage.getItem('resetPin')) {
+  //       this.match = false;
+  //       console.log("Matched");
+  //     }
+  //     else {
+  //       // this.otpCheck =true;
+  //       // console.log("Please check OTP");
+  //     }
+  //   }
+  // }
+  verifyOTP() {
+    this.match = true;
+    this.otpCheck = false;
+    console.log("verified");
+    if (this.inputOTP == localStorage.getItem('resetPin')) {
+      this.match = false;
     }
     else {
-      this.match = true;
-      if (e.detail.value == localStorage.getItem('resetPin')) {
-        this.match = false;
-        console.log("Matched");
-
-      }
-      else {
-        this.otpCheck =true;
-        console.log("Please check OTP");
-      }
+      this.otpCheck = true;
     }
   }
   resetPin(e, identifier) {
@@ -84,6 +100,7 @@ export class ResetPinPage implements OnInit {
     this.pinLen = false;
     this.pinreq = false;
     this.pinlen = false;
+    this.pinnotmatch = false;
 
     if (identifier == 'reset') {
       if (e.detail.value == "" || e.detail.value == undefined) {
@@ -99,6 +116,11 @@ export class ResetPinPage implements OnInit {
         this.pinone = e.detail.value
         if (this.pinone == this.pintwo) {
           this.enableRegister = false;
+        }
+        else {
+          if (this.pintwo != undefined) {
+            this.pinnotmatch = true;
+          }
         }
       }
     }
@@ -117,10 +139,13 @@ export class ResetPinPage implements OnInit {
         if (this.pinone == this.pintwo) {
           this.enableRegister = false;
         }
+        else {
+          this.pinnotmatch = true;
+        }
       }
     }
   }
-  
+
   onSubmit() {
     console.log(this.pinone, this.confirmPIN)
     if (this.pinone == this.confirmPIN) {

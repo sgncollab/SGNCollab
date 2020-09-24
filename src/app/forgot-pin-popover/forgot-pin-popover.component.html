@@ -19,7 +19,7 @@
       pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})" required></ion-input>
   </ion-item>
   <span *ngIf="emptyemail"  class="errorMsg">Email is required</span>
-  <span *ngIf="emailvalid"  class="errorMsg">Please enter valid email</span>
+  <span *ngIf="emailvalid"  class="errorMsg">Please enter valid email address</span>
 
 <ion-item>
   <ion-button size="small" (click)="onSubmit()" (click)="resetEmail()"

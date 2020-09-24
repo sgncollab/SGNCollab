@@ -159,7 +159,6 @@ export class RegistrationLoginPage implements OnInit {
     this.disabled = true;
     this.create = false;
     this.pinnotmatch = false;
-    
 
        if (e.detail.value == "" || e.detail.value == undefined) {
         this.pin1 = true;
@@ -184,10 +183,7 @@ export class RegistrationLoginPage implements OnInit {
         if(this.pintwo != undefined){
           this.pinnotmatch= true;
         }
-        
       }
-      
-      
       }
   }
   confirmPinInput(e) {
@@ -219,10 +215,7 @@ export class RegistrationLoginPage implements OnInit {
         //this.disabled = false;
       }
       else{
-        
           this.pinnotmatch= true;
-        
-        
       }
       
     }
@@ -301,7 +294,7 @@ export class RegistrationLoginPage implements OnInit {
       }
       else {
         this.rememberChecked = false;
-       localStorage.clear();
+        localStorage.clear();
       }
     }
     else if(identifier == "login"){

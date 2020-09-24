@@ -6,32 +6,44 @@
       <ion-col size="3"></ion-col>
     </ion-row>
   </div> -->
-  <ion-card style=margin-top:36vh;>
+  <ion-card style= "margin-top:36vh;">
     <ion-item>
-      <ion-input placeholder="Enter OTP" (ionChange)="resetOtp($event)"></ion-input>
+      <ion-input placeholder="Enter OTP"  [(ngModel)]="inputOTP"></ion-input>
+      <ion-button  fill="clear" (click)="verifyOTP()" color="success">Click To Verify</ion-button>
+      <!-- <ion-label><p><a (onClick)="verifyOTP()" color="green">Verify</a></p></ion-label> -->
     </ion-item>
-    <span *ngIf="otpLength" class="errorMsg">please enter 4 digit pin</span>
-    <span *ngIf="otpCheck" class="errorMsg">Please Check OTP</span>
-    <div [hidden]=match>
-      <ion-item>
-        <ion-input [type]="getType()" placeholder="Reset PIN" (ionChange)="resetPin($event,'reset')"
-          [(ngModel)]=resetPIN></ion-input>
-        <ion-icon [name]="passwordToggle" item-right (click)="toggleTextPassword()"></ion-icon>
-      </ion-item>
-      <span *ngIf="pinReq" class="errorMsg">PIN required</span>
-      <span *ngIf="pinLen" class="errorMsg">Please enter 4 digit pin</span>
-      <ion-item>
-        <ion-input [type]="getType()" placeholder="confirm PIN" (ionChange)="resetPin($event,'confirm')"
-          [(ngModel)]=confirmPIN></ion-input>
-      </ion-item>
-      <span *ngIf="pinreq" class="errorMsg">PIN required</span>
-      <span *ngIf="pinlen" class="errorMsg">Please enter 4 digit pin</span>
+    <!-- <span *ngIf="otpnull" class="errorMsg">Enter OTP code</span>
+    <span *ngIf="otpLength" class="errorMsg">please enter 4 digit pin</span> -->
+    <span *ngIf="otpCheck" class="errorMsg">OTP Invalid! Please Check OTP</span>
+    </ion-card>
+    <ion-card [hidden]=match style="margin-top: 4vh;">
+      <div >
+        <ion-item>
+          <ion-icon name="key"></ion-icon>
+          <ion-input [type]="getType()" placeholder="Reset PIN" (ionChange)="resetPin($event,'reset')"
+            [(ngModel)]=resetPIN></ion-input>
+          <ion-icon [name]="passwordToggle" item-right (click)="toggleTextPassword()"></ion-icon>
+        </ion-item>
+        <span *ngIf="pinReq" class="errorMsg">PIN required</span>
+        <span *ngIf="pinLen" class="errorMsg">Please enter 4 digit pin</span>
 
-    </div>
-    <ion-item>
-      <ion-button [disabled]="enableRegister" (click)="onSubmit()">Submit</ion-button>
-    </ion-item>
-  </ion-card>
+        <ion-item>
+          <ion-icon name="key"></ion-icon>
+          <ion-input [type]="getType()" placeholder="Confirm PIN" (ionChange)="resetPin($event,'confirm')"
+            [(ngModel)]=confirmPIN></ion-input>
+        </ion-item>
+        <span *ngIf="pinreq" class="errorMsg">PIN required</span>
+        <span *ngIf="pinlen" class="errorMsg">Please enter 4 digit pin</span>
+        <span *ngIf="pinnotmatch" class="errorMsg">PIN does not match</span>
+        <ion-item>
+          <ion-button [disabled]="enableRegister" (click)="onSubmit()">Submit</ion-button>
+        </ion-item>
+  
+      </div>
+    </ion-card>
+    
+    
+ 
 
 
 </ion-content>
