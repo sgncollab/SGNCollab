@@ -48,8 +48,8 @@
       <!-- <span *ngIf="pinnotmatch">PIN does not match</span> -->
 
       <!-- Confirm PIN -->
-      <div [hidden]="hideConfirmPin">
-        <ion-item>
+      <div>
+        <ion-item [hidden]="hideConfirmPin">
           <ion-icon name="key"></ion-icon>
           <ion-input [type]="getType()" placeholder="Confirm PIN" [(ngModel)]="confirmPIN"
             (ionChange)="confirmPinInput($event)"></ion-input>

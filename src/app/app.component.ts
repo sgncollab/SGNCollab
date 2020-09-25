@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
   userPlaylist: any = [];
   dataPage = "";
   currentPage = "app-component"
+  public onlineOffline: boolean = navigator.onLine;
   // enterUName
   // enterPIN
 
@@ -53,12 +54,11 @@ export class AppComponent implements OnInit {
     });
     // console.log(this.enterUName = localStorage.getItem('username'));
     // console.log(this.enterPIN   = localStorage.getItem('pin'));
-    
-    
   }
   
+ 
  viewMenu(name){
-   if(name.toLowerCase() == "guest"){
+  if(name.toLowerCase() == "guest"){
     this.username = "Guest";
     this.appPages = [
       {
@@ -122,6 +122,15 @@ export class AppComponent implements OnInit {
    
   
    }
+  //  window.addEventListener('offline', () => {
+  //   //Do task when no internet connection
+  //   this.dbService.showToast("Kindly check your internet Connection!");
+  //   });
+  //   window.addEventListener('online', () => {
+  //     //Do task when internet connection returns
+     
+  //     });
+   
   }
  
   sideMenuClick(index) {
