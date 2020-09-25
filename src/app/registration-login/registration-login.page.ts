@@ -46,6 +46,8 @@ export class RegistrationLoginPage implements OnInit {
   confirm = false;
   pinnotmatch =false;
   public onlineOffline: boolean = navigator.onLine;
+  pattern= /^[a-zA-Z]/
+
 
   constructor(
     private menu: MenuController,
@@ -136,6 +138,9 @@ export class RegistrationLoginPage implements OnInit {
     else if (e.detail.value.length < 4 || e.detail.value.length > 30) {
       this.length = true;
       //console.log("pl.check the length");
+    }
+    else if(!this.pattern.test(String(e.detail.value))){
+      console.log("please input valid username")
     }
     else {
       //console.log("Username is valid")
@@ -314,8 +319,10 @@ export class RegistrationLoginPage implements OnInit {
   rememberMe(identifier,e){
     if(identifier == "register"){
       if(e.currentTarget.checked){
-        localStorage.setItem('username',this.username);
-        localStorage.setItem('pin',this.confirmPIN);
+        //let username = Md5.hashStr(this.username)
+        localStorage.setItem('username', this.username);
+        localStorage.setItem('pin',this.confirmPIN)
+        //localStorage.setItem('pin', Md5.hashStr(this.confirmPIN));
       }
       else {
         this.rememberChecked = false;

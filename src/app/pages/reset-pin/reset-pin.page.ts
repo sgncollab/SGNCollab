@@ -3,6 +3,7 @@ import { NavController, MenuController, PopoverController } from '@ionic/angular
 import { FirebaseDbService } from 'src/app/services/firebase-db.service';
 import { DataService } from 'src/app/services/data.service';
 import { Md5 } from 'ts-md5/dist/md5';
+import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 import { UpdateUserPlaylistPageRoutingModule } from '../update-user-playlist/update-user-playlist-routing.module';
 
 @Component({
@@ -37,10 +38,14 @@ export class ResetPinPage implements OnInit {
   otpnull = false;
   inputOTP;
   pinnotmatch = false;
+  otp;
+  
 
   constructor(
+    private menu: MenuController,
     private navCtrl: NavController,
     private dbService: FirebaseDbService,
+    private screenOrientation: ScreenOrientation,
     private dataService: DataService
   ) { }
 
@@ -55,6 +60,15 @@ export class ResetPinPage implements OnInit {
         }
       });
     })
+  }
+  ionViewWillEnter() {
+    this.menu.enable(false);
+    //console.log(this.screenOrientation.type); // log the current orientation, example: 'landscape'
+    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);  // set to landscape
+    
+  }
+  ionViewDidLeave() {
+    this.menu.enable(true);
   }
   // resetOtp(e) {
   //   this.otpLength = false;
@@ -83,11 +97,17 @@ export class ResetPinPage implements OnInit {
   //     }
   //   }
   // }
+  // onOtpChange(event){
+  //   console.log(event.detail.value);
+  // }
+  onOtpChange(event){
+    this.otp =event
+  }
   verifyOTP() {
     this.match = true;
     this.otpCheck = false;
     console.log("verified");
-    if (this.inputOTP == localStorage.getItem('resetPin')) {
+    if (this.otp == localStorage.getItem('resetPin')) {
       this.match = false;
     }
     else {

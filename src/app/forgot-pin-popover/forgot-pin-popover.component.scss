@@ -17,3 +17,10 @@ ion-item{
     color:red;
     padding-left:3vh;
 }
+
+ion-popover {
+    div.popover-content {
+         top: 40% !important;
+         width: 90vw !important;
+  }
+  }

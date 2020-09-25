@@ -21,7 +21,7 @@ export class CreatePlaylistPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log("create playlist");
+    //console.log("create playlist");
       fetch('./assets/data/aarti-data.json').then(res => res.json())
         .then(json => {
           this.data = json;
