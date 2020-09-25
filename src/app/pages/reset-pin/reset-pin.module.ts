@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { NgOtpInputModule } from  'ng-otp-input';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -13,7 +14,8 @@ import { ResetPinPage } from './reset-pin.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    ResetPinPageRoutingModule
+    ResetPinPageRoutingModule,
+    NgOtpInputModule
   ],
   declarations: [ResetPinPage]
 })

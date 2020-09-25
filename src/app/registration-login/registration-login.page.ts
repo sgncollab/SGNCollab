@@ -45,6 +45,8 @@ export class RegistrationLoginPage implements OnInit {
   create= false;
   confirm = false;
   pinnotmatch =false;
+  pattern= /^[a-zA-Z]/
+
 
   constructor(
     private menu: MenuController,
@@ -91,8 +93,8 @@ export class RegistrationLoginPage implements OnInit {
       }
     })
     // getting remember me values if checked
-    console.log(this.enterUName = localStorage.getItem('username'));
-    console.log(this.enterPIN   = localStorage.getItem('pin'));
+    this.enterUName = localStorage.getItem('username');
+    this.enterPIN   = localStorage.getItem('pin');
     if(this.enterUName != null && this.enterUName != undefined){
       this.rememberChecked = true;
     }
@@ -126,6 +128,9 @@ export class RegistrationLoginPage implements OnInit {
     else if (e.detail.value.length < 4 || e.detail.value.length > 30) {
       this.length = true;
       //console.log("pl.check the length");
+    }
+    else if(!this.pattern.test(String(e.detail.value))){
+      console.log("please input valid username")
     }
     else {
       //console.log("Username is valid")
@@ -263,6 +268,7 @@ export class RegistrationLoginPage implements OnInit {
   login() {
     this.loginPin =false;
     this.loginUname =false;
+    
     let flag = this.regResult.filter(value => {
       if (this.enterUName.toLowerCase() == value.name) {
         //console.log(value.name, value.sr_no, value.pin);
@@ -270,8 +276,12 @@ export class RegistrationLoginPage implements OnInit {
           //console.log("pin matched");
           this.dataService.setLoggedInUserData(value.sr_no);
           this.dataService.setLoggedInUsername(value.name);
-          this.navCtrl.navigateForward('aarti-list');
           this.appComponent.viewMenu(this.enterUName);
+          this.enterUName = "" ;
+          this.enterPIN = "";
+          this.rememberChecked = false;
+          this.navCtrl.navigateForward('aarti-list');
+          
         }
         else {
           this.loginPin = true;
@@ -289,8 +299,10 @@ export class RegistrationLoginPage implements OnInit {
   rememberMe(identifier,e){
     if(identifier == "register"){
       if(e.currentTarget.checked){
-        localStorage.setItem('username',this.username);
-        localStorage.setItem('pin',this.confirmPIN);
+        //let username = Md5.hashStr(this.username)
+        localStorage.setItem('username', this.username);
+        localStorage.setItem('pin',this.confirmPIN)
+        //localStorage.setItem('pin', Md5.hashStr(this.confirmPIN));
       }
       else {
         this.rememberChecked = false;

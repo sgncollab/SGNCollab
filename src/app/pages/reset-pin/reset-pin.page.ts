@@ -37,6 +37,8 @@ export class ResetPinPage implements OnInit {
   otpnull = false;
   inputOTP;
   pinnotmatch = false;
+  otp;
+  
 
   constructor(
     private navCtrl: NavController,
@@ -83,11 +85,17 @@ export class ResetPinPage implements OnInit {
   //     }
   //   }
   // }
+  // onOtpChange(event){
+  //   console.log(event.detail.value);
+  // }
+  onOtpChange(event){
+    this.otp =event
+  }
   verifyOTP() {
     this.match = true;
     this.otpCheck = false;
     console.log("verified");
-    if (this.inputOTP == localStorage.getItem('resetPin')) {
+    if (this.otp == localStorage.getItem('resetPin')) {
       this.match = false;
     }
     else {

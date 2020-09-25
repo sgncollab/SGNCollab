@@ -102,14 +102,11 @@ export class ForgotPinPopoverComponent implements OnInit {
     // }
     
   }
-  
- 
 
   onSubmit() {
     this.emptyuname= false;
     this.uvalid =false;
     this.emailvalid = false;
-
 
     if(this.to_name == null || this.to_name == undefined ){
       this.emptyuname=true;
