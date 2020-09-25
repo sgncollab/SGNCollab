@@ -27,7 +27,7 @@ export class CreatePlaylistPage implements OnInit {
           this.data = json;
 
         });
-        this.dataService.setPresentPage(this.currentPage);
+        console.log(this.dataService.setPresentPage(this.currentPage));
         this.selectedItems = [];
         }
   // displayLang() {

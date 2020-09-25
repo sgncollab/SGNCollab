@@ -1,3 +1,8 @@
+
+<ion-header>
+  <ion-toolbar color="primary"></ion-toolbar>
+</ion-header>
+
 <ion-content class="background">
   <!-- <div>
     <ion-row>
@@ -10,14 +15,13 @@
     <h3 style="margin-top:20vh;margin-bottom:5vh;text-align:center">Enter the verification code <br> we just sent you on your email address.</h3>
   </ion-text>
   <!-- <ion-card style="margin-top:36vh;"> -->
-    <ion-item>
-      <ng-otp-input style="text-align: center;margin-left:8vh;" (onInputChange)="onOtpChange($event)"
+    <ion-item lines="none">
+      <ng-otp-input style="text-align: center;margin-left:8vh; margin-bottom:1vh;" (onInputChange)="onOtpChange($event)"
         [config]="{length:4,allowNumbersOnly:true}"></ng-otp-input>
         <!-- isPasswordInput:true -->
-        
       <ion-button  style="margin-left:9vh;" (click)="verifyOTP()" color="success">Verify</ion-button>
     </ion-item>
-    <span *ngIf="otpCheck" class="errorMsg">OTP Invalid! Please Check OTP</span>
+    <span *ngIf="otpCheck" class="errorMsg" style="margin-left:6vw;">OTP Invalid! Please Check OTP</span>
     <!-- <ion-item>
       <ion-input placeholder="Enter OTP"  [(ngModel)]="inputOTP"></ion-input>
       <ion-button  fill="clear" (click)="verifyOTP()" color="success">Click To Verify</ion-button>

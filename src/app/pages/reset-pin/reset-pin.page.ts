@@ -39,6 +39,7 @@ export class ResetPinPage implements OnInit {
   inputOTP;
   pinnotmatch = false;
   otp;
+  currentPage = "reset-pin";
   
 
   constructor(
@@ -50,6 +51,8 @@ export class ResetPinPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    //this.dataService.setPresentPage(this.currentPage);
+
     this.dbService.fetchUsers().subscribe((data) => {
       this.regResult = data.map(value => {
         return {
@@ -65,11 +68,13 @@ export class ResetPinPage implements OnInit {
     this.menu.enable(false);
     //console.log(this.screenOrientation.type); // log the current orientation, example: 'landscape'
     this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);  // set to landscape
-    
+    console.log(this.dataService.setPresentPage(this.currentPage));
   }
   ionViewDidLeave() {
     this.menu.enable(true);
   }
+ 
+  
   // resetOtp(e) {
   //   this.otpLength = false;
   //   this.enableRegister = true;
@@ -179,6 +184,7 @@ export class ResetPinPage implements OnInit {
       })
       this.dbService.updatePin(this.id, this.sr_no, this.Uname, Md5.hashStr(this.confirmPIN));
       this.navCtrl.navigateForward('registration-login');
+
     }
     else {
       console.log("check PIN")

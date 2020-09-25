@@ -4,7 +4,6 @@ import { ToastController } from '@ionic/angular';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { FirebaseDbService } from 'src/app/services/firebase-db.service';
 
-
 @Component({
   selector: 'app-aarti-details',
   templateUrl: './aarti-details.page.html',

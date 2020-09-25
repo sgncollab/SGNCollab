@@ -15,7 +15,7 @@ export class DataService {
   private selectedPlaylist = [];
   private userPlaylist =[];
   private listPlaylist =[];
-  private presentPage ="";
+  private presentPage ;
   private lang:boolean;
   private username;
   private Rmno=0;
