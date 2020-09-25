@@ -3,7 +3,6 @@ import { NavController, MenuController, PopoverController } from '@ionic/angular
 import { FirebaseDbService } from 'src/app/services/firebase-db.service';
 import { DataService } from 'src/app/services/data.service';
 import { Md5 } from 'ts-md5/dist/md5';
-import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 import { UpdateUserPlaylistPageRoutingModule } from '../update-user-playlist/update-user-playlist-routing.module';
 
 @Component({
@@ -43,10 +42,8 @@ export class ResetPinPage implements OnInit {
   
 
   constructor(
-    private menu: MenuController,
     private navCtrl: NavController,
     private dbService: FirebaseDbService,
-    private screenOrientation: ScreenOrientation,
     private dataService: DataService
   ) { }
 
@@ -64,16 +61,9 @@ export class ResetPinPage implements OnInit {
       });
     })
   }
-  ionViewWillEnter() {
-    this.menu.enable(false);
-    //console.log(this.screenOrientation.type); // log the current orientation, example: 'landscape'
-    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);  // set to landscape
+  ionViewWillEnter(){
     console.log(this.dataService.setPresentPage(this.currentPage));
   }
-  ionViewDidLeave() {
-    this.menu.enable(true);
-  }
- 
   
   // resetOtp(e) {
   //   this.otpLength = false;
