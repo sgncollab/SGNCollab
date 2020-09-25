@@ -44,8 +44,9 @@ export class RegistrationLoginPage implements OnInit {
   pinLen = false;
   create = false;
   confirm = false;
-  pinnotmatch = false;
-  pattern = /^[a-zA-Z]/
+  pinnotmatch =false;
+  public onlineOffline: boolean = navigator.onLine;
+  pattern= /^[a-zA-Z]/
   dataPage = "";
   temp
 
@@ -133,6 +134,7 @@ export class RegistrationLoginPage implements OnInit {
   }
 
   uNameValidation(e) {
+
     this.uName = false;
     this.length = false;
     this.uNameExist = false;
@@ -173,9 +175,11 @@ export class RegistrationLoginPage implements OnInit {
         //console.log("username already taken!")
       }
     }
+  
   }
 
   createPinInput(e) {
+
     this.pin1 = false;
     this.pinLength = false;
     this.pinValid = false;
@@ -211,6 +215,7 @@ export class RegistrationLoginPage implements OnInit {
     }
   }
   confirmPinInput(e) {
+  
     this.pin2 = false;
     this.disabled = true;
     this.pinLen = false;
@@ -243,14 +248,18 @@ export class RegistrationLoginPage implements OnInit {
       }
 
     }
+
   }
 
   registerEnable() {
     if (this.uNameExist == false && this.create == true && this.confirm == true) {
       this.disabled = false;
     }
+
+
   }
   register() {
+   
     console.log("register")
     let pin = Md5.hashStr(this.confirmPIN);
     this.dbService.createUser(this.srNo, this.username.toLowerCase(), pin);
@@ -282,35 +291,36 @@ export class RegistrationLoginPage implements OnInit {
     }
   }
   login() {
-    this.loginPin = false;
-    this.loginUname = false;
-
-    let flag = this.regResult.filter(value => {
-      if (this.enterUName.toLowerCase() == value.name) {
-        //console.log(value.name, value.sr_no, value.pin);
-        if (Md5.hashStr(this.enterPIN) == value.pin) {
-          //console.log("pin matched");
-          this.dataService.setLoggedInUserData(value.sr_no);
-          this.dataService.setLoggedInUsername(value.name);
-          this.appComponent.viewMenu(this.enterUName);
-          // this.enterUName = "";
-          // this.enterPIN = "";
-          // this.rememberChecked = false;
-          this.navCtrl.navigateForward('aarti-list');
-
+    if (navigator.onLine) {
+      //Do task when no internet connection
+      this.loginPin =false;
+      this.loginUname =false;
+      let flag = this.regResult.filter(value => {
+        if (this.enterUName.toLowerCase() == value.name) {
+          //console.log(value.name, value.sr_no, value.pin);
+          if (Md5.hashStr(this.enterPIN) == value.pin) {
+            //console.log("pin matched");
+            this.dataService.setLoggedInUserData(value.sr_no);
+            this.dataService.setLoggedInUsername(value.name);
+            this.navCtrl.navigateForward('aarti-list');
+            this.appComponent.viewMenu(this.enterUName);
+          }
+          else {
+            this.loginPin = true;
+            //console.log("Please check your PIN")
+          }
+          return true;
         }
-        else {
-          this.loginPin = true;
-          //console.log("Please check your PIN")
-        }
-        return true;
+        return false;
+      })
+      if (flag == false) {
+        this.loginUname = true;
+        //console.log("Please check your username");
       }
-      return false;
-    })
-    if (flag == false) {
-      this.loginUname = true;
-      //console.log("Please check your username");
-    }
+      }else{
+        this.dbService.showToast("Kindly check your Internet Connection!")
+      }
+  
   }
   rememberMe(identifier, e) {
     if (identifier == "register") {
@@ -356,7 +366,7 @@ export class RegistrationLoginPage implements OnInit {
   }
 
   public getType() {
-    return this.isActiveToggleTextPassword ? 'password' : 'number';
+    return this.isActiveToggleTextPassword ? 'password' : 'tel';
   }
 
   displayMenu(identifier) {

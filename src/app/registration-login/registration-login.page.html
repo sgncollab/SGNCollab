@@ -39,7 +39,8 @@
       <!-- Create PIN -->
       <ion-item>
         <ion-icon name="key"></ion-icon>
-        <ion-input [type]="getType()" inputmode="numeric" placeholder="Create PIN" [(ngModel)]="createPIN"
+        <!-- <input type="password" pattern="[0-9]*" inputmode="numeric"> -->
+        <ion-input [type]="getType()" placeholder="Create PIN" inputmode="numeric" [(ngModel)]="createPIN"
           (ionChange)="createPinInput($event)"></ion-input>
         <ion-icon [name]="passwordToggle" item-right (click)="toggleTextPassword()"></ion-icon>
       </ion-item>
@@ -48,10 +49,10 @@
       <!-- <span *ngIf="pinnotmatch">PIN does not match</span> -->
 
       <!-- Confirm PIN -->
-      <div [hidden]="hideConfirmPin">
-        <ion-item>
+      <div>
+        <ion-item [hidden]="hideConfirmPin">
           <ion-icon name="key"></ion-icon>
-          <ion-input [type]="getType()" inputmode="numeric" placeholder="Confirm PIN" [(ngModel)]="confirmPIN"
+          <ion-input [type]="getType()" placeholder="Confirm PIN" [(ngModel)]="confirmPIN" inputmode="numeric"
             (ionChange)="confirmPinInput($event)"></ion-input>
           <!-- <ion-icon [name]="passwordToggle" item-right (click)="toggleTextPassword()"></ion-icon> -->
         </ion-item>
@@ -87,7 +88,7 @@
 
       <ion-item>
         <ion-icon name="key"></ion-icon>
-        <ion-input [type]="getType()" inputmode="numeric" placeholder="Enter PIN" [(ngModel)]="enterPIN"></ion-input>
+        <ion-input [type]="getType()" placeholder="Enter PIN" inputmode="numeric" [(ngModel)]="enterPIN"></ion-input>
         <ion-icon [name]="passwordToggle" item-right (click)="toggleTextPassword()"></ion-icon>
       </ion-item>
       <span *ngIf="loginPin" class="errorMsg">Please check your PIN</span>
