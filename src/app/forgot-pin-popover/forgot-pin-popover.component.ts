@@ -21,6 +21,9 @@ export class ForgotPinPopoverComponent implements OnInit {
   emptyemail = false;
   patternmatch = false;
   emailvalid = false;
+  enterUName = "" ;
+  enterPIN = "";
+  rememberChecked = false;
 
   constructor(
     private popovercntrl: PopoverController,
@@ -127,6 +130,10 @@ export class ForgotPinPopoverComponent implements OnInit {
         else if(this.pattern.test(String(this.to_email))){
           console.log("pattern match");
           console.log(this.randomNo);
+          localStorage.clear();
+          this.enterUName = "" ;
+          this.enterPIN = "";
+          this.rememberChecked = false;
           localStorage.setItem('resetPin', this.randomNo);
           this.onClose();
           this.dataService.setResetUname(this.to_name.toLowerCase());

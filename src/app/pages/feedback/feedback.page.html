@@ -23,8 +23,8 @@
       <ion-input required type="text" placeholder="Your Name" [(ngModel)]="user_name" (ionChange)="onAutoFormatChanged()">
       </ion-input>
     </ion-item>
-    <ion-item style="margin:15px auto;">
-      <ion-input type="email" placeholder="Your Email" style="font:revert" [(ngModel)]="user_email" required> </ion-input>
+    <ion-item  lines="none"style="margin:15px auto;">
+      <ion-input type="email" placeholder="Your Email" style="font:revert" [(ngModel)]="user_email"> </ion-input>
     </ion-item>
     <ion-textarea maxLength="300" placeholder="Your Feedback" [(ngModel)]="user_feedback"
       (ionChange)="onAutoFormatChanged()" required>
