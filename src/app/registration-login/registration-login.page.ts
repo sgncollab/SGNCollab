@@ -148,9 +148,9 @@ export class RegistrationLoginPage implements OnInit {
       this.length = true;
       //console.log("pl.check the length");
     }
-    // else if (!this.pattern.test(String(e.detail.value))) {
-    //   console.log("please input valid username")
-    // }
+    else if (!this.pattern.test(String(e.detail.value))) {
+      console.log("please input valid username")
+    }
     else {
       //console.log("Username is valid")
       let flag = this.regResult.filter(value => {
@@ -260,26 +260,26 @@ export class RegistrationLoginPage implements OnInit {
     this.dataService.setLoggedInUsername(this.username);
     this.navCtrl.navigateForward('aarti-list');
 
-    // if(this.confirmPIN == this.createPIN){
-    //   console.log(this.confirmPIN);
-    //   if(this.username == "" || this.username == undefined){
-    //     console.log("please enter usename");
-    //   }
+    if(this.confirmPIN == this.createPIN){
+      console.log(this.confirmPIN);
+      if(this.username == "" || this.username == undefined){
+        console.log("please enter usename");
+      }
 
-    //   else{
-    //     console.log("register")
-    //     let pin = Md5.hashStr(this.confirmPIN);
-    //     this.dbService.createUser(this.srNo, this.username.toLowerCase(), pin);
-    //     this.appComponent.viewMenu(this.username);
-    //     let serialNo = this.srNo;
-    //     this.dataService.setLoggedInUserData(serialNo);
-    //     this.navCtrl.navigateForward('aarti-list');
-    //   }
+      else{
+        console.log("register")
+        let pin = Md5.hashStr(this.confirmPIN);
+        this.dbService.createUser(this.srNo, this.username.toLowerCase(), pin);
+        this.appComponent.viewMenu(this.username);
+        let serialNo = this.srNo;
+        this.dataService.setLoggedInUserData(serialNo);
+        this.navCtrl.navigateForward('aarti-list');
+      }
 
-    // }
-    // else{
-    //   console.log("Check the pin ")
-    // }
+    }
+    else{
+      console.log("Check the pin ")
+    }
   }
   login() {
     this.loginPin = false;
