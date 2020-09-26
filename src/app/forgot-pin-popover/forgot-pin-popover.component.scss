@@ -19,8 +19,11 @@ ion-item{
 }
 
 ion-popover {
-    div.popover-content {
-         top: 40% !important;
-         width: 90vw !important;
-  }
+    .popover-wrapper{
+        .popover-content{
+            top: 40% !important;
+         width: 100%!important;
+         height: 100%!important;
+        }
+    }
   }

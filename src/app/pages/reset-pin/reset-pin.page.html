@@ -16,10 +16,14 @@
   </ion-text>
   <!-- <ion-card style="margin-top:36vh;"> -->
     <ion-item lines="none">
-      <ng-otp-input style="text-align: center;margin-left:8vh; margin-bottom:1vh;" (onInputChange)="onOtpChange($event)"
+      <ng-otp-input style="text-align:center;margin-left:8vh; margin-bottom:1vh;" (onInputChange)="onOtpChange($event)"
         [config]="{length:4,allowNumbersOnly:true}"></ng-otp-input>
         <!-- isPasswordInput:true -->
-      <ion-button  style="margin-left:9vh;" (click)="verifyOTP()" color="success">Verify</ion-button>
+        <ion-icon *ngIf="!verify" name="checkmark-outline" style="margin-left:9vh;color:brown"></ion-icon>
+        <ion-icon *ngIf="verify" name="checkmark-outline" style="margin-left:9vh; color:chartreuse" ></ion-icon>
+       
+        <!-- <ion-button *ngIf="!verify" style="margin-left:9vh;"  color="danger">Verify</ion-button>
+      <ion-button *ngIf="verify" style="margin-left:9vh;"  color="success">Verify</ion-button> -->
     </ion-item>
     <span *ngIf="otpCheck" class="errorMsg" style="margin-left:6vw;">OTP Invalid! Please Check OTP</span>
     <!-- <ion-item>

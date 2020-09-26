@@ -27,21 +27,23 @@
     <!-- Registration -->
     <div *ngIf="display">
       <!-- Username -->
-      <ion-item>
+      <ion-item lines="none">
         <ion-icon name="person-sharp"></ion-icon>
         <ion-input type="text" [(ngModel)]="username" placeholder="Username" class="ion-text-capitalize"
-          (ionChange)="uNameValidation($event)"></ion-input>
+          (ionChange)="inputValidation($event,'username')"></ion-input>
       </ion-item>
+      
       <span *ngIf="uName" class="errorMsg">Username is required</span>
       <span *ngIf="length" class="errorMsg">Username should atlest contain 4 characters</span>
       <span *ngIf="uNameExist" class="errorMsg">Username already taken</span>
+      <!-- <span></span> -->
 
       <!-- Create PIN -->
-      <ion-item>
+      <ion-item lines="none">
         <ion-icon name="key"></ion-icon>
         <!-- <input type="password" pattern="[0-9]*" inputmode="numeric"> -->
         <ion-input [type]="getType()" placeholder="Create PIN" inputmode="numeric" [(ngModel)]="createPIN"
-          (ionChange)="createPinInput($event)"></ion-input>
+          (ionChange)="inputValidation($event,'createpin')"></ion-input>
         <ion-icon [name]="passwordToggle" item-right (click)="toggleTextPassword()"></ion-icon>
       </ion-item>
       <span *ngIf="pin1" class="errorMsg">PIN is required</span>
@@ -49,11 +51,11 @@
       <!-- <span *ngIf="pinnotmatch">PIN does not match</span> -->
 
       <!-- Confirm PIN -->
-      <div>
-        <ion-item [hidden]="hideConfirmPin">
+      <div [hidden]="hideConfirmPin">
+        <ion-item lines="none">
           <ion-icon name="key"></ion-icon>
           <ion-input [type]="getType()" placeholder="Confirm PIN" [(ngModel)]="confirmPIN" inputmode="numeric"
-            (ionChange)="confirmPinInput($event)"></ion-input>
+            (ionChange)="inputValidation($event,'confirmpin')"></ion-input>
           <!-- <ion-icon [name]="passwordToggle" item-right (click)="toggleTextPassword()"></ion-icon> -->
         </ion-item>
         <span *ngIf="pin2" class="errorMsg">PIN is required</span>
@@ -79,14 +81,14 @@
 
     <!-- Login -->
     <div *ngIf="!display">
-      <ion-item>
+      <ion-item lines="none">
         <ion-icon name="person-sharp"></ion-icon>
         <ion-input class="ion-text-capitalize" type="text" placeholder="Username" [(ngModel)]="enterUName"></ion-input>
         <!-- pattern="^[a-zA-Z]" -->
       </ion-item>
       <span *ngIf="loginUname" class="errorMsg">Please check your username</span>
 
-      <ion-item>
+      <ion-item lines="none">
         <ion-icon name="key"></ion-icon>
         <ion-input [type]="getType()" placeholder="Enter PIN" inputmode="numeric" [(ngModel)]="enterPIN"></ion-input>
         <ion-icon [name]="passwordToggle" item-right (click)="toggleTextPassword()"></ion-icon>
@@ -95,7 +97,7 @@
       <div style=" margin-left: 15px; margin-top: 10px; margin-bottom: 10px;">
 
         <ion-row style="margin-top:2vh">
-          <ion-checkbox [checked]="rememberChecked" (ionChange)="rememberMe('login',$event)"></ion-checkbox>
+          <ion-checkbox [ngModel]="rememberChecked" (ionChange)="rememberMe('login',$event)"></ion-checkbox>
           <ion-label>
             <p style="font-size: 14px; color: black; margin-left: 5px;">Remember Me</p>
           </ion-label>

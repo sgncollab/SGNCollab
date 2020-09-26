@@ -44,11 +44,13 @@ export class RegistrationLoginPage implements OnInit {
   pinLen = false;
   create = false;
   confirm = false;
-  pinnotmatch =false;
+  pinnotmatch = false;
   public onlineOffline: boolean = navigator.onLine;
-  pattern= /^[a-zA-Z]/
+  pattern = /^[a-zA-Z]/
   dataPage = "";
   temp
+  unamenull = false;
+ 
 
   constructor(
     private menu: MenuController,
@@ -94,12 +96,13 @@ export class RegistrationLoginPage implements OnInit {
         this.srNo = 1;
       }
     })
-    
+
     // getting remember me values if checked
-    
+
   }
 
   ionViewWillEnter() {
+    this.rememberChecked =false;
     this.enterUName = localStorage.getItem('username');
     this.enterPIN = localStorage.getItem('pin');
     if (this.enterUName != null && this.enterUName != undefined) {
@@ -107,12 +110,13 @@ export class RegistrationLoginPage implements OnInit {
     }
     else {
       this.rememberChecked = false;
-      this.enterUName="";
-      this.enterPIN="";
+      this.enterUName = "";
+      this.enterPIN = "";
     }
+
     this.menu.enable(false);
     console.log(this.dataPage = this.dataService.getPresentPage());
-    if(this.dataPage == "reset-pin"){
+    if (this.dataPage == "reset-pin") {
       console.log("coming from reset pin ");
       //localStorage.clear();
       this.enterUName = "";
@@ -120,11 +124,11 @@ export class RegistrationLoginPage implements OnInit {
       this.rememberChecked = false;
       this.dbService.showToast("PIN reset successfully! Login with your new PIN ");
 
-    }else{
+    } else {
       console.log("else");
     }
-    
-    
+
+
     //console.log(this.screenOrientation.type); // log the current orientation, example: 'landscape'
     this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);  // set to landscape
 
@@ -132,134 +136,233 @@ export class RegistrationLoginPage implements OnInit {
   ionViewDidLeave() {
     this.menu.enable(true);
   }
+  inputValidation(e, identifier) {
+    if (identifier == 'username') {
+      this.uName = false;
+      this.length = false;
+      this.uNameExist = false;
+      this.disabled = true;
+      
 
-  uNameValidation(e) {
-
-    this.uName = false;
-    this.length = false;
-    this.uNameExist = false;
-    this.pinValid = false;
-    this.disabled = true;
-
-    //console.log(e.detail.value)
-    if (e.detail.value == "" || e.detail.value == undefined) {
-      this.uName = true;
-      //console.log("username is required");
-    }
-    else if (e.detail.value.length < 4 || e.detail.value.length > 30) {
-      this.length = true;
-      //console.log("pl.check the length");
-    }
-    // else if (!this.pattern.test(String(e.detail.value))) {
-    //   console.log("please input valid username")
-    // }
-    else {
-      //console.log("Username is valid")
-      let flag = this.regResult.filter(value => {
-        if (value.name == e.detail.value.toLowerCase()) {
-          return true;
+      if (e.detail.value == "" || e.detail.value == undefined) {
+        this.uName = true;
+      }
+      else if (e.detail.value.length < 4 || e.detail.value.length > 30) {
+        this.length = true;
+      }
+      else {
+        let flag = this.regResult.filter(value => {
+          if (value.name == e.detail.value.toLowerCase()) {
+            return true;
+          }
+          return false;
+        })
+        if (flag.length == 0) {
+         
+          this.username = e.detail.value;
+          this.registerEnable();
         }
-        return false;
-      })
-      //console.log(flag);
-      if (flag.length == 0) {
-        this.uNameExist = false;
-        this.registerEnable();
-        // if(this.pinone == this.pintwo == undefined && this.pinone == this.pintwo ){
-        //   this.disabled = false;
-        // }
-        // console.log("register");
+        else {
+          this.uNameExist = true;
+        }
+
+      }
+
+
+    }
+    else if (identifier == 'createpin') {
+      this.pin1 = false;
+      this.pinLength = false;
+      this.pinValid = false;
+      this.hideConfirmPin = true;
+      this.pinnotmatch=false;
+      this.create=false;
+      this.disabled = true;
+      
+       
+      if (e.detail.value == "" || e.detail.value == undefined) {
+        this.pin1 = true;
+      }
+      else if (e.detail.value.length != 4) {
+        this.pinLength = true;
       }
       else {
-        this.uNameExist = true;
-        //console.log("username already taken!")
-      }
-    }
-  
-  }
-
-  createPinInput(e) {
-
-    this.pin1 = false;
-    this.pinLength = false;
-    this.pinValid = false;
-    this.hideConfirmPin = true;
-    this.disabled = true;
-    this.create = false;
-    this.pinnotmatch = false;
-
-    if (e.detail.value == "" || e.detail.value == undefined) {
-      this.pin1 = true;
-      //console.log("pin is required");
-    }
-    else if (e.detail.value.length != 4) {
-      this.pinLength = true;
-      //console.log("please enter 4 digit pin");
-    }
-    else {
-      //console.log("pin is valid");
-      this.pinValid = true;
-      this.hideConfirmPin = false;
-      this.pinone = e.detail.value;
-      if (this.pinone == this.pintwo) {
-        this.create = true;
-        this.confirm = true;
-        this.registerEnable();
-        // this.disabled = false;
-      }
-      else {
-        if (this.pintwo != undefined) {
-          this.pinnotmatch = true;
+        this.pinValid = true;
+        this.hideConfirmPin = false;
+        this.pinone = e.detail.value;
+        if (this.pinone == this.pintwo) {
+          this.create = true;
+          this.confirm = true;
+          this.registerEnable();
+        }
+        else {
+          if (this.pintwo != undefined) {
+            this.pinnotmatch = true;
+          }
         }
       }
     }
-  }
-  confirmPinInput(e) {
-  
-    this.pin2 = false;
-    this.disabled = true;
-    this.pinLen = false;
-    this.match = false;
-    this.confirm = false;
-    this.pinnotmatch = false;
-
-
-    if (e.detail.value == "" || e.detail.value == undefined) {
-      this.pin2 = true;
-      //console.log("pin is required");
-    }
-    else if (e.detail.value.length != 4) {
-      this.pinLen = true;
-      //console.log("Please enter 4 digit pin")
-    }
-    else {
-      this.match = false;
-      // this.pinMatched = false;
-      //pin valid
-      this.pintwo = e.detail.value;
-      if (this.pinone == this.pintwo) {
-        this.confirm = true;
-        this.create = true;
-        this.registerEnable();
-        //this.disabled = false;
+    else if (identifier == 'confirmpin') {
+      this.pin2 = false;
+      this.pinLen = false;
+      this.confirm = false;
+      this.pinnotmatch = false;
+      this.disabled = true;
+      
+      if (e.detail.value == "" || e.detail.value == undefined) {
+        this.pin2 = true;
+      }
+      else if (e.detail.value.length != 4) {
+        this.pinLen = true;
       }
       else {
-        this.pinnotmatch = true;
+        this.pintwo = e.detail.value;
+        if (this.pinone == e.detail.value) {
+          this.confirm = true;
+          this.create = true;
+          this.registerEnable();
+        }
+        else {
+          this.pinnotmatch= true;
+          
+        }
+
       }
 
     }
-
   }
+
+  // uNameValidation(e) {
+  //   this.uName = false;
+  //   this.length = false;
+  //   this.uNameExist = false;
+  //   this.pinValid = false;
+  //   this.disabled = true;
+
+  //   //console.log(e.detail.value)
+  //   if (e.detail.value == "" || e.detail.value == undefined) {
+  //     this.uName = true;
+  //     //console.log("username is required");
+  //   }
+  //   else if (e.detail.value.length < 4 || e.detail.value.length > 30) {
+  //     this.length = true;
+  //     //console.log("pl.check the length");
+  //   }
+  //   // else if (!this.pattern.test(String(e.detail.value))) {
+  //   //   console.log("please input valid username")
+  //   // }
+  //   else {
+  //     //console.log("Username is valid")
+  // let flag = this.regResult.filter(value => {
+  //   if (value.name == e.detail.value.toLowerCase()) {
+  //     return true;
+  //   }
+  //   return false;
+  // })
+  //     //console.log(flag);
+  //     if (flag.length == 0) {
+  //       this.registerEnable();
+  //       // if(this.pinone == this.pintwo == undefined && this.pinone == this.pintwo ){
+  //       //   this.disabled = false;
+  //       // }
+  //       // console.log("register");
+  //     }
+  //     else {
+  //       this.uNameExist = true;
+  //       //console.log("username already taken!")
+  //     }
+  //   }
+
+  // }
+
+  // createPinInput(e) {
+
+  //   this.pin1 = false;
+  //   this.pinLength = false;
+  //   this.pinValid = false;
+  //   this.hideConfirmPin = true;
+  //   this.disabled = true;
+  //   this.create = false;
+  //   this.pinnotmatch = false;
+
+  // if (e.detail.value == "" || e.detail.value == undefined) {
+  //   this.pin1 = true;
+  //   //console.log("pin is required");
+  // }
+  // else if (e.detail.value.length != 4) {
+  //   this.pinLength = true;
+  //   //console.log("please enter 4 digit pin");
+  // }
+  //   else {
+  //     //console.log("pin is valid");
+  // this.pinValid = true;
+  // this.hideConfirmPin = false;
+  // this.pinone = e.detail.value;
+  //     if (this.pinone == this.pintwo) {
+  //       this.create = true;
+  //       this.confirm = true;
+  //       this.registerEnable();
+  //       // this.disabled = false;
+  //     }
+  //     else {
+  //       if (this.pintwo != undefined) {
+  //         this.pinnotmatch = true;
+  //       }
+  //     }
+  //   }
+  // }
+  // confirmPinInput(e) {
+
+  //   this.pin2 = false;
+  //   this.disabled = true;
+  //   this.pinLen = false;
+  //   this.match = false;
+  //   this.confirm = false;
+  //   this.pinnotmatch = false;
+
+
+  // if (e.detail.value == "" || e.detail.value == undefined) {
+  //   this.pin2 = true;
+  //   //console.log("pin is required");
+  // }
+  // else if (e.detail.value.length != 4) {
+  //   this.pinLen = true;
+  //   //console.log("Please enter 4 digit pin")
+  // }
+  //   else {
+  //     this.match = false;
+  //     // this.pinMatched = false;
+  //     //pin valid
+  //     this.pintwo = e.detail.value;
+  //     if (this.pinone == this.pintwo && this.username != "" && this.username != undefined) {
+  //       this.confirm = true;
+  //       this.create = true;
+  //       this.registerEnable();
+  //       //this.disabled = false;
+  //     }
+  //     else {
+  //       this.pinnotmatch = true;
+  //       console.log("username")
+  //     }
+
+  //   }
+
+  // }
+
 
   registerEnable() {
-    if (this.uNameExist == false && this.create == true && this.confirm == true) {
+    if(this.username == "" || this.username == undefined ){
+      this.uName = true;
+
+    }
+ 
+   else if (this.create == true && this.confirm == true) {
       this.disabled = false;
     }
 
 
   }
   register() {
-   
     console.log("register")
     let pin = Md5.hashStr(this.confirmPIN);
     this.dbService.createUser(this.srNo, this.username.toLowerCase(), pin);
@@ -269,32 +372,33 @@ export class RegistrationLoginPage implements OnInit {
     this.dataService.setLoggedInUsername(this.username);
     this.navCtrl.navigateForward('aarti-list');
 
-    // if(this.confirmPIN == this.createPIN){
-    //   console.log(this.confirmPIN);
-    //   if(this.username == "" || this.username == undefined){
-    //     console.log("please enter usename");
-    //   }
+    if (this.confirmPIN == this.createPIN) {
+      console.log(this.confirmPIN);
+      if (this.username == "" || this.username == undefined) {
+        console.log("please enter usename");
+      }
 
-    //   else{
-    //     console.log("register")
-    //     let pin = Md5.hashStr(this.confirmPIN);
-    //     this.dbService.createUser(this.srNo, this.username.toLowerCase(), pin);
-    //     this.appComponent.viewMenu(this.username);
-    //     let serialNo = this.srNo;
-    //     this.dataService.setLoggedInUserData(serialNo);
-    //     this.navCtrl.navigateForward('aarti-list');
-    //   }
+      else {
+        console.log("register")
+        let pin = Md5.hashStr(this.confirmPIN);
+        this.dbService.createUser(this.srNo, this.username.toLowerCase(), pin);
+        this.appComponent.viewMenu(this.username);
+        let serialNo = this.srNo;
+        this.dataService.setLoggedInUserData(serialNo);
+        this.navCtrl.navigateForward('aarti-list');
+      }
 
-    // }
-    // else{
-    //   console.log("Check the pin ")
-    // }
+    }
+    else {
+      console.log("Check the pin ")
+    }
   }
+
   login() {
     if (navigator.onLine) {
       //Do task when no internet connection
-      this.loginPin =false;
-      this.loginUname =false;
+      this.loginPin = false;
+      this.loginUname = false;
       let flag = this.regResult.filter(value => {
         if (this.enterUName.toLowerCase() == value.name) {
           //console.log(value.name, value.sr_no, value.pin);
@@ -317,10 +421,10 @@ export class RegistrationLoginPage implements OnInit {
         this.loginUname = true;
         //console.log("Please check your username");
       }
-      }else{
-        this.dbService.showToast("Kindly check your Internet Connection!")
-      }
-  
+    } else {
+      this.dbService.showToast("Kindly check your Internet Connection!")
+    }
+
   }
   rememberMe(identifier, e) {
     if (identifier == "register") {

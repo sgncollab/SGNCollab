@@ -8,6 +8,7 @@ import { AartiListPageRoutingModule } from './aarti-list-routing.module';
 
 import { AartiListPage } from './aarti-list.page';
 
+
 @NgModule({
   imports: [
     CommonModule,
