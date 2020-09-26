@@ -39,6 +39,7 @@ export class ResetPinPage implements OnInit {
   pinnotmatch = false;
   otp;
   currentPage = "reset-pin";
+  verify =false;
   
 
   constructor(
@@ -97,18 +98,28 @@ export class ResetPinPage implements OnInit {
   // }
   onOtpChange(event){
     this.otp =event
-  }
-  verifyOTP() {
     this.match = true;
+    this.verify =false;
     this.otpCheck = false;
-    console.log("verified");
-    if (this.otp == localStorage.getItem('resetPin')) {
+    if(this.otp == localStorage.getItem('resetPin')){
       this.match = false;
+      this.verify= true;
     }
-    else {
+    else{
       this.otpCheck = true;
     }
   }
+  // verifyOTP() {
+  //   this.match = true;
+  //   this.otpCheck = false;
+  //   console.log("verified");
+  //   if (this.otp == localStorage.getItem('resetPin')) {
+  //     this.match = false;
+  //   }
+  //   else {
+  //     this.otpCheck = true;
+  //   }
+  // }
   resetPin(e, identifier) {
     this.enableRegister = true;
     this.pinReq = false;

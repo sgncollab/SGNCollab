@@ -1,14 +1,22 @@
-ion-content.background{
-    --background: url(../../assets/images/app-bg-light.png)0 0/100% 100% no-repeat ;
-}
-
+// ion-content.background{
+//     --background: url(../../assets/images/app-bg-light.png)0 0/100% 100% no-repeat ;
+// }
 ion-popover {
-    div.popover-content {
-         top: 50% !important;
-         left: 50% !important;
-        transform: translate(-50%, -50%) !important;
+    .popover-wrapper{
+        .popover-content{
+            top: 40% !important;
+         width: 100%!important;
+         height: 100%!important;
+        }
+    }
   }
-  }
+// ion-popover {
+//     div.popover-content {
+//          top: 50% !important;
+//          left: 50% !important;
+//         transform: translate(-50%, -50%) !important;
+//   }
+ // }
   ion-input{
       --padding-start:1vh !important
   }

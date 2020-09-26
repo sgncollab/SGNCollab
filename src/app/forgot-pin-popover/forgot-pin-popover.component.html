@@ -22,7 +22,7 @@
   <span *ngIf="emailvalid"  class="errorMsg">Please enter valid email address</span>
 
 <ion-item>
-  <ion-button size="small" (click)="onSubmit()" (click)="resetEmail()"
+  <ion-button size="small" [disabled]="disabled"(click)="onSubmit()" (click)="resetEmail()"
     style="margin-left:0vw; margin-bottom:2vh;margin-top:1.5vh;">Get OTP</ion-button>
   <ion-button size="small" (click)="onClose()" color="danger"
     style="margin-left:42vw; margin-bottom:2vh;margin-top:1.5vh;">Cancel</ion-button>

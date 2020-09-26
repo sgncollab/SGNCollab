@@ -9,15 +9,30 @@
   </ion-toolbar>
 </ion-header>
 
+<!-- <ion-content>
+  <ion-item *ngIf ="lang"  lines="none" >
+   <p>{{ aartiData.englishTitle }}</p> 
+  </ion-item>
+  <ion-item *ngIf="!lang" lines="none">
+    <ion-text style="text-align:center;"><p>{{aartiData.marathiTitle}}</p></ion-text>
+  </ion-item>
+
+</ion-content> -->
+
   <section>
     <ion-card class="cat_1">
-      <ion-item-divider sticky style="min-height: 8vh;">
-          <ion-item *ngIf ="lang"  lines="none" style="padding-left: 16vw;" >
-            <h4>{{aartiData.englishTitle}}</h4>
-          </ion-item>
-          <ion-item *ngIf="!lang" lines="none" style="padding-left: 22vw;">
-            <h3>{{aartiData.marathiTitle}}</h3>
-          </ion-item>
+      <ion-item-divider sticky style="min-height: 8vh;margin-left: auto;margin-right: auto;">
+        <ion-item *ngIf ="lang"  lines="none" >
+          <ion-row>
+            <ion-col>{{aartiData.englishTitle}}</ion-col>
+          </ion-row>
+          
+          
+        </ion-item>
+        <ion-item *ngIf="!lang" lines="none">
+          <ion-text style="text-align:center;"><p>{{aartiData.marathiTitle}}</p></ion-text>
+        </ion-item>
+          
       </ion-item-divider>
         <div>
             <ion-item *ngIf="!lang" lines="none"  class="splitData"  text-center no-lines style="padding-top: 10px;" [style.font-size]=smallFont>

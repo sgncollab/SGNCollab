@@ -16,14 +16,15 @@ export class ForgotPinPopoverComponent implements OnInit {
   to_name: any;
   randomNo;
   pattern = /[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})/;
-  emptyuname=false;
+  emptyuname = false;
   uvalid = false;
   emptyemail = false;
   patternmatch = false;
   emailvalid = false;
-  enterUName = "" ;
+  enterUName = "";
   enterPIN = "";
   rememberChecked = false;
+  disabled = true;
 
   constructor(
     private popovercntrl: PopoverController,
@@ -49,7 +50,7 @@ export class ForgotPinPopoverComponent implements OnInit {
       });
     })
   }
-  
+
 
   resetEmail() {
     // var templateParams = {
@@ -66,55 +67,81 @@ export class ForgotPinPopoverComponent implements OnInit {
     //       alert("FAILED!");
     //     });
   }
-  inputCheck(e,identifier){
-    // this.emptyuname= false;
-    // this.emptyemail = false;
-    // this.patternmatch = false;
-    // this.uvalid = false ;
-
-
-    // if(identifier == 'username'){
-    //   //console.log(e.detail.value)
-    //   if(this.to_name =="" || this.to_name == undefined ){
-    //     this.emptyuname=true;
-    //   }
-    //   else {
-    //     let flag = this.regResult.filter(value => {
-    //       if (this.to_name.toLowerCase() == value.name) {
-    //         return true;
-    //       }
-    //       return false;
-    //     })
-    //     if (flag.length == 0){
-    //       this.uvalid = true;
-    //      // console.log("username is not valid")
-    //     }
-    //   }
-    // }
-    // else if(identifier == 'email'){
-    //   //console.log(e.detail.value)
-    //   // if(this.uvalid == false){
-    //   //   console.log("please enter username first");
-    //   // }
-    //    if(this.to_email == "" || this.to_email == undefined){
-    //     this.emptyemail = true;
-    //   }
-    //   else if(!this.pattern.test(String(this.to_email))){
-    //     this.patternmatch =true;
-    //   }
-    // }
-    
-  }
-
-  onSubmit() {
-    this.emptyuname= false;
-    this.uvalid =false;
+  inputCheck(e, identifier) {
+    this.emptyuname = false;
+    this.emptyemail = false;
+    this.patternmatch = false;
+    this.uvalid = false;
+    this.disabled = true;
     this.emailvalid = false;
 
-    if(this.to_name == null || this.to_name == undefined ){
-      this.emptyuname=true;
+
+    if (identifier == 'username') {
+      //console.log(e.detail.value)
+      if (e.detail.value == "" || e.detail.value == undefined) {
+        this.emptyuname = true;
+      }
+      else {
+        let flag = this.regResult.filter(value => {
+          if (this.to_name.toLowerCase() == value.name) {
+            return true;
+          }
+          return false;
+        })
+        if (flag.length == 0) {
+          this.uvalid = true;
+          // console.log("username is not valid")
+        }
+        else {
+          this.to_name = e.detail.value
+          if (this.to_email == "" || this.to_email == undefined){
+            this.emptyemail = true;
+          }
+          else{
+            this.enablegetotp();
+
+          }
+        }
+      }
+    }
+    else if (identifier == 'email') {
+
+      if (e.detail.value == "" || e.detail.value == undefined) {
+        this.emptyemail = true;
+      }
+      else if (this.pattern.test(String(e.detail.value))) {
+        this.to_email = e.detail.value;
+
+        if(this.to_name == "" || this.to_name == undefined){
+          this.emptyuname = true;
+        }
+        else{
+          this.enablegetotp();
+        }
+
+
+      }
+      else {
+        this.emailvalid = true;
+        console.log("Please input valid email");
+
+      }
+    }
+
+  }
+
+  enablegetotp() {
+    this.disabled = false;
+  }
+  onSubmit() {
+    this.emptyuname = false;
+    this.uvalid = false;
+    this.emailvalid = false;
+
+    if (this.to_name == null || this.to_name == undefined) {
+      this.emptyuname = true;
       console.log("enter the details");
-    }else{
+    } else {
       let flag = this.regResult.filter(value => {
         if (this.to_name.toLowerCase() == value.name) {
           return true;
@@ -124,14 +151,14 @@ export class ForgotPinPopoverComponent implements OnInit {
       if (flag.length > 0) {
         console.log("username valid");
         if (this.to_email == "" || this.to_email == undefined) {
-          this.emptyemail =true;
+          this.emptyemail = true;
           //console.log("Enter email");
         }
-        else if(this.pattern.test(String(this.to_email))){
+        else if (this.pattern.test(String(this.to_email))) {
           console.log("pattern match");
           console.log(this.randomNo);
           localStorage.clear();
-          this.enterUName = "" ;
+          this.enterUName = "";
           this.enterPIN = "";
           this.rememberChecked = false;
           localStorage.setItem('resetPin', this.randomNo);
@@ -142,7 +169,7 @@ export class ForgotPinPopoverComponent implements OnInit {
         else {
           this.emailvalid = true;
           console.log("Please input valid email");
-          
+
         }
       }
       else {
