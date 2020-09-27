@@ -126,6 +126,7 @@ export class RegistrationLoginPage implements OnInit {
     this.user = this.dataService.getGuest();
     if(this.user == "guest"){
       this.guest = true;
+      this.display = true;
     }
     
     this.rememberChecked =false;
