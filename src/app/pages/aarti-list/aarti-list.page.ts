@@ -16,7 +16,7 @@ const { App } = Plugins;
   styleUrls: ['./aarti-list.page.scss'],
 })
 export class AartiListPage implements OnInit, OnDestroy, AfterViewInit {
-  backButtonSubscription;
+  backButtonSubscription:any;
   lang = false;
   data: any = [];
   isItemAvailable = true;
@@ -32,14 +32,15 @@ export class AartiListPage implements OnInit, OnDestroy, AfterViewInit {
     private routerOutlet: IonRouterOutlet,
     private router: Router,
     public alertController: AlertController
-     
-    //private globalization: Globalization
   ) {
-    // this.platform.backButton.subscribeWithPriority(-1, () => {
-    //   if (!this.routerOutlet.canGoBack()) {
-    //     App.exitApp();
-    //   }
-    // });
+    this.backButtonSubscription = this.platform.backButton.subscribeWithPriority(6666,()=> {
+      if(this.constructor.name == "AartiListPage"){
+        if(window.confirm("Do you want to Exit App")){
+          navigator["app"].exitApp();
+        }
+      }
+    })
+    
   }
 
   ngOnInit() {
@@ -51,45 +52,25 @@ export class AartiListPage implements OnInit, OnDestroy, AfterViewInit {
     this.dataService.setPresentPage(this.currentPage);
   }
   ngAfterViewInit() {
-    this.backButtonSubscription = this.platform.backButton.subscribe(() => {
-      this.presentAlertConfirm()
-      alert("Fired Back Button");
-
+    // this.backButtonSubscription = this.platform.backButton.subscribe((value) => {
+    //   this.closingApp();
+    //   navigator['app'].clearHistory();
+    //   navigator['app'].exitApp();
       
-    });
+
+
+
+
+    // });
   }
-  ionViewDidLeave(){
+  
+  ionViewDidLeave() {
     this.backButtonSubscription.unsubscribe();
   }
   ngOnDestroy() {
     this.backButtonSubscription.unsubscribe();
   }
-  async presentAlertConfirm() {
-    const alert = await this.alertController.create({
-      cssClass: 'my-custom-class',
-      header: 'Confirm!',
-      message: 'Message <strong>text</strong>!!!',
-      buttons: [
-        {
-          text: 'Cancel',
-          role: 'cancel',
-          cssClass: 'secondary',
-          handler: (blah) => {
-            console.log('Confirm Cancel: blah');
-
-          }
-        }, {
-          text: 'Okay',
-          handler: () => {
-            console.log('Confirm Okay');
-            navigator['app'].clearHistory();
-            navigator['app'].exitApp();
-          }
-        }
-      ]
-    });
   
-  }
   checkLang(identifier) {
     if (identifier == "marathi") {
       this.lang = true;

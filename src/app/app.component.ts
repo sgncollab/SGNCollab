@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Platform, NavController } from '@ionic/angular';
+import { Platform, NavController,AlertController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { DataService } from './services/data.service';
@@ -29,7 +29,8 @@ export class AppComponent implements OnInit {
     private dataService: DataService,
     private dbService: FirebaseDbService,
     private navController: NavController,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    public alertController: AlertController
   ) {
     this.initializeApp();
   }
@@ -39,7 +40,9 @@ export class AppComponent implements OnInit {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+    
   }
+
 
   ngOnInit() {
     this.dbService.fetchUserPlaylist().subscribe((data) => {
