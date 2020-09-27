@@ -50,7 +50,9 @@ export class RegistrationLoginPage implements OnInit {
   dataPage = "";
   temp
   unamenull = false;
- 
+  user;
+  guest =false;
+ view
 
   constructor(
     private menu: MenuController,
@@ -60,6 +62,7 @@ export class RegistrationLoginPage implements OnInit {
     private navCtrl: NavController,
     private popovercntrl: PopoverController,
     private dataService: DataService) {
+      
   }
   async presentPopover(ev) {
     const popover = await this.popovercntrl.create({
@@ -102,6 +105,11 @@ export class RegistrationLoginPage implements OnInit {
   }
 
   ionViewWillEnter() {
+    this.user = this.dataService.getGuest();
+    if(this.user == "guest"){
+      this.guest = true;
+    }
+    
     this.rememberChecked =false;
     this.enterUName = localStorage.getItem('username');
     this.enterPIN = localStorage.getItem('pin');
@@ -115,7 +123,7 @@ export class RegistrationLoginPage implements OnInit {
     }
 
     this.menu.enable(false);
-    console.log(this.dataPage = this.dataService.getPresentPage());
+    this.dataPage = this.dataService.getPresentPage();
     if (this.dataPage == "reset-pin") {
       console.log("coming from reset pin ");
       //localStorage.clear();
@@ -135,6 +143,8 @@ export class RegistrationLoginPage implements OnInit {
   }
   ionViewDidLeave() {
     this.menu.enable(true);
+    this.username="";
+    this.confirmPIN= "";
   }
   inputValidation(e, identifier) {
     if (identifier == 'username') {
@@ -459,6 +469,7 @@ export class RegistrationLoginPage implements OnInit {
       this.display = true;
     }
   }
+  
   public toggleTextPassword(): void {
     this.isActiveToggleTextPassword = (this.isActiveToggleTextPassword == true) ? false : true;
     this.showpass = !this.showpass;

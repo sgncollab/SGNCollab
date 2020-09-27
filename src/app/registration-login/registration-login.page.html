@@ -15,11 +15,20 @@
     </ion-row>
   </div>
   <ion-card class="content">
-    <ion-segment mode="ios" value="Login">
+    <ion-segment *ngIf="!guest" mode="ios" value="Login">
       <ion-segment-button style="height:6vh;" value="Login" (click)="checkView('loginView')">
         <b>Login</b>
       </ion-segment-button>
       <ion-segment-button style="height:6vh;" value="Register" (click)="checkView('registerView')">
+        <b>Register</b>
+      </ion-segment-button>
+    </ion-segment>
+
+    <ion-segment *ngIf="guest" mode="ios" value="Register">
+      <ion-segment-button style="height:6vh;" value="Login" (click)="checkView('loginView')">
+        <b>Login</b>
+      </ion-segment-button>
+      <ion-segment-button style="height:6vh;" value="Register"  (click)="checkView('registerView')">
         <b>Register</b>
       </ion-segment-button>
     </ion-segment>

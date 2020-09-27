@@ -20,8 +20,15 @@ export class DataService {
   private username;
   private Rmno=0;
    resetname:any;
+ user;
 
   constructor() { }
+  setGuest(user){
+    this.user = user
+  }
+  getGuest(){
+    return this.user
+  }
 
   setResetUname(resetname){
    this.resetname = resetname;
@@ -124,5 +131,7 @@ export class DataService {
   getRegisteredMobNo(){
     return this.Rmno
   }
+
+  
   
 }
