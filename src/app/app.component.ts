@@ -4,6 +4,7 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { DataService } from './services/data.service';
 import { FirebaseDbService } from './services/firebase-db.service';
+import { Network } from '@ionic-native/network/ngx';
 
 @Component({
   selector: 'app-root',
@@ -18,10 +19,11 @@ export class AppComponent implements OnInit {
   userPlaylist: any = [];
   dataPage = "";
   currentPage = "app-component";
-  public onlineOffline: boolean = navigator.onLine;
   user = "guest";
   
 
+
+ 
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -29,8 +31,24 @@ export class AppComponent implements OnInit {
     private dbService: FirebaseDbService,
     private navController: NavController,
     private statusBar: StatusBar,
+    private network: Network,
     public alertController: AlertController
   ) {
+    //   this.network.onDisconnect().subscribe(() => {
+
+    //   alert('network was disconnected :-('+ this.network.type);
+    // });
+    //   this.network.onConnect().subscribe(() => {
+    //   console.log('network connected!');
+    //   // We just got a connection but we need to wait briefly
+    //    // before we determine the connection type. Might need to wait.
+    //   // prior to doing any api requests as well.
+    //   setTimeout(() => {
+    //     if (this.network.type === 'wifi') {
+    //       alert('we got a wifi connection, woohoo!');
+    //     }
+    //   }, 3000);
+    // });
     this.initializeApp();
   }
 
@@ -54,9 +72,11 @@ export class AppComponent implements OnInit {
         }
       });
     });
+    
+   
   }
   
- 
+
  viewMenu(name){
   if(name.toLowerCase() == "guest"){
     this.username = "Guest";

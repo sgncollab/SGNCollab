@@ -41,8 +41,8 @@ export class ResetPinPage implements OnInit {
   currentPage = "reset-pin";
   verify =false;
   
-
   constructor(
+    private menu: MenuController,
     private navCtrl: NavController,
     private dbService: FirebaseDbService,
     private dataService: DataService
@@ -63,9 +63,13 @@ export class ResetPinPage implements OnInit {
     })
   }
   ionViewWillEnter(){
-    console.log(this.dataService.setPresentPage(this.currentPage));
+    this.menu.enable(false);
+    this.menu.swipeGesture(false);
+   
   }
-  
+  ionViewDidLeave() {
+    this.menu.enable(true);
+  }
   // resetOtp(e) {
   //   this.otpLength = false;
   //   this.enableRegister = true;

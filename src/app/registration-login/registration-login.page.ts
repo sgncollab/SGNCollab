@@ -6,6 +6,8 @@ import { AppComponent } from 'src/app/app.component';
 import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 import { ForgotPinPopoverComponent } from '../forgot-pin-popover/forgot-pin-popover.component'
 import { DataService } from 'src/app/services/data.service';
+import { Network } from '@ionic-native/network/ngx';
+
 
 @Component({
   selector: 'app-registration-login',
@@ -45,7 +47,6 @@ export class RegistrationLoginPage implements OnInit {
   create = false;
   confirm = false;
   pinnotmatch = false;
-  public onlineOffline: boolean = navigator.onLine;
   pattern = /^[a-zA-Z]/
   dataPage = "";
   temp
@@ -61,8 +62,25 @@ export class RegistrationLoginPage implements OnInit {
     private appComponent: AppComponent,
     private navCtrl: NavController,
     private popovercntrl: PopoverController,
-    private dataService: DataService) {
-      
+    private dataService: DataService,
+    private network: Network) {
+      this.network.onDisconnect().subscribe(() => {
+        this.dbService.showToast("network was disconnected :-(");
+        alert('network was disconnected :-('+ this.network.type);
+      });
+
+      this.network.onConnect().subscribe(() => {
+        console.log('network connected!');
+        this.dbService.showToast("network connected!");
+        // We just got a connection but we need to wait briefly
+         // before we determine the connection type. Might need to wait.
+        // prior to doing any api requests as well.
+        setTimeout(() => {
+          if (this.network.type === 'wifi') {
+            alert('we got a wifi connection, woohoo!');
+          }
+        }, 3000);
+      });
   }
   async presentPopover(ev) {
     const popover = await this.popovercntrl.create({
