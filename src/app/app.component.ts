@@ -19,11 +19,9 @@ export class AppComponent implements OnInit {
   userPlaylist: any = [];
   dataPage = "";
   currentPage = "app-component"
- // public onlineOffline: boolean = navigator.onLine;
-  // enterUName
-  // enterPIN
-
-
+  disconnectSubscription;
+  connectSubscription;
+ 
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -32,8 +30,23 @@ export class AppComponent implements OnInit {
     private navController: NavController,
     private statusBar: StatusBar,
     private network: Network
-    // public onlineOffline: boolean = navigator.onLine
+
   ) {
+      this.network.onDisconnect().subscribe(() => {
+
+      alert('network was disconnected :-('+ this.network.type);
+    });
+      this.network.onConnect().subscribe(() => {
+      console.log('network connected!');
+      // We just got a connection but we need to wait briefly
+       // before we determine the connection type. Might need to wait.
+      // prior to doing any api requests as well.
+      setTimeout(() => {
+        if (this.network.type === 'wifi') {
+          alert('we got a wifi connection, woohoo!');
+        }
+      }, 3000);
+    });
     this.initializeApp();
   }
 
@@ -55,9 +68,11 @@ export class AppComponent implements OnInit {
         }
       });
     });
+    
+   
   }
   
- 
+
  viewMenu(name){
   if(name.toLowerCase() == "guest"){
     this.username = "Guest";

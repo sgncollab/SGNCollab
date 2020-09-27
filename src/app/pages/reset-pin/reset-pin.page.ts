@@ -65,10 +65,10 @@ export class ResetPinPage implements OnInit {
   }
   ionViewWillEnter(){
     this.menu.enable(false);
-    console.log(this.dataService.setPresentPage(this.currentPage));
+   
   }
   ionViewDidLeave() {
-    this.menu.enable(true);
+    //this.menu.enable(true);
   }
   // resetOtp(e) {
   //   this.otpLength = false;

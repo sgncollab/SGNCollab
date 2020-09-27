@@ -47,7 +47,6 @@ export class RegistrationLoginPage implements OnInit {
   create = false;
   confirm = false;
   pinnotmatch = false;
-  public onlineOffline: boolean = navigator.onLine;
   pattern = /^[a-zA-Z]/
   dataPage = "";
   temp

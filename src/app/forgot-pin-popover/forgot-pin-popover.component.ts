@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PopoverController, NavController } from '@ionic/angular';
+import { PopoverController, NavController, MenuController } from '@ionic/angular';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 import { FirebaseDbService } from 'src/app/services/firebase-db.service';
 import { DataService } from 'src/app/services/data.service';
@@ -27,6 +27,7 @@ export class ForgotPinPopoverComponent implements OnInit {
   disabled = true;
 
   constructor(
+    private menu: MenuController,
     private popovercntrl: PopoverController,
     private dbService: FirebaseDbService,
     private navCtrl: NavController,
@@ -50,6 +51,11 @@ export class ForgotPinPopoverComponent implements OnInit {
       });
     })
   }
+
+  // ionViewWillEnter(){
+  //   this.menu.enable(false);
+  // }
+ 
 
 
   resetEmail() {

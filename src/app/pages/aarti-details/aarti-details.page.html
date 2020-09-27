@@ -9,53 +9,33 @@
   </ion-toolbar>
 </ion-header>
 
-<!-- <ion-content>
-  <ion-item *ngIf ="lang"  lines="none" >
-   <p>{{ aartiData.englishTitle }}</p> 
-  </ion-item>
-  <ion-item *ngIf="!lang" lines="none">
-    <ion-text style="text-align:center;"><p>{{aartiData.marathiTitle}}</p></ion-text>
-  </ion-item>
 
-</ion-content> -->
-
-  <section>
-    <ion-card class="cat_1">
-      <ion-item-divider sticky style="min-height: 8vh;margin-left: auto;margin-right: auto;">
-        <ion-item *ngIf ="lang"  lines="none" >
-          <ion-row>
-            <ion-col>{{aartiData.englishTitle}}</ion-col>
-          </ion-row>
-          
-          
-        </ion-item>
-        <ion-item *ngIf="!lang" lines="none">
-          <ion-text style="text-align:center;"><p>{{aartiData.marathiTitle}}</p></ion-text>
-        </ion-item>
-          
-      </ion-item-divider>
-        <div>
-            <ion-item *ngIf="!lang" lines="none"  class="splitData"  text-center no-lines style="padding-top: 10px;" [style.font-size]=smallFont>
-              {{aartiData.marathiAarti}}
-            </ion-item>
-        </div>
-         <div style="padding-left: 15px;"> 
-          <ion-item *ngIf="lang" lines="none" class="splitData" text-center no-lines style="padding-top: 10px;" [style.font-size]=smallFont>
-            {{aartiData.englishAarti}}
-          </ion-item>
-         </div> 
+<section>
+  <ion-card class="cat_1" style="margin-bottom: 6vh;">
+    <ion-item-divider sticky style="min-height: 8vh;">
+      <div *ngIf="lang" style="width: 100%; text-align: center; font-size:large;font-weight:600;color:#3b5998">
+        {{aartiData.englishTitle}}</div>
+      <div *ngIf="!lang" style="width: 100%; text-align: center; font-size:large;font-weight:600;color:#3b5998">
+        {{aartiData.marathiTitle}}</div>
+    </ion-item-divider>
+    <div>
+      <ion-item *ngIf="!lang" lines="none" class="splitData" text-center no-lines style="padding-bottom: 10px;"
+        [style.font-size]=smallFont>
+        {{aartiData.marathiAarti}}
+      </ion-item>
+    </div>
+    <div >
+      <ion-item *ngIf="lang" lines="none" class="splitData" text-center no-lines style="padding-top: 10px;"
+        [style.font-size]=smallFont>
+        {{aartiData.englishAarti}}
+      </ion-item>
+    </div>
   </ion-card>
-  <ion-button (click)="onNextPrev('prev')" style="margin-left:3vw">
+  
+  <ion-button (click)="onNextPrev('prev')" style="margin-left:3vw;">
     <ion-icon name="caret-back-outline"></ion-icon>Prev
   </ion-button>
-  <ion-button  (click)="onNextPrev('next')" style="float:right;">Next
+  <ion-button (click)="onNextPrev('next')" style="float:right;">Next
     <ion-icon name="caret-forward-outline"></ion-icon>
   </ion-button>
 </section>
-
-
-    
-    
-    
-
-

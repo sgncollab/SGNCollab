@@ -1,6 +1,6 @@
-// ion-content.background{
-//     --background: url(../../assets/images/app-bg-light.png)0 0/100% 100% no-repeat ;
-// }
+ion-content.background{
+    --background: url(../../assets/images/blue-bg-70.png)0 0/100% 100% no-repeat ;
+}
 ion-popover {
     .popover-wrapper{
         .popover-content{
@@ -38,6 +38,7 @@ ion-popover {
 
 .errorMsg{
     color:red;
+    padding-left:3vh;
    }
 
 

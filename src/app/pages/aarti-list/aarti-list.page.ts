@@ -52,14 +52,14 @@ export class AartiListPage implements OnInit, OnDestroy, AfterViewInit {
   }
   ngAfterViewInit() {
     this.backButtonSubscription = this.platform.backButton.subscribe(() => {
-      navigator['app'].clearHistory();
-      navigator['app'].exitApp();
-      alert("Fired Back Button");
       this.presentAlertConfirm()
+      alert("Fired Back Button");
 
       
-      
     });
+  }
+  ionViewDidLeave(){
+    this.backButtonSubscription.unsubscribe();
   }
   ngOnDestroy() {
     this.backButtonSubscription.unsubscribe();
@@ -82,6 +82,7 @@ export class AartiListPage implements OnInit, OnDestroy, AfterViewInit {
           text: 'Okay',
           handler: () => {
             console.log('Confirm Okay');
+            navigator['app'].clearHistory();
             navigator['app'].exitApp();
           }
         }

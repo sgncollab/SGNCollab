@@ -15,8 +15,8 @@ export class AartiDetailsPage implements OnInit {
   lang = false;
   language = "";
   private aartiDetail: any;
-  smallFont = "3vh";
-  fontSize: number = 3;
+  smallFont = "2.8vh";
+  fontSize: number = 2.8;
   upperLimit = false;
   lowerLimit = false;
 
@@ -27,7 +27,7 @@ export class AartiDetailsPage implements OnInit {
   ) { }
 
   ionViewDidLeave() {
-    this.smallFont = "3vh";
+    this.smallFont = "2.8vh";
   }
 
   ngOnInit() {
@@ -39,7 +39,7 @@ export class AartiDetailsPage implements OnInit {
   changeFont(identifier) {
     if (identifier == "plus") {
       this.lowerLimit = false;
-      if (this.fontSize == 4.5) {
+      if (this.fontSize == 4.3) {
         this.upperLimit = true;
       }
       else {
@@ -50,7 +50,7 @@ export class AartiDetailsPage implements OnInit {
     }
     else if (identifier == "minus") {
       this.upperLimit = false;
-      if (this.fontSize == 2.5) {
+      if (this.fontSize == 2.3) {
         this.lowerLimit = true;
       }
       else {
