@@ -4,6 +4,7 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { DataService } from './services/data.service';
 import { FirebaseDbService } from './services/firebase-db.service';
+import { Network } from '@ionic-native/network/ngx';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +19,7 @@ export class AppComponent implements OnInit {
   userPlaylist: any = [];
   dataPage = "";
   currentPage = "app-component"
-  public onlineOffline: boolean = navigator.onLine;
+ // public onlineOffline: boolean = navigator.onLine;
   // enterUName
   // enterPIN
 
@@ -29,7 +30,9 @@ export class AppComponent implements OnInit {
     private dataService: DataService,
     private dbService: FirebaseDbService,
     private navController: NavController,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private network: Network
+    // public onlineOffline: boolean = navigator.onLine
   ) {
     this.initializeApp();
   }

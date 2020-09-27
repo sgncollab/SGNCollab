@@ -52,6 +52,11 @@ export class AartiListPage implements OnInit, OnDestroy, AfterViewInit {
   }
   ngAfterViewInit() {
     this.backButtonSubscription = this.platform.backButton.subscribe(() => {
+      navigator['app'].clearHistory();
+      navigator['app'].exitApp();
+      alert("Fired Back Button");
+      this.presentAlertConfirm()
+
       
       
     });

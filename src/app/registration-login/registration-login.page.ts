@@ -6,6 +6,8 @@ import { AppComponent } from 'src/app/app.component';
 import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 import { ForgotPinPopoverComponent } from '../forgot-pin-popover/forgot-pin-popover.component'
 import { DataService } from 'src/app/services/data.service';
+import { Network } from '@ionic-native/network/ngx';
+
 
 @Component({
   selector: 'app-registration-login',
@@ -59,7 +61,9 @@ export class RegistrationLoginPage implements OnInit {
     private appComponent: AppComponent,
     private navCtrl: NavController,
     private popovercntrl: PopoverController,
-    private dataService: DataService) {
+    private dataService: DataService,
+    private network: Network
+    ) {
   }
   async presentPopover(ev) {
     const popover = await this.popovercntrl.create({
