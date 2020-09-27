@@ -41,7 +41,6 @@ export class ResetPinPage implements OnInit {
   currentPage = "reset-pin";
   verify =false;
   
-
   constructor(
     private menu: MenuController,
     private navCtrl: NavController,
