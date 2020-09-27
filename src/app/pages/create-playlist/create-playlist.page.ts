@@ -27,7 +27,7 @@ export class CreatePlaylistPage implements OnInit {
           this.data = json;
 
         });
-        console.log(this.dataService.setPresentPage(this.currentPage));
+        this.dataService.setPresentPage(this.currentPage);
         this.selectedItems = [];
         }
   // displayLang() {
@@ -38,6 +38,9 @@ export class CreatePlaylistPage implements OnInit {
  ionViewWillEnter(){
    this.data.filter(value => value.isChecked=false)
  }
+//  onclick(){
+//    console.log("pressed");
+//  }
 
   getItem(e: any, marathiTitle: string) {
     if (e.target.checked) {

@@ -33,13 +33,13 @@ export class AartiListPage implements OnInit, OnDestroy, AfterViewInit {
     private router: Router,
     public alertController: AlertController
   ) {
-    this.backButtonSubscription = this.platform.backButton.subscribeWithPriority(6666,()=> {
-      if(this.constructor.name == "AartiListPage"){
-        if(window.confirm("Do you want to Exit App")){
-          navigator["app"].exitApp();
-        }
-      }
-    })
+    // this.backButtonSubscription = this.platform.backButton.subscribeWithPriority(6666,()=> {
+    //   if(this.constructor.name == "AartiListPage"){
+    //     if(window.confirm("Do you want to Exit App")){
+    //       navigator["app"].exitApp();
+    //     }
+    //   }
+    // })
     
   }
 
@@ -52,23 +52,22 @@ export class AartiListPage implements OnInit, OnDestroy, AfterViewInit {
     this.dataService.setPresentPage(this.currentPage);
   }
   ngAfterViewInit() {
-    // this.backButtonSubscription = this.platform.backButton.subscribe((value) => {
-    //   this.closingApp();
-    //   navigator['app'].clearHistory();
-    //   navigator['app'].exitApp();
-      
+    
+  }
+  ionViewDidLoad(){
+    this.backButtonSubscription = this.platform.backButton.subscribeWithPriority(6666,()=> {
+        if(window.confirm("Do you want to Exit App")){
+          navigator["app"].exitApp();
+        }
+    })
 
-
-
-
-    // });
   }
   
   ionViewDidLeave() {
-    this.backButtonSubscription.unsubscribe();
+    // this.backButtonSubscription.unsubscribe();
   }
   ngOnDestroy() {
-    this.backButtonSubscription.unsubscribe();
+    //this.backButtonSubscription.unsubscribe();
   }
   
   checkLang(identifier) {

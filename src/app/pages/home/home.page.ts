@@ -11,4 +11,7 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
   }
+  onclick(){
+    console.log("we did it!");
+  }
 }

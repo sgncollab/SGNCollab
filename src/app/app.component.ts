@@ -18,7 +18,11 @@ export class AppComponent implements OnInit {
   srNo:any;
   userPlaylist: any = [];
   dataPage = "";
-  currentPage = "app-component"
+  currentPage = "app-component";
+  user = "guest";
+  
+
+
  
   constructor(
     private platform: Platform,
@@ -181,6 +185,12 @@ export class AppComponent implements OnInit {
           this.navController.navigateForward(this.dataPage);
           this.dbService.showToast("Please create a playlist!");
         }
+      }
+    }
+    else if(this.username.toLowerCase() == "guest"){
+      // console.log("Guest")
+      if(index == 3){
+        this.dataService.setGuest(this.user);
       }
     }
   }
