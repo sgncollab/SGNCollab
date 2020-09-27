@@ -3,7 +3,6 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Logo</ion-title>
     <ion-button [disabled]="lowerLimit" slot="end" (click)="changeFont('minus')">-</ion-button>
     <ion-button [disabled]="upperLimit" slot="end" (click)="changeFont('plus')">+</ion-button>
   </ion-toolbar>
@@ -11,7 +10,7 @@
 
 
 <section>
-  <ion-card class="cat_1" style="margin-bottom: 6vh;">
+  <ion-card class="cat_1" style="margin-bottom: 3vh;">
     <ion-item-divider sticky style="min-height: 8vh;">
       <div *ngIf="lang" style="width: 100%; text-align: center; font-size:large;font-weight:600;color:#3b5998">
         {{aartiData.englishTitle}}</div>
@@ -19,13 +18,13 @@
         {{aartiData.marathiTitle}}</div>
     </ion-item-divider>
     <div>
-      <ion-item *ngIf="!lang" lines="none" class="splitData" text-center no-lines style="padding-bottom: 10px;"
+      <ion-item *ngIf="!lang" lines="none" class="splitData" text-center no-lines style="padding-bottom: 10px;margin-top: 2vh;"
         [style.font-size]=smallFont>
         {{aartiData.marathiAarti}}
       </ion-item>
     </div>
     <div >
-      <ion-item *ngIf="lang" lines="none" class="splitData" text-center no-lines style="padding-top: 10px;"
+      <ion-item *ngIf="lang" lines="none" class="splitData" text-center no-lines style="padding-top: 10px;margin-top: 2vh;"
         [style.font-size]=smallFont>
         {{aartiData.englishAarti}}
       </ion-item>

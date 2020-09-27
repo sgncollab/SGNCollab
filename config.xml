@@ -21,12 +21,12 @@
         </edit-config>
         <resource-file src="resources/android/xml/network_security_config.xml" target="app/src/main/res/xml/network_security_config.xml" />
         <allow-intent href="market:*" />
-        <icon density="ldpi" src="resources/android/icon/ic_ldpi.png" />
-        <icon density="mdpi" src="resources/android/icon/ic_mdpi.png" />
-        <icon density="hdpi" src="resources/android/icon/ic_hdpi.png" />
-        <icon density="xhdpi" src="resources/android/icon/ic_xhdpi.png" />
-        <icon density="xxhdpi" src="resources/android/icon/ic_xxhdpi.png" />
-        <icon density="xxxhdpi" src="resources/android/icon/ic_xxxhdpi.png" />
+        <icon density="ldpi" src="resources/android/icon/mipmap-hdpi/ic_launcher.png" />
+        <icon density="mdpi" src="resources/android/icon/mipmap_mdpi/ic_launcher.png" />
+        <icon density="hdpi" src="resources/android/icon/mipmap_hdpi/ic_launcher.png" />
+        <icon density="xhdpi" src="resources/android/icon/mipmap_xhdpi/ic_launcher.png" />
+        <icon density="xxhdpi" src="resources/android/icon/mipmap_xxhdpi/ic_launcher.png" />
+        <icon density="xxxhdpi" src="resources/android/icon/mipmap_xxxhdpi/ic_launcher.png" />
         <splash density="land-ldpi" src="resources/android/splash/splashimg-ldpi.png" />
         <splash density="land-mdpi" src="resources/android/splash/splashimg-mdpi.png" />
         <splash density="land-hdpi" src="resources/android/splash/splashimg-hdpi.png" />
