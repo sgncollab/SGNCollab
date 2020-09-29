@@ -227,7 +227,7 @@ export class AppComponent implements OnInit {
   }
 
   logout() {
-    this.user_name= "";
+    // this.user_name= "";
     console.log("logout");
     localStorage.clear();
   }
