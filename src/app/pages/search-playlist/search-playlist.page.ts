@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseDbService } from 'src/app/services/firebase-db.service';
 import { DataService } from 'src/app/services/data.service';
-import { NavController } from '@ionic/angular';
+import { NavController,Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-search-playlist',
@@ -17,12 +17,14 @@ export class SearchPlaylistPage implements OnInit {
   playlistString = [];
   fetchAarti = [];
   noItemFound = false;
-  currentPage = "search-playlist"
+  currentPage = "search-playlist";
+  backButtonSubscription
 
   constructor(
     private dbService: FirebaseDbService,
     private dataService: DataService,
-    private navController: NavController
+    private navController: NavController,
+    private platform: Platform
   ) { }
 
   ngOnInit() {
@@ -53,6 +55,15 @@ export class SearchPlaylistPage implements OnInit {
       .then(json => {
         this.data = json;
       });
+  }
+  ionViewWillEnter() {
+    this.backButtonSubscription = this.platform.backButton.subscribeWithPriority(6666, () => {
+       //alert("back button clicked")
+        this.navController.navigateForward('aarti-list');
+    })
+  }
+  ionViewDidLeave() {
+   this.backButtonSubscription.unsubscribe();
   }
   search() {
     this.fetchSearch = [];

@@ -41,7 +41,7 @@
         <ion-input type="text" [(ngModel)]="username" placeholder="Username" class="ion-text-capitalize"
           (ionChange)="inputValidation($event,'username')"></ion-input>
       </ion-item>
-      
+
       <span *ngIf="uName" class="errorMsg">Username is required</span>
       <span *ngIf="length" class="errorMsg">Username should atlest contain 4 characters</span>
       <span *ngIf="uNameExist" class="errorMsg">Username already taken</span>
@@ -104,16 +104,24 @@
       </ion-item>
       <span *ngIf="loginPin" class="errorMsg">Please check your PIN</span>
       <div style=" margin-left: 15px; margin-top: 10px; margin-bottom: 10px;">
+        <ion-grid>
+          <ion-row style="margin-top:2vh">
+            <ion-col size="1">
+              <ion-checkbox [ngModel]="rememberChecked" (ionChange)="rememberMe('login',$event)"></ion-checkbox>
+            </ion-col>
+            <ion-col size="6">
+              Remember Me
+            </ion-col>
+            <ion-col size="5"  style="text-align: right;" (click)="presentPopover($event)">
+               Forgot PIN
+            </ion-col>
+          </ion-row>
+        </ion-grid>
 
-        <ion-row style="margin-top:2vh">
-          <ion-checkbox [ngModel]="rememberChecked" (ionChange)="rememberMe('login',$event)"></ion-checkbox>
-          <ion-label>
-            <p style="font-size: 14px; color: black; margin-left: 5px;">Remember Me</p>
-          </ion-label>
-          <ion-label style="margin-left: 14vh;">
-            <p><a (click)="presentPopover($event)">Forgot PIN</a></p>
-          </ion-label>
-        </ion-row>
+
+
+
+
 
       </div>
 

@@ -77,7 +77,7 @@ export class AartiReorderPage implements OnInit {
       
       const popover = await this.popovercntrl.create({
         component: UpdatePopoverComponent,
-        cssClass: 'my-custom-class',
+        cssClass: 'ion-popover',
         event: ev,
         translucent: true
       });
@@ -85,7 +85,7 @@ export class AartiReorderPage implements OnInit {
     }else  {
       const popover = await this.popovercntrl.create({
         component: ReorderPopoverComponent,
-        cssClass: 'my-custom-class',
+        cssClass: 'ion-popover',
         event: ev,
         translucent: true
       });

@@ -15,8 +15,8 @@ const { App } = Plugins;
   templateUrl: './aarti-list.page.html',
   styleUrls: ['./aarti-list.page.scss'],
 })
-export class AartiListPage implements OnInit, OnDestroy, AfterViewInit {
-  backButtonSubscription:any;
+export class AartiListPage implements OnInit {
+  backButtonSubscription: any;
   lang = false;
   data: any = [];
   isItemAvailable = true;
@@ -32,17 +32,9 @@ export class AartiListPage implements OnInit, OnDestroy, AfterViewInit {
     private routerOutlet: IonRouterOutlet,
     private router: Router,
     public alertController: AlertController
-  ) {
-    // this.backButtonSubscription = this.platform.backButton.subscribeWithPriority(6666,()=> {
-    //   if(this.constructor.name == "AartiListPage"){
-    //     if(window.confirm("Do you want to Exit App")){
-    //       navigator["app"].exitApp();
-    //     }
-    //   }
-    // })
-    
-  }
+  ) { }
 
+  
   ngOnInit() {
     fetch('./assets/data/aarti-data.json').then(res => res.json())
       .then(json => {
@@ -51,28 +43,20 @@ export class AartiListPage implements OnInit, OnDestroy, AfterViewInit {
       });
     this.dataService.setPresentPage(this.currentPage);
   }
-  ngAfterViewInit() {
-    
-  }
-  ionViewDidLoad(){
-    this.backButtonSubscription = this.platform.backButton.subscribeWithPriority(6666,()=> {
-      if(this.constructor.name == "AartiListPage"){
-        if(window.confirm("Do you want to Exit App")){
+  ionViewWillEnter() {
+    this.backButtonSubscription = this.platform.backButton.subscribeWithPriority(6666, () => {
+      if (this.constructor.name == "AartiListPage") {
+        if (window.confirm("Do you want to Exit App")) {
           navigator["app"].exitApp();
         }
       }
-        
     })
-
   }
-  
   ionViewDidLeave() {
-     this.backButtonSubscription.unsubscribe();
-  }
-  ngOnDestroy() {
-    //this.backButtonSubscription.unsubscribe();
+    this.backButtonSubscription.unsubscribe();
   }
   
+
   checkLang(identifier) {
     if (identifier == "marathi") {
       this.lang = true;
@@ -80,13 +64,11 @@ export class AartiListPage implements OnInit, OnDestroy, AfterViewInit {
     if (identifier == "english") {
       this.lang = false;
     }
-
   }
 
   displayLang() {
     this.lang = !this.lang;
   }
-
 
   reasignData() {
     this.copyData = this.data

@@ -4,6 +4,7 @@ import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 import { Toast } from '@capacitor/core';
 import { FirebaseDbService } from 'src/app/services/firebase-db.service';
 import { ToastController } from '@ionic/angular';
+import { NavController,Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-feedback',
@@ -17,11 +18,14 @@ export class FeedbackPage implements OnInit {
   user_feedback = "";
   contact_number;
   data: string;
+  backButtonSubscription
 
   constructor(
     private dataService: DataService,
     private dbService: FirebaseDbService,
     private toastController: ToastController,
+    private navController: NavController,
+    private platform: Platform
     
   ) {this.data = ''; }
 
@@ -32,6 +36,15 @@ export class FeedbackPage implements OnInit {
     this.dataService.setPresentPage(this.currentPage);
     this.user_name = this.dataService.getLoggedInUsername();
     //console.log(this.someAutoFormattedInput);
+  }
+  ionViewWillEnter() {
+    this.backButtonSubscription = this.platform.backButton.subscribeWithPriority(6666, () => {
+       //alert("back button clicked")
+        this.navController.navigateForward('aarti-list');
+    })
+  }
+  ionViewDidLeave() {
+   this.backButtonSubscription.unsubscribe();
   }
   onAutoFormatChanged() {
     this.user_name = this.setFirstLetterToUppercase(this.user_name);
