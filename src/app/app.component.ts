@@ -20,8 +20,7 @@ export class AppComponent implements OnInit {
   dataPage = "";
   currentPage = "app-component";
   user = "guest";
-  
-
+  user_name;
 
  
   constructor(
@@ -32,23 +31,10 @@ export class AppComponent implements OnInit {
     private navController: NavController,
     private statusBar: StatusBar,
     private network: Network,
-    public alertController: AlertController
+    public alertController: AlertController,
+    
   ) {
-    //   this.network.onDisconnect().subscribe(() => {
-
-    //   alert('network was disconnected :-('+ this.network.type);
-    // });
-    //   this.network.onConnect().subscribe(() => {
-    //   console.log('network connected!');
-    //   // We just got a connection but we need to wait briefly
-    //    // before we determine the connection type. Might need to wait.
-    //   // prior to doing any api requests as well.
-    //   setTimeout(() => {
-    //     if (this.network.type === 'wifi') {
-    //       alert('we got a wifi connection, woohoo!');
-    //     }
-    //   }, 3000);
-    // });
+    
     this.initializeApp();
   }
 
@@ -57,11 +43,34 @@ export class AppComponent implements OnInit {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
-    
   }
+  ionViewWillEnter(){
 
+  }
+ 
 
   ngOnInit() {
+    let disconnectSubscription = this.network.onDisconnect().subscribe(() => {
+      alert('network was disconnected :-(');
+    });
+    
+    // stop disconnect watch
+    // disconnectSubscription.unsubscribe();
+    
+    
+    // watch network for a connection
+    let connectSubscription = this.network.onConnect().subscribe(() => {
+      alert('network connected!');
+      // We just got a connection but we need to wait briefly
+       // before we determine the connection type. Might need to wait.
+      // prior to doing any api requests as well.
+      setTimeout(() => {
+        if (this.network.type === 'wifi') {
+          alert('we got a wifi connection, woohoo!');
+        }
+      }, 3000);
+    });
+
     this.dbService.fetchUserPlaylist().subscribe((data) => {
       this.userPlaylist = data.map(value => {
         return {
@@ -196,6 +205,7 @@ export class AppComponent implements OnInit {
   }
 
   logout() {
+    this.user_name= "";
     console.log("logout");
     localStorage.clear();
   }

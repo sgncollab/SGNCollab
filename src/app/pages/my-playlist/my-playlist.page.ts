@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseDbService } from 'src/app/services/firebase-db.service';
 import { DataService } from 'src/app/services/data.service';
-import { NavController, LoadingController, PopoverController, ActionSheetController } from '@ionic/angular';
+import { NavController, LoadingController, PopoverController, ActionSheetController,Platform } from '@ionic/angular';
 import { NavigationExtras } from '@angular/router';
 import { Clipboard } from '@ionic-native/clipboard/ngx';
 
@@ -19,8 +19,18 @@ export class MyPlaylistPage implements OnInit {
   artiJson = [];
   fetchArti = [];
   currentPage = "my-playlist";
+  backButtonSubscription
 
-  constructor(private dbService: FirebaseDbService,private clipboard: Clipboard, public actionSheetController: ActionSheetController, private popoverController: PopoverController, private loadingController: LoadingController, private dataService: DataService, private navCtrl: NavController) { }
+  constructor(
+    private dbService: FirebaseDbService,
+    private clipboard: Clipboard, 
+    public actionSheetController: ActionSheetController, 
+    private popoverController: PopoverController, 
+    private loadingController: LoadingController, 
+    private dataService: DataService, 
+    private navCtrl: NavController,
+    private platform: Platform)
+     { }
 
   doRefresh(event) {
     console.log('Begin async operation');
@@ -60,6 +70,15 @@ export class MyPlaylistPage implements OnInit {
       .then(json => {
         this.artiJson = json;
       });
+  }
+  ionViewWillEnter() {
+    this.backButtonSubscription = this.platform.backButton.subscribeWithPriority(6666, () => {
+       //alert("back button clicked")
+        this.navCtrl.navigateForward('aarti-list');
+    })
+  }
+  ionViewDidLeave() {
+   this.backButtonSubscription.unsubscribe();
   }
   
 

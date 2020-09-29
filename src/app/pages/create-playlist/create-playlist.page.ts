@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service'
-import { NavController } from '@ionic/angular';
+import { NavController,Platform } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
+import { NavigationStart } from '@angular/router';
 
 @Component({
   selector: 'app-create-playlist',
@@ -14,10 +15,12 @@ export class CreatePlaylistPage implements OnInit {
   checkedbtn = true;
   currentPage = "create-playlist";
   lang = false;
+  backButtonSubscription
   
   constructor(
     private dataService: DataService,
-    private navController: NavController
+    private navController: NavController,
+    private platform: Platform
   ) { }
 
   ngOnInit() {
@@ -35,12 +38,18 @@ export class CreatePlaylistPage implements OnInit {
   //   this.selectedItems = [];
   // }
 
- ionViewWillEnter(){
-   this.data.filter(value => value.isChecked=false)
- }
-//  onclick(){
-//    console.log("pressed");
-//  }
+ 
+ ionViewWillEnter() {
+  this.data.filter(value => value.isChecked=false);
+  this.backButtonSubscription = this.platform.backButton.subscribeWithPriority(6666, () => {
+     //alert("back button clicked")
+      this.navController.navigateForward('aarti-list');
+  })
+}
+ionViewDidLeave() {
+ this.backButtonSubscription.unsubscribe();
+}
+
 
   getItem(e: any, marathiTitle: string) {
     if (e.target.checked) {

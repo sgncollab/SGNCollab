@@ -85,7 +85,7 @@ export class RegistrationLoginPage implements OnInit {
   async presentPopover(ev) {
     const popover = await this.popovercntrl.create({
       component: ForgotPinPopoverComponent,
-      cssClass: 'my-custom-class',
+      cssClass: 'ion-popover-1',
       event: ev,
       translucent: true
     });

@@ -3,8 +3,8 @@
     <h5 style="margin-top:2vh;margin-bottom:0vh;margin-left:4vw">Reset Your PIN</h5>
   </ion-text>
   <ion-label>
-    <p style="margin-left:4vw;margin-top:1vh;margin-bottom:0.5vh;">Submit your username and email address, <br> we will send 
-      you an OTP to reset your pin </p>
+    <p style="margin-left:4vw;margin-top:1vh;margin-bottom:0.5vh;">Submit your username and email address,we will send 
+      you <br>an OTP to reset your pin </p>
   </ion-label>
 
   <ion-item lines="none">
@@ -21,11 +21,11 @@
   <span *ngIf="emptyemail"  class="errorMsg">Email is required</span>
   <span *ngIf="emailvalid"  class="errorMsg">Please enter valid email address</span>
 
-<ion-item>
+
   <ion-button size="small" [disabled]="disabled"(click)="onSubmit()" (click)="resetEmail()"
-    style="margin-left:0vw; margin-bottom:2vh;margin-top:1.5vh;">Get OTP</ion-button>
-  <ion-button size="small" (click)="onClose()" color="danger"
-    style="margin-left:42vw; margin-bottom:2vh;margin-top:1.5vh;">Cancel</ion-button>
+    style="margin-left:2vh; margin-bottom:2vh;margin-top:1.5vh;">Get OTP</ion-button>
+  <ion-button size="small" (click)="onClose()" color="danger" 
+    style="float:right;margin-right:2vh; margin-bottom:2vh;margin-top:1.5vh;">Cancel</ion-button>
   <span *ngIf="emptysubmit" style="color: brown;">Please,enter the details!</span>
-</ion-item>
+
 </ion-content>
