@@ -64,23 +64,23 @@ export class RegistrationLoginPage implements OnInit {
     private popovercntrl: PopoverController,
     private dataService: DataService,
     private network: Network) {
-      this.network.onDisconnect().subscribe(() => {
-        this.dbService.showToast("network was disconnected :-(");
-        alert('network was disconnected :-('+ this.network.type);
-      });
+      // this.network.onDisconnect().subscribe(() => {
+      //   this.dbService.showToast("network was disconnected :-(");
+      //   alert('network was disconnected :-('+ this.network.type);
+      // });
 
-      this.network.onConnect().subscribe(() => {
-        console.log('network connected!');
-        this.dbService.showToast("network connected!");
-        // We just got a connection but we need to wait briefly
-         // before we determine the connection type. Might need to wait.
-        // prior to doing any api requests as well.
-        setTimeout(() => {
-          if (this.network.type === 'wifi') {
-            alert('we got a wifi connection, woohoo!');
-          }
-        }, 3000);
-      });
+      // this.network.onConnect().subscribe(() => {
+      //   console.log('network connected!');
+      //   this.dbService.showToast("network connected!");
+      //   // We just got a connection but we need to wait briefly
+      //    // before we determine the connection type. Might need to wait.
+      //   // prior to doing any api requests as well.
+      //   setTimeout(() => {
+      //     if (this.network.type === 'wifi') {
+      //       alert('we got a wifi connection, woohoo!');
+      //     }
+      //   }, 3000);
+      // });
   }
   async presentPopover(ev) {
     const popover = await this.popovercntrl.create({

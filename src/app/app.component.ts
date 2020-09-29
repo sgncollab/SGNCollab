@@ -56,6 +56,22 @@ export class AppComponent implements OnInit {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+          this.network.onDisconnect().subscribe(() => {
+            this.viewMenu("issue");
+
+      alert('network was disconnected :-('+ this.network.type);
+    });
+      this.network.onConnect().subscribe(() => {
+      console.log('network connected!');
+      // We just got a connection but we need to wait briefly
+       // before we determine the connection type. Might need to wait.
+      // prior to doing any api requests as well.
+      setTimeout(() => {
+        if (this.network.type === 'wifi') {
+          alert('we got a wifi connection, woohoo!');
+        }
+      }, 3000);
+    });
     });
     
   }
@@ -104,7 +120,15 @@ export class AppComponent implements OnInit {
         icon: 'enter'
       }
     ];
-   } else {
+   } else if(name =="issue") {
+    this.appPages = [
+      {
+        title: 'Homepage',
+        url: 'aarti-list',
+        icon: 'home'
+      }
+    ];
+   }else {
     this.username = name;
     this.appPages = [
       {
@@ -139,8 +163,6 @@ export class AppComponent implements OnInit {
         icon: 'exit'
       }
     ];
-   
-  
    }
   //  window.addEventListener('offline', () => {
   //   //Do task when no internet connection

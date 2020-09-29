@@ -56,15 +56,18 @@ export class AartiListPage implements OnInit, OnDestroy, AfterViewInit {
   }
   ionViewDidLoad(){
     this.backButtonSubscription = this.platform.backButton.subscribeWithPriority(6666,()=> {
+      if(this.constructor.name == "AartiListPage"){
         if(window.confirm("Do you want to Exit App")){
           navigator["app"].exitApp();
         }
+      }
+        
     })
 
   }
   
   ionViewDidLeave() {
-    // this.backButtonSubscription.unsubscribe();
+     this.backButtonSubscription.unsubscribe();
   }
   ngOnDestroy() {
     //this.backButtonSubscription.unsubscribe();
