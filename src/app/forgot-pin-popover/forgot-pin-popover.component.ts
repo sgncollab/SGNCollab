@@ -163,9 +163,9 @@ export class ForgotPinPopoverComponent implements OnInit {
         else if (this.pattern.test(String(this.to_email))) {
           console.log("pattern match");
           console.log(this.randomNo);
-          localStorage.clear();
-          this.enterUName = "";
-          this.enterPIN = "";
+          
+          // this.enterUName = "";
+          // this.enterPIN = "";
           this.rememberChecked = false;
           localStorage.setItem('resetPin', this.randomNo);
           this.onClose();

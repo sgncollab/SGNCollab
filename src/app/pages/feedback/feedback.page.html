@@ -3,6 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
+    <ion-title>Feedback</ion-title>
     <img slot="end" src="../../../assets/images/logo.png"  style="display:inline-block ;height: 8vh; width:8vh;" />
   </ion-toolbar>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
@@ -14,7 +15,33 @@
 </ion-header>
 
 <ion-content class="background">
-  <ion-card style="margin-top: 15vh; height:66vh;width:85vw;padding-top:3vh;margin-left: 7vw;">
+  <ion-card style="margin-top: 15vh; height:66vh;width:85vw;padding-top:3vh;margin-left:7vw;">
+  <ion-text color="primary" style="text-align: center;">
+    <h3>Feedback Form</h3>
+  </ion-text>
+  <ion-card-content style="padding-top:5vh;">
+    <ion-item class="font" style="margin-bottom: 2vh;" lines="none">
+      <ion-input required type="text" placeholder="Your name" [(ngModel)]="user_name" (ionChange)="onAutoFormatChanged()">
+      </ion-input>
+    </ion-item>
+    <ion-item class="font" style="margin-bottom: 2vh;" lines="none">
+      <ion-input type="email" placeholder="Your email" style="font:revert" [(ngModel)]="user_email"> </ion-input>
+    </ion-item>
+    <ion-textarea  class="font" maxLength="300" placeholder="Your feedback" [(ngModel)]="user_feedback"
+      (ionChange)="onAutoFormatChanged()" required style="margin-bottom: 2vh;text-indent: 1vh;">
+    </ion-textarea>
+    <div>
+     
+      <ion-button [disabled]="!user_name || !user_email || !user_feedback" expand="full" fill="solid" color="primary" 
+       shape="round" (click)="sendEmail()">
+        Submit</ion-button>
+    </div>
+  </ion-card-content>
+</ion-card>
+</ion-content>
+
+
+<!-- <ion-card style="margin-top: 15vh; height:66vh;width:85vw;padding-top:3vh;margin-left: 7vw;">
   <ion-text color="primary" style="text-align: center;">
     <h3 style="margin-top:0px">Feedback Form</h3>
   </ion-text>
@@ -30,16 +57,13 @@
       (ionChange)="onAutoFormatChanged()" required>
     </ion-textarea>
     <div>
-      <!-- <button [disabled]="!name || !surname || !username">Save</button> -->
+       <button [disabled]="!name || !surname || !username">Save</button> 
       <ion-button [disabled]="!user_name || !user_email || !user_feedback" expand="full" fill="solid" color="primary" style="text-transform:none;font-size:20px; 
       margin-top: 15px;" shape="round" (click)="sendEmail()">
         Submit</ion-button>
     </div>
   </ion-card-content>
-</ion-card>
-
-  
-</ion-content>
+</ion-card> -->
 
 
 

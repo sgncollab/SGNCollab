@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service'
-import { NavController,Platform } from '@ionic/angular';
+import { NavController, Platform } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { NavigationStart } from '@angular/router';
 
@@ -10,13 +10,13 @@ import { NavigationStart } from '@angular/router';
   styleUrls: ['./create-playlist.page.scss'],
 })
 export class CreatePlaylistPage implements OnInit {
-   data= [];
+  data = [];
   selectedItems = [];
   checkedbtn = true;
   currentPage = "create-playlist";
   lang = false;
   backButtonSubscription
-  
+
   constructor(
     private dataService: DataService,
     private navController: NavController,
@@ -25,30 +25,30 @@ export class CreatePlaylistPage implements OnInit {
 
   ngOnInit() {
     //console.log("create playlist");
-      fetch('./assets/data/aarti-data.json').then(res => res.json())
-        .then(json => {
-          this.data = json;
+    fetch('./assets/data/aarti-data.json').then(res => res.json())
+      .then(json => {
+        this.data = json;
 
-        });
-        this.dataService.setPresentPage(this.currentPage);
-        this.selectedItems = [];
-        }
+      });
+    this.dataService.setPresentPage(this.currentPage);
+    this.selectedItems = [];
+  }
   // displayLang() {
   //   this.lang = !this.lang;
   //   this.selectedItems = [];
   // }
 
- 
- ionViewWillEnter() {
-  this.data.filter(value => value.isChecked=false);
-  this.backButtonSubscription = this.platform.backButton.subscribeWithPriority(6666, () => {
-     //alert("back button clicked")
+
+  ionViewWillEnter() {
+    this.data.filter(value => value.isChecked = false);
+    this.backButtonSubscription = this.platform.backButton.subscribeWithPriority(6666, () => {
+      //alert("back button clicked")
       this.navController.navigateForward('aarti-list');
-  })
-}
-ionViewDidLeave() {
- this.backButtonSubscription.unsubscribe();
-}
+    })
+  }
+  ionViewDidLeave() {
+    this.backButtonSubscription.unsubscribe();
+  }
 
 
   getItem(e: any, marathiTitle: string) {
@@ -59,7 +59,7 @@ ionViewDidLeave() {
     else {
       this.selectedItems = this.selectedItems.filter(item => item != marathiTitle);
     }
-    if(this.selectedItems.length == 0 ){
+    if (this.selectedItems.length == 0) {
       this.checkedbtn = true;
     }
   }

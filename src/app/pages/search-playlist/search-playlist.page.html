@@ -3,12 +3,13 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
+    <ion-title>Search Playlist</ion-title>
     <img slot="end" src="../../../assets/images/logo.png"  style="display:inline-block ;height: 8vh; width:8vh;" />
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="background">
-  <ion-searchbar debounce="500"  placeholder="Search Playlist" inputmode="numeric" [(ngModel)]="searchPlaylist" 
+  <ion-searchbar debounce="500"  placeholder="Enter playlist code" inputmode="numeric" [(ngModel)]="searchPlaylist" 
   (ionChange)="search()">
   </ion-searchbar>
   <div *ngIf="fetchSearch.length > 0;"> 

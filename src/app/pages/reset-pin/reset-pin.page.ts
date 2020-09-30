@@ -49,8 +49,6 @@ export class ResetPinPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    //this.dataService.setPresentPage(this.currentPage);
-
     this.dbService.fetchUsers().subscribe((data) => {
       this.regResult = data.map(value => {
         return {
@@ -188,6 +186,8 @@ export class ResetPinPage implements OnInit {
         }
       })
       this.dbService.updatePin(this.id, this.sr_no, this.Uname, Md5.hashStr(this.confirmPIN));
+      this.dataService.setPresentPage(this.currentPage);
+      //localStorage.clear();
       this.navCtrl.navigateForward('registration-login');
 
     }

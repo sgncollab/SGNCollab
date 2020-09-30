@@ -3,11 +3,7 @@ import { DataService } from '../../services/data.service';
 import { NavController, Platform, IonRouterOutlet } from '@ionic/angular';
 import { NavigationExtras, Router } from '@angular/router';
 import { Plugins } from '@capacitor/core';
-import { OnDestroy, AfterViewInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
-
-
-//import { Globalization } from '@ionic-native/globalization/ngx';
 const { App } = Plugins;
 
 @Component({
@@ -23,7 +19,6 @@ export class AartiListPage implements OnInit {
   searchAarti: string = "";
   copyData = []
   currentPage = "aarti-list";
-
 
   constructor(
     private navController: NavController,

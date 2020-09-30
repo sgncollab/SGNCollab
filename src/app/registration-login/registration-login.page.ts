@@ -8,7 +8,6 @@ import { ForgotPinPopoverComponent } from '../forgot-pin-popover/forgot-pin-popo
 import { DataService } from 'src/app/services/data.service';
 import { Network } from '@ionic-native/network/ngx';
 
-
 @Component({
   selector: 'app-registration-login',
   templateUrl: './registration-login.page.html',
@@ -145,7 +144,7 @@ export class RegistrationLoginPage implements OnInit {
     this.dataPage = this.dataService.getPresentPage();
     if (this.dataPage == "reset-pin") {
       console.log("coming from reset pin ");
-      //localStorage.clear();
+      
       this.enterUName = "";
       this.enterPIN = "";
       this.rememberChecked = false;
@@ -382,14 +381,10 @@ export class RegistrationLoginPage implements OnInit {
   registerEnable() {
     if(this.username == "" || this.username == undefined ){
       this.uName = true;
-
     }
- 
    else if (this.create == true && this.confirm == true) {
       this.disabled = false;
     }
-
-
   }
   register() {
     console.log("register")

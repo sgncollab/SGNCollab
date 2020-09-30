@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Platform, NavController,AlertController } from '@ionic/angular';
+import { Platform, NavController,AlertController,PopoverController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { DataService } from './services/data.service';
 import { FirebaseDbService } from './services/firebase-db.service';
 import { Network } from '@ionic-native/network/ngx';
+
 
 @Component({
   selector: 'app-root',
@@ -21,6 +22,7 @@ export class AppComponent implements OnInit {
   currentPage = "app-component";
   user = "guest";
   user_name;
+  backButtonSubscription
 
  
   constructor(
@@ -32,15 +34,23 @@ export class AppComponent implements OnInit {
     private statusBar: StatusBar,
     private network: Network,
     public alertController: AlertController,
-    
+    private popovercntrl: PopoverController
   ) {
-    
     this.initializeApp();
+  }
+  ionViewWillEnter() {
+    this.backButtonSubscription = this.platform.backButton.subscribeWithPriority(6666, () => {
+      //alert("back button clicked")
+      this.navController.navigateForward('aarti-list');
+    })
+  }
+  ionViewDidLeave() {
+    this.backButtonSubscription.unsubscribe();
   }
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
+      this.statusBar.hide();
       this.splashScreen.hide();
           this.network.onDisconnect().subscribe(() => {
             this.viewMenu("issue");
@@ -60,9 +70,7 @@ export class AppComponent implements OnInit {
     });
     });
   }
-  ionViewWillEnter(){
-
-  }
+  
  
 
   ngOnInit() {
@@ -114,7 +122,7 @@ export class AppComponent implements OnInit {
       },
       {
         title: 'Search Playlist',
-        url: 'search-playlist',
+         url: 'search-playlist',
         icon: 'search'
       },
       {
@@ -220,9 +228,12 @@ export class AppComponent implements OnInit {
     }
     else if(this.username.toLowerCase() == "guest"){
       // console.log("Guest")
-      if(index == 3){
+      if(index == 3 || index == 2){
         this.dataService.setGuest(this.user);
       }
+      // if(index == 1){
+      //   this.presentPopover();
+      // }
     }
   }
 
@@ -232,6 +243,15 @@ export class AppComponent implements OnInit {
     localStorage.clear();
   }
 }
+//   async presentPopover() {
+//     const popover = await this.popovercntrl.create({
+//       component: ForgotPinPopoverComponent,
+//       cssClass: 'ion-popover-1',
+//       translucent: true
+//     });
+//     return await popover.present();
+//   }
+// }
 
 // {
 //   title: 'Settings',
