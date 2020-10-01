@@ -32,14 +32,14 @@ export class MyPlaylistPage implements OnInit {
     private platform: Platform)
      { }
 
-  doRefresh(event) {
-    console.log('Begin async operation');
+  // doRefresh(event) {
+  //   console.log('Begin async operation');
 
-    setTimeout(() => {
-      console.log('Async operation has ended');
-      event.target.complete();
-    }, 2000);
-  }
+  //   setTimeout(() => {
+  //     console.log('Async operation has ended');
+  //     event.target.complete();
+  //   }, 2000);
+  // }
   ngOnInit() {
     this.dataService.setPresentPage(this.currentPage);
     this.dbService.fetchUserPlaylist().subscribe((data) => {
@@ -142,16 +142,7 @@ export class MyPlaylistPage implements OnInit {
     this.navCtrl.navigateForward('update-user-playlist');
   }
   copyData(item){
-    this.clipboard.copy('Hello world');
-
-    // this.clipboard.paste().then(
-    //   (resolve: string) => {
-    //      alert(resolve);
-    //    },
-    //    (reject: string) => {
-    //      alert('Error: ' + reject);
-    //    }
-    //  );
+    this.clipboard.copy(item.playlist_id);
    }
 
   deletePlaylist(item) {
@@ -175,9 +166,7 @@ export class MyPlaylistPage implements OnInit {
     }
     this.dbService.showToast(item.playlist_name + " " + " Deleted!")
   }
-  // options(){
-  //   this.dbService.showToast("show options")
-  // }
+ 
 
   async presentActionSheet(item) {
     const actionSheet = await this.actionSheetController.create({

@@ -45,51 +45,21 @@ export class AppComponent implements OnInit {
     this.network.onDisconnect().subscribe(() => {
       this.net= false;
       this.userType = this.dataService.getUserType();
-     // this.viewMenu(this.userType)
-      this.appPages = [
-        {
-          title: 'Homepage',
-          url: 'aarti-list',
-          icon: 'home'
-        }
-      ];
+     this.viewMenu(this.userType)
       if(this.currentPage !="RegisterationLogin "){
         this.navController.navigateForward('aarti-list');
       } 
-  alert('network was disconnected :-('+ this.network.type);
+  // alert('network was disconnected :-('+ this.network.type);
 });
   this.network.onConnect().subscribe(() => {
-  alert('network connected!');
+  // alert('network connected!');
   this.net= true;
-  this.appPages = [
-    {
-      title: 'All Aarti List',
-      url: 'aarti-list',
-      icon: 'list'
-      
-    },
-    {
-      title: 'Search Playlist',
-      url: 'search-playlist',
-      icon: 'search'
-    },
-    {
-      title: 'Feedback',
-      url: 'feedback',
-      icon: 'create'
-    },
-  
-    {
-      title: 'Register',
-      url: 'registration-login',
-      icon: 'enter'
-    }
-  ];
+
   this.userType = this.dataService.getUserType();
-    //  this.viewMenu(this.userType)
+     this.viewMenu(this.userType)
   setTimeout(() => {
     if (this.network.type === 'wifi') {
-      alert('we got a wifi connection, woohoo!');
+      // alert('we got a wifi connection, woohoo!');
     }
   }, 3000);
 });
@@ -236,6 +206,7 @@ export class AppComponent implements OnInit {
       }
     ];
    } else if(name!= "guest" && this.net== false) {
+    
     this.username = name;
     this.appPages = [
       {
@@ -251,6 +222,7 @@ export class AppComponent implements OnInit {
       }
     ];
    }else if(name =="guest" && this.net== false) {
+    
     this.username = "Guest";
     this.appPages = [
       {
