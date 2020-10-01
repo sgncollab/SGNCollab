@@ -74,13 +74,25 @@
 
       <!-- Remember me -->
       <div style=" margin-left: 15px; margin-top: 10px; margin-bottom: 10px;">
+      <ion-grid style="margin-left:-1vh">
+        <ion-row >
+          <ion-col size="1">
+            <ion-checkbox  (ionChange)="rememberMe('register',$event)"></ion-checkbox>
+          </ion-col>
+          <ion-col size="6">
+            Remember Me
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+      <!-- <div style=" margin-left: 15px; margin-top: 10px; margin-bottom: 10px;">
         <ion-row style="margin-top:2vh">
           <ion-checkbox (ionChange)="rememberMe('register',$event)"></ion-checkbox>
           <ion-label>
             <p style="font-size: 14px; color: black; margin-left: 5px;">Remember Me</p>
           </ion-label>
         </ion-row>
-      </div>
+      </div> -->
       <ion-button expand="full" fill="solid" color="primary" [disabled]="disabled"
         style="text-transform:none;font-size: 15px;margin-left:2vw;margin-right:2vw;margin-top:2vh;margin-bottom:2vh;"
         shape="round" (click)="register()">Register
@@ -105,24 +117,18 @@
       <span *ngIf="loginPin" class="errorMsg">Please check your PIN</span>
       <div style=" margin-left: 15px; margin-top: 10px; margin-bottom: 10px;">
         <ion-grid style="margin-left:-1vh">
-          <ion-row style="margin-top:2vh">
+          <ion-row >
             <ion-col size="1">
               <ion-checkbox [ngModel]="rememberChecked" (ionChange)="rememberMe('login',$event)"></ion-checkbox>
             </ion-col>
             <ion-col size="6">
               Remember Me
             </ion-col>
-            <ion-col size="5"  style="text-align: right;" (click)="presentPopover($event)">
+            <ion-col size="5"  style="text-align:right; color: #3b5998" (click)="presentPopover($event)" > 
                Forgot PIN
             </ion-col>
           </ion-row>
         </ion-grid>
-
-
-
-
-
-
       </div>
 
       <ion-button expand="full" fill="solid" color="primary" (click)="login()"

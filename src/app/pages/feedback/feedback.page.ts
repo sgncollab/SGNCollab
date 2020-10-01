@@ -18,7 +18,8 @@ export class FeedbackPage implements OnInit {
   user_feedback = "";
   contact_number;
   data: string;
-  backButtonSubscription
+  backButtonSubscription;
+  user
 
   constructor(
     private dataService: DataService,
@@ -34,7 +35,14 @@ export class FeedbackPage implements OnInit {
       emailjs.init("user_bfpYBxcMyOSkR0oaHUcZB");
    })();
     this.dataService.setPresentPage(this.currentPage);
-    this.user_name = this.dataService.getLoggedInUsername();
+    this.user = this.dataService.getGuest();
+    if(this.user == "guest"){
+      this.user_name = ""
+    }
+    else{
+      this.user_name = this.dataService.getLoggedInUsername();
+    }
+    
     //console.log(this.someAutoFormattedInput);
   }
   ionViewWillEnter() {
@@ -45,6 +53,7 @@ export class FeedbackPage implements OnInit {
   }
   ionViewDidLeave() {
    this.backButtonSubscription.unsubscribe();
+   
   }
   onAutoFormatChanged() {
     this.user_name = this.setFirstLetterToUppercase(this.user_name);
@@ -74,6 +83,7 @@ export class FeedbackPage implements OnInit {
       this.user_name = "";
       this.user_email = "";
       this.user_feedback = "";
+      
   }
 }
 

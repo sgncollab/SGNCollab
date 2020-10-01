@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Platform, NavController,AlertController } from '@ionic/angular';
+import { Platform, NavController,AlertController,PopoverController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { DataService } from './services/data.service';
 import { FirebaseDbService } from './services/firebase-db.service';
 import { Network } from '@ionic-native/network/ngx';
+// import { Events } from '@ionic/angular';
+
+
 
 @Component({
   selector: 'app-root',
@@ -21,7 +24,10 @@ export class AppComponent implements OnInit {
   currentPage = "app-component";
   user = "guest";
   user_name;
- // net=true;
+  net=true;
+  backButtonSubscription
+  userType;
+
  
   constructor(
     private platform: Platform,
@@ -32,34 +38,80 @@ export class AppComponent implements OnInit {
     private statusBar: StatusBar,
     private network: Network,
     public alertController: AlertController,
-    
+    private popovercntrl: PopoverController
   ) {
-    
     this.initializeApp();
+    
+    this.network.onDisconnect().subscribe(() => {
+      this.net= false;
+      this.userType = this.dataService.getUserType();
+     // this.viewMenu(this.userType)
+      this.appPages = [
+        {
+          title: 'Homepage',
+          url: 'aarti-list',
+          icon: 'home'
+        }
+      ];
+      if(this.currentPage !="RegisterationLogin "){
+        this.navController.navigateForward('aarti-list');
+      } 
+  alert('network was disconnected :-('+ this.network.type);
+});
+  this.network.onConnect().subscribe(() => {
+  alert('network connected!');
+  this.net= true;
+  this.appPages = [
+    {
+      title: 'All Aarti List',
+      url: 'aarti-list',
+      icon: 'list'
+      
+    },
+    {
+      title: 'Search Playlist',
+      url: 'search-playlist',
+      icon: 'search'
+    },
+    {
+      title: 'Feedback',
+      url: 'feedback',
+      icon: 'create'
+    },
+  
+    {
+      title: 'Register',
+      url: 'registration-login',
+      icon: 'enter'
+    }
+  ];
+  this.userType = this.dataService.getUserType();
+    //  this.viewMenu(this.userType)
+  setTimeout(() => {
+    if (this.network.type === 'wifi') {
+      alert('we got a wifi connection, woohoo!');
+    }
+  }, 3000);
+});
+  }
+  ionViewWillEnter() {
+    this.backButtonSubscription = this.platform.backButton.subscribeWithPriority(6666, () => {
+      //alert("back button clicked")
+      this.navController.navigateForward('aarti-list');
+    })
+  }
+  ionViewDidLeave() {
+    this.backButtonSubscription.unsubscribe();
   }
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
+      this.statusBar.hide();
       this.splashScreen.hide();
-          this.network.onDisconnect().subscribe(() => {
-          this.viewMenu("issue");
-          //redirect to homepage
-      alert('network was disconnected :-('+ this.network.type);
-    });
-      this.network.onConnect().subscribe(() => {
-      console.log('network connected!');
-      setTimeout(() => {
-        if (this.network.type === 'wifi') {
-          alert('we got a wifi connection, woohoo!');
-        }
-      }, 3000);
-    });
+         
     });
   }
-  ionViewWillEnter(){
-
-  }
+  
  
 
   ngOnInit() {
@@ -87,172 +139,164 @@ export class AppComponent implements OnInit {
     });
   } 
 
-  viewMenu(name){
-    if(name.toLowerCase() == "guest"){
-      this.username = "Guest";
-      this.appPages = [
-        {
-          title: 'All Aarti List',
-          url: 'aarti-list',
-          icon: 'list'
+  // viewMenu(name){
+  //   if(name.toLowerCase() == "guest"){
+  //     this.username = "Guest";
+  //     this.appPages = [
+  //       {
+  //         title: 'All Aarti List',
+  //         url: 'aarti-list',
+  //         icon: 'list'
           
-        },
-        {
-          title: 'Search Playlist',
-          url: 'search-playlist',
-          icon: 'search'
-        },
-        {
-          title: 'Feedback',
-          url: 'feedback',
-          icon: 'create'
-        },
+  //       },
+  //       {
+  //         title: 'Search Playlist',
+  //         url: 'search-playlist',
+  //         icon: 'search'
+  //       },
+  //       {
+  //         title: 'Feedback',
+  //         url: 'feedback',
+  //         icon: 'create'
+  //       },
       
-        {
-          title: 'Register',
-          url: 'registration-login',
-          icon: 'enter'
-        }
-      ];
-     } else { 
-      this.username = name;
-      this.appPages = [
-        {
-          title: 'Homepage',
-          url: 'aarti-list',
-          icon: 'home'
-        },
-        {
-          title: 'Create Playlist',
-          url: 'create-playlist',
-          icon: 'add'
-        },
-        {
-          title: 'My Playlist',
-          url: 'my-playlist',
-          icon: 'musical-notes'
-        },
-        {
-          title: 'Search Playlist',
-          url: 'search-playlist',
-          icon: 'search'
-        },
-        {
-          title: 'Feedback',
-          url: 'feedback',
-          icon: 'create'
-        },
+  //       {
+  //         title: 'Register',
+  //         url: 'registration-login',
+  //         icon: 'enter'
+  //       }
+  //     ];
+  //    } else { 
+  //     this.username = name;
+  //     this.appPages = [
+  //       {
+  //         title: 'Homepage',
+  //         url: 'aarti-list',
+  //         icon: 'home'
+  //       },
+  //       {
+  //         title: 'Create Playlist',
+  //         url: 'create-playlist',
+  //         icon: 'add'
+  //       },
+  //       {
+  //         title: 'My Playlist',
+  //         url: 'my-playlist',
+  //         icon: 'musical-notes'
+  //       },
+  //       {
+  //         title: 'Search Playlist',
+  //         url: 'search-playlist',
+  //         icon: 'search'
+  //       },
+  //       {
+  //         title: 'Feedback',
+  //         url: 'feedback',
+  //         icon: 'create'
+  //       },
        
-        {
-          title: 'Logout',
-          url: 'registration-login',
-          icon: 'exit'
-        }
-      ];
-     }
+  //       {
+  //         title: 'Logout',
+  //         url: 'registration-login',
+  //         icon: 'exit'
+  //       }
+  //     ];
+  //    }
      
-    }
+  //   }
    
 //   netCheck(){
 // this.net = false;
 //   }
-//  viewMenu(name){
-//   if(name.toLowerCase() == "guest" && this.net==true){
-//     this.username = "Guest";
-//     this.appPages = [
-//       {
-//         title: 'All Aarti List',
-//         url: 'aarti-list',
-//         icon: 'list'
+ viewMenu(name){
+  if(name.toLowerCase() == "guest" && this.net==true){
+    this.username = "Guest";
+    this.appPages = [
+      {
+        title: 'All Aarti List',
+        url: 'aarti-list',
+        icon: 'list'
         
-//       },
-//       {
-//         title: 'Search Playlist',
-//         url: 'search-playlist',
-//         icon: 'search'
-//       },
-//       {
-//         title: 'Feedback',
-//         url: 'feedback',
-//         icon: 'create'
-//       },
+      },
+      {
+        title: 'Search Playlist',
+        url: 'search-playlist',
+        icon: 'search'
+      },
+      {
+        title: 'Feedback',
+        url: 'feedback',
+        icon: 'create'
+      },
     
-//       {
-//         title: 'Register',
-//         url: 'registration-login',
-//         icon: 'enter'
-//       }
-//     ];
-//    } else if(name != null && name!= "guest" && this.net== false) {
-//     this.username = name;
-//     this.appPages = [
-//       {
-//         title: 'Homepage',
-//         url: 'aarti-list',
-//         icon: 'home'
-//       },
+      {
+        title: 'Register',
+        url: 'registration-login',
+        icon: 'enter'
+      }
+    ];
+   } else if(name!= "guest" && this.net== false) {
+    this.username = name;
+    this.appPages = [
+      {
+        title: 'Homepage',
+        url: 'aarti-list',
+        icon: 'home'
+      },
      
-//       {
-//         title: 'Logout',
-//         url: 'registration-login',
-//         icon: 'exit'
-//       }
-//     ];
-//    }else if(name =="guest" && this.net== false) {
-//     this.username = "Guest";
-//     this.appPages = [
-//       {
-//         title: 'Homepage',
-//         url: 'aarti-list',
-//         icon: 'home'
-//       }
-//     ];
-//    }else if(name != null && this.net == true){ 
-//     this.username = name;
-//     this.appPages = [
-//       {
-//         title: 'Homepage',
-//         url: 'aarti-list',
-//         icon: 'home'
-//       },
-//       {
-//         title: 'Create Playlist',
-//         url: 'create-playlist',
-//         icon: 'add'
-//       },
-//       {
-//         title: 'My Playlist',
-//         url: 'my-playlist',
-//         icon: 'musical-notes'
-//       },
-//       {
-//         title: 'Search Playlist',
-//         url: 'search-playlist',
-//         icon: 'search'
-//       },
-//       {
-//         title: 'Feedback',
-//         url: 'feedback',
-//         icon: 'create'
-//       },
+      {
+        title: 'Logout',
+        url: 'registration-login',
+        icon: 'exit'
+      }
+    ];
+   }else if(name =="guest" && this.net== false) {
+    this.username = "Guest";
+    this.appPages = [
+      {
+        title: 'Homepage',
+        url: 'aarti-list',
+        icon: 'home'
+      }
+    ];
+   }else if(name!= "guest"  && this.net == true){ 
+    this.username = name;
+    this.appPages = [
+      {
+        title: 'Homepage',
+        url: 'aarti-list',
+        icon: 'home'
+      },
+      {
+        title: 'Create Playlist',
+        url: 'create-playlist',
+        icon: 'add'
+      },
+      {
+        title: 'My Playlist',
+        url: 'my-playlist',
+        icon: 'musical-notes'
+      },
+      {
+        title: 'Search Playlist',
+        url: 'search-playlist',
+        icon: 'search'
+      },
+      {
+        title: 'Feedback',
+        url: 'feedback',
+        icon: 'create'
+      },
      
-//       {
-//         title: 'Logout',
-//         url: 'registration-login',
-//         icon: 'exit'
-//       }
-//     ];
-//    }
-//   //  window.addEventListener('offline', () => {
-//   //   //Do task when no internet connection
-//   //   this.dbService.showToast("Kindly check your internet Connection!");
-//   //   });
-//   //   window.addEventListener('online', () => {
-//   //     //Do task when internet connection returns
-     
-//   //     });
+      {
+        title: 'Logout',
+        url: 'registration-login',
+        icon: 'exit'
+      }
+    ];
+   }
    
-//   }
+  }
  
   sideMenuClick(index) {
     //console.log(this.dataPage);
@@ -290,9 +334,12 @@ export class AppComponent implements OnInit {
     }
     else if(this.username.toLowerCase() == "guest"){
       // console.log("Guest")
-      if(index == 3){
+      if(index == 3 || index == 2){
         this.dataService.setGuest(this.user);
       }
+      // if(index == 1){
+      //   this.presentPopover();
+      // }
     }
   }
 
@@ -302,6 +349,15 @@ export class AppComponent implements OnInit {
     localStorage.clear();
   }
 }
+//   async presentPopover() {
+//     const popover = await this.popovercntrl.create({
+//       component: ForgotPinPopoverComponent,
+//       cssClass: 'ion-popover-1',
+//       translucent: true
+//     });
+//     return await popover.present();
+//   }
+// }
 
 // {
 //   title: 'Settings',
