@@ -23,7 +23,17 @@ ion-content.background{
     background: transparent;
 }
 
+.marathi-font{
+    font-family: Eczar;
+    
+}
 
+@font-face{
+    font-family: Eczar;
+    font-style: regular;
+    src: url("../../../assets/fonts/Eczar-Regular.ttf");
+
+}
   
 
   

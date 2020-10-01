@@ -14,19 +14,19 @@
   </ion-searchbar>
   <div *ngIf="fetchSearch.length > 0;"> 
   <ion-list class="bg-transparent"  *ngFor ="let item of fetchSearch;index as i">
-    <ion-item class="ion-text-capitalize"style="--inner-padding-start:22vw; font-size:3vh;font-weight:300;border:1px solid lightgray;
+    <ion-item class="ion-text-capitalize"style=" border:1px solid lightgray;
     border-radius:2vh;margin-left:7vw;margin-right:7vw;" 
     (click)="getString(item.playlist_id)">
-      {{ item.playlist_name }}
+    <ion-label style="text-align:center;font-size:3vh;">{{ item.playlist_name }}</ion-label> 
     </ion-item>
   </ion-list>
  </div> 
-<!-- <ng-template *ngIf = "this.noItemFound" > -->
+
   <ion-item *ngIf = "this.noItemFound" style="--inner-padding-start:22vw; font-size:3vh;font-weight:300;border:1px solid lightgray;
   border-radius:2vh;margin-left:7vw;margin-right:7vw;" >
     No items found!
   </ion-item>
-<!-- </ng-template> -->
+
 </ion-content>
   
   

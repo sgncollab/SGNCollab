@@ -52,7 +52,7 @@ export class RegistrationLoginPage implements OnInit {
   unamenull = false;
   user;
   guest =false;
- view
+  view
 
   constructor(
     private menu: MenuController,
@@ -116,9 +116,6 @@ export class RegistrationLoginPage implements OnInit {
         this.srNo = 1;
       }
     })
-
-    // getting remember me values if checked
-
   }
 
   ionViewWillEnter() {
