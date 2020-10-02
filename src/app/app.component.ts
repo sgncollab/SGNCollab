@@ -5,6 +5,8 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { DataService } from './services/data.service';
 import { FirebaseDbService } from './services/firebase-db.service';
 import { Network } from '@ionic-native/network/ngx';
+// import { Events } from '@ionic/angular';
+
 
 
 @Component({
@@ -22,7 +24,9 @@ export class AppComponent implements OnInit {
   currentPage = "app-component";
   user = "guest";
   user_name;
+  net=true;
   backButtonSubscription
+  userType;
 
  
   constructor(
@@ -37,6 +41,58 @@ export class AppComponent implements OnInit {
     private popovercntrl: PopoverController
   ) {
     this.initializeApp();
+    
+    this.network.onDisconnect().subscribe(() => {
+      this.net= false;
+      this.userType = this.dataService.getUserType();
+     // this.viewMenu(this.userType)
+      this.appPages = [
+        {
+          title: 'Homepage',
+          url: 'aarti-list',
+          icon: 'home'
+        }
+      ];
+      if(this.currentPage !="RegisterationLogin "){
+        this.navController.navigateForward('aarti-list');
+      } 
+  alert('network was disconnected :-('+ this.network.type);
+});
+  this.network.onConnect().subscribe(() => {
+  alert('network connected!');
+  this.net= true;
+  this.appPages = [
+    {
+      title: 'All Aarti List',
+      url: 'aarti-list',
+      icon: 'list'
+      
+    },
+    {
+      title: 'Search Playlist',
+      url: 'search-playlist',
+      icon: 'search'
+    },
+    {
+      title: 'Feedback',
+      url: 'feedback',
+      icon: 'create'
+    },
+  
+    {
+      title: 'Register',
+      url: 'registration-login',
+      icon: 'enter'
+    }
+  ];
+  this.userType = this.dataService.getUserType();
+    //  this.viewMenu(this.userType)
+  setTimeout(() => {
+    if (this.network.type === 'wifi') {
+      alert('we got a wifi connection, woohoo!');
+    }
+  }, 3000);
+});
   }
   ionViewWillEnter() {
     this.backButtonSubscription = this.platform.backButton.subscribeWithPriority(6666, () => {
@@ -52,48 +108,24 @@ export class AppComponent implements OnInit {
     this.platform.ready().then(() => {
       this.statusBar.hide();
       this.splashScreen.hide();
-          this.network.onDisconnect().subscribe(() => {
-            this.viewMenu("issue");
-
-      alert('network was disconnected :-('+ this.network.type);
-    });
-      this.network.onConnect().subscribe(() => {
-      console.log('network connected!');
-      // We just got a connection but we need to wait briefly
-       // before we determine the connection type. Might need to wait.
-      // prior to doing any api requests as well.
-      setTimeout(() => {
-        if (this.network.type === 'wifi') {
-          alert('we got a wifi connection, woohoo!');
-        }
-      }, 3000);
-    });
+         
     });
   }
   
  
 
   ngOnInit() {
-    let disconnectSubscription = this.network.onDisconnect().subscribe(() => {
-      alert('network was disconnected :-(');
-    });
-    
-    // stop disconnect watch
-    // disconnectSubscription.unsubscribe();
-    
-    
-    // watch network for a connection
-    let connectSubscription = this.network.onConnect().subscribe(() => {
-      alert('network connected!');
-      // We just got a connection but we need to wait briefly
-       // before we determine the connection type. Might need to wait.
-      // prior to doing any api requests as well.
-      setTimeout(() => {
-        if (this.network.type === 'wifi') {
-          alert('we got a wifi connection, woohoo!');
-        }
-      }, 3000);
-    });
+    // this.network.onDisconnect().subscribe(() => {
+    //   alert('network was disconnected :-(');
+    // });
+    // this.network.onConnect().subscribe(() => {
+    //   alert('network connected!');
+    //   setTimeout(() => {
+    //     if (this.network.type === 'wifi') {
+    //       alert('we got a wifi connection, woohoo!');
+    //     }
+    //   }, 3000);
+    // });
 
     this.dbService.fetchUserPlaylist().subscribe((data) => {
       this.userPlaylist = data.map(value => {
@@ -105,13 +137,79 @@ export class AppComponent implements OnInit {
         }
       });
     });
-    
-   
-  }
-  
+  } 
 
+  // viewMenu(name){
+  //   if(name.toLowerCase() == "guest"){
+  //     this.username = "Guest";
+  //     this.appPages = [
+  //       {
+  //         title: 'All Aarti List',
+  //         url: 'aarti-list',
+  //         icon: 'list'
+          
+  //       },
+  //       {
+  //         title: 'Search Playlist',
+  //         url: 'search-playlist',
+  //         icon: 'search'
+  //       },
+  //       {
+  //         title: 'Feedback',
+  //         url: 'feedback',
+  //         icon: 'create'
+  //       },
+      
+  //       {
+  //         title: 'Register',
+  //         url: 'registration-login',
+  //         icon: 'enter'
+  //       }
+  //     ];
+  //    } else { 
+  //     this.username = name;
+  //     this.appPages = [
+  //       {
+  //         title: 'Homepage',
+  //         url: 'aarti-list',
+  //         icon: 'home'
+  //       },
+  //       {
+  //         title: 'Create Playlist',
+  //         url: 'create-playlist',
+  //         icon: 'add'
+  //       },
+  //       {
+  //         title: 'My Playlist',
+  //         url: 'my-playlist',
+  //         icon: 'musical-notes'
+  //       },
+  //       {
+  //         title: 'Search Playlist',
+  //         url: 'search-playlist',
+  //         icon: 'search'
+  //       },
+  //       {
+  //         title: 'Feedback',
+  //         url: 'feedback',
+  //         icon: 'create'
+  //       },
+       
+  //       {
+  //         title: 'Logout',
+  //         url: 'registration-login',
+  //         icon: 'exit'
+  //       }
+  //     ];
+  //    }
+     
+  //   }
+   
+//   netCheck(){
+// this.net = false;
+//   }
  viewMenu(name){
-  if(name.toLowerCase() == "guest"){
+  if(name.toLowerCase() == "guest" && this.net==true){
     this.username = "Guest";
     this.appPages = [
       {
@@ -122,7 +220,7 @@ export class AppComponent implements OnInit {
       },
       {
         title: 'Search Playlist',
-         url: 'search-playlist',
+        url: 'search-playlist',
         icon: 'search'
       },
       {
@@ -137,7 +235,23 @@ export class AppComponent implements OnInit {
         icon: 'enter'
       }
     ];
-   } else if(name =="issue") {
+   } else if(name!= "guest" && this.net== false) {
+    this.username = name;
+    this.appPages = [
+      {
+        title: 'Homepage',
+        url: 'aarti-list',
+        icon: 'home'
+      },
+     
+      {
+        title: 'Logout',
+        url: 'registration-login',
+        icon: 'exit'
+      }
+    ];
+   }else if(name =="guest" && this.net== false) {
+    this.username = "Guest";
     this.appPages = [
       {
         title: 'Homepage',
@@ -145,7 +259,7 @@ export class AppComponent implements OnInit {
         icon: 'home'
       }
     ];
-   }else {
+   }else if(name!= "guest"  && this.net == true){ 
     this.username = name;
     this.appPages = [
       {
@@ -181,14 +295,6 @@ export class AppComponent implements OnInit {
       }
     ];
    }
-  //  window.addEventListener('offline', () => {
-  //   //Do task when no internet connection
-  //   this.dbService.showToast("Kindly check your internet Connection!");
-  //   });
-  //   window.addEventListener('online', () => {
-  //     //Do task when internet connection returns
-     
-  //     });
    
   }
  

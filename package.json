@@ -70,6 +70,7 @@
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-ionic-keyboard": "^2.2.0",
     "cordova-plugin-ionic-webview": "^4.2.1",
+    "cordova-plugin-network-information": "^2.0.2",
     "cordova-plugin-splashscreen": "^5.0.2",
     "cordova-plugin-statusbar": "^2.4.2",
     "cordova-plugin-whitelist": "^1.3.3",
@@ -105,7 +106,8 @@
       "cordova-plugin-customurlscheme": {
         "URL_SCHEME": "ionicapp"
       },
-      "cordova-plugin-aes256-encryption": {}
+      "cordova-plugin-aes256-encryption": {},
+      "cordova-plugin-network-information": {}
     },
     "platforms": [
       "android"

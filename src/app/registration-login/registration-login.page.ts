@@ -7,6 +7,7 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 import { ForgotPinPopoverComponent } from '../forgot-pin-popover/forgot-pin-popover.component'
 import { DataService } from 'src/app/services/data.service';
 import { Network } from '@ionic-native/network/ngx';
+//import { Events } from '@ionic/angular';
 
 @Component({
   selector: 'app-registration-login',
@@ -52,7 +53,8 @@ export class RegistrationLoginPage implements OnInit {
   unamenull = false;
   user;
   guest =false;
-  view
+ view
+ currentPage ="RegisterationLogin";
 
   constructor(
     private menu: MenuController,
@@ -62,24 +64,9 @@ export class RegistrationLoginPage implements OnInit {
     private navCtrl: NavController,
     private popovercntrl: PopoverController,
     private dataService: DataService,
-    private network: Network) {
-      // this.network.onDisconnect().subscribe(() => {
-      //   this.dbService.showToast("network was disconnected :-(");
-      //   alert('network was disconnected :-('+ this.network.type);
-      // });
-
-      // this.network.onConnect().subscribe(() => {
-      //   console.log('network connected!');
-      //   this.dbService.showToast("network connected!");
-      //   // We just got a connection but we need to wait briefly
-      //    // before we determine the connection type. Might need to wait.
-      //   // prior to doing any api requests as well.
-      //   setTimeout(() => {
-      //     if (this.network.type === 'wifi') {
-      //       alert('we got a wifi connection, woohoo!');
-      //     }
-      //   }, 3000);
-      // });
+    private network: Network
+   ) {
+    
   }
   async presentPopover(ev) {
     const popover = await this.popovercntrl.create({
@@ -116,9 +103,13 @@ export class RegistrationLoginPage implements OnInit {
         this.srNo = 1;
       }
     })
+
+    // getting remember me values if checked
+    
   }
 
   ionViewWillEnter() {
+    this.dataService.setPresentPage(this.currentPage);
     this.user = this.dataService.getGuest();
     if(this.user == "guest"){
       this.guest = true;
@@ -150,8 +141,6 @@ export class RegistrationLoginPage implements OnInit {
     } else {
       console.log("else");
     }
-
-
     //console.log(this.screenOrientation.type); // log the current orientation, example: 'landscape'
     this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);  // set to landscape
 
@@ -387,6 +376,7 @@ export class RegistrationLoginPage implements OnInit {
     console.log("register")
     let pin = Md5.hashStr(this.confirmPIN);
     this.dbService.createUser(this.srNo, this.username.toLowerCase(), pin);
+    this.dataService.setUserType(this.username)
     this.appComponent.viewMenu(this.username);
     let serialNo = this.srNo;
     this.dataService.setLoggedInUserData(serialNo);
@@ -403,6 +393,7 @@ export class RegistrationLoginPage implements OnInit {
         console.log("register")
         let pin = Md5.hashStr(this.confirmPIN);
         this.dbService.createUser(this.srNo, this.username.toLowerCase(), pin);
+        this.dataService.setUserType(this.username);
         this.appComponent.viewMenu(this.username);
         let serialNo = this.srNo;
         this.dataService.setLoggedInUserData(serialNo);
@@ -427,8 +418,9 @@ export class RegistrationLoginPage implements OnInit {
             //console.log("pin matched");
             this.dataService.setLoggedInUserData(value.sr_no);
             this.dataService.setLoggedInUsername(value.name);
-            this.navCtrl.navigateForward('aarti-list');
+            this.dataService.setUserType(this.enterUName);
             this.appComponent.viewMenu(this.enterUName);
+            this.navCtrl.navigateForward('aarti-list'); 
           }
           else {
             this.loginPin = true;
@@ -496,6 +488,7 @@ export class RegistrationLoginPage implements OnInit {
   }
 
   displayMenu(identifier) {
+    this.dataService.setUserType("guest");
     this.appComponent.viewMenu("guest");
     if (identifier == "search") {
       this.navCtrl.navigateRoot('search-playlist');
@@ -503,6 +496,10 @@ export class RegistrationLoginPage implements OnInit {
       this.navCtrl.navigateRoot('aarti-list');
     }
   }
+
+  // menuChange(userType){
+  //   this.events.publish('userType', userType);
+  // }
 }
 
 

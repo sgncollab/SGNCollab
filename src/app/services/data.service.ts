@@ -21,8 +21,10 @@ export class DataService {
   private Rmno=0;
    resetname:any;
  user;
+ usertype:string="guest";
 
   constructor() { }
+
   setGuest(user){
     this.user = user
   }
@@ -132,6 +134,11 @@ export class DataService {
     return this.Rmno
   }
 
-  
+  setUserType(usertype){
+    this.usertype = usertype;
+  }
+  getUserType(){
+    return this.usertype;
+  }
   
 }
