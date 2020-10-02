@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
-import { NavController, Platform, IonRouterOutlet } from '@ionic/angular';
+import { NavController, Platform, IonRouterOutlet,MenuController} from '@ionic/angular';
 import { NavigationExtras, Router } from '@angular/router';
 import { Plugins } from '@capacitor/core';
 import { AlertController } from '@ionic/angular';
@@ -26,7 +26,8 @@ export class AartiListPage implements OnInit {
     private platform: Platform,
     private routerOutlet: IonRouterOutlet,
     private router: Router,
-    public alertController: AlertController
+    public alertController: AlertController,
+    private menu: MenuController
   ) { }
 
   
@@ -40,11 +41,10 @@ export class AartiListPage implements OnInit {
   }
   ionViewWillEnter() {
     this.backButtonSubscription = this.platform.backButton.subscribeWithPriority(6666, () => {
-      if (this.constructor.name == "AartiListPage") {
+       this.menu.close();
         if (window.confirm("Do you want to Exit App")) {
           navigator["app"].exitApp();
         }
-      }
     })
   }
   ionViewDidLeave() {

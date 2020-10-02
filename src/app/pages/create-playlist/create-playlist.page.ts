@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service'
-import { NavController, Platform } from '@ionic/angular';
+import { NavController, Platform ,MenuController } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { NavigationStart } from '@angular/router';
 
@@ -20,7 +20,8 @@ export class CreatePlaylistPage implements OnInit {
   constructor(
     private dataService: DataService,
     private navController: NavController,
-    private platform: Platform
+    private platform: Platform,
+    private menu: MenuController
   ) { }
 
   ngOnInit() {
@@ -42,7 +43,7 @@ export class CreatePlaylistPage implements OnInit {
   ionViewWillEnter() {
     this.data.filter(value => value.isChecked = false);
     this.backButtonSubscription = this.platform.backButton.subscribeWithPriority(6666, () => {
-      //alert("back button clicked")
+      this.menu.close();
       this.navController.navigateForward('aarti-list');
     })
   }

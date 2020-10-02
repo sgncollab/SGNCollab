@@ -7,7 +7,7 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 import { ForgotPinPopoverComponent } from '../forgot-pin-popover/forgot-pin-popover.component'
 import { DataService } from 'src/app/services/data.service';
 import { Network } from '@ionic-native/network/ngx';
-//import { Events } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-registration-login',
@@ -47,14 +47,17 @@ export class RegistrationLoginPage implements OnInit {
   create = false;
   confirm = false;
   pinnotmatch = false;
-  pattern = /^[a-zA-Z]/
+  pattern = /^[0-9]+$/
+  patternCheck=false;
   dataPage = "";
   temp
   unamenull = false;
   user;
   guest =false;
- view
- currentPage ="RegisterationLogin";
+  view
+  currentPage ="RegisterationLogin";
+  
+ 
 
   constructor(
     private menu: MenuController,
@@ -64,10 +67,11 @@ export class RegistrationLoginPage implements OnInit {
     private navCtrl: NavController,
     private popovercntrl: PopoverController,
     private dataService: DataService,
-    private network: Network
+    private network: Network,
    ) {
     
   }
+  
   async presentPopover(ev) {
     const popover = await this.popovercntrl.create({
       component: ForgotPinPopoverComponent,
@@ -156,7 +160,7 @@ export class RegistrationLoginPage implements OnInit {
       this.length = false;
       this.uNameExist = false;
       this.disabled = true;
-      
+      this.patternCheck= false;
 
       if (e.detail.value == "" || e.detail.value == undefined) {
         this.uName = true;
@@ -164,6 +168,9 @@ export class RegistrationLoginPage implements OnInit {
       else if (e.detail.value.length < 4 || e.detail.value.length > 30) {
         this.length = true;
       }
+      else if (this.pattern.test(String(e.detail.value))) {
+           this.patternCheck= true;
+          }
       else {
         let flag = this.regResult.filter(value => {
           if (value.name == e.detail.value.toLowerCase()) {
@@ -246,122 +253,7 @@ export class RegistrationLoginPage implements OnInit {
     }
   }
 
-  // uNameValidation(e) {
-  //   this.uName = false;
-  //   this.length = false;
-  //   this.uNameExist = false;
-  //   this.pinValid = false;
-  //   this.disabled = true;
-
-  //   //console.log(e.detail.value)
-  //   if (e.detail.value == "" || e.detail.value == undefined) {
-  //     this.uName = true;
-  //     //console.log("username is required");
-  //   }
-  //   else if (e.detail.value.length < 4 || e.detail.value.length > 30) {
-  //     this.length = true;
-  //     //console.log("pl.check the length");
-  //   }
-  //   // else if (!this.pattern.test(String(e.detail.value))) {
-  //   //   console.log("please input valid username")
-  //   // }
-  //   else {
-  //     //console.log("Username is valid")
-  // let flag = this.regResult.filter(value => {
-  //   if (value.name == e.detail.value.toLowerCase()) {
-  //     return true;
-  //   }
-  //   return false;
-  // })
-  //     //console.log(flag);
-  //     if (flag.length == 0) {
-  //       this.registerEnable();
-  //       // if(this.pinone == this.pintwo == undefined && this.pinone == this.pintwo ){
-  //       //   this.disabled = false;
-  //       // }
-  //       // console.log("register");
-  //     }
-  //     else {
-  //       this.uNameExist = true;
-  //       //console.log("username already taken!")
-  //     }
-  //   }
-
-  // }
-
-  // createPinInput(e) {
-
-  //   this.pin1 = false;
-  //   this.pinLength = false;
-  //   this.pinValid = false;
-  //   this.hideConfirmPin = true;
-  //   this.disabled = true;
-  //   this.create = false;
-  //   this.pinnotmatch = false;
-
-  // if (e.detail.value == "" || e.detail.value == undefined) {
-  //   this.pin1 = true;
-  //   //console.log("pin is required");
-  // }
-  // else if (e.detail.value.length != 4) {
-  //   this.pinLength = true;
-  //   //console.log("please enter 4 digit pin");
-  // }
-  //   else {
-  //     //console.log("pin is valid");
-  // this.pinValid = true;
-  // this.hideConfirmPin = false;
-  // this.pinone = e.detail.value;
-  //     if (this.pinone == this.pintwo) {
-  //       this.create = true;
-  //       this.confirm = true;
-  //       this.registerEnable();
-  //       // this.disabled = false;
-  //     }
-  //     else {
-  //       if (this.pintwo != undefined) {
-  //         this.pinnotmatch = true;
-  //       }
-  //     }
-  //   }
-  // }
-  // confirmPinInput(e) {
-
-  //   this.pin2 = false;
-  //   this.disabled = true;
-  //   this.pinLen = false;
-  //   this.match = false;
-  //   this.confirm = false;
-  //   this.pinnotmatch = false;
-
-
-  // if (e.detail.value == "" || e.detail.value == undefined) {
-  //   this.pin2 = true;
-  //   //console.log("pin is required");
-  // }
-  // else if (e.detail.value.length != 4) {
-  //   this.pinLen = true;
-  //   //console.log("Please enter 4 digit pin")
-  // }
-  //   else {
-  //     this.match = false;
-  //     // this.pinMatched = false;
-  //     //pin valid
-  //     this.pintwo = e.detail.value;
-  //     if (this.pinone == this.pintwo && this.username != "" && this.username != undefined) {
-  //       this.confirm = true;
-  //       this.create = true;
-  //       this.registerEnable();
-  //       //this.disabled = false;
-  //     }
-  //     else {
-  //       this.pinnotmatch = true;
-  //       console.log("username")
-  //     }
-
-  //   }
-
-  // }
+  
 
 
   registerEnable() {
@@ -439,14 +331,12 @@ export class RegistrationLoginPage implements OnInit {
     }
 
   }
+  
   rememberMe(identifier, e) {
     if (identifier == "register") {
       if (e.currentTarget.checked) {
         localStorage.setItem('username', this.username);
         localStorage.setItem('pin', this.confirmPIN);
-        //  this.temp = Md5.hashStr(this.confirmPIN);
-        //  console.log(this.temp);
-        //  localStorage.setItem('pin',this.temp);
       }
       else {
         this.rememberChecked = false;

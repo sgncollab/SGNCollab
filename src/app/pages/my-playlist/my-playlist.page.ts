@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseDbService } from 'src/app/services/firebase-db.service';
 import { DataService } from 'src/app/services/data.service';
-import { NavController, LoadingController, PopoverController, ActionSheetController,Platform } from '@ionic/angular';
+import { NavController, LoadingController, PopoverController, ActionSheetController,Platform,MenuController } from '@ionic/angular';
 import { NavigationExtras } from '@angular/router';
 import { Clipboard } from '@ionic-native/clipboard/ngx';
 
@@ -29,17 +29,19 @@ export class MyPlaylistPage implements OnInit {
     private loadingController: LoadingController, 
     private dataService: DataService, 
     private navCtrl: NavController,
-    private platform: Platform)
+    private platform: Platform,
+    private menu: MenuController
+    )
      { }
 
-  doRefresh(event) {
-    console.log('Begin async operation');
+  // doRefresh(event) {
+  //   console.log('Begin async operation');
 
-    setTimeout(() => {
-      console.log('Async operation has ended');
-      event.target.complete();
-    }, 2000);
-  }
+  //   setTimeout(() => {
+  //     console.log('Async operation has ended');
+  //     event.target.complete();
+  //   }, 2000);
+  // }
   ngOnInit() {
     this.dataService.setPresentPage(this.currentPage);
     this.dbService.fetchUserPlaylist().subscribe((data) => {
@@ -73,7 +75,7 @@ export class MyPlaylistPage implements OnInit {
   }
   ionViewWillEnter() {
     this.backButtonSubscription = this.platform.backButton.subscribeWithPriority(6666, () => {
-       //alert("back button clicked")
+      this.menu.close();
         this.navCtrl.navigateForward('aarti-list');
     })
   }
@@ -142,16 +144,7 @@ export class MyPlaylistPage implements OnInit {
     this.navCtrl.navigateForward('update-user-playlist');
   }
   copyData(item){
-    this.clipboard.copy('Hello world');
-
-    // this.clipboard.paste().then(
-    //   (resolve: string) => {
-    //      alert(resolve);
-    //    },
-    //    (reject: string) => {
-    //      alert('Error: ' + reject);
-    //    }
-    //  );
+    this.clipboard.copy(item.playlist_id);
    }
 
   deletePlaylist(item) {
@@ -175,9 +168,7 @@ export class MyPlaylistPage implements OnInit {
     }
     this.dbService.showToast(item.playlist_name + " " + " Deleted!")
   }
-  // options(){
-  //   this.dbService.showToast("show options")
-  // }
+ 
 
   async presentActionSheet(item) {
     const actionSheet = await this.actionSheetController.create({
