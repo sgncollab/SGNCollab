@@ -7,7 +7,7 @@ import { RegistrationLoginPageRoutingModule } from './registration-login-routing
 import { RegistrationLoginPage } from './registration-login.page';
 import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 import {ForgotPinPopoverComponent} from '../forgot-pin-popover/forgot-pin-popover.component';
-import { AES256 } from '@ionic-native/aes-256/ngx';
+
 
 
 
@@ -22,6 +22,6 @@ import { AES256 } from '@ionic-native/aes-256/ngx';
   ],
   entryComponents:[ForgotPinPopoverComponent],
   declarations: [RegistrationLoginPage,ForgotPinPopoverComponent ],
-  providers:[ScreenOrientation,AES256]
+  providers:[ScreenOrientation,]
 })
 export class RegistrationLoginPageModule {}

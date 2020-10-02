@@ -2,8 +2,6 @@ ion-content.background{
     --background: url(../../../assets/images/blue-bg-70.png)0 0/100% 100% no-repeat ;
   }
 
-  
-
   ion-card {
     //max-height: 100%;
     display: flex;
@@ -18,3 +16,14 @@ ion-content.background{
       display: none;
     }
   }
+  @font-face{
+    font-family: Khand-Regular;
+    font-style: regular;
+    src: url("../../../assets/fonts/Khand-Regular.ttf");
+}
+@font-face{
+    font-family: Khand-SemiBold;
+    font-style: semi-bold;
+    src: url("../../../assets/fonts/Khand-SemiBold.ttf");
+}
+
