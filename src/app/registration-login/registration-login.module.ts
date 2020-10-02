@@ -10,7 +10,6 @@ import {ForgotPinPopoverComponent} from '../forgot-pin-popover/forgot-pin-popove
 
 
 
-
 @NgModule({
   imports: [
     CommonModule,
@@ -22,6 +21,6 @@ import {ForgotPinPopoverComponent} from '../forgot-pin-popover/forgot-pin-popove
   ],
   entryComponents:[ForgotPinPopoverComponent],
   declarations: [RegistrationLoginPage,ForgotPinPopoverComponent ],
-  providers:[ScreenOrientation,]
+  providers:[ScreenOrientation]
 })
 export class RegistrationLoginPageModule {}

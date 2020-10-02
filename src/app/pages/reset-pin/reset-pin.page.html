@@ -1,51 +1,44 @@
-
+<!-- 
 <ion-header>
   <ion-toolbar color="primary">
     <img slot="end" src="../../../assets/images/logo.png"  style="display:inline-block ;height: 8vh; width:8vh;" />
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
-<ion-content class="background">
-  <!-- <div>
-    <ion-row>
-      <ion-col size="3"></ion-col>
-      <ion-col size="6">
-        <img src="../../../assets/images/logo.png"  style="height: 15vh; width:15vh; align-items: center" /></ion-col>
-      <ion-col size="3"></ion-col>
-    </ion-row>
-  </div> -->
-  <!-- <img src="../../../assets/images/logo.png"  style="height: 15vh; width:15vh;align-items: center" /> -->
-  <ion-text color="primary">
-    <h3 style="margin-top:20vh;margin-bottom:5vh;text-align:center">Enter the verification code <br> we just sent you on your email address.</h3>
-  </ion-text>
-  <!-- <ion-card style="margin-top:36vh;"> -->
-    <ion-item lines="none">
-      <ng-otp-input style="text-align:center;margin-left:8vh; margin-bottom:1vh;" (onInputChange)="onOtpChange($event)"
-        [config]="{length:4,allowNumbersOnly:true}"></ng-otp-input>
-        <!-- isPasswordInput:true -->
-        <ion-icon *ngIf="!verify" name="checkmark-outline" style="margin-left:9vh;color:brown"></ion-icon>
-        <ion-icon *ngIf="verify" name="checkmark-outline" style="margin-left:9vh; color:chartreuse" ></ion-icon>
-       
-        <!-- <ion-button *ngIf="!verify" style="margin-left:9vh;"  color="danger">Verify</ion-button>
-      <ion-button *ngIf="verify" style="margin-left:9vh;"  color="success">Verify</ion-button> -->
-    </ion-item>
-    <span *ngIf="otpCheck" class="errorMsg" style="margin-left:6vw;">OTP Invalid! Please Check OTP</span>
-    <!-- <ion-item>
-      <ion-input placeholder="Enter OTP"  [(ngModel)]="inputOTP"></ion-input>
-      <ion-button  fill="clear" (click)="verifyOTP()" color="success">Click To Verify</ion-button>
-    </ion-item> -->
-    <!-- <span *ngIf="otpnull" class="errorMsg">Enter OTP code</span>
-    <span *ngIf="otpLength" class="errorMsg">please enter 4 digit pin</span> -->
-    
-  <!-- </ion-card> -->
-  <ion-card [hidden]=match style="margin-top: 4vh;">
+<ion-content fullscreen="true" slot="fixed">
+  <div class="card">
+
+    <div class="header">
+      <div class="avatar">
+        <img src="../../../assets/images/icon.png" alt="Logo">
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="user-meta ion-text-center">
+        <h3 class="h3">Enter the verification code </h3>
+        <h5 class="h5"> we just sent you on your email address.</h5>
+        <!-- <h3 class="playername">One Time Password</h3>
+        <h5 class="country">Enter OTP sent to</h5>
+        <ion-label style="margin-top: 2vh;">{{RegisteredNo}}</ion-label>   -->
+        <ion-item lines="none">
+          <ng-otp-input style="text-align:center;margin-left:5vh; margin-bottom:1vh;" (onInputChange)="onOtpChange($event)"
+            [config]="{length:4,allowNumbersOnly:true}"></ng-otp-input>
+            <!-- isPasswordInput:true -->
+            <ion-icon *ngIf="!verify" name="checkmark-outline" style="margin-left:4vh;color:brown"></ion-icon>
+            <ion-icon *ngIf="verify" name="checkmark-outline" style="margin-left:4vh; color:chartreuse" ></ion-icon>
+           
+        </ion-item>
+        <span *ngIf="otpCheck" class="errorMsg" style="margin-left:6vw;">OTP Invalid! Please Check OTP</span>
+      </div>
+      <!-- [hidden]=match -->
+  <ion-card [hidden]=match style="margin-top: 4vh;border-radius: 3vh;">
     <ion-text color="primary">
-      <h4 style="margin-top:2vh;margin-bottom:1vh;text-align:center;">Reset Your PIN</h4>
+      <h4 class="title" >Reset Your PIN</h4>
     </ion-text>
     <div>
       <ion-item>
         <ion-icon name="key"></ion-icon>
-        <ion-input [type]="getType()" placeholder="Reset PIN" (ionChange)="resetPin($event,'reset')"
+        <ion-input [type]="getType()" placeholder=" Reset PIN" (ionChange)="resetPin($event,'reset')"
           [(ngModel)]=resetPIN></ion-input>
         <ion-icon [name]="passwordToggle" item-right (click)="toggleTextPassword()"></ion-icon>
       </ion-item>
@@ -54,7 +47,7 @@
 
       <ion-item>
         <ion-icon name="key"></ion-icon>
-        <ion-input [type]="getType()" placeholder="Confirm PIN" (ionChange)="resetPin($event,'confirm')"
+        <ion-input [type]="getType()" placeholder=" Confirm PIN" (ionChange)="resetPin($event,'confirm')"
           [(ngModel)]=confirmPIN></ion-input>
       </ion-item>
       <span *ngIf="pinreq" class="errorMsg">PIN required</span>
@@ -66,8 +59,8 @@
 
     </div>
   </ion-card>
-
-
+</div>
+</div>
 
 
 
