@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Platform, NavController,AlertController,PopoverController } from '@ionic/angular';
+import { Platform, NavController, AlertController, PopoverController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { DataService } from './services/data.service';
 import { FirebaseDbService } from './services/firebase-db.service';
 import { Network } from '@ionic-native/network/ngx';
 // import { Events } from '@ionic/angular';
-
-
 
 @Component({
   selector: 'app-root',
@@ -18,17 +16,17 @@ export class AppComponent implements OnInit {
   public selectedIndex = 0;
   username: any;
   public appPages = [];
-  srNo:any;
+  srNo: any;
   userPlaylist: any = [];
   dataPage = "";
   currentPage = "app-component";
   user = "guest";
   user_name;
-  net=true;
+  net = true;
   backButtonSubscription
   userType;
 
- 
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -41,28 +39,28 @@ export class AppComponent implements OnInit {
     private popovercntrl: PopoverController
   ) {
     this.initializeApp();
-    
-    this.network.onDisconnect().subscribe(() => {
-      this.net= false;
-      this.userType = this.dataService.getUserType();
-     this.viewMenu(this.userType)
-      if(this.currentPage !="RegisterationLogin "){
-        this.navController.navigateForward('aarti-list');
-      } 
-  // alert('network was disconnected :-('+ this.network.type);
-});
-  this.network.onConnect().subscribe(() => {
-  // alert('network connected!');
-  this.net= true;
 
-  this.userType = this.dataService.getUserType();
-     this.viewMenu(this.userType)
-  setTimeout(() => {
-    if (this.network.type === 'wifi') {
-      // alert('we got a wifi connection, woohoo!');
-    }
-  }, 3000);
-});
+    this.network.onDisconnect().subscribe(() => {
+      this.net = false;
+      this.userType = this.dataService.getUserType();
+      this.viewMenu(this.userType)
+      if (this.currentPage != "RegisterationLogin ") {
+        this.navController.navigateForward('aarti-list');
+      }
+      // alert('network was disconnected :-('+ this.network.type);
+    });
+    this.network.onConnect().subscribe(() => {
+      // alert('network connected!');
+      this.net = true;
+
+      this.userType = this.dataService.getUserType();
+      this.viewMenu(this.userType)
+      setTimeout(() => {
+        if (this.network.type === 'wifi') {
+          // alert('we got a wifi connection, woohoo!');
+        }
+      }, 3000);
+    });
   }
   ionViewWillEnter() {
     this.backButtonSubscription = this.platform.backButton.subscribeWithPriority(6666, () => {
@@ -78,11 +76,10 @@ export class AppComponent implements OnInit {
     this.platform.ready().then(() => {
       this.statusBar.hide();
       this.splashScreen.hide();
-         
     });
   }
-  
- 
+
+
 
   ngOnInit() {
     // this.network.onDisconnect().subscribe(() => {
@@ -107,7 +104,7 @@ export class AppComponent implements OnInit {
         }
       });
     });
-  } 
+  }
 
   // viewMenu(name){
   //   if(name.toLowerCase() == "guest"){
@@ -117,7 +114,7 @@ export class AppComponent implements OnInit {
   //         title: 'All Aarti List',
   //         url: 'aarti-list',
   //         icon: 'list'
-          
+
   //       },
   //       {
   //         title: 'Search Playlist',
@@ -129,7 +126,7 @@ export class AppComponent implements OnInit {
   //         url: 'feedback',
   //         icon: 'create'
   //       },
-      
+
   //       {
   //         title: 'Register',
   //         url: 'registration-login',
@@ -164,7 +161,7 @@ export class AppComponent implements OnInit {
   //         url: 'feedback',
   //         icon: 'create'
   //       },
-       
+
   //       {
   //         title: 'Logout',
   //         url: 'registration-login',
@@ -172,109 +169,109 @@ export class AppComponent implements OnInit {
   //       }
   //     ];
   //    }
-     
+
   //   }
-   
-//   netCheck(){
-// this.net = false;
-//   }
- viewMenu(name){
-  if(name.toLowerCase() == "guest" && this.net==true){
-    this.username = "Guest";
-    this.appPages = [
-      {
-        title: 'All Aarti List',
-        url: 'aarti-list',
-        icon: 'list'
-        
-      },
-      {
-        title: 'Search Playlist',
-        url: 'search-playlist',
-        icon: 'search'
-      },
-      {
-        title: 'Feedback',
-        url: 'feedback',
-        icon: 'create'
-      },
-    
-      {
-        title: 'Register',
-        url: 'registration-login',
-        icon: 'enter'
-      }
-    ];
-   } else if(name!= "guest" && this.net== false) {
-    
-    this.username = name;
-    this.appPages = [
-      {
-        title: 'Homepage',
-        url: 'aarti-list',
-        icon: 'home'
-      },
-     
-      {
-        title: 'Logout',
-        url: 'registration-login',
-        icon: 'exit'
-      }
-    ];
-   }else if(name =="guest" && this.net== false) {
-    
-    this.username = "Guest";
-    this.appPages = [
-      {
-        title: 'Homepage',
-        url: 'aarti-list',
-        icon: 'home'
-      }
-    ];
-   }else if(name!= "guest"  && this.net == true){ 
-    this.username = name;
-    this.appPages = [
-      {
-        title: 'Homepage',
-        url: 'aarti-list',
-        icon: 'home'
-      },
-      {
-        title: 'Create Playlist',
-        url: 'create-playlist',
-        icon: 'add'
-      },
-      {
-        title: 'My Playlist',
-        url: 'my-playlist',
-        icon: 'musical-notes'
-      },
-      {
-        title: 'Search Playlist',
-        url: 'search-playlist',
-        icon: 'search'
-      },
-      {
-        title: 'Feedback',
-        url: 'feedback',
-        icon: 'create'
-      },
-     
-      {
-        title: 'Logout',
-        url: 'registration-login',
-        icon: 'exit'
-      }
-    ];
-   }
-   
+
+  //   netCheck(){
+  // this.net = false;
+  //   }
+  viewMenu(name) {
+    if (name.toLowerCase() == "guest" && this.net == true) {
+      this.username = "Guest";
+      this.appPages = [
+        {
+          title: 'All Aarti List',
+          url: 'aarti-list',
+          icon: 'list'
+
+        },
+        {
+          title: 'Search Playlist',
+          url: 'search-playlist',
+          icon: 'search'
+        },
+        {
+          title: 'Feedback',
+          url: 'feedback',
+          icon: 'create'
+        },
+
+        {
+          title: 'Register',
+          url: 'registration-login',
+          icon: 'enter'
+        }
+      ];
+    } else if (name != "guest" && this.net == false) {
+
+      this.username = name;
+      this.appPages = [
+        {
+          title: 'Homepage',
+          url: 'aarti-list',
+          icon: 'home'
+        },
+
+        {
+          title: 'Logout',
+          url: 'registration-login',
+          icon: 'exit'
+        }
+      ];
+    } else if (name == "guest" && this.net == false) {
+
+      this.username = "Guest";
+      this.appPages = [
+        {
+          title: 'Homepage',
+          url: 'aarti-list',
+          icon: 'home'
+        }
+      ];
+    } else if (name != "guest" && this.net == true) {
+      this.username = name;
+      this.appPages = [
+        {
+          title: 'Homepage',
+          url: 'aarti-list',
+          icon: 'home'
+        },
+        {
+          title: 'Create Playlist',
+          url: 'create-playlist',
+          icon: 'add'
+        },
+        {
+          title: 'My Playlist',
+          url: 'my-playlist',
+          icon: 'musical-notes'
+        },
+        {
+          title: 'Search Playlist',
+          url: 'search-playlist',
+          icon: 'search'
+        },
+        {
+          title: 'Feedback',
+          url: 'feedback',
+          icon: 'create'
+        },
+
+        {
+          title: 'Logout',
+          url: 'registration-login',
+          icon: 'exit'
+        }
+      ];
+    }
+
   }
- 
+
   sideMenuClick(index) {
     //console.log(this.dataPage);
     this.dataPage = this.dataService.getPresentPage();
     //console.log(this.dataPage);
-    if(this.username.toLowerCase() != "guest"){
+    if (this.username.toLowerCase() != "guest") {
       if (index == 5) {
         this.logout();
       }
@@ -285,7 +282,7 @@ export class AppComponent implements OnInit {
           if (this.srNo == this.userPlaylist[i].sr_no) {
             count++;
           }
-        } 
+        }
         if (count >= 5) {
           this.navController.navigateForward(this.dataPage);
           this.dbService.showToast("You have already created five playlist.");
@@ -297,16 +294,16 @@ export class AppComponent implements OnInit {
           if (this.srNo == this.userPlaylist[i].sr_no) {
             count++;
           }
-        } 
+        }
         if (count < 1) {
           this.navController.navigateForward(this.dataPage);
           this.dbService.showToast("Please create a playlist!");
         }
       }
     }
-    else if(this.username.toLowerCase() == "guest"){
+    else if (this.username.toLowerCase() == "guest") {
       // console.log("Guest")
-      if(index == 3 || index == 2){
+      if (index == 3 || index == 2) {
         this.dataService.setGuest(this.user);
       }
       // if(index == 1){
@@ -321,15 +318,7 @@ export class AppComponent implements OnInit {
     localStorage.clear();
   }
 }
-//   async presentPopover() {
-//     const popover = await this.popovercntrl.create({
-//       component: ForgotPinPopoverComponent,
-//       cssClass: 'ion-popover-1',
-//       translucent: true
-//     });
-//     return await popover.present();
-//   }
-// }
+
 
 // {
 //   title: 'Settings',

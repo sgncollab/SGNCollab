@@ -4,7 +4,7 @@ import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 import { Toast } from '@capacitor/core';
 import { FirebaseDbService } from 'src/app/services/firebase-db.service';
 import { ToastController } from '@ionic/angular';
-import { NavController,Platform } from '@ionic/angular';
+import { NavController,Platform ,MenuController} from '@ionic/angular';
 
 @Component({
   selector: 'app-feedback',
@@ -26,7 +26,8 @@ export class FeedbackPage implements OnInit {
     private dbService: FirebaseDbService,
     private toastController: ToastController,
     private navController: NavController,
-    private platform: Platform
+    private platform: Platform,
+    private menu: MenuController
     
   ) {this.data = ''; }
 
@@ -47,7 +48,7 @@ export class FeedbackPage implements OnInit {
   }
   ionViewWillEnter() {
     this.backButtonSubscription = this.platform.backButton.subscribeWithPriority(6666, () => {
-       //alert("back button clicked")
+        this.menu.close();
         this.navController.navigateForward('aarti-list');
     })
   }

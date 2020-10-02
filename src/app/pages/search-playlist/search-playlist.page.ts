@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseDbService } from 'src/app/services/firebase-db.service';
 import { DataService } from 'src/app/services/data.service';
-import { NavController,Platform } from '@ionic/angular';
+import { NavController,Platform ,MenuController} from '@ionic/angular';
 
 @Component({
   selector: 'app-search-playlist',
@@ -24,7 +24,8 @@ export class SearchPlaylistPage implements OnInit {
     private dbService: FirebaseDbService,
     private dataService: DataService,
     private navController: NavController,
-    private platform: Platform
+    private platform: Platform,
+    private menu: MenuController
   ) { }
 
   ngOnInit() {
@@ -58,7 +59,7 @@ export class SearchPlaylistPage implements OnInit {
   }
   ionViewWillEnter() {
     this.backButtonSubscription = this.platform.backButton.subscribeWithPriority(6666, () => {
-       //alert("back button clicked")
+        this.menu.close();
         this.navController.navigateForward('aarti-list');
     })
   }

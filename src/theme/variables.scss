@@ -19,11 +19,31 @@
 }
 }
 
-
-
 ion-toast.cssAccept {
           transform: translateY(82vh) !important;
 }
+@font-face{
+  font-family: Khand-Regular;
+  font-style: regular;
+  src: url("../assets/fonts/Khand-Regular.ttf");
+}
+@font-face{
+  font-family: Khand-SemiBold;
+  font-style: semi-bold;
+  src: url("../assets/fonts/Khand-SemiBold.ttf");
+}
+
+@font-face{
+  font-family: Dosis-Regular;
+  font-style: regular;
+  src: url("../assets/fonts/Dosis-Regular.ttf");
+}
+@font-face{
+  font-family: Dosis-SemiBold;
+  font-style: semi-bold;
+  src: url("../assets/fonts/Dosis-SemiBold.ttf");
+}
+
 
 .searchbar-input.sc-ion-searchbar-md {
   padding-left: 55px;
@@ -44,6 +64,7 @@ ion-toast.cssAccept {
   --ion-color-primary-contrast-rgb: 255, 255, 255;
   --ion-color-primary-shade: #3171e0;
   --ion-color-primary-tint: #4c8dff;
+  --ion-font-family: Dosis-Regular;
 
   /** secondary **/
   --ion-color-secondary: #3dc2ff;
