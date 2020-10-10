@@ -180,7 +180,7 @@ export class AppComponent implements OnInit {
       this.username = "Guest";
       this.appPages = [
         {
-          title: 'All Aarti List',
+          title: 'Aarti Library',
           url: 'aarti-list',
           icon: 'list'
 
@@ -207,7 +207,7 @@ export class AppComponent implements OnInit {
       this.username = name;
       this.appPages = [
         {
-          title: 'Homepage',
+          title: 'Home',
           url: 'aarti-list',
           icon: 'home'
         },
@@ -223,7 +223,7 @@ export class AppComponent implements OnInit {
       this.username = "Guest";
       this.appPages = [
         {
-          title: 'Homepage',
+          title: 'Home',
           url: 'aarti-list',
           icon: 'home'
         }
@@ -232,7 +232,7 @@ export class AppComponent implements OnInit {
       this.username = name;
       this.appPages = [
         {
-          title: 'Homepage',
+          title: 'Home',
           url: 'aarti-list',
           icon: 'home'
         },
