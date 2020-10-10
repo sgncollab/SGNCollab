@@ -144,7 +144,7 @@ export class MyPlaylistPage implements OnInit {
     this.navCtrl.navigateForward('update-user-playlist');
   }
   copyData(item){
-    this.clipboard.copy(item.playlist_id);
+    this.clipboard.copy('m-Aarti :-\n'+'My Playlist Code : '+item.playlist_id+'\nPlease use the above code to search my playlist with name : '+item.playlist_name + '\n https://play.google.com/store/apps/details?id=com.sgn.maarti');
    }
 
   deletePlaylist(item) {
@@ -194,6 +194,8 @@ export class MyPlaylistPage implements OnInit {
         icon: 'share-social-outline',
         handler: () => {
           this.copyData(item)
+          this.dbService.showToast("Copied to Clipboard")
+         // alert("Copied to Clipboard");
           console.log('Share clicked');
         }
       }, {
