@@ -132,8 +132,7 @@ export class RegistrationLoginPage implements OnInit {
     this.menu.enable(false);
     this.dataPage = this.dataService.getPresentPage();
     if (this.dataPage == "reset-pin") {
-      console.log("coming from reset pin ");
-      
+      //console.log("coming from reset pin ");
       this.enterUName = "";
       this.enterPIN = "";
       this.rememberChecked = false;
@@ -249,9 +248,6 @@ export class RegistrationLoginPage implements OnInit {
 
     }
   }
-
-  
-
 
   registerEnable() {
     if(this.username == "" || this.username == undefined ){

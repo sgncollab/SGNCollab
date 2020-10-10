@@ -17,24 +17,24 @@
   <ion-card class="content">
     <ion-segment *ngIf="!guest" mode="ios" value="Login">
       <ion-segment-button style="height:6vh; font-family: Dosis-Regular; font-size: 2.5vh;" value="Login" (click)="checkView('loginView')">
-        <b>Login</b>
+        Login
       </ion-segment-button>
       <ion-segment-button style="height:6vh; font-family: Dosis-Regular; font-size: 2.5vh;" value="Register" (click)="checkView('registerView')">
-        <b>Register</b>
+        Register
       </ion-segment-button>
     </ion-segment>
 
     <ion-segment *ngIf="guest" mode="ios" value="Register">
-      <ion-segment-button  value="Login" (click)="checkView('loginView')" >
+      <ion-segment-button  value="Login" (click)="checkView('loginView')" style="height:6vh; font-family: Dosis-Regular; font-size: 2.5vh;" >
         Login
       </ion-segment-button>
-      <ion-segment-button class="register" value="Register" (click)="checkView('registerView')">
+      <ion-segment-button class="register" value="Register" (click)="checkView('registerView')" style="height:6vh; font-family: Dosis-Regular; font-size: 2.5vh;">
         Register
       </ion-segment-button>
     </ion-segment>
 
     <!-- Registration -->
-    <div *ngIf="display">
+    <div *ngIf="display" >
       <!-- Username -->
       <ion-item lines="none">
         <ion-icon name="person-sharp"></ion-icon>
