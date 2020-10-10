@@ -66,11 +66,12 @@ export class SearchPlaylistPage implements OnInit {
   ionViewDidLeave() {
    this.backButtonSubscription.unsubscribe();
   }
-  search() {
+  search(e) {
+    //console.log(e.detail.value);
     this.fetchSearch = [];
     let flag=false;
     for (let i = 0; i < this.playlist.length; i++) {
-      if (this.searchPlaylist == this.playlist[i].playlist_id) {
+      if (e.detail.value == this.playlist[i].playlist_id) {
         flag = true;
         var playlistId = this.playlist[i].playlist_id;
         this.playlistString.push(this.playlist[i]);

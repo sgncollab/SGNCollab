@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/registration-login',
+    redirectTo: '/home',
     pathMatch: 'full'
   },
   {
@@ -82,7 +82,8 @@ const routes: Routes = [
   {
     path: 'registration-login',
     loadChildren: () => import('./registration-login/registration-login.module').then( m => m.RegistrationLoginPageModule)
-  },  {
+  },
+  {
     path: 'reset-pin',
     loadChildren: () => import('./pages/reset-pin/reset-pin.module').then( m => m.ResetPinPageModule)
   }

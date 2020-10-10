@@ -10,14 +10,14 @@
 
 <ion-content class="background">
   <ion-searchbar debounce="500"  placeholder="Enter playlist code" inputmode="numeric" [(ngModel)]="searchPlaylist" 
-  (ionChange)="search()">
+  (ionChange)="search($event)">
   </ion-searchbar>
   <div *ngIf="fetchSearch.length > 0;"> 
   <ion-list class="bg-transparent"  *ngFor ="let item of fetchSearch;index as i">
     <ion-item class="ion-text-capitalize"style=" border:1px solid lightgray;
     border-radius:2vh;margin-left:7vw;margin-right:7vw;" 
     (click)="getString(item.playlist_id)">
-    <ion-label style="text-align:center;font-size:3vh;">{{ item.playlist_name }}</ion-label> 
+    <ion-label style="text-align:center;font-size:3vh;">{{item.playlist_id}}{{ item.playlist_name }} </ion-label> 
     </ion-item>
   </ion-list>
  </div> 
