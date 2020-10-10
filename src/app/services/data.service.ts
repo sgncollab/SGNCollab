@@ -19,9 +19,10 @@ export class DataService {
   private lang:boolean;
   private username;
   private Rmno=0;
-   resetname:any;
- user;
- usertype:string="guest";
+  resetname:any;
+  user;
+  usertype:string="guest";
+  item;
 
   constructor() { }
 
@@ -139,6 +140,13 @@ export class DataService {
   }
   getUserType(){
     return this.usertype;
+  }
+
+  setItem(item){
+    this.item = item;
+  }
+  getItem(){
+    return this.item;
   }
   
 }

@@ -25,7 +25,15 @@ ion-list {
   ::-webkit-scrollbar {
     display: none;
   }
+  ion-item {
+    --inner-padding-end: 0px;
+    }
 }
+
+.label {
+  margin: 0;
+}
+
 @font-face{
   font-family: Khand-Regular;
   font-style: regular;

@@ -187,7 +187,7 @@ export class MyPlaylistPage implements OnInit {
         icon: 'pencil',
         handler: () => {
           this.updatePlaylist(item)
-          console.log('Edit clicked');
+          //console.log('Edit clicked');
         }
       }, {
         text: 'Share',
@@ -196,14 +196,14 @@ export class MyPlaylistPage implements OnInit {
           this.copyData(item)
           this.dbService.showToast("Copied to Clipboard")
          // alert("Copied to Clipboard");
-          console.log('Share clicked');
+          //console.log('Share clicked');
         }
       }, {
         text: 'Cancel',
         icon: 'close',
         role: 'cancel',
         handler: () => {
-          console.log('Cancel clicked');
+          //console.log('Cancel clicked');
         }
       }]
     });

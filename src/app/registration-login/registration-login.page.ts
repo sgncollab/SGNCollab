@@ -56,8 +56,6 @@ export class RegistrationLoginPage implements OnInit {
   guest =false;
   view
   currentPage ="RegisterationLogin";
-  
- 
 
   constructor(
     private menu: MenuController,
@@ -69,7 +67,6 @@ export class RegistrationLoginPage implements OnInit {
     private dataService: DataService,
     private network: Network,
    ) {
-    
   }
   
   async presentPopover(ev) {
@@ -143,7 +140,7 @@ export class RegistrationLoginPage implements OnInit {
       this.dbService.showToast("PIN reset successfully! Login with your new PIN ");
 
     } else {
-      console.log("else");
+      // console.log("else");
     }
     //console.log(this.screenOrientation.type); // log the current orientation, example: 'landscape'
     this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);  // set to landscape
