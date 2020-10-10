@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseDbService } from 'src/app/services/firebase-db.service';
 import { DataService } from 'src/app/services/data.service';
-import { NavController, LoadingController, PopoverController, ActionSheetController,Platform,MenuController } from '@ionic/angular';
+import { NavController, LoadingController, ActionSheetController,Platform,MenuController, AlertController } from '@ionic/angular';
 import { NavigationExtras } from '@angular/router';
 import { Clipboard } from '@ionic-native/clipboard/ngx';
 
@@ -25,23 +25,14 @@ export class MyPlaylistPage implements OnInit {
     private dbService: FirebaseDbService,
     private clipboard: Clipboard, 
     public actionSheetController: ActionSheetController, 
-    private popoverController: PopoverController, 
-    private loadingController: LoadingController, 
     private dataService: DataService, 
     private navCtrl: NavController,
     private platform: Platform,
-    private menu: MenuController
+    private menu: MenuController,
+    public alertCtrl:AlertController
     )
      { }
 
-  // doRefresh(event) {
-  //   console.log('Begin async operation');
-
-  //   setTimeout(() => {
-  //     console.log('Async operation has ended');
-  //     event.target.complete();
-  //   }, 2000);
-  // }
   ngOnInit() {
     this.dataService.setPresentPage(this.currentPage);
     this.dbService.fetchUserPlaylist().subscribe((data) => {
@@ -168,7 +159,31 @@ export class MyPlaylistPage implements OnInit {
     }
     this.dbService.showToast(item.playlist_name + " " + " Deleted!")
   }
- 
+ async confirmDelete(item){
+    const alert = await this.alertCtrl.create({
+      cssClass: 'my-custom-class',
+      mode: 'ios',
+      message: 'Are you sure you want to delete?',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => { 
+            console.log('Confirm Cancel: blah');
+          }
+        }, {
+          text: 'Delete',
+          handler: () => {
+            this.deletePlaylist(item)
+            console.log('Confirm Okay');
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
 
   async presentActionSheet(item) {
     const actionSheet = await this.actionSheetController.create({
@@ -179,7 +194,8 @@ export class MyPlaylistPage implements OnInit {
         // role: 'destructive',
         icon: 'trash',
         handler: () => {
-          this.deletePlaylist(item)
+         this.confirmDelete(item)
+          //
           console.log('Delete clicked');
         }
       }, {
@@ -210,5 +226,4 @@ export class MyPlaylistPage implements OnInit {
     await actionSheet.present();
   }
 }
-
 // this.clipboard.clear();
