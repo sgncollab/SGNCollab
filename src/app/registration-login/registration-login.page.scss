@@ -10,13 +10,7 @@ ion-popover {
         }
     }
   }
-// ion-popover {
-//     div.popover-content {
-//          top: 50% !important;
-//          left: 50% !important;
-//         transform: translate(-50%, -50%) !important;
-//   }
- // }
+
   ion-input{
       --padding-start:1vh !important
   }
@@ -41,6 +35,26 @@ ion-popover {
     padding-left:3vh;
    }
 
+   @font-face{
+    font-family: Dosis-Regular;
+    font-style: regular;
+    src: url("../../assets/fonts/Dosis-Regular.ttf");
+}
+    @font-face{
+    font-family: Dosis-SemiBold;
+    font-style: semi-bold;
+    src: url("../../assets/fonts/Dosis-SemiBold.ttf");
+}
+@font-face{
+    font-family: Dosis-Bold;
+    font-style: dosis-bold;
+    src: url("../../assets/fonts/Dosis-Bold.ttf");
+}
+@font-face{
+    font-family: Dosis-Medium;
+    font-style: dosis-medium;
+    src: url("../../assets/fonts/Dosis-Medium.ttf");
+}
 
 
 
@@ -50,10 +64,5 @@ ion-popover {
 
 
 
-//    ion-popover {
-//     div.popover-content {
-//          top: 50% !important;
-//          //left: 50% !important;
-//         transform: translate(-50%, -50%) !important;
-//   }
-//   }
+
+
