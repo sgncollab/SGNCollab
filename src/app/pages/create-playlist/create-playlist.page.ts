@@ -50,6 +50,7 @@ export class CreatePlaylistPage implements OnInit {
   ionViewDidLeave() {
     this.backButtonSubscription.unsubscribe();
   }
+  
 
 
   getItem(e: any, marathiTitle: string) {
@@ -64,6 +65,11 @@ export class CreatePlaylistPage implements OnInit {
       this.checkedbtn = true;
     }
   }
+  aartiOpen(){
+    console.log("clicked")
+    
+  }
+
   onNext() {
     //this.dataService.setLang(this.lang);
     this.dataService.setAarti(this.selectedItems);

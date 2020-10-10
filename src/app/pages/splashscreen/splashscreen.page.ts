@@ -8,12 +8,12 @@ import { NavController } from '@ionic/angular';
 })
 export class SplashscreenPage implements OnInit {
 
-  constructor(private navCtrl:NavController) { }
+  constructor(private navCtrl: NavController) { }
 
   ngOnInit() {
     setTimeout(() => {
-      this.navCtrl.navigateForward('/login-register')
-}, 6000);
+      this.navCtrl.navigateForward('/registration-login')
+    }, 6000);
   }
 
 }

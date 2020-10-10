@@ -16,20 +16,20 @@
   </div>
   <ion-card class="content">
     <ion-segment *ngIf="!guest" mode="ios" value="Login">
-      <ion-segment-button style="height:6vh;" value="Login" (click)="checkView('loginView')">
+      <ion-segment-button style="height:6vh; font-family: Dosis-Regular; font-size: 2.5vh;" value="Login" (click)="checkView('loginView')">
         <b>Login</b>
       </ion-segment-button>
-      <ion-segment-button style="height:6vh;" value="Register" (click)="checkView('registerView')">
+      <ion-segment-button style="height:6vh; font-family: Dosis-Regular; font-size: 2.5vh;" value="Register" (click)="checkView('registerView')">
         <b>Register</b>
       </ion-segment-button>
     </ion-segment>
 
     <ion-segment *ngIf="guest" mode="ios" value="Register">
-      <ion-segment-button style="height:6vh;" value="Login" (click)="checkView('loginView')">
-        <b>Login</b>
+      <ion-segment-button  value="Login" (click)="checkView('loginView')" >
+        Login
       </ion-segment-button>
-      <ion-segment-button style="height:6vh;" value="Register" (click)="checkView('registerView')">
-        <b>Register</b>
+      <ion-segment-button class="register" value="Register" (click)="checkView('registerView')">
+        Register
       </ion-segment-button>
     </ion-segment>
 
@@ -38,7 +38,7 @@
       <!-- Username -->
       <ion-item lines="none">
         <ion-icon name="person-sharp"></ion-icon>
-        <ion-input type="text" [(ngModel)]="username" placeholder="Username" class="ion-text-capitalize"
+        <ion-input type="text" [(ngModel)]="username" placeholder="Username" class="ion-text-capitalize" style="font-family: Dosis-Regular;"
           (ionChange)="inputValidation($event,'username')" pattern="^[0-9]+$"></ion-input>
       </ion-item>
 
