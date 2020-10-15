@@ -14,7 +14,7 @@ export class HomePage implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       this.navCtrl.navigateForward('/registration-login')
-    }, 4000);
+    }, 80000);
   }
 
     

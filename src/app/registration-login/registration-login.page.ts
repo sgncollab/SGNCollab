@@ -9,6 +9,7 @@ import { DataService } from 'src/app/services/data.service';
 import { Network } from '@ionic-native/network/ngx';
 
 
+
 @Component({
   selector: 'app-registration-login',
   templateUrl: './registration-login.page.html',
@@ -55,7 +56,9 @@ export class RegistrationLoginPage implements OnInit {
   user;
   guest =false;
   view
-  currentPage ="RegisterationLogin";
+  currentPage ="registration-login";
+  internet = true;
+ 
 
   constructor(
     private menu: MenuController,
@@ -67,6 +70,20 @@ export class RegistrationLoginPage implements OnInit {
     private dataService: DataService,
     private network: Network,
    ) {
+    this.network.onDisconnect().subscribe(() => {
+      this.internet = false;
+      //alert('network was disconnected :-(');
+    });
+    this.network.onConnect().subscribe(() => {
+      this.internet = true;
+      //alert('network connected!');
+      
+      setTimeout(() => {
+        if (this.network.type === 'wifi') {
+          //alert('we got a wifi connection, woohoo!');
+        }
+      }, 3000);
+    });
   }
   
   async presentPopover(ev) {
@@ -111,6 +128,7 @@ export class RegistrationLoginPage implements OnInit {
 
   ionViewWillEnter() {
     this.dataService.setPresentPage(this.currentPage);
+     
     this.user = this.dataService.getGuest();
     if(this.user == "guest"){
       this.guest = true;
@@ -258,8 +276,8 @@ export class RegistrationLoginPage implements OnInit {
     }
   }
   register() {
-    console.log("register")
-    let pin = Md5.hashStr(this.confirmPIN);
+    if(this.internet == true){
+      let pin = Md5.hashStr(this.confirmPIN);
     this.dbService.createUser(this.srNo, this.username.toLowerCase(), pin);
     this.dataService.setUserType(this.username)
     this.appComponent.viewMenu(this.username);
@@ -289,10 +307,17 @@ export class RegistrationLoginPage implements OnInit {
     else {
       console.log("Check the pin ")
     }
+
+    }
+    else{
+      alert("Kindly check your Internet connection!");
+
+    }
+    
   }
 
   login() {
-    if (navigator.onLine) {
+    if(this.internet == true) {
       //Do task when no internet connection
       this.loginPin = false;
       this.loginUname = false;

@@ -45,7 +45,7 @@ export class AppComponent implements OnInit {
       this.net = false;
       this.userType = this.dataService.getUserType();
       this.viewMenu(this.userType)
-      if (this.currentPage != "RegisterationLogin ") {
+      if (this.currentPage != "registration-login") {
         this.navController.navigateForward('aarti-list');
       }
       // alert('network was disconnected :-('+ this.network.type);
@@ -53,7 +53,6 @@ export class AppComponent implements OnInit {
     this.network.onConnect().subscribe(() => {
       // alert('network connected!');
       this.net = true;
-
       this.userType = this.dataService.getUserType();
       this.viewMenu(this.userType)
       setTimeout(() => {
@@ -298,7 +297,7 @@ export class AppComponent implements OnInit {
         }
         if (count < 1) {
           this.navController.navigateForward(this.dataPage);
-          this.dbService.showToast("Please create a playlist!");
+          this.dbService.showToast("Please create a playlist.");
         }
       }
     }
