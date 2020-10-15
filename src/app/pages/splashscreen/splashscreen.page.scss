@@ -110,11 +110,11 @@
     
     animation-iteration-count: infinite;
   }
-  .background{
-    animation-name: backgroundAnimation;
-    --background:url(../../../assets/images/final.png)0 0/100% 100% no-repeat ;
-    animation-duration: 6s;
-}
+//   .background{
+//     animation-name: backgroundAnimation;
+//     --background:url(../../../assets/images/final.png)0 0/100% 100% no-repeat ;
+//     animation-duration: 6s;
+// }
 @keyframes backgroundAnimation {
   from {opacity: 0;}
   to {opacity: 1;}

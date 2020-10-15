@@ -1,6 +1,30 @@
 [
-    {
-        "aartiId":"a",
+{
+    "aartiId":"a",
+    
+    "isChecked" : false, 
+
+    "englishTitle":"21 Ganpati",
+
+    "marathiTitle":"२१ गणपती ",
+
+    "englishAarti":"Moraya moraya Ganpati Bappa moraya || 1 ||\nMoraya moraya Prathamesha moraya || 2 ||\nMoraya moraya Shree Ganesha moraya || 3 ||\nMoraya moraya Siddhivinayak moraya || 4 ||\nMoraya moraya Mangalmurti moraya || 5 ||\nMoraya moraya Vakratund moraya || 6 ||\nMoraya moraya Mahaganpati moraya || 7 ||\nMoraya moraya Mayureshwara moraya || 8 ||\nMoraya moraya Gajavadana tu moraya || 9 ||\nMoraya moraya Gajananay moraya || 10 ||\nMoraya moraya Gaurisutay moraya || 11 ||\nMoraya moraya Ekdantay moraya || 12 ||\nMoraya moraya Lambodaray moraya || 13 ||\nMoraya moraya Bhalchandray moraya || 14 ||\nMoraya moraya Ganadhyakshay moraya || 15 ||\nMoraya moraya Heramba tumoraya || 16 ||\nMoraya moraya Gaurinandana moraya || 17 ||\nMoraya moraya Sumukhay moraya || 18 ||\nMoraya moraya Omkara tu moraya || 19 ||\nMoraya moraya Ballaleshwaray moraya || 20 ||\nMoraya moraya Vighnaharta tu moraya || 21 ||\n",
+
+    "marathiAarti":"मोरया मोरया गणपती बाप्पा मोरया ।। १ ।।\nमोरया मोरया प्रथमेशा मोरया ।। २ ।।\nमोरया मोरया श्री गणेशा मोरया ।। ३ ।।\nमोरया मोरया सिद्धिविनायक मोरया ।। ४ ।।\nमोरया मोरया मंगलमूर्ती मोरया ।। ५ ।।\nमोरया मोरया वक्रतुंड मोरया ।। ६ ।।\nमोरया मोरया महागणपती मोरया ।। ७ ।।\nमोरया मोरया मयुरेश्र्वरा मोरया ।। ८ ।।\nमोरया मोरया गजवदना तू मोरया ।। ९ ।।\nमोरया मोरया गजाननाय मोरया ।। १० ।।\nमोरया मोरया गौरीसुताय मोरया ।। ११ ।।\nमोरया मोरया एकदंताय मोरया ।। १२ ।।\nमोरया मोरया लंबोदराय मोरया ।। १३ ।।\nमोरया मोरया भालचंद्राय मोरया ।। १४ ।।\nमोरया मोरया गणाध्यक्षाय मोरया ।। १५ ।।\nमोरया मोरया हेरंबा तू मोरया ।। १६ ।।\nमोरया मोरया गौरीनंदना मोरया ।। १७ ।।\nमोरया मोरया सुमुखाय मोरया ।। १८ ।।\nमोरया मोरया ओंकारा तू मोरया ।। १९ ।।\nमोरया मोरया बल्लाळेश्वराय मोरया ।। २० ।।\nमोरया मोरया विघ्नहर्ता तू मोरया ।। २१ ।।\n"
+},{
+    "aartiId":"b",
+    
+    "isChecked" : false, 
+	
+    "englishTitle":"Aarti Hartalike",
+
+    "marathiTitle":"आरती हरतालिके ",
+
+    "englishAarti":"Himalayachi kanya zali ase upvar |\nTine tap kele bahu |\nShankarachya gauri, lakshmi ek pan |\nSath chausasht purana, tap kele mahadeva |\nSharir aale sharan, aarti hartalike || 1 ||\n\nKrupavant ho maate, naariya vasataati |\nTyansi kaay tu deshi, udand saubhagya |\nPutra, rajya, sampatti, kaankan akshayi chude |\nNari janmalya yeti, aarti hartalike || 2 ||\n\nSwargahuni uttarle narad muni, vinaviti himalaya |\nKanya dyavi harisi, bahu gun asti taya |\nItke boluni narad uthle, aarti hartalike || 3 ||\n\nPityache vachan aikuni uma kopali |\nMata pita sandun vanasi geli |\nSakhiye vartaman, ling karu lagli, aarti hartalike || 4 ||\n\nBhadrapad masi shuddha trutiya |\nHast nakshatra tyane keli mahamaya |\nValavi ling kele, tithe dhyan dharile, aarti hartalike || 5 ||\n\nPita mhane uma kothe geli |\nMata mhane gharat hoti |\nShodhile ghardar, shodhilya utkabava |\nUma kothe na sapde, aata kay karave |\nAsech vanasi jave, aarti hartalike || 6 ||\n\nEwdha thor himalay vana gela |\nGangechya katakshana dekhilya don kanya |\nKa bale aalis, ka bale ruslis |\nTujhiya manakamana aamhi neu siddhis, aarti hartalike || 7 ||\n\nBara varshe tine tap kele bahu |\nDhumrapanasi gheun deh alavila |\nDekhile pityane, mani kariti chinta, aarti hartalike || 8 ||\n\nEwdha thor himalay vana gela |\nKanya gheuni gharasi aala |\nUma dili mahadeva, tyane thor utsav kela |\nPach divas sonyache kele, aarti hartalike || 9 ||\n",
+
+    "marathiAarti":"हिमालयाची कन्या झाली असे उपवर ।\nतिने तप केले बहू ।\nशंकराच्या गौरी, लक्ष्मी एक पान ।\nसाठ चौसष्ट पुराणं, तप केले महादेवा ।\nशरीर आले शरण, आरती हरतालिके ।। १ ।।\n\nकृपावंत हो माते, नारिया वसताती ।\nत्यांसी काय तू देशी, उदंड सौभाग्य ।\nपुत्र, राज्य, संपत्ती, कांकण अक्षयी चुडे ।\nनारी जन्मल्या येती, आरती हरतालिके ।। २ ।।\n\nस्वर्गाहुनी उतरले नारद मुनी, विनविती हिमालया ।\nकन्या द्यावी हरिसी, बहू गुण असती तया ।\nइतके बोलुनी नारद उठले, आरती हरतालिके ।। ३ ।।\n\nपित्याचे वचन ऐकुनी उमा कोपली ।\nमाता पिता सांडून वनासी गेली ।\nसखिये वर्तमान, लिंग करू लागली, आरती हरतालिके ।। ४ ।।\n\nभाद्रपद मासी शुद्ध तृतीया ।\nहस्त नक्षत्र त्याने केली महामाया ।\nवाळवी लिंग केले, तिथे ध्यान हरिले, आरती हरतालिके ।। ५ ।।\n\nपिता म्हणे उमा कोठे गेली ।\nमाता म्हणे घरात होती ।\nशोधिले घरदार, शोधिल्या उत्कबावा ।\nउमा कोठे न सापडे, आता काय करावे ।\nअसेच वनासी जावे, आरती हरतालिके ।। ६ ।।\n\nएवढा थोर हिमालय वना गेला ।\nगंगेच्या कटाक्षणा देखिल्या दोन कन्या ।\nका बाळे आलीस, का बाळे रुसलीस ।\nतुझिया मनकामना आम्ही नेऊ सिद्धीस, आरती हरतालिके ।। ७ ।।\n\nबारा वर्षे तिने तप केले बहू ।\nधुम्रपानासी घेऊन देह आळविला ।\nदेखिले पित्याने, मनी करिती चिंता, आरती हरतालिके ।। ८ ।।\n\nएवढा थोर हिमालय वना गेला ।\nकन्या घेऊनि घरासी आला ।\nउमा दिली महादेवा, त्याने थोर उत्सव केला ।\nपाच दिवस सोन्याचे केले, आरती हरतालिके ।। ९ ।।\n"
+}, {
+        "aartiId":"c",
         
         "isChecked" : false, 
     
@@ -12,8 +36,22 @@
     
         "marathiAarti":"जय कचेश्वरा योगीराजया सदगुरु आचार्या ।\nप्रेमाने ओवाळू आरती तुजला गुरुवर्या  ।। धृ ।।\n\nभूक तहानेने ।\n कंठी प्राण आले ।\nतपसामर्थ्य पणास लावले ।\nइंद्राचे आसन डळमळले ।\nवर्षति जलधारा ।। १ ।।\n\nजय कचेश्वरा योगीराजया सदगुरु आचार्या ।\nप्रेमाने ओवाळू आरती तुजला गुरुवर्या  ।। धृ ।।\n\nचाकणासी शाहू तव दर्शनासी आले ।\nश्रद्धा भक्तीने तुजसि पुजियेले ।\nकचेश्वरांच्या कृपा प्रसादे ।\nराज्यलक्ष्मीने तयास वरिले ।\nकेले सत्कार्या ।। २ ।।\n\nजय कचेश्वरा योगीराजया सदगुरु आचार्या ।\nप्रेमाने ओवाळू आरती तुजला गुरुवर्या  ।। धृ ।।\n\nशाहू राजासी अनुग्रह दिधला ।\nराजगुरुचा तो मान प्राप्त झाला ।\nविरक्त साधुवृत्ती तुमची ।\nआरक्ती नच संपत्तीची ।\nत्यागी ऐश्वर्या ।। ३ ।।\n\nजय कचेश्वरा योगीराजया सदगुरु आचार्या ।\nप्रेमाने ओवाळू आरती तुजला गुरुवर्या  ।। धृ ।। "
     },
+{
+    "aartiId":"d",
+    
+    "isChecked" : false, 
+	
+    "englishTitle":"Aarti Mangalagauri",
+
+    "marathiTitle":"आरती मंगळागौरी ",
+
+    "englishAarti":"Mangalmurti upajali karya |\nPrasanna zali alpayushi raya |\nTishthali rajbali aayupan dyavaya |\nAarti Mangalagauri || 1 ||\n\nVasusakashi apuri tujhi maay bhakt kari |\nOvalu soniya tati ratanache dive manikachya vati |\nHeere ya moti jyoti bhave karu aarti |\nAarti Mangalagauri || 2 ||\n\nNahuni makhuni mouni baisali |\nPatav choli kshirodak nesali |\nSvachha bahut houniya amba puju baisali |\nAarti Mangalagauri || 3 ||\n\nAana re malyanno jaijuichya kalya |\nSola trikuti sola durva sola parichi patri |\nJaijui aboli shevanti nagchafe pujela ga aniti |\nAarti Mangalagauri || 4 ||\n\nAmdum dumdum vajantri vajate |\nKalai kakan gauraila shobhate |\nShobhati bajuband kanikapache gave lyayali amba saje |\nAarti Mangalagauri || 5 ||\n\nChandichya tatat gauraila naivedya |\nKhajichya karanjiya bhuk ladu modak |\nVar sakharecha pak vistarili tat |\nAarti Mangalagauri || 6 ||\n\nSaaliche tandul mugachi dal |\nAalan khichadi randhite nar |\nApulya patilagi seva karite far |\nAarti Mangalagauri || 7 ||\n\nHaladichi vati kunkavacha karanda |\nAlpayushi hota to shatayushi zala |\nZala ho zala aisi mhanati ambechi shakti |\nAarti Mangalagauri || 8 ||\n\nKunkavacha karanda haladichi vati |\nEwdha pratap kela amba mayesathi |\nKela ho kela mhanati aisi ambechi shakti |\nAarti Mangalagauri || 9 ||\n\nDurun disate ambamaiche deul |\nTuali tulavat var sonyachi vit |\nDeul soniyache aat murt baravi |\nAarti Mangalagauri || 10 ||\n\nLavlahe kashis nighali |\nAvarjan kela pan visarjan karayla visarli |\nMaguti paratli amba svayambhu dekhili |\nAarti Mangalagauri || 11 ||\n",
+
+    "marathiAarti":"मंगलमूर्ती उपजली कार्या ।\nप्रसन्न झाली अल्पायुषी राया ।\nतिष्ठली राजबाळी आयुपण द्यावया ।\nआरती मंगळागौरी ।। १ ।।\n\nवासुसकाशी आपुरी तुझी माय भक्ती करी ।\nओवाळू सोनिया ताटी रतनाचे दिवे माणिकाच्या वाती ।\nहिरे या मोती ज्योती भावे करू आरती ।\nआरती मंगळागौरी ।। २ ।।\n\nनाहुनी माखुनी मौनी बैसली ।\nपाटाव चोळी क्षिरोदक नेसली ।\nस्वच्छ बहुत होऊनिया अंबा पुजू बैसली ।\nआरती मंगळागौरी ।। ३ ।।\n\nआणा रे माळ्यांनो जाईजुईच्या कळ्या ।\nसोळा त्रिकुटी सोळा दुर्वा सोळा परिची पत्री ।\nजाईजुई अबोली शेवंती नागचाफे पूजेला ग आणिती ।\nआरती मंगळागौरी ।। ४ ।।\n\nअमडुम डुमडुम वाजंत्री वाजते ।\nकळाई काकण गौराईला शोभते ।\nशोभती बाजूबंद कानीकापाचे गवे ल्यायली अंबा साजे ।\nआरती मंगळागौरी ।। ५ ।।\n\nचांदीच्या ताटात गौराईला नैवेद्य ।\nखाजीच्या करंजीया भूक लाडू मोदक ।\nवर साखरेचा पाक विस्तारिली ताट ।\nआरती मंगळागौरी ।। ६ ।।\n\nसाळीचे तांदूळ मूगाची डाळ ।\nआळण खिचडी रांधिते नार ।\nआपुल्या पतीलागी सेवा करिते फार ।\nआरती मंगळागौरी ।। ७ ।।\n\nहळदीची वाटी कुंकवाचा करंडा ।\nअल्पायुषी होता तो शतायुषी झाला ।\nझाला हो झाला म्हणती ऐसी अंबेची शक्ती ।\nआरती मंगळागौरी ।। ८ ।।\n\nकुंकवाचा करंडा हळदीची वाटी ।\nएवढा प्रताप केला अंबा मायेसाठी ।\nकेला हो केला म्हणती ऐसी अंबेची शक्ती ।\nआरती मंगळागौरी ।। ९ ।।\n\nदुरून दिसते अंबामाईचे देऊळ ।\nतुळई तुळवत वर सोन्याची वीट ।\nदेऊळ सोनियाचे आत मूर्त बरवी ।\nआरती मंगळागौरी ।। १० ।।\n\nलवलाहे काशीस निघाली ।\nआवर्जन केलं पण विसर्जन करायला विसरली ।\nमागुती परतली अंबा स्वयंभू देखिली ।\nआरती मंगळागौरी ।। ११ ।।\n"
+},
+
     {
-        "aartiId":"b",
+        "aartiId":"e",
         
         "isChecked" : false, 
     
@@ -21,16 +59,16 @@
     
         "marathiTitle":"अंबेचा धावा ",
     
-        "englishAarti":"Jay jagadambe ambabai dhav jani aata |\n Ambe dhaav jani aata |\nYa sansaari shramalo bhari vari bhav chinta || 1 ||\n\nRatrandin mi kashta soshile saukhya muli naahi |\n Maate saukhya muli nahi |\nTav sevela antarlo mi mhanuni shiksha hi || 2 ||\n\nRog kashta ani dukkha dainya he lagalese pathi |\nAmbe lagalese pathi |\nTav smaranane paltil saare kari krupa drushti || 3 ||\n\nKaam krodh he daitya matale chhalati maj faar |\n Ambe chhalati maj faar |\nRagaduni paaya tali tayancha kari tu sanhaar || 4 ||\n\nPrapanchache oze vaahile kashtuni ahoratri |\n Ambe kashtuni ahoratri |\nTujhya krupevin vaaya gele maj kalale anti || 5 ||\n\nMhanuni ambe padar pasarito dhav jani aata |\n Ambe dhav jani aata |\nVinamra bhave aai thevito tav charani matha || 6 ||\n\nAshtaputra naam tumche shobhatase tumha |\n Aai shobhatase tumha |\nDin balake amhi tumchi sambhali amha || 7 ||\n\nTav svarupacha mahima gaata pavasi amhala |\n Ambe pavasi amhala |\nSakal manorath puravuni amuche deshi saukhyla || 8 ||\n\nPaapi amangal apradhi mi kaay karu aata | \nAmbe kaay karu aata |\nPatit paavan tujha mhanavito mag kaichi chinta || 9 ||\n\nDas tujha mi kari prarthana joduniya kar |\n Ambe joduniya kar |\nVisar na vhava tav charanacha hachi dei var || 10 ||",
+        "englishAarti":"Jai jagadambe ambabai dhav jani aata |\n Ambe dhaav jani aata |\nYa sansaari shramalo bhari vari bhav chinta || 1 ||\n\nRatrandin mi kashta soshile saukhya muli naahi |\n Maate saukhya muli nahi |\nTav sevela antarlo mi mhanuni shiksha hi || 2 ||\n\nRog kashta ani dukkha dainya he lagalese pathi |\nAmbe lagalese pathi |\nTav smaranane paltil saare kari krupa drushti || 3 ||\n\nKaam krodh he daitya matale chhalati maj faar |\n Ambe chhalati maj faar |\nRagaduni paaya tali tayancha kari tu sanhaar || 4 ||\n\nPrapanchache oze vaahile kashtuni ahoratri |\n Ambe kashtuni ahoratri |\nTujhya krupevin vaaya gele maj kalale anti || 5 ||\n\nMhanuni ambe padar pasarito dhav jani aata |\n Ambe dhav jani aata |\nVinamra bhave aai thevito tav charani matha || 6 ||\n\nAshtaputra naam tumche shobhatase tumha |\n Aai shobhatase tumha |\nDin balake amhi tumchi sambhali amha || 7 ||\n\nTav svarupacha mahima gaata pavasi amhala |\n Ambe pavasi amhala |\nSakal manorath puravuni amuche deshi saukhyla || 8 ||\n\nPaapi amangal apradhi mi kaay karu aata | \nAmbe kaay karu aata |\nPatit paavan tujha mhanavito mag kaichi chinta || 9 ||\n\nDas tujha mi kari prarthana joduniya kar |\n Ambe joduniya kar |\nVisar na vhava tav charanacha hachi dei var || 10 ||",
     
         "marathiAarti":"जय जगदंबे अंबाबाई धाव जणी आता ।\nअंबे धाव जणी आता ।\nया संसारी श्रमलो भारी वारी भव चिंता ।। १ ।।\n\nरात्रंदिन मी कष्ट सोशिले सौख्य मुळी नाही ।\n माते सौख्य मुळी नाही । \nतव सेवेला अंतरलो मी म्हणूनी शिक्षा ही ।। २ ।।\n\nरोग  कष्ट  आणी दुःख दैन्य हे लागलेसे पाठी ।\n अंबे लागलेसे पाठी । \nतव स्मरणाने पळतील सारे करी कृपा दृष्टी ।। ३ ।।\n\nकाम क्रोध हे दैत्य मातले छळती मज फार ।\nअंबे छळती मज फार । \nरगडूनी पायातळी तयांचा करी तू संहार ।। ४ ।।\n\nप्रपंचाचे ओझे वाहिले कष्टुनि अहोरात्री ।\n अंबे कष्टुनि अहोरात्री । \nतुझ्या कृपेवीण वाया गेले मज कळले अंती ।। ५ ।।\n\nम्हणूनी अंबे पदर पसरितो धाव जणी आता ।\n अंबे धाव जणी आता । \nविनम्र भावे आई ठेवितो तव चरणी माथा ।। ६ ।।\n\nअष्टपुत्रा नाम तुमचे शोभतसे तुम्हा ।\n आई शोभतसे तुम्हा । \nदीन बालके आम्ही तुमची सांभाळी आम्हा ।। ७ ।।\n\nतव स्वरूपाचा महिमा गाता पावसी आम्हाला ।\nअंबे पावसी आम्हाला । \nसकल मनोरथ पुरवुनी आमुचे देशी सौख्याला ।। ८ ।।\n\nपी अमंगल अपराधी मी काय करू आता ।\nअंबे काय करू आता ।\nपतित पावने तुझा म्हणवितो मग कैची चिंता ।। ९ ।।\n\nदास तुझा मी करी प्रार्थना जोडूनिया कर ।\n अंबे जोडूनिया कर । \nविसर न व्हावा तव चरणांचा हाची देई वर ।। १० ।। "
     },
     {
-        "aartiId":"c",
+        "aartiId":"f",
         
         "isChecked" : false, 
     
-        "englishTitle":"  Atharvashirsh",
+        "englishTitle":"Atharvashirsh",
     
         "marathiTitle":"अथर्वशीर्ष ",
     
@@ -39,7 +77,7 @@
         "marathiAarti":"ॐ नमस्ते गणपतये ।। १ ।।\n\nत्वमेव प्रत्यक्षं तत्त्वमसि ।\nत्वमेव केवलं कर्ताऽसि ।\nत्वमेव केवलं धर्ताऽसि ।\nत्वमेव केवलं हर्ताऽसि ।\nत्वमेव सर्वं खल्विदं ब्रह्मासि ।\nत्वं साक्षादात्माऽसि नित्यम् ।। २ ।।\n\nऋतं वच्मि । सत्यं वच्मि ।। ३ ।।\n\nअव त्वं माम् ।\nअव वक्तारम् ।\nअव श्रोतारम् ।\nअव दातारम् ।\nअव धातारम् ।\nअवानूचानमव शिष्यम् ।\nअव पुरस्तात् ।\nअव दक्षिणात्तात् ।\nअव पश्चात्तात् ।\nअवोत्तरात्तात् ।\nअव चोर्ध्वात्तात् ।\nअवाधरात्तात् ।\nसर्वतो मां पाहि पाहि समन्तात् ।। ४ ।।\n\nत्वं वाङ्मयस्त्वं चिन्मयः ।\nत्वमानन्दमयस्त्वं ब्रह्ममयः ।\nत्वं सच्चिदानन्दाऽद्वितीयोऽसि ।\nत्वं प्रत्यक्षं ब्रह्मासि ।\nत्वं ज्ञानमयो विज्ञानमयोऽसि ।। ५ ।।\n\nसर्वं जगदिदं त्वत्तो जायते ।\nसर्वं जगदिदं त्वत्तस्तिष्ठति ।\nसर्वं जगदिदं त्वयि लयमेष्यति ।\nसर्वं जगदिदं त्वयि प्रत्येति ।\nत्वं भूमिरापोऽनलोऽनिलो नभः ।\nत्वं चत्वारि वाक् पदानि ।\nत्वं गुणत्रयातीतः ।\nत्वं अवस्थात्रयातीतः ।\nत्वं देहत्रयातीतः ।\nत्वं कालत्रयातीतः ।\nत्वं मूलाधारस्थितोऽसि नित्यम् ।\nत्वं शक्तित्रयात्मकः ।\nत्वां योगिनो ध्यायन्ति नित्यम् ।\nत्वं ब्रह्मा त्वं विष्णुस्त्वं\nरुद्रस्त्वमिन्द्रस्त्वमग्निस्त्वं \nवायुस्त्वं सूर्यस्त्वं चन्द्रमास्त्वं \n ब्रह्म भूर्भुवस्सुवरोम् ।। ६ ।।\n\nगणादिं पूर्वमुच्चार्य वर्णादींस्तदनन्तरम् ।\nअनुस्वारः परतरः ।\nअर्धेन्दुलसितम् ।\nतारेण ऋद्धम् ।\nएतत्तव मनुस्वरूपम् ।। ७ ।।\n\nगकारः पूर्वरूपम् ।\nअकारो मध्यरूपम् ।\nअनुस्वारश्चान्त्यरूपम् ।\nबिन्दुरुत्तररूपम् ।\nनादस्संधानम् ।\nसग्ं‌हिता संधिः ।। ८ ।।\n\nसैषा गणेशविद्या ।\nगणक ऋषिः ।\nनिचृद्गायत्रीच्छन्दः ।\nगणपतिर्देवता ।\nॐ गं गणपतये नमः ।। ९ ।।\n\nएकदन्ताय विद्महे वक्रतुण्डाय धीमहि ।\nतन्नो दन्तिः प्रचोदयात् ।। १० ।।\n\nएकदन्तं चतुर्हस्तं पाशमङ्कुशधारिणम् ।\nरदं च वरदं हस्तैर्बिभ्राणं मूषकध्वजम् ।\nरक्तं लम्बोदरं शूर्पकर्णकं रक्तवाससम् ।\nरक्तगन्धानुलिप्ताङ्गं रक्तपुष्पैस्सुपूजितम् ।\nभक्तानुकम्पिनं देवं जगत्कारणमच्युतम् ।\nआविर्भूतं च सृष्ट्यादौ प्रकृतेः पुरुषात्परम् ।\nएवं ध्यायति यो नित्यं स योगी योगिनां वरः ।। ११ ।।\n\nनमो व्रातपतये ।\nनमो गणपतये ।\nनमः प्रमथपतये ।\nनमस्तेऽस्तु लम्बोदरायैकदन्ताय\nविघ्ननाशिने शिवसुताय वरदमूर्तये नमः  ।। १२ ।।\n\nएतदथर्वशीर्षं योऽधीते स ब्रह्मभूयाय कल्पते ।\nस सर्वविघ्नैर्न बाध्यते ।\nस सर्वत्र सुखमेधते ।\nस पञ्चमहापापात्प्रमुच्यते ।\nसायमधीयानो दिवसकृतं पापं नाशयति ।\nप्रातरधीयानो रात्रिकृतं पापं नाशयति ।\nसायं प्रातः प्रयुञ्जानो पापोऽपापो भवति ।\nसर्वत्राधीयानोऽपविघ्नो भवति ।\nधर्मार्थकाममोक्षं च विन्दति  ।। १३ ।।\n\nइदमथर्वशीर्षमशिष्याय न देयम् ।\nयो यदि मोहाद्दास्यति स पापीयान् भवति ।\nसहस्रावर्तनाद्यं यं काममधीते तं तमनेन साधयेत् ।। १४ ।।\n\nअनेन गणपतिमभिषिञ्चति स वाग्मी भवति ।\nचतुर्थ्यामनश्नन् जपति स विद्यावान् भवति ।\nइत्यथर्वणवाक्यम् ।\nब्रह्माद्यावरणं विद्यान्न बिभेति कदाचनेति ।। १५ ।।\n\nयो दूर्वाङ्कुरैर्यजति स वैश्रवणोपमो भवति ।\nयो लाजैर्यजति स यशोवान् भवति ।\nस मेधावान् भवति ।\nयो मोदकसहस्रेण यजति स वाञ्छितफलमवाप्नोति ।\nयस्साज्यसमिद्भिर्यजति स सर्वं लभते स सर्वं लभते ।। १६ ।।\n\nअष्टौ ब्राह्मणान् सम्यग् \nग्राहयित्वा सूर्यवर्चस्वी भवति ।\nसूर्यग्रहेमहानद्यां प्रतिमासन्निधौ \nवा जप्त्वा सिद्धमन्त्रो भवति\nमहाविघ्नात् प्रमुच्यते ।\nमहादोषात् प्रमुच्यते ।\nमहाप्रत्यवायात् प्रमुच्यते ।\nस सर्वविद् भवति स सर्वविद् भवति ।\nय एवं वेद ।\nइत्युपनिषत्  ।। १७ ।।\n\nॐ शान्तिश्शान्तिश्शान्तिः ।। "
     },
     {
-        "aartiId":"d",
+        "aartiId":"g",
         
         "isChecked" : false, 
     
@@ -49,10 +87,10 @@
     
         "englishAarti":"Jai jai bhavani, manaramani, mata puravasini |\nChavada bhivananchi, swamini, mahishasur-mardini |\nJai jai bhavani ||\n\nNesuni patav, pivala, haar shobhato gala |\nHati gheuniya, trishula, bhali kumkum tila || 1 ||\n\nAngi levuniya, kacholi, var motyachi jali |\nHrudayi shobhatase, padakamali, kanthi he garsoli || 2 ||\n\nPaayi ghagariya, ghulghul, naki muktafal |\nMatha kuntal he, kural, nayanihi kajal || 3 ||\n\nSinhavari baisun, hindasi ranorani |\nTujala vinavito, nishidin, gosavi nandan || 4 ||",
     
-        "marathiAarti":"जय जय भवानी, मनरामणी, माता पूरवासिनी ।\nचवदा भुवनांची, स्वामिनी, महिषासुर-मर्दिनी ।\nजय जय भवानी ।। धृ ।।\n\nनेसूनि पाटाव, पिवळा, हार शोभतो गळा ।\nहाती घेऊनिया त्रिशूळा, भाळी कुंकुम टिळा ।। १ ।।\n\nअंगी लेवूनिया, काचोळी, वर मोत्याची जाळी ।\nहृदयी शोभतसे, पदकमळी, कंठी हे गरसोळी ।। २ ।।\n\nपायी घागरिया, घुळघुळ, नाकी मुक्ताफळ ।\nमाथा कुंतल हे, कुरळ, नयनीही काजळ ।। ३ ।।\n\nसिंहावरी बैसून, हिंडसी रानोरानी ।\nतुजला विनवितो, निशिदिन, गोसावी नंदन ।। ४ ।। "
+        "marathiAarti":"जय जय भवानी, मनरमणी, माता पूरवासिनी ।\nचवदा भुवनांची, स्वामिनी, महिषासुर-मर्दिनी ।\nजय जय भवानी ।। धृ ।।\n\nनेसूनि पाटाव, पिवळा, हार शोभतो गळा ।\nहाती घेऊनिया त्रिशूळा, भाळी कुंकुम टिळा ।। १ ।।\n\nअंगी लेवूनिया, काचोळी, वर मोत्याची जाळी ।\nहृदयी शोभतसे, पदकमळी, कंठी हे गरसोळी ।। २ ।।\n\nपायी घागरिया, घुळघुळ, नाकी मुक्ताफळ ।\nमाथा कुंतल हे, कुरळ, नयनीही काजळ ।। ३ ।।\n\nसिंहावरी बैसून, हिंडसी रानोरानी ।\nतुजला विनवितो, निशिदिन, गोसावी नंदन ।। ४ ।। "
     },
     {
-        "aartiId":"e",
+        "aartiId":"h",
         
         "isChecked" : false, 
     
@@ -64,15 +102,28 @@
     
         "marathiAarti":"त्रिगुणात्मक त्रैमूर्ती दत्त हा जाणा।\nत्रिगुणी अवतार त्रैलोक्यराणा।\nनेती नेती शब्द न ये अनुमाना।\nसुरवर मुनिजन योगी समाधि न ये ध्याना॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥\n\nसबाह्य अभ्यंतरी तू एक दत्त।\nअभाग्यासी कैसी न कळे ही मात।\nपराही परतली तेथे कैचा हेत।\nजन्ममरणाचा पुरलासे अन्त॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥\n\nदत्त येऊनियां ऊभा ठाकला।\nसद्भावे साष्टांगे प्रणिपात केला।\nप्रसन्न होऊनी आशीर्वाद दिधला।\nजन्ममरणाचा फेरा चुकविला॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥\n\nदत्त दत्त ऐसे लागले ध्यान।\nहरपलें मन झालें उन्मन।\nमी तू पणाची झाली बोळवण।\nएका जनार्दनी श्रीदत्तध्यान॥\n\nजय देव जय देव जय श्री गुरुदत्ता।\nआरती ओवाळीतां हरली भवचिन्ता॥"
     },
+{
+    "aartiId":"i",
+    
+    "isChecked" : false, 
+	
+    "englishTitle":"Dhav Dhav Ba Moreshwara",
+
+    "marathiTitle":"धाव धाव बा मोरेश्वरा ",
+
+    "englishAarti":"Dhav dhav ba moreshwara, girijecha kumara |\nDayala vighnahara, mangalmurti |\nTujhya charanache karu dhyan, karito pujan, aarti ||\n\nKailasvasi pita tumcha shivshankar bhola |\nSarva angi bhasma lavto galyat rudramala |\nTyacha dumdum dumroo vaje |\nNandivar svari saje, parvati |\nTujhya charanache karu dhyan, karito pujan, aarti || 1 ||\n\nSond vakdi shobha dete jaijai vighnahara |\nKhandyavarti shela shobhe pivala pitambara |\nTyachya bembit hira chamke |\nAakashpatal ghumke, ghartari |\nTujhya charanache karu dhyan, karito pujan, aarti || 2 ||\n\nTehetis koti devdevta karito tujhe dhyan |\nSadhusant arpan kariti pratham pujecha maan |\nTujhya kapali lavu chandan |\nPremane karu vandan, ganpati |\nTujhya charanache karu dhyan, karito pujan, aarti || 3 ||\n\n",
+
+    "marathiAarti":"धाव धाव बा मोरेश्वरा, गिरिजेच्या कुमरा ।\nदयाळा विघ्नहरा, मंगलमूर्ती ।\nतुझ्या चरणाचे करू ध्यान, करितो पूजन, आरती ।। धृ० ।।\n\nकैलासवासी पिता तुमचा शिवशंकर भोळा ।\nसर्वाअंगी भस्म लावतो गळ्यात रुद्रमाळा ।\nत्याचा डमडम डमरू वाजे ।\nनंदीवर स्वारी साजे, पार्वती ।\nतुझ्या चरणाचे करू ध्यान, करितो पूजन, आरती ।। १ ।।\n\nसोंड वाकडी शोभा देते जयजय विघ्नहरा ।\nखांद्यावरती शेला शोभे पिवळा पीतांबरा ।\nत्याच्या बेंबीत हिरा चमके ।\nआकाशपाताळ घुमके, घरतरी ।\nतुझ्या चरणाचे करू ध्यान, करितो पूजन, आरती ।। २ ।।\n\nतेहेतीस कोटी देवदेवता करिती तुझे ध्यान ।\nसाधुसंत अर्पण करिती प्रथम पूजेचा मान ।\nतुझ्या कपाळी लावू चंदन ।\nप्रेमाने करू वंदन, गणपती ।\nतुझ्या चरणाचे करू ध्यान, करितो पूजन, आरती ।। ३ ।।\n"
+},
     
     {
-        "aartiId":"f",
+        "aartiId":"j",
         
         "isChecked" : false, 
     
-        "englishTitle":" Dnyandevachi Aarti",
+        "englishTitle":"Dnyandevachi Aarti",
     
-        "marathiTitle":" ज्ञानदेवाची आरती ",
+        "marathiTitle":"ज्ञानदेवाची आरती ",
     
         "englishAarti":"Aarti dnyanaraja | Mahakaivalyateja |\nSeviti sadhusant | Manu vedhala majha ||\n\nLopale dnyan jagi | Heet nenati koni |\nAvatar pandurang | Naam thevile dnyani || 1 ||\n\nAarti dnyanaraja | Mahakaivalyateja |\nSeviti sadhusant | Manu vedhala majha ||\n\nKanakache taat kari | Ubhya gopika naari |\nNarada tumbarahi | Saam gayan kari || 2 ||\n\nAarti dnyanaraja | Mahakaivalyateja |\nSeviti sadhusant | Manu vedhala majha ||\n\nPrakata gruhya bole | Vishwa brahmachi kele | \nRama janardani | Paayi mastak thevile || 3 ||\n\nAarti dnyanaraja | Mahakaivalyateja |\nSeviti sadhusant | Manu vedhala majha || ",
     
@@ -81,7 +132,7 @@
     
     
     {
-        "aartiId" :"g",
+        "aartiId" :"k",
 
         "isChecked" : false, 
     
@@ -93,16 +144,30 @@
     
         "marathiAarti":"सुखकर्ता दुःखहर्ता वार्ता विघ्नाची। \n नुरवी पुरवी प्रेम कृपा जयाची।\nसर्वांगी सुन्दर उटि शेंदुराची।\nकण्ठी झळके माळ मुक्ताफळांची॥\n\nजय देव जय देव जय मंगलमूर्ति।\nदर्शनमात्रे मनकामना पुरती॥\n\nरत्नखचित फरा तुज गौरीकुमरा।\nचन्दनाची उटि कुंकुमकेशरा।\nहिरे जड़ित मुकुट शोभतो बरा।\nरुणझुणती नूपुरे चरणी घागरिया॥\n\nजय देव जय देव जय मंगलमूर्ति।\nदर्शनमात्रे मनकामना पुरती॥\n\nलम्बोदर पीताम्बर फणिवर बन्धना।\nसरळ सोण्ड वक्रतुण्ड त्रिनयना।\nदास रामाचा वाट पाहे सदना।\nसंकटी पावावे निर्वाणीरक्षावे सुरवरवन्दना॥\n\nजय देव जय देव जय मंगलमूर्ति।\nदर्शनमात्रे मनकामना पुरती॥"
     },
+
+{
+    "aartiId":"l",
+    
+    "isChecked" : false, 
+	
+    "englishTitle":"Ganpatila Durva",
+
+    "marathiTitle":"गणपतीला दुर्वा ",
+
+    "englishAarti":"Ganpatila durva | Vithobala tulashi |\nVahin bel mi, mahadeva || 1 ||\n\nGanpati gora | Vithoba savala |\nShankar nila, mahadeva || 2 ||\n\nGanpatila jasvand | Vithobala tagar |\nShankarala mogra, mahadeva || 3 ||\n\nGanpatila gandh | Vithobala bukka |\nShankarala bhasma, mahadeva || 4 ||\n\nGanpatila modak | Vithobala bhakri |\nShankarala dudh, mahadeva || 5 ||\n\nGanpatichi sankashti | Vithobachi ekadashi |\nShankarachi shivrati, mahadeva || 6 ||\n",
+
+    "marathiAarti":"गणपतीला दुर्वा । विठोबाला तुळशी ।\nवाहीन बेल मी, महादेवा ।। १ ।।\n\nगणपती गोरा । विठोबा सावळा ।\nशंकर निळा, महादेवा ।। २ ।।\n\nगणपतीला जास्वंद । विठोबाला तगर ।\nशंकराला मोगरा, महादेवा ।। ३ ।।\n\nगणपतीला गंध । विठोबाला बुक्का ।\nशंकराला भस्म, महादेवा ।। ४ ।।\n\nगणपतीला मोदक । विठोबाला भाकरी ।\nशंकराला दूध, महादेवा ।। ५ ।।\n\nगणपतीची संकष्टी । विठोबाची एकादशी ।\nशंकराची शिवरात्री, महादेवा ।। ६ ।।\n"
+},
     
 
 {
-    "aartiId":"h",
+    "aartiId":"m",
     
     "isChecked" : false, 
 
-    "englishTitle":" Ghalin Lotangan ",
+    "englishTitle":"Ghalin Lotangan ",
 
-    "marathiTitle":" घालीन लोटांगण",
+    "marathiTitle":"घालीन लोटांगण",
 
     "englishAarti":"Ghalin lotangan vandina charan |\nDolyani pahina rup tujhe |\nPreme alingin anande pujin |\nBhave ovalin mhane nama ||\n\nTvameva mata cha pita tvameva |\nTvameva bandhuscha sakha tvameva |\nTvameva vidya dravinam tvameva |\nTvameva sarvam mum deva deva ||\n\nKayen vacha mansendriyairva |\nBuddhyatmana va prakruti svabhavat |\nKaromi yadyat sakalam parasmai |\nNarayanayeti samarpaiyami ||\n\nAchyutam keshavam ramnarayanam |\nKrushnadamodaram vasudevam harim |\nShridharam madhavam gopikavallabham |\nJanakinayakam ramchandram bhaje |\nHare ram hare ram ram ram hare hare |\nHare krushna hare krushna krushna krushna hare hare ||",
 
@@ -110,76 +175,102 @@
 },
 
 {
-    "aartiId":"i",
+    "aartiId":"n",
     
     "isChecked" : false, 
 
-    "englishTitle":" Gondavlekar Maharajanchi Aarti ",
+    "englishTitle":"Gondavlekar Maharajanchi Aarti ",
 
-    "marathiTitle":" गोंदवलेकर महाराजांची आरती",
+    "marathiTitle":"गोंदवलेकर महाराजांची आरती",
 
-    "englishAarti":"Jay jay aarti shrigururaya | Sadgururaya |\nNamito tav padi sanhari maya ||\n\nMi jiv ha bhram dvait pasara | Dvait pasara |\nVaaruni didhala advait sara || 1 ||\n\nJay jay aarti shrigururaya | Sadgururaya |\nNamito tav padi sanhari maya ||\n\nParam paratpar chinmaykhani | Chinmaykhani |\nShatmukh stavita mandali vani || 2 ||\n\nJay jay aarti shrigururaya | Sadgururaya |\nNamito tav padi sanhari maya ||\n\nJagajjivanprabhu mangal dhama |Mangal dhama |\nNaam rupatit tu abhirama || 3 ||\n\nJay jay aarti shrigururaya | Sadgururaya |\nNamito tav padi sanhari maya ||",
+    "englishAarti":"Jai jai aarti shrigururaya | Sadgururaya |\nNamito tav padi sanhari maya ||\n\nMi jiv ha bhram dvait pasara | Dvait pasara |\nVaaruni didhala advait sara || 1 ||\n\nJai jai aarti shrigururaya | Sadgururaya |\nNamito tav padi sanhari maya ||\n\nParam paratpar chinmaykhani | Chinmaykhani |\nShatmukh stavita mandali vani || 2 ||\n\nJai jai aarti shrigururaya | Sadgururaya |\nNamito tav padi sanhari maya ||\n\nJagajjivanprabhu mangal dhama |Mangal dhama |\nNaam rupatit tu abhirama || 3 ||\n\nJai jai aarti shrigururaya | Sadgururaya |\nNamito tav padi sanhari maya ||",
 
     "marathiAarti":"जय जय आरती श्रीगुरुराया । सद्गुरुराया ।\nनमितो तव पदी संहरी माया ।। \n\nमी जीव हा भ्रम द्वैत पसारा । द्वैत पसारा ।\nवारुनि दिधला अद्वैत सारा ।। १ ।।\n\nजय जय आरती श्रीगुरुराया । सद्गुरुराया ।\nनमितो तव पदी संहरी माया ।। \n\nपरम परात्पर चिन्मयखाणी । चिन्मयखाणी ।\nशतमुख स्तविता मंदलि वाणी ।। २ ।।\n\nजय जय आरती श्रीगुरुराया । सद्गुरुराया ।\nनमितो तव पदी संहरी माया ।। \n\nजगज्जीवन प्रभु मंगल धामा । मंगल धामा ।\nनाम रूपातीत तू अभिरामा ।। ३ ।।\n\nजय जय आरती श्रीगुरुराया । सद्गुरुराया ।\nनमितो तव पदी संहरी माया ।। "
 },
+{
+    "aartiId":"o",
+    
+    "isChecked" : false, 
+	
+    "englishTitle":"Gondhal",
+
+    "marathiTitle":"गोंधळ",
+
+    "englishAarti":"Aaicha gondhal, gondhal ghalite |\nAaicha jogava, jogava magate ||\n\nKaam krodh he, krodh he mahishasur |\nAaine marduni, marduni,marduni kele chur |\nSatva gunachi, gunachi hati talvar || 1 ||\nAaicha gondhal… ||\n\nBodh sambal, sambal, sambal gheun hati |\nDnyan divtya, divtya pajalalya jyoti |\nTethe ramle mi, ramle mi, ramle dinratri || 2 ||\nAaicha gondhal… ||\n\nSukshmasthali ya, sthali ya, aaichehi yena |\nAmba bhavani,bhavani tethe tujha thana |\nChaitanya svarupi, svarupi, svarupi nitya rahane || 3 ||\nAaicha gondhal… ||\n\nYa ba gondhala, gondhala, gondhalachyasathi |\nBhakt padiyale, padiyale aata-aati |\nVishnu dasachi, dasachi, dasachi krupadrushti || 4 ||\nAaicha gondhal… ||\n",
+
+    "marathiAarti":"आईचा गोंधळ, गोंधळ घालिते ।\nआईचा जोगवा, जोगवा मागते ।। धृ० ।। \n\nकाम क्रोध हे, क्रोध हे महिषासूर ।\nआईने मर्दूनी, मर्दूनी, मर्दूनी केले चूर ।\nसत्व गुणाची, गुणाची हाती तलवार ।। १ ।।\n\nबोध संबळ, संबळ, संबळ घेऊन हाती ।\nज्ञान दिवट्या, दिवट्या पाजळल्या ज्योती ।\nतेथे रमले मी, रमले मी, रमले दिनरात्री ।। २ ।।\n\nसूक्ष्मस्थळी या, स्थळी या, आईचेही येणं ।\nअंबा भवानी, भवानी तेथे तुझं ठाणं ।\nचैतन्य स्वरूपी, स्वरूपी, स्वरूपी नित्य रहाणे ।। ३ ।।\n\nया बा गोंधळा, गोंधळा, गोंधळाच्यासाठी ।\nभक्त पडियले, पडियले आटाआटी ।\nविष्णू दासाची, दासाची, दासाची कृपादृष्टी ।। ४ ।।\n"
+},
     {
-        "aartiId":"j",
+        "aartiId":"p",
         
         "isChecked" : false, 
     
-        "englishTitle":" Guruvarchi Aarti",
+        "englishTitle":"Guruvarchi Aarti",
     
-        "marathiTitle":" गुरुवारची आरती  ",
+        "marathiTitle":"गुरुवारची आरती  ",
     
         "englishAarti":"Aarti sadgururayachi | Karito sadbhave sachi |\nTan man arpuni ho gurula | Preme ovalu tyala |\nPanchaprananchya vati | Lavuni netranchya pati |\nMan he sthir karuni paha |\n Reva tiri sadguru ha |\nDusara dev nase aisa, dusara dev nase aisa |\nBhaktajananchya puravi asha | Toduni Taki |\nSaunskruti pasha | Dharu ho kas amhi yachi | \nAse hi kamdhenu amuchi |\nAarti sadgururayachi | Karito sadbhave sachi || 1 ||\n\nDhyan te ramya ki disate | Dhari jo hati dandate |\nBhali bhasmachya resha |\n Shobhati teen paha kaisha |\nKatipari kar to jhalakatase | Kaupina ramya kiti bhase |\nKamandalu to hi vaunshacha | Hati shobhatase sacha |\nVidhiharihar ha traimurti, vidhiharihar ha traimurti |Dattachi aise | Majala bhase |\nManmani tavase | Murti manharani sachi |\nAse hi kamdhenu amuchi |\nAarti sadgururayachi | Karito sadbhave sachi || 2 ||\n\nDayalu kititari mi sangu | Vani hota ase pangu |\nKeval dhyanacha bhanu | Tayache guun kiti varnu |\nSwami vasudevaraya | Satat mi sharana tujhe paya |\nVasudev kari aarti | Didhali sadguru ne sphurti |\nSwami sadgururayachi, swami sadgururayachi |\nKarita aarti | Duradin jati |\nSudin bhasati | Paha prachiti |\nSatta sarvahi sadguruchi |\nAse hi kamdhenu amuchi |\nAarti sadgururayachi | Karito sadbhave sachi || 3 ||",
     
         "marathiAarti":"आरती सद्गुरुरायाची । करितो सद्भावे साची ।\nतन मन अर्पूनि हो गुरूला । प्रेमे ओवाळू त्याला ।\nपंचप्राणांच्या वाती । लावुनी नेत्रांच्या पाती ।\nमन हे स्थिर करुनि पहा । रेवा तीरी सद्गुरू हा ।\nदुसरा देव नसे ऐसा,दुसरा देव नसे ऐसा ।\nभक्ताजणांच्या । पुरवी आशा । \nतोडुनी टाकी । संस्कृती पाशा । \nधरू हो कास आम्ही याची । असे ही कामधेनू आमुची ।\nआरती सद्गुरुरायाची । करितो सद्भावे साची ।। १ ।।\n\nध्यान ते रम्य किती दिसते । धरी जो हाती दंडाते ।\nभाळी भस्माच्या रेषा । शोभती तीन पहा कैशा ।\nकटिपरी करतो झळकतसे । कौपिन रम्य किती भासे ।\nकमंडलू तो ही वंशाचा । हाती शोभतसे साचा ।\nविधीहरी हर हा त्रैमूर्ति, विधीहरी हर हा त्रैमूर्ति ।\nदत्ताची ऐसे । मजला भासे ।मन मनी तवसे । \nमूर्ती मन हरणीसाची । असे ही कामधेनू आमुची । \nआरती सद्गुरुरायाची । करितो सद्भावे साची ।। २ ।।\n\nदयाळू कितीतरी मी सांगू । वाणी होत असे पंगू ।\nकेवळ ध्यानाचा भानू । तयाचे गुण किती वर्णू ।\nस्वामी वासुदेवराया । सतत मी शरण तुझे पाया ।\nवासुदेव करी आरती । दिधली सद्गुरूने स्फूर्ती ।\nस्वामी सद्गुरूरायाची, स्वामी सद्गुरूरायाची ।\nकरिता आरती । दूर दिन जाती ।\nसुदिन भासती । पहा प्रचिती । \nसत्ता सर्वही सद्गुरूची । असे ही कामधेनू आमुची । \nआरती सद्गुरुरायाची । करितो सद्भावे साची ।। ३ ।। "
     },
+{
+    "aartiId":"q",
+    
+    "isChecked" : false, 
+	
+    "englishTitle":"Jai Devi Hartalike",
+
+    "marathiTitle":"जय देवी हरतालिके ",
+
+    "englishAarti":"Jai devi hartalike |\nSakhi parvati ambike |\nAarti ovalite |\nDnyandipakalike ||\n\nHarardhangi vasasi |\nJasi yadnya maherasi |\nTethe apman pavasi |\nYadnyakundi gupt hosi || 1 ||\n\nRighasi himadrichya poti |\nKanya hosi tu gomati |\nUgra tapascharya mothi |\nAcharasi uthauthi || 2 ||\n\nTapapanchagnisadhane |\nDhumrapane adhovadane |\nKeli bahu uposhane |\nShambhu bhratarakarane || 3 ||\n\nLeela dakhavisi drushti |\nHe vrat karisi lokansathi |\nPunha varisi dhurjati |\nMaj rakshave sankati || 4 ||\n\nKaay varnu tav gun |\nAlpamati narayan |\nMate dakhavi charan |\nChukvave janmamaran || 5 ||\n",
+
+    "marathiAarti":"जय देवी हरतालिके ।\nसखी पार्वती अंबिके ।\nआरती ओवाळीते ।\nज्ञानदीपकळिके ।। धृ० ।।\n\nहरअर्धांगी वससी ।\nजासी यज्ञा माहेरासी ।\nतेथे अपमान पावसी ।\nयज्ञकुंडी गुप्त होसी ।। १ ।।\n\nरिघसी हिमाद्रीच्या पोटी ।\nकन्या होसी तू गोमटी ।\nउग्र तपश्चर्या मोठी ।\nआचरसी उठाउठी ।। २ ।।\n\nतपपंचाग्नीसाधने ।\nधुम्रपाने अधोवदने ।\nकेली बहू उपोषणे ।\nशंभू भ्रताराकारणे ।। ३ ।।\n\nलीला दाखविसी दृष्टी ।\nहे व्रत करिसी लोकांसाठी ।\nपुन्हा वरिसी धूर्जटी ।\nमज रक्षावे संकटी ।। ४ ।।\n\nकाय वर्णू तव गुण ।\nअल्पमती नारायण ।\nमाते दाखवी चरण ।\nचुकवावे जन्ममरण ।। ५ ।।\n"
+},
+{
+    "aartiId":"r",
+    
+    "isChecked" : false, 
+	
+    "englishTitle":"Jai Ganesh Deva",
+
+    "marathiTitle":"जय गणेश देवा ",
+
+    "englishAarti":"Jai ganesh jai ganesh jai ganesh deva |\nJai ganesh jai ganesh jai ganesh deva |\nMata jyaki parvati pita mahadeva |\nMata jyaki parvati pita mahadeva ||\n\nEkdant dayavant char bhuja dhari |\nMathepar tilak sohe muse ki sawari || 1 ||\nJai ganesh… ||\n\nPaan chadhe phul chadhe aur chadhe meva |\nLadhooan ka bhog lage sant kare seva || 2 ||\nJai ganesh.... ||\n\nAndhe ko aankh det kodhin ko kaaya |\nBanjhan ko putra det nirdhan ko maaya || 3 ||\nJai ganesh… ||\n\nSur shaam sharan aye safal kijiye seva |\nMata jyaki parvati pita mahadeva || 4 ||\nJai ganesh… ||\n\n",
+
+    "marathiAarti":"जय गणेश जय गणेश जय गणेश देवा ।\nजय गणेश जय गणेश जय गणेश देवा ।\nमाता ज्याकी पार्वती पिता महादेवा ।\nमाता ज्याकी पार्वती पिता महादेवा ।। धृ० ।।\n\nएकदंत दयावंत चार भुजा धारी ।\nमाथेपर तिलक सोहे मुसे की सवारी ।। १ ।।\n\nपान चढ़े फूल चढ़े और चढ़े मेवा । \nलढूअन का भोग लगे संत करे सेवा ।। २ ।।\n\nअंधे को आँख देत कोढिन को काया ।\nबांझन को पुत्र देत निर्धन को माया ।। ३ ।।\n\nसूर शाम शरण आये सफल कीजिये सेवा ।\nमाता ज्याकी पार्वती पिता महादेवा ।। ४ ।।\n\n"
+},
     {
-        "aartiId":"k",
+        "aartiId":"s",
         
         "isChecked" : false, 
     
-        "englishTitle":" Kolhapuri Devichi Aarti",
+        "englishTitle":"Kolhapuri Devichi Aarti",
     
-        "marathiTitle":" कोल्हापुरी देवीची आरती ",
+        "marathiTitle":"कोल्हापुरी देवीची आरती ",
     
-        "englishAarti":"Kolhapuri devi tu rahivas kela |\nMaruni daitya daanav dharma sthapiyala |\nDeva suravara anand jahla |\nSakalahi miluni yeti bhetila || 1 ||\n\nJay devi jay devi jay mahalakshmi |\nAarti ovalu sharana aahe mi ||\n\nChausashta yogini rati sevesi |\nAdsashta teerthe yeti mahimesi |\nManav sakalik yeti snanasi |\nTyanchi sarvahi paape jati bhangasi || 2 ||\n\nJay devi jay devi jay mahalakshmi |\nAarti ovalu sharana aahe mi ||\n\nAvtar purna dharila devine |\nTrikal pujan hoto sanmane |\nPruthvivari varta keli brahmyane |\nKrushnasut ha vinavi bhakti bhavane || 3 ||\n\nJay devi jay devi jay mahalakshmi |\nAarti ovalu sharana aahe mi || ",
+        "englishAarti":"Kolhapuri devi tu rahivas kela |\nMaruni daitya daanav dharma sthapiyala |\nDeva suravara anand jahla |\nSakalahi miluni yeti bhetila || 1 ||\n\nJai devi jai devi jai mahalakshmi |\nAarti ovalu sharana aahe mi ||\n\nChausashta yogini rati sevesi |\nAdsashta teerthe yeti mahimesi |\nManav sakalik yeti snanasi |\nTyanchi sarvahi paape jati bhangasi || 2 ||\n\nJai devi jai devi jai mahalakshmi |\nAarti ovalu sharana aahe mi ||\n\nAvtar purna dharila devine |\nTrikal pujan hoto sanmane |\nPruthvivari varta keli brahmyane |\nKrushnasut ha vinavi bhakti bhavane || 3 ||\n\nJai devi jai devi jai mahalakshmi |\nAarti ovalu sharana aahe mi || ",
     
         "marathiAarti":"कोल्हापुरी देवी तू रहिवास केला ।\nमारुनि दैत्यदानवधर्म स्थापीला ।\nदेव सुरवरा आनंद जाहला ।\nसकळही मिळुनी येती भेटीला ।। १ ।।\n\nजय देवी जय देवी जय महालक्ष्मी ।\nआरती ओवाळू शरण आहे मी ।।\n\nचौसष्ट योगिनी रात्री सेवेसी ।\nअडसष्ट तीर्थे येती महिमेसी ।\nमानव सकळिक येती स्नानासी ।\nत्यांची सर्वही पापे जाती भंगासी ।। २ ।।\n\nजय देवी जय देवी जय महालक्ष्मी ।\nआरती ओवाळू शरण आहे मी ।।\n\nअवतार पूर्ण धरिला देवीने ।\nत्रिकाळ पूजन होतो सन्माने ।\nपृथ्वीवरी वार्ता गेली महीमेने ।\nकृष्णसुत हा विनवी भक्ती भावाने ।। ३ ।।\n\nजय देवी जय देवी जय महालक्ष्मी ।\nआरती ओवाळू शरण आहे मी ।। "
     },
     {
-        "aartiId":"l",
+        "aartiId":"t",
         
         "isChecked" : false, 
     
-        "englishTitle":"Mantrapushpanjali ",
+        "englishTitle":"Mahalakshmichi Aarti",
     
-        "marathiTitle":"  मंत्रपुष्पांजली ",
+        "marathiTitle":"महालक्ष्मीची आरती",
     
-        "englishAarti":"Om yadnyen yadhnyamayjant\n devastani dharmani prathamanyasan |\nTe ha nakam mahmanaha sachat\n yatra purve sadhyaha santi devaha |\nOm rajadhirajay prasahye sahine |\nNamo vayam vaishravnay kurmahe |\nSa me kamankamakamay mahyam |\n Kameshwaro viashravno dadatu |\nKuberay vaishravnay | \nMaharajay namah |\nOm svastim samrajyam bhoujyam \nsvarajyam vairajyam parmeshthyam\nrajyam maharajyamadhipatyamayam\n samantaparyayi syatsyarvabhoumaha \nsarvayush antadaparardhatpruthivyai\n samudraparyanta ya ekaraliti\ntadapyesh shlokobhigito marutaha\n pariveshtaro maruttasyavasangruhe\navikshitasya kamaprervishwedevaha sabhasad iti |\nEkadantay vidmahi vakratunday\n dhimahi tannodanti prachodayat |",
-    
-        "marathiAarti":"ॐ यज्ञेन यज्ञमयजंत देवास्तानि धर्माणि प्रथमान्यासन् ।\nते हं नाकं महिमान: सचंत यत्र पूर्वे साध्या: संति देवा: ।\nॐ राजाधिराजाय प्रसह्ये साहिने ।\n नमो वयं वैश्रवणाय कुर्महे ।\nस मे कामान्कामकामाय मह्यम् ।\n कामेश्वरो वैश्रवणो ददातु ।\nकुबेराय वैश्रवणाय । महाराजाय नम: ।\nॐ स्वस्ति साम्राज्यं भौज्यं \nस्वाराज्यं वैराज्यं पारमेष्ठ्यं राज्यं \nमाहाराज्यमाधिपत्यमयं समंतपर्यायी \nस्यात्सार्वभौम: सार्वायुष \nआंतादापरार्धात्पृथिव्यै समुद्रपर्यंता या एकराळिति\nतदप्येष श्लोकोऽभिगीतो \nमरुत: परिवेष्टारो मरुत्तस्यावसन्गृहे\nआविक्षितस्य कामप्रेर्विश्वेदेवा: सभासद इति । \nएकदंतायविद्महे वक्रंतुडाय धीमहि \nतन्नोदंती प्रचोदयात् ।"
-    },
-    {
-        "aartiId":"m",
-        
-        "isChecked" : false, 
-    
-        "englishTitle":" Mahalakshmichi Aarti",
-    
-        "marathiTitle":" महालक्ष्मीची आरती",
-    
-        "englishAarti":"Jai devi jai devi jay mahalakshmi |\nVasasi vyapkarupe tu sthulsukshmi ||\n\nKarvirpurvasini survarmunimata |\nPurharvardayini murharpriyakanta |\nKamalakare jathari janmavila dhata | \nSahastravadani bhudhar na pure gun gata || 1 ||\n\nMatuling gada khetak ravikirani |\nJhalake hatakvati piuyushraspani |\nManikrasna surangvasna mrugnayani |\nShashikarvadana rajas madanachi janani || 2 ||\n\nTara shakti agamya shivbhajaka gauri |\nSankhya mhanti prakruti nirgun nirdhari |\nGayatri nijbhija nigamagam sari |\nPragate padmavati nijadhamachari || 3 ||\n\nAmrut bharite sarite aghdurite vari |\nMari durghat asura bhav dustar tari |\nVari mayapatal pranmat parivari |\nHe rup chidrup tadrup davi nirdhari || 4 ||\n\nChaturanane kuschitkarmachya oli |\nLihilya astil mate majhe nijbhali |\nPusoni charanatali padsumane kshali |\nMukteshwar naagar kshirsagarbali || 5 ||",
+        "englishAarti":"Jai devi jai devi jai mahalakshmi |\nVasasi vyapkarupe tu sthulsukshmi ||\n\nKarvirpurvasini survarmunimata |\nPurharvardayini murharpriyakanta |\nKamalakare jathari janmavila dhata | \nSahastravadani bhudhar na pure gun gata || 1 ||\n\nMatuling gada khetak ravikirani |\nJhalake hatakvati piuyushraspani |\nManikrasna surangvasna mrugnayani |\nShashikarvadana rajas madanachi janani || 2 ||\n\nTara shakti agamya shivbhajaka gauri |\nSankhya mhanti prakruti nirgun nirdhari |\nGayatri nijbhija nigamagam sari |\nPragate padmavati nijadhamachari || 3 ||\n\nAmrut bharite sarite aghdurite vari |\nMari durghat asura bhav dustar tari |\nVari mayapatal pranmat parivari |\nHe rup chidrup tadrup davi nirdhari || 4 ||\n\nChaturanane kuschitkarmachya oli |\nLihilya astil mate majhe nijbhali |\nPusoni charanatali padsumane kshali |\nMukteshwar naagar kshirsagarbali || 5 ||",
     
         "marathiAarti":"जय देवी जय देवी जय महालक्ष्मी ।\nवससी व्यापकरूपे तू स्थूलसूक्ष्मी ।। धृ ।।\n\nकरविरपुरवासिनी सुरवारमुनिमाता । \nपुरहरवरदायिनी मुरहरप्रियकांता ।\nकमलाकारे जठरी जन्माविला धाता । \nसहस्त्रवदनी भूधर न पुरे गुण गाता  ।। १ ।।\n\nमातुलिंग गदा खेटक रविकिरणी । \nझळके हाटकवाटी पीयूषरसपाणी ।\nमाणिकरसना सुरंगवसना मृगनयनी । \nशशीकरवदना राजस मदनाची जननी ।। २ ।।\n\nतारा शक्ति अगम्या शिवभजका गौरी । \nसांख्य म्हणती प्रकृति निर्गुण निर्धारी ।\nगायत्री निजबीजा निगमागम सारी ।\nप्रगटे पद्मावती निजधर्मचारी ।। ३ ।। \n\nअमृत भरिते सरिते अघदुरिते वारी । \nमारी दुर्घट असुरा भव दुस्तर तारी ।\nवारी मायापटल प्रणमत परिवारी । \nहे रूप चिदृप तदृप दावी निर्धारी ।। ४ ।।\n\nचतुरानने कुश्चितकर्माच्या ओळी । \nलिहिल्या असतील माते माझे निजभाळी ।\nपुसोनि चरणातळी पदसुमने क्षाळी । \nमुक्तेश्वर नागर क्षिरसागरबाळी।। ५ ।।"
     },
     {
-        "aartiId":"n",
+        "aartiId":"u",
         
         "isChecked" : false, 
     
-        "englishTitle":" Mahur Gadavari  ",
+        "englishTitle":"Mahur Gadavari",
     
         "marathiTitle":"माहूर गडावरी",
     
@@ -188,41 +279,67 @@
         "marathiAarti":"माहूर गडावरी, गडावरी ग तुझा वास ।\nभक्त येतील दर्शनास ।। धृ ।।\n\nपिवळे पातळ ग, पातळ बुट्टेदार ।\n अंगी काचोळी हिरवीगार ।\nपितांबराची ग,पितांबराची खोवली कास ।\n भक्त येतील दर्शनास ।। १ ।।\n\nसरी ठुशीन ग,सरी ठुशीन मोहनमाळ । \nजोडवे मासोळ्या पैंजण चाळ ।\nहिच्या नथेला ग, हिच्या नथेला हिरवे घोस ।\nभक्त येतील दर्शनास ।। २ ।।\n\nबिंदी बिजवरा,बिजवरा ग भाळी शोभे ।\nकाप बाळ्यान बेल झुबे ।\nपट्टा सोन्याचा ग, सोन्याचा ग कमरेला ।\n भक्त येतील दर्शनास ।। ३ ।।\n\nजाई जुईची ग, जुईची आणली फुले ।\nभक्त गुंफ़िती हारतुरे ।\nहार घालिते ग, घालिते अंबे तुला ।\nभक्त येतील दर्शनाला ।। ४ ।।\n\nहिला बसायला ग, बसायला चंदनाचा पाट ।\nहिला जेवायला चांदीचे ताट ।\nपुरणपोळी ग, पुरणपोळी हिला नैवेद्याला ।\nमुखी तांबूल देते तुला । \nखणा नारळाची ग, खणा नारळाची ओटी तुला ।\nभक्त येतील दर्शनाला ।। ५ ।।\n\nमाझ्या मनीची ग,मनीची मानसपूजा ।\nप्रेमे अर्पिली अष्टभुजा ।\nमनोभावाने ग, मनोभावाने नमिते तुला ।\n भक्त येतील दर्शनाला ।। ६ ।।"
     },
     {
-        "aartiId":"o",
+        "aartiId":"v",
         
         "isChecked" : false, 
     
-        "englishTitle":" Marutichi Aarti",
+        "englishTitle":"Mantrapushpanjali ",
     
-        "marathiTitle":"  मारुतीची आरती",
+        "marathiTitle":"मंत्रपुष्पांजली ",
     
-        "englishAarti":"Satrane uddane hunkar vadani |\nKari dalmal bhumandal sindhujal gagani |\nKadadile brahmand dhake tribhuvani |\nSurvar nar nishachar tya jhalya palni || 1 ||\n\nJay dev jay dev jay hanumanta |\nTumcheni prasade na bhi krutanta ||\n\nDumdumli patale uthila pratishabd |\nThartharila dharnidhar manila khed |\nKadkadile parvat uduganucched |\nRami ramdasa shakticha shodh || 2 ||\n\nJay dev jay dev jay hanumanta |\nTumcheni prasade na bhi krutanta ||",
+        "englishAarti":"Om yadnyen yadhnyamayjant\n devastani dharmani prathamanyasan |\nTe ha nakam mahmanaha sachat\n yatra purve sadhyaha santi devaha |\nOm rajadhirajay prasahye sahine |\nNamo vayam vaishravnay kurmahe |\nSa me kamankamakamay mahyam |\n Kameshwaro viashravno dadatu |\nKuberay vaishravnay | \nMaharajay namah |\nOm svastim samrajyam bhoujyam \nsvarajyam vairajyam parmeshthyam\nrajyam maharajyamadhipatyamayam\n samantaparyayi syatsyarvabhoumaha \nsarvayush antadaparardhatpruthivyai\n samudraparyanta ya ekaraliti\ntadapyesh shlokobhigito marutaha\n pariveshtaro maruttasyavasangruhe\navikshitasya kamaprervishwedevaha sabhasad iti |\nEkadantay vidmahi vakratunday\n dhimahi tannodanti prachodayat |",
+    
+        "marathiAarti":"ॐ यज्ञेन यज्ञमयजंत देवास्तानि धर्माणि प्रथमान्यासन् ।\nते हं नाकं महिमान: सचंत यत्र पूर्वे साध्या: संति देवा: ।\nॐ राजाधिराजाय प्रसह्ये साहिने ।\n नमो वयं वैश्रवणाय कुर्महे ।\nस मे कामान्कामकामाय मह्यम् ।\n कामेश्वरो वैश्रवणो ददातु ।\nकुबेराय वैश्रवणाय । महाराजाय नम: ।\nॐ स्वस्ति साम्राज्यं भौज्यं \nस्वाराज्यं वैराज्यं पारमेष्ठ्यं राज्यं \nमाहाराज्यमाधिपत्यमयं समंतपर्यायी \nस्यात्सार्वभौम: सार्वायुष \nआंतादापरार्धात्पृथिव्यै समुद्रपर्यंता या एकराळिति\nतदप्येष श्लोकोऽभिगीतो \nमरुत: परिवेष्टारो मरुत्तस्यावसन्गृहे\nआविक्षितस्य कामप्रेर्विश्वेदेवा: सभासद इति । \nएकदंतायविद्महे वक्रंतुडाय धीमहि \nतन्नोदंती प्रचोदयात् ।"
+    },
+    {
+        "aartiId":"w",
+        
+        "isChecked" : false, 
+    
+        "englishTitle":"Marutichi Aarti",
+    
+        "marathiTitle":"मारुतीची आरती",
+    
+        "englishAarti":"Satrane uddane hunkar vadani |\nKari dalmal bhumandal sindhujal gagani |\nKadadile brahmand dhake tribhuvani |\nSurvar nar nishachar tya jhalya palni || 1 ||\n\nJai dev jai dev jai hanumanta |\nTumcheni prasade na bhi krutanta ||\n\nDumdumli patale uthila pratishabd |\nThartharila dharnidhar manila khed |\nKadkadile parvat uduganucched |\nRami ramdasa shakticha shodh || 2 ||\n\nJai dev jai dev jai hanumanta |\nTumcheni prasade na bhi krutanta ||",
     
         "marathiAarti":"सत्राणे उड्डाणे हुंकार वदनी । \nकरि डळमळ भूमंडळ सिंधूजळ गगनी ।\nकडाडिले ब्रह्माण्ड धाके त्रिभुवनी ।\nसुरवर नर निशाचर त्या झाल्या पळणी ।। १ ।।\n\nजय देव जय देव जय हनुमंता ।\nतुमचेनी प्रसादे न भी कृतांता ।। \n\nदुमदुमली पाताळे उठिला प्रतिशब्द ।\nथरथरिला धरणीधर मनिला खेद ।\nकडकडिले पर्वत उडुगणउच्छेद ।\nरामी रामदासा शक्तीचा शोध ।। २ ।।\n\nजय देव जय देव जय हनुमंता ।\nतुमचेनी प्रसादे न भी कृतांता ।। "
     },
     
     
     {
-        "aartiId":"p",
+        "aartiId":"x",
         
         "isChecked" : false, 
     
-        "englishTitle":"  Mitha Pithacha Jogva ",
+        "englishTitle":"Mitha Pithacha Jogva",
     
-        "marathiTitle":" मिठा पिठाचा जोगवा",
+        "marathiTitle":"मिठा पिठाचा जोगवा",
     
         "englishAarti":"Mitha pithacha jogva ya ga bayano darbari |\nMala bai jayacha guruvari ga tuljapurchya bajari |\nTuljapurla jaain aaila navas karin |\nAaicha navas fedin ga parat maghari yein || 1 ||\n\nMitha pithacha jogva ya ga bayano darbari |\nMala bai jayacha guruvari ga tuljapurchya bajari |\nTuljapurla jaain aaila halad kunku ghein |\nAaila halad kunku lavin ga parat maghari yein || 2 ||\n\nMitha pithacha jogva ya ga bayano darbari |\nMala bai jayacha guruvari ga tuljapurchya bajari |\nTuljapurla jaain aaila oti ghein |\nAaichi oti bharin ga parat maghari yein || 3 ||\n\nMitha pithacha jogva ya ga bayano darbari |\nMala bai jayacha guruvari ga tuljapurchya bajari |\nTuljapurla jaain aaila bangdya anin |\nAaila bangdya dein ga parat maghari yein || 4 ||\n\nMitha pithacha jogva ya ga bayano darbari |\nMala bai jayacha guruvari ga tuljapurchya bajari |\nTuljapurla jaain aaila sadi choli ghein |\nAaila sadi choli dein ga parat maghari yein || 5 ||\n\nMitha pithacha jogva ya ga bayano darbari |\nMala bai jayacha guruvari ga tuljapurchya bajari |\nTuljapurla jaain aaila haar veni ghein |\nAaila haar veni dein ga parat maghari yein || 6 ||",
     
         "marathiAarti":"मिठा पिठाचा जोगवा या ग बायानो दरबारी ।\nमला बाई जायाच गुरुवारी ग तुळजापूरच्या बाजारी ।\nतुळजापूरला जाईन आईला नवस करीन ।\nआईचा नवस फेडीन ग परत माघारी येईन ।। १ ।।\n\nमिठा पिठाचा जोगवा या ग बायानो दरबारी ।\nमला बाई जायाच गुरुवारी ग तुळजापूरच्या बाजारी ।\nतुळजापूरला जाईन आईला हळद कुंकू घेईन ।\nआईला हळद कुंकू लावीन ग परत माघारी येईन ।। २ ।।\n\nमिठा पिठाचा जोगवा या ग बायानो दरबारी ।\nमला बाई जायाच गुरुवारी ग तुळजापूरच्या बाजारी ।\nतुळजापूरला जाईन आईला ओटी घेईन ग ।\nआईची ओटी भरीन ग परत माघारी येईन ।। ३ ।।\n\nमिठा पिठाचा जोगवा या ग बायानो दरबारी ।\nमला बाई जायाच गुरुवारी ग तुळजापूरच्या बाजारी ।\nतुळजापूरला जाईन आईला बांगड्या आणीन ।\nआईला बांगड्या देईन ग परत माघारी येईन ।। ४ ।।\n\nमिठा पिठाचा जोगवा या ग बायानो दरबारी ।\nमला बाई जायाच गुरुवारी ग तुळजापूरच्या बाजारी ।\nतुळजापूरला जाईन आईला आईला साडी चोळी घेईन ।\nआईला साडी चोळी देईन ग परत माघारी येईन ।। ५ ।।\n\nमिठा पिठाचा जोगवा या ग बायानो दरबारी ।\nमला बाई जायाच गुरुवारी ग तुळजापूरच्या बाजारी ।\nतुळजापूरला जाईन आईला हार वेणी घेईन ।\nआईला हार वेणी घालीन ग परत माघारी येईन ।। ६ ।।"
     },
+{
+    "aartiId":"y",
+    
+    "isChecked" : false, 
+	
+    "englishTitle":"Nanaparimal Durva",
+
+    "marathiTitle":"नानापरिमळ दुर्वा ",
+
+    "englishAarti":"Nanaparimal durva shendur shamipatre |\nLadoo modak anne paripurit patre |\nAise pujan kelya bijaksharmantre |\nAshtahi siddhi navnidhi desi kshanmatre || 1 ||\n\nJai dev jai deva jai mangalmurti |\nTujhe gun varnaya maj kaichi sphurti ||\n\nTujhe dhyan nirantar je koni kariti |\nTyanchi sakalahi paape vighnehi harti |\nVaji varan shibika sevak sut yuvati |\nSarvahi pavati anti bhavsagar tarati || 2 ||\n\nJai dev jai deva jai mangalmurti |\nTujhe gun varnaya maj kaichi sphurti ||\n\nSharanagat sarvasve bhajati tav charani |\nKirti tayanchi rahe jovar shashi tarani |\nTrailokyi te vijayi adbhut he karani |\nGosavinandan rata namasmarani || 3 ||\n\nJai dev jai deva jai mangalmurti |\nTujhe gun varnaya maj kaichi sphurti ||\n\n",
+
+    "marathiAarti":"नानापरिमळ दुर्वा शेंदूर शमिपत्रें ।\nलाडू मोद्क अन्ने परिपूरित पात्रें ।।\nऎसे पूजन केल्या बीजाक्षरमंत्रे ।\nअष्टहि सिद्धी नवनिधी देसी क्षणमात्रें ।। १ ।।\n\nजय देव जय देव जय मंगलमूर्ती ।\nतुझे गुण वर्णाया मज कैची स्फ़ूर्ती ।। धृ० ।।\n\nतुझे ध्यान निरंतर जे कोणी करिती ।\nत्यांची सकलही पापे विघ्नेंही हरती ।।\nवाजी वारण शिबिका सेवक सुत युवती ।\nसर्वहि पावती अंती भवसागर तरती ।। २ ।।\n\nजय देव जय देव जय मंगलमूर्ती ।\nतुझे गुण वर्णाया मज कैची स्फ़ूर्ती ।। धृ० ।।\n\nशरणांगत सर्वस्वें भजती तव चरणी ।\nकीर्ती तयांची राहे जोवर शशितरणि ।।\nत्रैलोक्यी ते विजयी अदभूत हे करणी ।\nगोसावीनंदन रत नामस्मरणी ।। ३ ।।\n\nजय देव जय देव जय मंगलमूर्ती ।\nतुझे गुण वर्णाया मज कैची स्फ़ूर्ती ।। धृ० ।।\n\n"
+},
     {
-        "aartiId":"q",
+        "aartiId":"z",
         
         "isChecked" : false, 
     
-        "englishTitle":" Navratrichi Aarti ",
+        "englishTitle":"Navratrichi Aarti",
     
-        "marathiTitle":" नवरात्रीची आरती",
+        "marathiTitle":"नवरात्रीची आरती",
     
         "englishAarti":"Asvinshudhhapakshi amba baisali sinhasani ho |\nPratipadepasuni ghatasthapana ti karuni ho |\nMulmantrajap karuni bhovate rakshak thevuni ho |\nBrahma vishnu rudra aaiche pujan kariti ho || 1 ||\n\nUdo bola udo ambabai maulicha ho |\nUdokare garjati kay mahima varnu ticha ho ||\n\nDvitiyeche divshi milti chausashta yogini ho |\nSakalnmadhye shreshtha parshuramachi janani ho |\nKasturi malvat bhangi shendur bharuni ho |\nUdokare garjati sakal chamunda miluni ho || 2 ||\n\nTrutiyeche divshi ambe shrungar mandila ho |\nMalvat patal choli kanthi har muktafala ho |\nKanthichi padake kase pitambar pivala ho |\nAshtabhuja mirvati ambe sundar dise lila ho || 3 ||\n\nChaturthichya divshi vishwavyapak janani ho |\nUpaska pahasi ambe prasanna antahkarni ho |\nPurnakrupe tarsi jaganmate manmohini ho |\nBhaktanchya mauli sur te yeti lotangani ho || 4 ||\n\nPanchamiche divshi vrat te upangalalita ho |\nArdhyapadyapujane tujala bhavani staviti ho |\nRatriche samyi kariti jagran harikatha ho |\nAnande prem te aale sadbhave kridta ho || 5 ||\n\nShashthiche divshi bhakta anand vartala ho |\nGheuni divtya hasti harshe gondhal ghatla ho |\nKavdi ek arpita deshi har muktafala ho |\nJogva magata prasanna zali bhaktakula ho || 6 ||\n\nSaptamiche divshi saptashrungagadavri ho |\nTethe tu nandasi bhovate pushpe nanapari ho |\nJaijuishevanti puja rekhiyali barvi ho |\nBhakt sankati padta jheluni ghesi varche vari ho || 7 ||\n\nAsthamiche divshi ashtabhuja narayani ho |\nSahyadriparvati pahili ubhoi jagajjanani ho |\nMan majhe mohile sharan aalo tujlaguni ho |\nStanpan deuni sukhi kele antahkarani ho || 8 ||\n\nNavamiche divshi nav divasanche parane ho |\nSaptashati jap homhavane sadbhakti karuni ho |\nShadrasanne naivedyasi arpiyali bhojani ho |\nAcharya brahmana trupt kele krupekaruni ho || 9 ||\n\nDashamiche divshi amba nighe simollanghani ho |\nSinharudh kari darun shastre ambe tva gheuni ho |\nShumbhanishumbhadik rakshasa kiti marisi rani ho |\nVipra ramdasa aashray didhala to charani ho || 10 ||",
     
@@ -230,11 +347,11 @@
     },
     
     {
-        "aartiId":"r",
+        "aartiId":"A",
         
         "isChecked" : false, 
     
-        "englishTitle":"Nirop ",
+        "englishTitle":"Nirop",
     
         "marathiTitle":"निरोप ",
     
@@ -244,22 +361,35 @@
     },
     
 {
-    "aartiId":"s",
+    "aartiId":"B",
     
     "isChecked" : false, 
 
-    "englishTitle":" Om Jai Jagdish Hare ",
+    "englishTitle":"Om Jai Jagdish Hare",
 
-    "marathiTitle":" ॐ जय जगदीश हरे",
+    "marathiTitle":"ॐ जय जगदीश हरे",
 
     "englishAarti":"Om jai jagdish hare\nSwami jai jagdish hare\nBhakt jano ke sankat\nDas jano ke sankat\nKshan mein dur kare\nOm jai jagdish hare ||\n\nJo dhyave phal pave\nDukh bina se man ka\nSwami dukh bina se man ka\nSukh sampatti ghar aave\nSukh sampatti ghar aave\nKasht mite tan ka\nOm jai jagdish hare || 1 ||\n\nMata pita tum mere\nSharan gahu kiski\nSwami sharan gahu kiski\nTum bina aur na duja\nTum bina aur na duja\nAas karu jiski\nOm jai jagdish hare || 2 ||\n\nTum purn paramatma\nTum antaryami\nSwami tum antaryami\nPar brahma parameshwar\nPar brahma parameshwar\nTum sabke swami\nOm jai jagdish hare || 3 ||\n\nTum karuna ke sagar\nTum palan karta\nSwami tum palan karta\nMain murkh khalkami\nMain sevak tum swami\nKrupa karo bharta\nOm jai jagdish hare || 4 ||\n\nTum ho ek agochar\nSabke pran pati\nSwami sabke pran pati\nKis vidh milu dayamay\nKis vidh milu dayamay\nTum ko main kumti\nOm jai jagdish hare || 5 ||\n\nDin bandhu dukh harta\nThakur tum mere\nSwami thakur tum mere\nApne haath uthao\nApni sharan lagao\nDwar pada tere\nOm jai jagdish hare || 6 ||\n\nVishay vikar mitao \nPaap haro deva\nSwami paap haro deva\nShraddha bhakti badhao\nShraddha bhakti badhao \nSantan ki seva\nOm jai jagdish hare || 7 ||\n\nOm jai jagdish hare\nSwami jai jagdish hare\nBhakt jano ke sankat\nDas jano ke sankat\nKshan mein dur kare\nOm jai jagdish hare ||",
 
     "marathiAarti":" ॐ जय जगदीश हरे\nस्वामी जय जगदीश हरे \nभक्त जनों के संकट, \nदास जनों के संकट\nक्षण में दूर करे\nॐ जय जगदीश हरे ।। \n\nजो ध्यावे फल पावे, \nदुःख बिन से मन का \nस्वामी दुख बिन से मन का \nसुख सम्पति घर आवे\nसुख सम्पति घर आवे\nकष्ट मिटे तन का \nॐ जय जगदीश हरे ।। १ ।।\n\nमात पिता तुम मेरे\nशरण गहूं किसकी\nस्वामी शरण गहूं किसकी\nतुम बिन और ना दूजा\nम बिन और ना दूजा\nआस करूँ जिसकी\nॐ जय जगदीश हरे ।। २ ।।\n\nतुम पूरण, परमात्मा\nतुम अंतरियामी\nस्वामी तुम अंतरियामी\nपार ब्रह्म परमेश्वर\nपार ब्रह्म परमेश्वर\nतुम सबके स्वामी\nॐ जय जगदीश हरे ।। ३ ।।\n\nतुम करुणा के सागर\nतुम पालन करता\nस्वामी तुम पालन करता\nमैं मूरख खलकामी\nमैं सेवक तुम स्वामी\nकृपा करो भर्ता\nॐ जय जगदीश हरे ।। ४ ।।\n\nतुम हो एक अगोचर\nसबके प्राण पति\nस्वामी सबके प्राण पति\nकिस विध मिलु दयामय\nकिस विध मिलु दयामय\nतुम को मैं कुमति\nॐ जय जगदीश हरे ।। ५ ।।\n\nदीन-बन्धु दुःख-हर्ता\nठाकुर तुम मेरे\nस्वामी रक्षक तुम मेरे\nअपने हाथ उठाओ\nअपनी शरण लगाओ\nद्वार पड़ा तेरे\nॐ जय जगदीश हरे ।। ६ ।।\n\nविषय-विकार मिटाओ, \nपाप हरो देवा\nस्वामी पाप हरो देवा\nश्रद्धा भक्ति बढ़ाओ\nश्रद्धा भक्ति बढ़ाओ\nसन्तन की सेवा\nॐ जय जगदीश हरे ।। ७ ।।\n\nॐ जय जगदीश हरे\nस्वामी जय जगदीश हरे\nभक्त ज़नो के संकट\nदास ज़नो के संकट\nक्षण में दूर करे\nॐ जय जगदीश हरे ।। "
 },
+{
+    "aartiId":"C",
+    
+    "isChecked" : false, 
+	
+    "englishTitle":"Ovalu aartila (Mangalagaur)",
+
+    "marathiTitle":"ओवाळू आरतीला (मंगळागौर) ",
+
+    "englishAarti":"Ovalu aartila mangalgauri tujala |\nSaubhagya dei amha hich vinanti tula |\nOvalu aartila mangalgauri tujala || 1 ||\n\nShravan mangalvari jamu saglya amhi naari |\nArpu vasan jartaari tujala bahut prakari |\nMala ya sumananchya arpu padakamala || 2 || Ovalu… ||\n\nShodash parichi patri theuniya satapatri |\nVahu tuj atipriti anande amha yuvati |\nSvikari pujela vandan tav charana || 3 || Ovalu… ||\n\nVandan karito tujala bhaktini amha bala |\nDaavit sanmargala yastav namu charanala |\nAdnyani amhi bala tari ya sakala || 4 || Ovalu… ||\n\nPrarthirama tanayani sthir saubhagya dei |\nMagat nach tav kahi yavin ambabai |\nPremane parisavi hich vinanti tula || 5 || Ovalu… ||\n\n",
+
+    "marathiAarti":"ओवाळू आरतीला मंगलगौरी तुजला ।\nसौभाग्या देई आम्हा हीच विनंती तुला ।\nओवाळू आरतीला मंगलगौरी तुजला ।। १ ।।\n\nश्रावण मंगळवारी जमू सगळ्या आम्ही नारी ।\nअर्पू वसन जरतारी तुजला बहुत प्रकारी ।\nमाला या सुमनांच्या अर्पू पदकमला ।। २ ।। ओवाळू० ।।\n\nशोडष परीची पत्री ठेऊनिया सतपात्री ।\nवाहू तुज अतिप्रीती आनंदे आम्हा युवती ।\nस्विकारी पूजेला वंदन तव चरणा ।। ३ ।।  ओवाळू० ।।\n\nवंदन करितो तुजला भक्तिनी आम्हा बाला ।\nडावीत सन्मार्गाला यास्तव नमु चरणाला ।\nअज्ञानी आम्ही बाला तारी या सकला ।। ४ ।। ओवाळू० ।।\n\nप्रार्थिरमा तनयानी स्थिर सौभाग्या देई ।\nमागत नच तव काही यावीण अंबाबाई ।\nप्रेमाने परिसावी हीच विनंती तुला ।। ५ ।। ओवाळू० ।।\n\n"
+},
   
 
 {
-    "aartiId":"t",
+    "aartiId":"D",
     
     "isChecked" : false, 
 
@@ -273,7 +403,7 @@
 },
 
 {
-    "aartiId":"u",
+    "aartiId":"E",
     
     "isChecked" : false, 
 
@@ -287,7 +417,7 @@
 },
 
 {
-    "aartiId":"v",
+    "aartiId":"F",
 
     "isChecked" : false, 
 
@@ -300,48 +430,87 @@
     "marathiAarti":"लवथवती विक्राळा ब्रह्माण्डी माळा।\nवीषे कण्ठ काळा त्रिनेत्री ज्वाळा।\nलावण्य सुन्दर मस्तकी बाळा।\nतेथुनिया जळ निर्मळ वाहे झुळझुळा॥\n\nजय देव जय देव जय श्रीशंकरा।\nआरती ओवाळू तुज कर्पुरगौरा॥\n\nकर्पुर्गौरा भोळा नयनी विशाळा।\nअर्धांगी पार्वती सुमनांच्या माळा।\nविभुतीचे उधळण शितिकण्ठ नीळा।\nऐसा शंकर शोभे उमावेल्हाळा॥\n\nजय देव जय देव जय श्रीशंकरा।\nआरती ओवाळू तुज कर्पुरगौरा॥\n\nदेवी दैत्यी सागरमन्थन पै केलें।\nत्यामाजी अवचित हळाहळ जें उठिले।\nते त्वां असुरपणे प्राशन केलें।\nनीलकण्ठ नाम प्रसिद्ध झालें॥\n\nजय देव जय देव जय श्रीशंकरा।\nआरती ओवाळू तुज कर्पुरगौरा॥\n\nव्याघ्राम्बर फणिवरधर सुन्दर मदनारी।\nपंचानन मनमोहन मुनिजन सुखकारी।\nशतकोटीचें बीज वाचे उच्चारी।\nरघुकुळटिळक रामदासा अन्तरी॥\n\nजय देव जय देव जय श्रीशंकरा।\nआरती ओवाळू तुज कर्पुरगौरा॥"
 },
 {
-    "aartiId":"w",
+    "aartiId":"G",
     
     "isChecked" : false, 
 
-    "englishTitle":" Shendur Lal Chadhayo  ",
+    "englishTitle":"Shendur Lal Chadhayo",
 
     "marathiTitle":"शेंदूर लाल चढायो",
 
-    "englishAarti":"Shendur lal chadhayo achha gajmukhko |\nDondil lal biraje sut gauriharko |\nHath liye gudladdoo sai suravar ko |\nMahima kahe na jaay laagat hu padako || 1 ||\n\nJay jay shri ganraj vidya sukhdata |\nDhanya tumharo darshan mera man ramta |\nJay dev jay dev ||\n\nAshtau siddhi dasi sanktako bairi |\nVighnavinashan mangal murat adhikari |\nKotisuraj prakash aisi chhabi teri |\nGandasthalamadamastak jhule shashibihari || 2 ||\n\nJay jay shri ganraj vidya sukhdata |\nDhanya tumharo darshan mera man ramta |\nJay dev jay dev ||\n\nBhavbhagat se ko sharanagat aave |\nSantat sampat sabahi bharpur pave |\nAise tum maharaj moko ati bhave |\nGosavinandan nishidin guun gave || 3 ||\n\nJay jay shri ganraj vidya sukhdata |\nDhanya tumharo darshan mera man ramta |\nJay dev jay dev ||",
+    "englishAarti":"Shendur lal chadhayo achha gajmukhko |\nDondil lal biraje sut gauriharko |\nHath liye gudladdoo sai suravar ko |\nMahima kahe na jaay laagat hu padako || 1 ||\n\nJai jai shri ganraj vidya sukhdata |\nDhanya tumharo darshan mera man ramta |\nJai dev jai dev ||\n\nAshtau siddhi dasi sanktako bairi |\nVighnavinashan mangal murat adhikari |\nKotisuraj prakash aisi chhabi teri |\nGandasthalamadamastak jhule shashibihari || 2 ||\n\nJai jai shri ganraj vidya sukhdata |\nDhanya tumharo darshan mera man ramta |\nJai dev jai dev ||\n\nBhavbhagat se ko sharanagat aave |\nSantat sampat sabahi bharpur pave |\nAise tum maharaj moko ati bhave |\nGosavinandan nishidin guun gave || 3 ||\n\nJai jai shri ganraj vidya sukhdata |\nDhanya tumharo darshan mera man ramta |\nJai dev jai dev ||",
 
     "marathiAarti":"शेंदुर लाल चढ़ायो अच्छा गजमुखको ।\nदोंदिल लाल बिराजे सुत गौरिहरको ।\nहाथ लिए गुडलद्दु साई सुरवरको ।\nमहिमा कहे न जाय लागत हूं पादको ।। १ ।।\n\nजय जय श्री गणराज विद्या सुखदाता\nधन्य तुम्हारो दर्शन मेरा मन रमता\nजय देव जय देव ।।\n\nअष्टौ सिद्धि दासी संकटको बैरि ।\nविघ्नविनाशन मंगल मूरत अधिकारी ।\nकोटीसूरजप्रकाश ऐसी छबि तेरी ।\nगंडस्थलमदमस्तक झूले शशिबिहारि  ।। २ ।।\n\nजय जय श्री गणराज विद्या सुखदाता\nधन्य तुम्हारो दर्शन मेरा मन रमता\nजय देव जय देव ।।\n\nभावभगत से कोई शरणागत आवे ।\nसंतत संपत सबही भरपूर पावे ।\nऐसे तुम महाराज मोको अति भावे ।\nगोसावीनंदन निशिदिन गुण गावे ।। ३ ।।\n\nजय जय श्री गणराज विद्या सुखदाता\nधन्य तुम्हारो दर्शन मेरा मन रमता\nजय देव जय देव ।।"
 },
+{
+    "aartiId":"H",
+    
+    "isChecked" : false, 
+	
+    "englishTitle":"Shree Devichi Karpur Aarti",
+
+    "marathiTitle":"श्री देवीची कर्पूर आरती",
+
+    "englishAarti":"Dhup deep zala aata karpur aarti |\nAata karpur aarti |\nRatnakhachit sinhasani shree ambechi murti |\nShree ambechi murti, jaganmata parvati |\nDhup deep zala aata karpur aarti ||\n\nKarpur vadi sam nirmal majhe man rahu de |\nKarpur vadi sam bhavbhakticha sugandh vahu de |\nKarpur vadichi lavun jyoti, pahin tav murti |\nNayani pahin tav murti || 1 ||\n\nDnyan kalena dhyan kalena |\nNa kale kahi majala na kale kahi |\nShabdarupi gumfuni maala vahate payi |\nMukhi naam, hrudayi sathavu tav murti |\nHrudayi sathavu tav murti || 2 ||\n\n",
+
+    "marathiAarti":"धूप दिप झाला आता कर्पूर आरती ।\nआता कर्पूर आरती ।\nरत्नखचित सिंहासनी श्री अंबेची मूर्ती ।\nश्री अंबेची मूर्ती, जगन्माता पार्वती ।\nधूप दिप झाला आता कर्पूर आरती ।। धृ० ।।\n\nकर्पूर वडी सम निर्मळ माझे मन राहू दे ।\nकर्पूर वडी सम भावभक्तीचा सुगंध वाहू दे ।\nकर्पूर वडीची लावून ज्योती, पाहीन तव मूर्ती ।\nनयनी पाहीन तव मूर्ती ।। १ ।। \n\nज्ञान कळेना ध्यान कळेना ।\nना कळे काही मजला ना कळे काही ।\nशब्दरूपी गुंफूनि माला वाहते पायी ।\nमुखी नाम, हृदयी साठवू तव मूर्ती ।\nहृदयी साठवू तव मूर्ती ।। २ ।।\n\n"
+},
 
 {
-    "aartiId":"x",
+    "aartiId":"I",
 
     "isChecked" : false, 
 
-    "englishTitle":"Shri Durga Devichi Aarti",
+    "englishTitle":"Shree Durga Devichi Aarti",
 
     "marathiTitle":"श्री दुर्गा देवीची आरती",
 
-    "englishAarti":"Durge Durghat Bhari Tujvin Sansari।\nAnathanathe Ambe Karuna Vistari।\nVari Vari Janma Maranate Vari।\nHari Padalo Ata Sankat Nivari॥\n\nJai Devi Jai Devi Mahishasuramathini।\nSuravara Ishwara Varade Taraka Sanjivani॥\n\nTribhuvana Bhuvani Pahata Tuja Aisi Nahi।\nChari Shramale Parantu Na Bolve Kahi।\nSahi Vivad Karita Padale Pravahi।\nTe Tu Bhaktalagi Pavasi Lavalahi॥\n\nJai Devi Jai Devi Mahishasuramathini।\nSuravara Ishwara Varade Taraka Sanjivani॥\n\nPrasanna Vadane Prasanna Hosi Nijadasa।\nKleshampasuni Sodavi Todi Bhavapasha।\nAmbe Tujvachun Kon Purvila Asha।\nNarahari Tallina Jhala Padapankajalesha॥\n\nJai Devi Jai Devi Mahishasuramathini।\nSuravara Ishwara Varade Taraka Sanjivani॥",
+    "englishAarti":"Durge Durghat Bhari Tujvin Sansari।\nAnathanathe Ambe Karuna Vistari।\nVari Vari Janma Maranate Vari।\nHari Padalo Ata Sankat Nivari॥\n\nJai Devi Jai Devi Mahishasuramathini।\nSuravara Ishwara Varade Taraka Sanjivani॥\n\nTribhuvana Bhuvani Pahata Tuja Aisi Nahi।\nChari Shramale Parantu Na Bolve Kahi।\nSahi Vivad Karita Padale Pravahi।\nTe Tu Bhaktalagi Pavasi Lavalahi॥\n\nJai Devi Jai Devi Mahishasuramathini।\nSuravara Ishwara Varade Taraka Sanjivani॥\n\nPrasanna Vadane Prasanna Hosi Nijadasa।\nKleshampasuni Sodavi Todi Bhavapasha।\nAmbe Tujvachun Kon Purvila Asha।\nNarahari Tallina Jhala Padapankajalesha॥\n\nJai Devi Jai Devi Mahishasuramathini।\nSuravara Ishwara Varade Taraka Sanjivani॥\n",
 
-    "marathiAarti":"दुर्गे दुर्घट भारी तुजविण संसारी।\nअनाथ नाथे अम्बे करुणा विस्तारी।\nवारी वारी जन्म मरणांते वारी।\nहारी पडलो आता संकट निवारी॥\n\nजय देवी जय देवी महिषासुरमथिनी।\nसुरवर ईश्वर वरदे तारक संजीवनी॥\n\nत्रिभुवन-भुवनी पाहता तुज ऐसी नाही।\nचारी श्रमले परन्तु न बोलवे काही।\nसाही विवाद करिता पडले प्रवाही।\nते तू भक्तालागी पावसि लवलाही॥\n\nजय देवी जय देवी महिषासुरमथिनी।\nसुरवर ईश्वर वरदे तारक संजीवनी॥\n\nप्रसन्न वदने प्रसन्न होसी निजदासा।\nक्लेशांपासुनि सोडवि तोडी भवपाशा।\nअम्बे तुजवाचून कोण पुरविल आशा।\nनरहरी तल्लिन झाला पदपंकजलेशा॥\n\nजय देवी जय देवी महिषासुरमथिनी।\nसुरवर ईश्वर वरदे तारक संजीवनी॥"
+    "marathiAarti":"दुर्गे दुर्घट भारी तुजविण संसारी।\nअनाथ नाथे अम्बे करुणा विस्तारी।\nवारी वारी जन्म मरणांते वारी।\nहारी पडलो आता संकट निवारी॥\n\nजय देवी जय देवी महिषासुरमथिनी।\nसुरवर ईश्वर वरदे तारक संजीवनी॥\n\nत्रिभुवन-भुवनी पाहता तुज ऐसी नाही।\nचारी श्रमले परन्तु न बोलवे काही।\nसाही विवाद करिता पडले प्रवाही।\nते तू भक्तालागी पावसि लवलाही॥\n\nजय देवी जय देवी महिषासुरमथिनी।\nसुरवर ईश्वर वरदे तारक संजीवनी॥\n\nप्रसन्न वदने प्रसन्न होसी निजदासा।\nक्लेशांपासुनि सोडवि तोडी भवपाशा।\nअम्बे तुजवाचून कोण पुरविल आशा।\nनरहरी तल्लिन झाला पदपंकजलेशा॥\n\nजय देवी जय देवी महिषासुरमथिनी।\nसुरवर ईश्वर वरदे तारक संजीवनी॥\n"
 },
-
 {
-    "aartiId":"y",
+    "aartiId":"J",
     
     "isChecked" : false, 
+	
+    "englishTitle":"Shree Krushnachi Aarti",
 
-    "englishTitle":" Swamini Chavada Bhuvanachi ",
+    "marathiTitle":"श्री कृष्णाची आरती",
 
-    "marathiTitle":" स्वामिनी चवदा भुवनाची ",
+    "englishAarti":"Ovalu aarti madangopala |\nShyam sundar gala vaijayantimala ||\n\nCharankamal jyache ati sukumar |\nDhvajvajrankush bridache todar || 1 ||\n\nNaabhikamali jyache brahmayache sthan |\nHrudayi padak shobhe shreevatsalanchhan || 2 ||\n\nMukhkamal pahta suryachya koti |\nVedhle manas harapli drushti || 3 ||\n\nJadit mukut jyacha daidipyaman |\nTene teje kondale avghe tribhuvan || 4 ||\n\nEka janardani dekhiyale roop |\nRoop paho jata avghe zale tadrup || 5 ||\n\n",
 
-    "englishAarti":"Jai jai bhavani, manaramani, matapuravasini |\nChavada bhuvanachi, swamini, mahishasurmardini |\nJai jai bhavani ||\n\nNaisuni patav, pivala, har shobhato gala |\nHati ghevuniya, trishula, bhali kumkum tila || 1 ||\n\nJai jai bhavani, manaramani, matapuravasini |\nChavada bhuvanachi, swamini, mahishasurmardini |\nJai jai bhavani ||\n\nAngi levuniya, kacholi, var motyachi jali |\nHrudayi shobhatase, padakamali, kanthi he garsoli || 2 ||\n\nJai jai bhavani, manaramani, matapuravasini |\nChavada bhuvanachi, swamini, mahishasurmardini |\nJai jai bhavani ||\n\nPayi ghagariya, ghulghul, naki mukta phal |\nMatha kuntha he, kurala, nayanihi kajala || 3 || \n\nJai jai bhavani, manaramani, matapuravasini |\nChavada bhuvanachi, swamini, mahishasurmardini |\nJai jai bhavani ||\n\nSinhavarti tu, baisuna, marisi danav gan |\nTujala vinavito, nishidin, gosavi nandan || 4 ||\n\nJai jai bhavani, manaramani, matapuravasini |\nChavada bhuvanachi, swamini, mahishasurmardini |\nJai jai bhavani ||",
-
-    "marathiAarti":"जय जय भवानी, मनरमणी मातापुरवासिनी ।\nचवदा भुवनाची स्वामिनी, महिषासुर मर्दिनी ।\nजय जय भवानी ।।\n\nनैसुनी पाटाव, पिवळा, हार शोभतो गळा ।\nहाती घेवूनिया, त्रिशूळ, भाळी कुंकुम टिळा ।। १ ।। \n\nजय जय भवानी, मनरमणी मातापुरवासिनी ।\nचवदा भुवनाची स्वामिनी, महिषासुर मर्दिनी ।\nजय जय भवानी ।।\n\nअंगी लेवुनिया, काचोळी, वर मोत्याची जाळी ।\nहृदयी शोभतसे, पदकमळी, कंठी हे गरसोळी ।। २ ।।\n\nजय जय भवानी, मनरमणी मातापुरवासिनी ।\nचवदा भुवनाची स्वामिनी, महिषासुर मर्दिनी ।\nजय जय भवानी ।।\n\nपायी घागरिया, घुळघुळ, नाकी मुक्ताफळ ।\nमाथा कुंतल हे, कुरळ, नयनीही काजळ ।। ३ ।।\n\nजय जय भवानी, मनरमणी मातापुरवासिनी ।\nचवदा भुवनाची स्वामिनी, महिषासुर मर्दिनी ।\nजय जय भवानी ।।\n\nसिंहावरती तु, बैसून, मारिसी दानव गण ।\nतुजला विनवितो, निशिदिन, गोसावी नंदन ।। ४ ।।\n\nजय जय भवानी, मनरमणी मातापुरवासिनी ।चवदा भुवनाची स्वामिनी, महिषासुर मर्दिनी ।\nजय जय भवानी ।। "
+    "marathiAarti":"ओवाळू आरती मदनगोपाळा ।\nश्याम सुंदर गळा वैजयंतीमाळा ।। धृ० ।।\n\nचरणकमल ज्याचे अति सुकुमार ।\nध्वजवज्रांकुश ब्रीदाचे तोडर ।। १ ।।\n\nनाभिकमली ज्याचे ब्रह्मयाचे स्थान ।\nहृदयी पदक शोभे श्रीवत्सलांच्छन ।। २ ।।\n\nमुखकमल पाहता सूर्याच्या कोटी ।\nवेधले मानस हारपली दृष्टी ।। ३ ।।\n\nजडित मुकुट ज्याचा दैदीप्यमान ।\nतेणे तेजे कोंदले अवघे त्रिरभुवन ।। ४ ।।\n\nएका जनार्दनी देखियले रूप ।\nरूप पाहो जाता अवघे झाले तद्रूप ।। ५ ।।\n\n"
 },
 {
-    "aartiId":"z",
+    "aartiId":"K",
+    
+    "isChecked" : false, 
+	
+    "englishTitle":"Shree Ramchandraji Ki Aarti",
+
+    "marathiTitle":"श्री रामचंद्रजी की आरती",
+
+    "englishAarti":"Jagmag jagmag jyot jali hai | Bolo !\nRam aarti hone lagi hai | Bolo !\n\nBhakti ka deepak prem ki bati |\nSadhu sant kare din rati |\nAnand ki sarita umgi hai || 1 || Bolo !\n\nAarti hanumant ke man bhave |\nRam katha nit shankar gave |\nPrabhu ki chhabi badi lagat bhali hai || 2 || Bolo !\n\nLakhanlalji birajat daye |\nBharat shamungh chavar duraye |\nCharan sharan bajrang bali hai || 3 || Bolo !\n\nKanak sinhasan siyas bhecha |\nBaithe ram hoye chit cheta |\nVam bhag mein janak lali hai || 4 || Bolo !\n\n",
+
+    "marathiAarti":"जगमग जगमग ज्योत जली है । बोलो !\nराम आरती होने लगी है । बोलो !\n\nभक्ती का दीपक प्रेम की बाती ।\nसाधु संत करे दिन राती ।\nआनंद की सरिता उमगी है ।। १ ।। बोलो !\n\nआरती हनुमंत के मन भावे ।\nराम कथा नित शंकर गावे ।\nप्रभु की छबी बडी लगत भली है ।। २ ।। बोलो !\n\nलखनलालजी बिराजत दाये ।\nभरत शमून्घ चवर दुराये ।\nचरण शरण बजरंग बली है ।। ३ ।। बोलो !\n\nकनक सिंहासन सियास भेचा ।\nबैठे राम होये चित चेता ।\nवाम भाग मे जनक लली  है ।। ४ ।। बोलो !\n\n"
+},
+{
+    "aartiId":"L",
+    
+    "isChecked" : false, 
+	
+    "englishTitle":"Shree Saptshrunga Devichi Aarti",
+
+    "marathiTitle":"श्री सप्तश्रृंग देवीची आरती ",
+
+    "englishAarti":"Prachand chandabai saptashrung nivasini ho |\nOvalu aarti aadishakti ambabai ho ||\n\nSinharudh houni roop dharile mahachand ho |\nVadhuni mahishasur mardiyele chandmund ho |\nThor garjana kele kampit zale he brahmand ho |\nPasaruni vitand dadha vadani kele agnikund ho || 1 ||\n\nBhrukati Vrukati kelya netri vanhiche sphulling ho |\nDhadhad vamsi jvala karisi asurancha mulbhang ho |\nGhanghan vajati ghanta sansan sodisi shar ogh ho |\nDandan danka nade dananile avni ang ho || 2 ||\n\nKadkat dhadkat trishul krodhe firavishi digmandali ho |\nGadgad mrudgal nade tav tu hanashi dhanushya vari ho |\nBhadbhad shonit vahe tat-tat munde udavisi nabhi ho |\nKhadkhad hasti bhute gahtghat kariti shonit pan ho || 3 ||\n\nAshtadash bhujdand matha babar pingat jata ho |\nPitambar paridhan shobhe kasota pari kata ho |\nChandan charchit angi bhali mrugnabhicha tila ho |\nTaranki shravani shobhe tej trake gandasthala ho || 4 ||\n\nAishi tujhi khyati mahima na kale brahmadika ho |\nAmar durlabh ramane karisi saptashrung nivas ho |\nAnant karvar dayak ambe bhavsindhu tarak ho |\nBalkrushna swami vinavi ambe patitasi sambhal ho || 5 ||\n\n",
+
+    "marathiAarti":"प्रचंड चंडाबाई सप्तश्रृंग निवासीनी हो ।\nओवाळू आरती आदिशक्ती अंबाबाई हो ।। धृ० ।।\n\nसिंहारूढ होऊनि रूप धरिले महाचंड हो ।\nवधुनी महिषासुर मर्दीयेले चंडमुंड हो ।\nथोर गर्जना केले कंपित झाले हे ब्रह्माण्ड हो ।\nपसरुनी वितंड दाढा वदनी केले अग्निकुंड हो ।। १ ।।\n\nभृकटी वृकटी केल्या नेत्री वन्हीचे स्फुल्लींग हो ।\nधडधड वमसी ज्वाळा करिसी असुरांचा मुळभंग हो ।\nघणघण वाजती घंटा सणसण सोडीसी शर ओघ हो ।\nदणदण डंका नादे दणाणिले अवनी अंग हो ।। २ ।।\n\nकडकत धडकत त्रिशुळ क्रोधे फिरविशी दिग्मंडळी हो ।\nगडगड मृद्गल नादे तव तु हाणशी धनुष्या वरी हो ।\nभडभड शोणीत वाहे तटतट मुंडे उडविसी नभी हो ।\nखदखद हासती भूते घटघट करिती शोणीत पान हो ।। ३ ।।\n\nअष्टदश भुजदंड माथा बाबर पिंगट जटा हो ।\nपितांबर परिधान शोभे कासोटा परि कटा हो ।\nचंदन चर्चित अंगी भाळी मृगनाभीचा टिळा हो ।\nतारांकी श्रवणी शोभे तेज पत्रके गंडस्थळा हो ।। ४ ।।\n\nऐशी तुझी ख्याती महिमा न कळे ब्रह्मादिका हो ।\nअमर दुर्लभ रमणे करिसी सप्तश्रृंग निवास हो ।\nअनंत करवर दायक अंबे भवसिंधू तारक हो ।\nबाळकृष्ण स्वामी विनवी अंबे पतितासी सांभाळ हो ।। ५ ।। \n\n"
+},
+
+{
+    "aartiId":"M",
     
     "isChecked" : false, 
 
@@ -349,12 +518,12 @@
 
     "marathiTitle":"तू सुखकर्ता ",
 
-    "englishAarti":"Tu sukhkarta tu dukhharta vighnavinashak moraya |\nSankati rakshi sharan tula mi ganpati bappa moraya ||\n\nMangalmurti tu gananayak |\nVakratund tu siddhivinayak |\nTujhiya dvari aaj patalo |\nNei sthitiprati raya || Sankati… || 1 ||\n\nTu sakalancha bhagyavidhata |\nTu vidyecha swami data |\nDnyandeep ujalun amuchya |\nNimavi nairashyala || Sankati… || 2 ||\n\nTu mata tu pita jagi ya |\nDnyata tu sarvasva jagi ya |\nPamar mi svar une bhasati |\nTujhiya aarti gaya || Sankati… || 3 ||",
+    "englishAarti":"Tu sukhkarta tu dukhharta vighnavinashak moraya |\nSankati rakshi sharan tula mi ganpati bappa moraya ||\n\nMangalmurti tu gananayak |\nVakratund tu siddhivinayak |\nTujhiya dvari aaj patalo |\nNei sthitiprati raya || Sankati… || 1 ||\n\nTu sakalancha bhagyavidhata |\nTu vidyecha swami data |\nDnyandeep ujalun amuchya |\nNimavi nairashyala || Sankati… || 2 ||\n\nTu mata tu pita jagi ya |\nDnyata tu sarvasva jagi ya |\nPamar mi svar une bhasati |\nTujhiya aarti gaya || Sankati… || 3 ||\n",
 
-    "marathiAarti":"तू सुखकर्ता तू दुःखहर्ता विघ्नविनाशक मोरया ।\nसंकटी रक्षी शरण तुला मी, गणपती बाप्पा मोरया ।। धृ ।।\n\nमंगलमूर्ति तू गणनायक ।\nवक्रतुंड तू सिद्धिविनायक ।।\nतुझिया द्वारी आज पातलो ।\nनेई स्थितीप्रति राया । संकटी० ।। १ ।।\n\nतू सकलांचा भाग्यविधाता ।\nतू विद्येचा स्वामी दाता ।।\nज्ञानदीप उजळून आमुच्या ।\nनिमवी नैराश्याला । संकटी० ।। २ ।।\n\nतू माता तू पिता जगी या ।\nज्ञाता तू सर्वस्व जगी या ।।\nपामर मी स्वर उणे भासती ।\nतुझिया आरती गाया । संकटी० ।। ३ ।। "
+    "marathiAarti":"तू सुखकर्ता तू दुःखहर्ता विघ्नविनाशक मोरया ।\nसंकटी रक्षी शरण तुला मी, गणपती बाप्पा मोरया ।। धृ ।।\n\nमंगलमूर्ति तू गणनायक ।\nवक्रतुंड तू सिद्धिविनायक ।।\nतुझिया द्वारी आज पातलो ।\nनेई स्थितीप्रति राया । संकटी० ।। १ ।।\n\nतू सकलांचा भाग्यविधाता ।\nतू विद्येचा स्वामी दाता ।।\nज्ञानदीप उजळून आमुच्या ।\nनिमवी नैराश्याला । संकटी० ।। २ ।।\n\nतू माता तू पिता जगी या ।\nज्ञाता तू सर्वस्व जगी या ।।\nपामर मी स्वर उणे भासती ।\nतुझिया आरती गाया । संकटी० ।। ३ ।। \n"
 },
 {
-    "aartiId":"A",
+    "aartiId":"N",
     
     "isChecked" : false, 
 
@@ -362,13 +531,13 @@
 
     "marathiTitle":"तुकारामाची आरती ",
 
-    "englishAarti":"Aarti tukarama | Swami sadgurudhama |\nSachchidanandmurti | Paay dakhavi amha ||\n\nRaghave sagarat pashan tarile |\nTaise he tukobache abhang udaki rakshile || 1 ||\n\nTukita tulanesi | Brahma tukasi aale |\nMhanoni rameshware | Charani mastak thevle || 2 ||\n\nAarti tukarama | Swami sadgurudhama |\nSachchidanandmurti | Paay dakhavi amha ||",
+    "englishAarti":"Aarti tukarama | Swami sadgurudhama |\nSachchidanandmurti | Paay dakhavi amha ||\n\nRaghave sagarat pashan tarile |\nTaise he tukobache abhang udaki rakshile || 1 ||\n\nTukita tulanesi | Brahma tukasi aale |\nMhanoni rameshware | Charani mastak thevle || 2 ||\n\nAarti tukarama | Swami sadgurudhama |\nSachchidanandmurti | Paay dakhavi amha ||\n",
 
-    "marathiAarti":"आरती तुकारामा । स्वामी सद्गुरुधामा ।\nसच्चिदानंदमूर्ति । पाय दाखवी आम्हा ।। धृ० ।।\n\nराघवे सागरात पाषाण तारिले ।\nतैसे हे तुकोबाचे अभंग उदकी रक्षिले ।। १ ।।\n\nतुकिता तुलनेसी । ब्रह्म तुकासी आले ।\nम्हणोन रामेश्र्वरे । चरणी मस्तक ठेवले ।। २ ।।\n\nआरती तुकारामा । स्वामी सद्गुरुधामा ।\nसच्चिदानंदमूर्ति । पाय दाखवी आम्हा ।। धृ० ।। "
+    "marathiAarti":"आरती तुकारामा । स्वामी सद्गुरुधामा ।\nसच्चिदानंदमूर्ति । पाय दाखवी आम्हा ।। धृ० ।।\n\nराघवे सागरात पाषाण तारिले ।\nतैसे हे तुकोबाचे अभंग उदकी रक्षिले ।। १ ।।\n\nतुकिता तुलनेसी । ब्रह्म तुकासी आले ।\nम्हणोन रामेश्र्वरे । चरणी मस्तक ठेवले ।। २ ।।\n\nआरती तुकारामा । स्वामी सद्गुरुधामा ।\nसच्चिदानंदमूर्ति । पाय दाखवी आम्हा ।। धृ० ।।\n "
 },
 
 {
-    "aartiId":"B",
+    "aartiId":"O",
     
     "isChecked" : false, 
 
@@ -376,13 +545,13 @@
 
     "marathiTitle":" विठ्ठलाची आरती",
 
-    "englishAarti":"Yuge atthavis vitevari ubha |\nVamangi rakhumai dise divya shobha |\nPundalikache bheti parabrahma aale ga |\nCharni vahe bhima uddhari jaga || 1 ||\n\nJai dev jai dev jay panduranga |\nRakhumai vallabha raichya vallabha |\nPave jivlaga | Jai dev jai dev ||\n\nTulsimala gala kar theuni kati |\nKase pitambar kasturi lallati |\nDeva survar nitya yeti bheti |\nGarud hanumant pudhe ubhe rahti || 2 ||\n\nJai dev jai dev jay panduranga |\nRakhumai vallabha raichya vallabha |\nPave jivlaga | Jai dev jai dev ||\n\nDhanya venunad anukshetra pala |\nSuvarnachi kamale vanmala gala |\nRai rakhumabai raniya sakala |\nOvaliti raja vithoba savla || 3 ||\n\nJai dev jai dev jay panduranga |\nRakhumai vallabha raichya vallabha |\nPave jivlaga | Jai dev jai dev ||\n\nOvalu aartya kurvandya yeti |\nChandrabhagemaji soduniya deti |\nDindya pataka vaishnav nachati |\nPandharicha mahima varnava kiti || 4 ||\n\nJai dev jai dev jay panduranga |\nRakhumai vallabha raichya vallabha |\nPave jivlaga | Jai dev jai dev ||\n\nAshadhi kartiki bhaktajan yeti |\nChandrabhagemaji snane je kariti |\nDarshan helamate taya hoy mukti |\nKeshavasi namdev bhave ovaliti || 5 ||\n\nJai dev jai dev jay panduranga |\nRakhumai vallabha raichya vallabha |\nPave jivlaga | Jai dev jai dev ||",
+    "englishAarti":"Yuge atthavis vitevari ubha |\nVamangi rakhumai dise divya shobha |\nPundalikache bheti parabrahma aale ga |\nCharni vahe bhima uddhari jaga || 1 ||\n\nJai dev jai dev jai panduranga |\nRakhumai vallabha raichya vallabha |\nPave jivlaga | Jai dev jai dev ||\n\nTulsimala gala kar theuni kati |\nKase pitambar kasturi lallati |\nDeva survar nitya yeti bheti |\nGarud hanumant pudhe ubhe rahti || 2 ||\n\nJai dev jai dev jai panduranga |\nRakhumai vallabha raichya vallabha |\nPave jivlaga | Jai dev jai dev ||\n\nDhanya venunad anukshetra pala |\nSuvarnachi kamale vanmala gala |\nRai rakhumabai raniya sakala |\nOvaliti raja vithoba savla || 3 ||\n\nJai dev jai dev jai panduranga |\nRakhumai vallabha raichya vallabha |\nPave jivlaga | Jai dev jai dev ||\n\nOvalu aartya kurvandya yeti |\nChandrabhagemaji soduniya deti |\nDindya pataka vaishnav nachati |\nPandharicha mahima varnava kiti || 4 ||\n\nJai dev jai dev jai panduranga |\nRakhumai vallabha raichya vallabha |\nPave jivlaga | Jai dev jai dev ||\n\nAshadhi kartiki bhaktajan yeti |\nChandrabhagemaji snane je kariti |\nDarshan helamate taya hoy mukti |\nKeshavasi namdev bhave ovaliti || 5 ||\n\nJai dev jai dev jai panduranga |\nRakhumai vallabha raichya vallabha |\nPave jivlaga | Jai dev jai dev ||\n",
 
-    "marathiAarti":"युगे अठ्ठावीस विटेवरी उभा ।\nवामांगी रखुमाई दिसे दिव्य शोभा ।\nपुंडलिकाचे भेटी परब्रह्म आले गा ।\nचरणी वाहे भीमा उद्धरी जगा  ।। १ ।।\n\nजय देव जय देव जय पांडुरंगा ।\nरखुमाईवल्लभा राईच्या वल्लभा ।\nपावे जिवलगा । जय देव जय देव ।।\n\nतुळसीमाळा गळा कर ठेउनी कटी ।\nकासे पितांबर कस्तुरी लल्लाटी ।\nदेव सुरवर नित्य येती भेटी ।\nगरुड हनुमंत पुढे उभे राहती ।। २ ।।\n\nजय देव जय देव जय पांडुरंगा ।\nरखुमाईवल्लभा राईच्या वल्लभा ।\nपावे जिवलगा । जय देव जय देव ।।\n\nधन्य वेणूनाद अनुक्षेत्रपाळा ।\nसुवर्णाची कमळे वनमाळा गळा ।\nराई रखुमाबाई राणीया सकळा ।\nओवाळिती राजा विठोबा सावळा ।। ३ ।।\n\nजय देव जय देव जय पांडुरंगा ।\nरखुमाईवल्लभा राईच्या वल्लभा ।\nपावे जिवलगा । जय देव जय देव ।।\n\nओवाळू आरत्या कुरवंड्या येती ।\nचंद्रभागेमाजी सोडूनिया देती ।\nदिंड्या पताका वैष्णव नाचती ।\nपंढरीचा महिमा वर्णावा किती ।। ४ ।।\n\nजय देव जय देव जय पांडुरंगा ।\nरखुमाईवल्लभा राईच्या वल्लभा ।\nपावे जिवलगा । जय देव जय देव ।।\n\nआषाढी कार्तिकी भक्तजन येति ।\nचंद्रभागेमाजी स्नाने जे करिती ।\nदर्शन हेळामात्रे तया होय मुक्ती ।\nकेशवासी नामदेव भावे ओवाळिती ।। ५ ।।\n\nजय देव जय देव जय पांडुरंगा ।\nरखुमाईवल्लभा राईच्या वल्लभा ।\nपावे जिवलगा । जय देव जय देव ।।"
+    "marathiAarti":"युगे अठ्ठावीस विटेवरी उभा ।\nवामांगी रखुमाई दिसे दिव्य शोभा ।\nपुंडलिकाचे भेटी परब्रह्म आले गा ।\nचरणी वाहे भीमा उद्धरी जगा  ।। १ ।।\n\nजय देव जय देव जय पांडुरंगा ।\nरखुमाईवल्लभा राईच्या वल्लभा ।\nपावे जिवलगा । जय देव जय देव ।।\n\nतुळसीमाळा गळा कर ठेउनी कटी ।\nकासे पितांबर कस्तुरी लल्लाटी ।\nदेव सुरवर नित्य येती भेटी ।\nगरुड हनुमंत पुढे उभे राहती ।। २ ।।\n\nजय देव जय देव जय पांडुरंगा ।\nरखुमाईवल्लभा राईच्या वल्लभा ।\nपावे जिवलगा । जय देव जय देव ।।\n\nधन्य वेणूनाद अनुक्षेत्रपाळा ।\nसुवर्णाची कमळे वनमाळा गळा ।\nराई रखुमाबाई राणीया सकळा ।\nओवाळिती राजा विठोबा सावळा ।। ३ ।।\n\nजय देव जय देव जय पांडुरंगा ।\nरखुमाईवल्लभा राईच्या वल्लभा ।\nपावे जिवलगा । जय देव जय देव ।।\n\nओवाळू आरत्या कुरवंड्या येती ।\nचंद्रभागेमाजी सोडूनिया देती ।\nदिंड्या पताका वैष्णव नाचती ।\nपंढरीचा महिमा वर्णावा किती ।। ४ ।।\n\nजय देव जय देव जय पांडुरंगा ।\nरखुमाईवल्लभा राईच्या वल्लभा ।\nपावे जिवलगा । जय देव जय देव ।।\n\nआषाढी कार्तिकी भक्तजन येति ।\nचंद्रभागेमाजी स्नाने जे करिती ।\nदर्शन हेळामात्रे तया होय मुक्ती ।\nकेशवासी नामदेव भावे ओवाळिती ।। ५ ।।\n\nजय देव जय देव जय पांडुरंगा ।\nरखुमाईवल्लभा राईच्या वल्लभा ।\nपावे जिवलगा । जय देव जय देव ।।\n"
 },
 
 {
-    "aartiId":"C",
+    "aartiId":"P",
     
     "isChecked" : false, 
 
@@ -390,13 +559,10 @@
 
     "marathiTitle":"येई हो विठ्ठले ",
 
-    "englishAarti":"Yei ho vitthale majhe mauli ye |\nNidhalavari kar thevuni vaat mi pahe || 1 ||\n\nAaliya geliya hati dhadi nirop |\nPandharpuri aahe majha maay-baap || 2 ||\n\nPivala pitambar kaisa gagani jhalakla |\nGarudavar baisoni majha kaivari aala || 3 ||\n\nVithobache rajya amha nitya dipavali |\nVishnudas nama jeeve bhave ovali || 4 ||\n\nAso naso bhav amha tujhiya thaya |\nKrupadrushti pahe majha pandhari raya || 5 ||",
+    "englishAarti":"Yei ho vitthale majhe mauli ye |\nNidhalavari kar thevuni vaat mi pahe || 1 ||\n\nAaliya geliya hati dhadi nirop |\nPandharpuri aahe majha maay-baap || 2 ||\n\nPivala pitambar kaisa gagani jhalakla |\nGarudavar baisoni majha kaivari aala || 3 ||\n\nVithobache rajya amha nitya dipavali |\nVishnudas nama jeeve bhave ovali || 4 ||\n\nAso naso bhav amha tujhiya thaya |\nKrupadrushti pahe majha pandhari raya || 5 ||\n",
 
-    "marathiAarti":"येई हो विठ्ठले माझे माउली ये ।\nनिढळावरी कर ठेवुनि वाट मी पाहे ।। १ ।।\n\nआलिया गेलिया हाती धाडी निरोप ।\nपंढरपुरी आहे माझा मायबाप ।। २ ।।\n\nपिवळा पीतांबर कैसा गगनी झळकला ।\nगरुडावरि बैसोनि माझा कैवारी आला ।। ३ ।।\n\nविठोबाचे राज्य आम्हा नित्य दिपवाळी ।\nविष्णुदास नामा जीवे भावे ओंवाळी ।। ४ ।।\n\nअसो नसो भाव आम्हा तुझिया ठाया ।\nकृपादृष्टी पाहे माझा पांढरी राया ।। ५ ।। "
+    "marathiAarti":"येई हो विठ्ठले माझे माउली ये ।\nनिढळावरी कर ठेवुनि वाट मी पाहे ।। १ ।।\n\nआलिया गेलिया हाती धाडी निरोप ।\nपंढरपुरी आहे माझा मायबाप ।। २ ।।\n\nपिवळा पीतांबर कैसा गगनी झळकला ।\nगरुडावरि बैसोनि माझा कैवारी आला ।। ३ ।।\n\nविठोबाचे राज्य आम्हा नित्य दिपवाळी ।\nविष्णुदास नामा जीवे भावे ओंवाळी ।। ४ ।।\n\nअसो नसो भाव आम्हा तुझिया ठाया ।\nकृपादृष्टी पाहे माझा पांढरी राया ।। ५ ।।\n "
 }
-
-
-
 ]
 
 
