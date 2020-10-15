@@ -340,9 +340,35 @@
 
     "marathiAarti":"जय जय भवानी, मनरमणी मातापुरवासिनी ।\nचवदा भुवनाची स्वामिनी, महिषासुर मर्दिनी ।\nजय जय भवानी ।।\n\nनैसुनी पाटाव, पिवळा, हार शोभतो गळा ।\nहाती घेवूनिया, त्रिशूळ, भाळी कुंकुम टिळा ।। १ ।। \n\nजय जय भवानी, मनरमणी मातापुरवासिनी ।\nचवदा भुवनाची स्वामिनी, महिषासुर मर्दिनी ।\nजय जय भवानी ।।\n\nअंगी लेवुनिया, काचोळी, वर मोत्याची जाळी ।\nहृदयी शोभतसे, पदकमळी, कंठी हे गरसोळी ।। २ ।।\n\nजय जय भवानी, मनरमणी मातापुरवासिनी ।\nचवदा भुवनाची स्वामिनी, महिषासुर मर्दिनी ।\nजय जय भवानी ।।\n\nपायी घागरिया, घुळघुळ, नाकी मुक्ताफळ ।\nमाथा कुंतल हे, कुरळ, नयनीही काजळ ।। ३ ।।\n\nजय जय भवानी, मनरमणी मातापुरवासिनी ।\nचवदा भुवनाची स्वामिनी, महिषासुर मर्दिनी ।\nजय जय भवानी ।।\n\nसिंहावरती तु, बैसून, मारिसी दानव गण ।\nतुजला विनवितो, निशिदिन, गोसावी नंदन ।। ४ ।।\n\nजय जय भवानी, मनरमणी मातापुरवासिनी ।चवदा भुवनाची स्वामिनी, महिषासुर मर्दिनी ।\nजय जय भवानी ।। "
 },
-
 {
     "aartiId":"z",
+    
+    "isChecked" : false, 
+
+    "englishTitle":"Tu Sukhkarta",
+
+    "marathiTitle":"तू सुखकर्ता ",
+
+    "englishAarti":"Tu sukhkarta tu dukhharta vighnavinashak moraya |\nSankati rakshi sharan tula mi ganpati bappa moraya ||\n\nMangalmurti tu gananayak |\nVakratund tu siddhivinayak |\nTujhiya dvari aaj patalo |\nNei sthitiprati raya || Sankati… || 1 ||\n\nTu sakalancha bhagyavidhata |\nTu vidyecha swami data |\nDnyandeep ujalun amuchya |\nNimavi nairashyala || Sankati… || 2 ||\n\nTu mata tu pita jagi ya |\nDnyata tu sarvasva jagi ya |\nPamar mi svar une bhasati |\nTujhiya aarti gaya || Sankati… || 3 ||",
+
+    "marathiAarti":"तू सुखकर्ता तू दुःखहर्ता विघ्नविनाशक मोरया ।\nसंकटी रक्षी शरण तुला मी, गणपती बाप्पा मोरया ।। धृ ।।\n\nमंगलमूर्ति तू गणनायक ।\nवक्रतुंड तू सिद्धिविनायक ।।\nतुझिया द्वारी आज पातलो ।\nनेई स्थितीप्रति राया । संकटी० ।। १ ।।\n\nतू सकलांचा भाग्यविधाता ।\nतू विद्येचा स्वामी दाता ।।\nज्ञानदीप उजळून आमुच्या ।\nनिमवी नैराश्याला । संकटी० ।। २ ।।\n\nतू माता तू पिता जगी या ।\nज्ञाता तू सर्वस्व जगी या ।।\nपामर मी स्वर उणे भासती ।\nतुझिया आरती गाया । संकटी० ।। ३ ।। "
+},
+{
+    "aartiId":"A",
+    
+    "isChecked" : false, 
+
+    "englishTitle":"Tukaramachi Aarti",
+
+    "marathiTitle":"तुकारामाची आरती ",
+
+    "englishAarti":"Aarti tukarama | Swami sadgurudhama |\nSachchidanandmurti | Paay dakhavi amha ||\n\nRaghave sagarat pashan tarile |\nTaise he tukobache abhang udaki rakshile || 1 ||\n\nTukita tulanesi | Brahma tukasi aale |\nMhanoni rameshware | Charani mastak thevle || 2 ||\n\nAarti tukarama | Swami sadgurudhama |\nSachchidanandmurti | Paay dakhavi amha ||",
+
+    "marathiAarti":"आरती तुकारामा । स्वामी सद्गुरुधामा ।\nसच्चिदानंदमूर्ति । पाय दाखवी आम्हा ।। धृ० ।।\n\nराघवे सागरात पाषाण तारिले ।\nतैसे हे तुकोबाचे अभंग उदकी रक्षिले ।। १ ।।\n\nतुकिता तुलनेसी । ब्रह्म तुकासी आले ।\nम्हणोन रामेश्र्वरे । चरणी मस्तक ठेवले ।। २ ।।\n\nआरती तुकारामा । स्वामी सद्गुरुधामा ।\nसच्चिदानंदमूर्ति । पाय दाखवी आम्हा ।। धृ० ।। "
+},
+
+{
+    "aartiId":"B",
     
     "isChecked" : false, 
 
@@ -356,7 +382,7 @@
 },
 
 {
-    "aartiId":"A",
+    "aartiId":"C",
     
     "isChecked" : false, 
 
@@ -364,9 +390,9 @@
 
     "marathiTitle":"येई हो विठ्ठले ",
 
-    "englishAarti":"Yei ho vitthale majhe mauli ye |\nNidhalavari kar thevuni vaat mi pahe || 1 ||\n\nAaliya geliya hati dhadi nirop |\nPandharpuri aahe majha maay-baap || 2 ||\n\nPivala pitambar kaisa gagani jhalakla |\nGarudavar baisoni majha kaivari aala || 3 ||\n\nVithobache rajya amha nitya dipavali |\nVishnudas nama jeeve bhave ovali || 4 ||",
+    "englishAarti":"Yei ho vitthale majhe mauli ye |\nNidhalavari kar thevuni vaat mi pahe || 1 ||\n\nAaliya geliya hati dhadi nirop |\nPandharpuri aahe majha maay-baap || 2 ||\n\nPivala pitambar kaisa gagani jhalakla |\nGarudavar baisoni majha kaivari aala || 3 ||\n\nVithobache rajya amha nitya dipavali |\nVishnudas nama jeeve bhave ovali || 4 ||\n\nAso naso bhav amha tujhiya thaya |\nKrupadrushti pahe majha pandhari raya || 5 ||",
 
-    "marathiAarti":"येई हो विठ्ठले माझे माउली ये ।\nनिढळावरी कर ठेवुनि वाट मी पाहे ।। १ ।।\n\nआलिया गेलिया हाती धाडी निरोप ।\nपंढरपुरी आहे माझा मायबाप ।। २ ।।\n\nपिवळा पीतांबर कैसा गगनी झळकला ।\nगरुडावरि बैसोनि माझा कैवारी आला ।। ३ ।।\n\nविठोबाचे राज्य आम्हा नित्य दिपवाळी ।\nविष्णुदास नामा जीवे भावे ओंवाळी ।। ४ ।। "
+    "marathiAarti":"येई हो विठ्ठले माझे माउली ये ।\nनिढळावरी कर ठेवुनि वाट मी पाहे ।। १ ।।\n\nआलिया गेलिया हाती धाडी निरोप ।\nपंढरपुरी आहे माझा मायबाप ।। २ ।।\n\nपिवळा पीतांबर कैसा गगनी झळकला ।\nगरुडावरि बैसोनि माझा कैवारी आला ।। ३ ।।\n\nविठोबाचे राज्य आम्हा नित्य दिपवाळी ।\nविष्णुदास नामा जीवे भावे ओंवाळी ।। ४ ।।\n\nअसो नसो भाव आम्हा तुझिया ठाया ।\nकृपादृष्टी पाहे माझा पांढरी राया ।। ५ ।। "
 }
 
 
