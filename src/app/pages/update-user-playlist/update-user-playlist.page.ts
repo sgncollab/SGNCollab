@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
-import { NavController } from '@ionic/angular';
+import { NavController, PopoverController } from '@ionic/angular';
+import { AartiPreviewPopoverComponent } from '../../aarti-preview-popover/aarti-preview-popover.component';
 
 
 @Component({
@@ -15,10 +16,13 @@ aarti=[];
 playlistStr = "";
 currentPage = "update-user-playlist";
 
-  constructor(private dataService:DataService,private navCtrl:NavController ) { }
+  constructor(
+    private dataService:DataService,
+    private navCtrl:NavController,
+    private popovercntrl: PopoverController ) { }
 
   ngOnInit() {
-    console.log(this.dataService.setPresentPage(this.currentPage));
+  this.dataService.setPresentPage(this.currentPage);
     fetch('./assets/data/aarti-data.json').then(res => res.json())
     .then(json => {
       this.data = json;
@@ -49,6 +53,17 @@ datacheck(){
   }
     this.dataService.setAarti(selectedItems);
     this.navCtrl.navigateForward('aarti-reorder');
+  }
+  async presentPopover(ev ,item) {
+    //console.log(item);
+    this.dataService.setItem(item);
+    const popover = await this.popovercntrl.create({
+      component: AartiPreviewPopoverComponent,
+      cssClass: 'ion-popover-1',
+      event: ev,
+      translucent: true
+    });
+    return await popover.present();
   }
 
 }

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service'
-import { NavController, Platform ,MenuController } from '@ionic/angular';
+import { NavController, Platform ,MenuController, PopoverController } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { NavigationStart } from '@angular/router';
+import { AartiPreviewPopoverComponent } from '../../aarti-preview-popover/aarti-preview-popover.component'
 
 @Component({
   selector: 'app-create-playlist',
@@ -21,7 +22,8 @@ export class CreatePlaylistPage implements OnInit {
     private dataService: DataService,
     private navController: NavController,
     private platform: Platform,
-    private menu: MenuController
+    private menu: MenuController,
+    private popovercntrl: PopoverController
   ) { }
 
   ngOnInit() {
@@ -34,10 +36,7 @@ export class CreatePlaylistPage implements OnInit {
     this.dataService.setPresentPage(this.currentPage);
     this.selectedItems = [];
   }
-  // displayLang() {
-  //   this.lang = !this.lang;
-  //   this.selectedItems = [];
-  // }
+  
 
 
   ionViewWillEnter() {
@@ -65,9 +64,16 @@ export class CreatePlaylistPage implements OnInit {
       this.checkedbtn = true;
     }
   }
-  aartiOpen(){
-    console.log("clicked")
-    
+  async presentPopover(ev ,item) {
+    //console.log(item);
+    this.dataService.setItem(item);
+    const popover = await this.popovercntrl.create({
+      component: AartiPreviewPopoverComponent,
+      cssClass: 'ion-popover-1',
+      event: ev,
+      translucent: true
+    });
+    return await popover.present();
   }
 
   onNext() {
@@ -78,3 +84,8 @@ export class CreatePlaylistPage implements OnInit {
     this.navController.navigateForward('aarti-reorder');
   }
 }
+
+// displayLang() {
+  //   this.lang = !this.lang;
+  //   this.selectedItems = [];
+  // }

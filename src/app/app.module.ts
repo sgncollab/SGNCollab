@@ -13,6 +13,7 @@ import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { Network } from '@ionic-native/network/ngx';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+//import { AartiPreviewPopoverComponent } from '../app/aarti-preview-popover/aarti-preview-popover.component'
 
 
 @NgModule({

@@ -5,6 +5,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { DataService } from './services/data.service';
 import { FirebaseDbService } from './services/firebase-db.service';
 import { Network } from '@ionic-native/network/ngx';
+
 // import { Events } from '@ionic/angular';
 
 @Component({

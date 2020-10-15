@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { CreatePlaylistPageRoutingModule } from './create-playlist-routing.module';
 
 import { CreatePlaylistPage } from './create-playlist.page';
+import { AartiPreviewPopoverComponent } from '../../aarti-preview-popover/aarti-preview-popover.component'
 
 @NgModule({
   imports: [
@@ -15,6 +16,9 @@ import { CreatePlaylistPage } from './create-playlist.page';
     IonicModule,
     CreatePlaylistPageRoutingModule
   ],
-  declarations: [CreatePlaylistPage]
+  entryComponents:[AartiPreviewPopoverComponent],
+  declarations: [CreatePlaylistPage,AartiPreviewPopoverComponent],
+  exports:[AartiPreviewPopoverComponent]
+
 })
 export class CreatePlaylistPageModule {}
