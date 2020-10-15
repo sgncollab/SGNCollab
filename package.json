@@ -53,7 +53,7 @@
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.803.28",
+    "@angular-devkit/build-angular": "^0.803.29",
     "@angular/cli": "~8.3.23",
     "@angular/compiler": "~8.2.14",
     "@angular/compiler-cli": "~8.2.14",
@@ -105,7 +105,10 @@
       "cordova-plugin-screen-orientation": {},
       "cordova-clipboard": {},
       "cordova-plugin-customurlscheme": {
-        "URL_SCHEME": "ionicapp"
+        "URL_SCHEME": "ionicapp",
+        "ANDROID_SCHEME": " ",
+        "ANDROID_HOST": " ",
+        "ANDROID_PATHPREFIX": "/"
       },
       "cordova-plugin-network-information": {},
       "cordova-plugin-aes256-encryption": {}

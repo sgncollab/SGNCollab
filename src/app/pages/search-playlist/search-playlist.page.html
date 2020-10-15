@@ -17,14 +17,20 @@
     <ion-item class="ion-text-capitalize"style=" border:1px solid lightgray;
     border-radius:2vh;margin-left:7vw;margin-right:7vw;" 
     (click)="getString(item.playlist_id)">
-    <ion-label style="text-align:center;font-size:3vh;">{{item.playlist_id}}{{ item.playlist_name }} </ion-label> 
+    <ion-label style="font-size:3vh;">
+      <ion-row>
+
+        <ion-col size="3">{{item.playlist_id}} </ion-col>
+        <ion-col >{{ item.playlist_name }}</ion-col>
+      </ion-row>
+       </ion-label> 
     </ion-item>
   </ion-list>
  </div> 
 
   <ion-item *ngIf = "this.noItemFound" style="--inner-padding-start:22vw; font-size:3vh;font-weight:300;border:1px solid lightgray;
   border-radius:2vh;margin-left:7vw;margin-right:7vw;" >
-    No items found!
+    No Playlist found!
   </ion-item>
 
 </ion-content>

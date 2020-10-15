@@ -1,32 +1,11 @@
-// ion-content.background{
-//   --background: url(../../../assets/images/blue-bg-70.png)0 0/100% 100% no-repeat  ;
-  
-// }
-.fadeIn {
-  animation-name: fadeIn;
-  animation-duration: 4s;
-}
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0.25;
-  }
-  25% {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 0.75;
-  }
-  75% {
-    opacity: 0.90;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-.vertical-center{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
+.video{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translateX(-50%) translateY(-50%);
 }

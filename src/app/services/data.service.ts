@@ -24,6 +24,8 @@ export class DataService {
   usertype:string="guest";
   item;
 
+  
+
   constructor() { }
 
   setGuest(user){
@@ -148,5 +150,6 @@ export class DataService {
   getItem(){
     return this.item;
   }
+  
   
 }

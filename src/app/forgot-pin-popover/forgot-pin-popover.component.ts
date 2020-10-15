@@ -59,19 +59,19 @@ export class ForgotPinPopoverComponent implements OnInit {
 
 
   resetEmail() {
-    // var templateParams = {
-    //   to_email: this.to_email,
-    //   to_name: this.to_name,
-    //   randomNo: this.randomNo
-    // }
-    // emailjs.send('feedback_service', 'reset_email', templateParams)
-    //   .then(function (response) {
-    //     console.log('SUCCESS!', response.status, response.text);
-    //     alert("Reset Request were sent to your Email");
-    //   },
-    //     function (error) {
-    //       alert("FAILED!");
-    //     });
+    var templateParams = {
+      to_email: this.to_email,
+      to_name: this.to_name,
+      randomNo: this.randomNo
+    }
+    emailjs.send('feedback_service', 'reset_email', templateParams)
+      .then(function (response) {
+        console.log('SUCCESS!', response.status, response.text);
+        alert("Reset Request were sent to your Email");
+      },
+        function (error) {
+          alert("FAILED!");
+        });
   }
   inputCheck(e, identifier) {
     this.emptyuname = false;
