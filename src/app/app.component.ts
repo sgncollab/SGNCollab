@@ -200,6 +200,11 @@ export class AppComponent implements OnInit {
           title: 'Register',
           url: 'registration-login',
           icon: 'enter'
+        },
+        {
+          title: 'Help',
+          url: 'help',
+          icon: 'help-circle'
         }
       ];
     } else if (name != "guest" && this.net == false) {
@@ -219,7 +224,6 @@ export class AppComponent implements OnInit {
         }
       ];
     } else if (name == "guest" && this.net == false) {
-
       this.username = "Guest";
       this.appPages = [
         {
@@ -256,6 +260,12 @@ export class AppComponent implements OnInit {
           url: 'feedback',
           icon: 'create'
         },
+        
+        {
+          title: 'Help',
+          url: 'help',
+          icon: 'help-circle'
+        },
 
         {
           title: 'Logout',
@@ -272,7 +282,7 @@ export class AppComponent implements OnInit {
     this.dataPage = this.dataService.getPresentPage();
     //console.log(this.dataPage);
     if (this.username.toLowerCase() != "guest") {
-      if (index == 5) {
+      if (index == 6) {
         this.logout();
       }
       let count = 0;
