@@ -86,7 +86,11 @@ const routes: Routes = [
   {
     path: 'reset-pin',
     loadChildren: () => import('./pages/reset-pin/reset-pin.module').then( m => m.ResetPinPageModule)
+  },  {
+    path: 'help',
+    loadChildren: () => import('./pages/help/help.module').then( m => m.HelpPageModule)
   }
+
 
 ];
 

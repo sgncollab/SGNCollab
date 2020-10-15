@@ -6,7 +6,7 @@ import { AppComponent } from 'src/app/app.component';
 import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 import { ForgotPinPopoverComponent } from '../forgot-pin-popover/forgot-pin-popover.component'
 import { DataService } from 'src/app/services/data.service';
-import { Network } from '@ionic-native/network/ngx';
+//import { Network } from '@ionic-native/network/ngx';
 
 
 
@@ -57,7 +57,7 @@ export class RegistrationLoginPage implements OnInit {
   guest =false;
   view
   currentPage ="registration-login";
-  internet = true;
+  //internet = true;
  
 
   constructor(
@@ -68,22 +68,22 @@ export class RegistrationLoginPage implements OnInit {
     private navCtrl: NavController,
     private popovercntrl: PopoverController,
     private dataService: DataService,
-    private network: Network,
+    //private network: Network,
    ) {
-    this.network.onDisconnect().subscribe(() => {
-      this.internet = false;
-      //alert('network was disconnected :-(');
-    });
-    this.network.onConnect().subscribe(() => {
-      this.internet = true;
-      //alert('network connected!');
+    // this.network.onDisconnect().subscribe(() => {
+    //   this.internet = false;
+    //   //alert('network was disconnected :-(');
+    // });
+    // this.network.onConnect().subscribe(() => {
+    //   this.internet = true;
+    //   //alert('network connected!');
       
-      setTimeout(() => {
-        if (this.network.type === 'wifi') {
-          //alert('we got a wifi connection, woohoo!');
-        }
-      }, 3000);
-    });
+    //   setTimeout(() => {
+    //     if (this.network.type === 'wifi') {
+    //       //alert('we got a wifi connection, woohoo!');
+    //     }
+    //   }, 3000);
+    // });
   }
   
   async presentPopover(ev) {
@@ -122,7 +122,7 @@ export class RegistrationLoginPage implements OnInit {
       }
     })
 
-    // getting remember me values if checked
+    
     
   }
 
@@ -276,8 +276,7 @@ export class RegistrationLoginPage implements OnInit {
     }
   }
   register() {
-    if(this.internet == true){
-      let pin = Md5.hashStr(this.confirmPIN);
+    let pin = Md5.hashStr(this.confirmPIN);
     this.dbService.createUser(this.srNo, this.username.toLowerCase(), pin);
     this.dataService.setUserType(this.username)
     this.appComponent.viewMenu(this.username);
@@ -285,40 +284,9 @@ export class RegistrationLoginPage implements OnInit {
     this.dataService.setLoggedInUserData(serialNo);
     this.dataService.setLoggedInUsername(this.username);
     this.navCtrl.navigateForward('aarti-list');
-
-    if (this.confirmPIN == this.createPIN) {
-      console.log(this.confirmPIN);
-      if (this.username == "" || this.username == undefined) {
-        console.log("please enter usename");
-      }
-
-      else {
-        console.log("register")
-        let pin = Md5.hashStr(this.confirmPIN);
-        this.dbService.createUser(this.srNo, this.username.toLowerCase(), pin);
-        this.dataService.setUserType(this.username);
-        this.appComponent.viewMenu(this.username);
-        let serialNo = this.srNo;
-        this.dataService.setLoggedInUserData(serialNo);
-        this.navCtrl.navigateForward('aarti-list');
-      }
-
-    }
-    else {
-      console.log("Check the pin ")
-    }
-
-    }
-    else{
-      alert("Kindly check your Internet connection!");
-
-    }
-    
   }
 
   login() {
-    if(this.internet == true) {
-      //Do task when no internet connection
       this.loginPin = false;
       this.loginUname = false;
       let flag = this.regResult.filter(value => {
@@ -344,10 +312,6 @@ export class RegistrationLoginPage implements OnInit {
         this.loginUname = true;
         //console.log("Please check your username");
       }
-    } else {
-      this.dbService.showToast("Kindly check your Internet Connection!")
-    }
-
   }
   
   rememberMe(identifier, e) {
