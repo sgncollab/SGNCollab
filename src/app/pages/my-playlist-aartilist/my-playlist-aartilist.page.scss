@@ -15,3 +15,24 @@ ion-content.background{
 .bg-transparent {
     background: transparent;
 }
+@font-face{
+    font-family: Khand-Regular;
+    font-style: regular;
+    src: url("../../../assets/fonts/Khand-Regular.ttf");
+}
+@font-face{
+    font-family: Khand-SemiBold;
+    font-style: semi-bold;
+    src: url("../../../assets/fonts/Khand-SemiBold.ttf");
+}
+
+@font-face{
+    font-family: Dosis-Regular;
+    font-style: regular;
+    src: url("../../../assets/fonts/Dosis-Regular.ttf");
+}
+@font-face{
+    font-family: Dosis-SemiBold;
+    font-style: semi-bold;
+    src: url("../../../assets/fonts/Dosis-SemiBold.ttf");
+}
