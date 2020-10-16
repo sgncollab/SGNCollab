@@ -20,7 +20,6 @@ export class AppComponent implements OnInit {
   srNo: any;
   userPlaylist: any = [];
   dataPage = "";
-  currentPage = "app-component";
   user = "guest";
   user_name;
   net = true;
@@ -40,19 +39,25 @@ export class AppComponent implements OnInit {
     private popovercntrl: PopoverController
   ) {
     this.initializeApp();
+    
 
     this.network.onDisconnect().subscribe(() => {
       this.net = false;
+      this.dataService.setInternetStatus(this.net);
       this.userType = this.dataService.getUserType();
+
       this.viewMenu(this.userType)
-      if (this.currentPage != "registration-login") {
+      if ( this.dataService.getPresentPage() != "registration-login") {      
         this.navController.navigateForward('aarti-list');
+      }else{
+        this.dbService.showToast("Kindly Check Your Internet Connecion!")
       }
       // alert('network was disconnected :-('+ this.network.type);
     });
     this.network.onConnect().subscribe(() => {
       // alert('network connected!');
       this.net = true;
+      this.dataService.setInternetStatus(this.net);
       this.userType = this.dataService.getUserType();
       this.viewMenu(this.userType)
       setTimeout(() => {

@@ -276,17 +276,25 @@ export class RegistrationLoginPage implements OnInit {
     }
   }
   register() {
-    let pin = Md5.hashStr(this.confirmPIN);
-    this.dbService.createUser(this.srNo, this.username.toLowerCase(), pin);
-    this.dataService.setUserType(this.username)
-    this.appComponent.viewMenu(this.username);
-    let serialNo = this.srNo;
-    this.dataService.setLoggedInUserData(serialNo);
-    this.dataService.setLoggedInUsername(this.username);
-    this.navCtrl.navigateForward('aarti-list');
+    let internet =this.dataService.getInternetStatus();
+    if(internet == true){
+      let pin = Md5.hashStr(this.confirmPIN);
+      this.dbService.createUser(this.srNo, this.username.toLowerCase(), pin);
+      this.dataService.setUserType(this.username)
+      this.appComponent.viewMenu(this.username);
+      let serialNo = this.srNo;
+      this.dataService.setLoggedInUserData(serialNo);
+      this.dataService.setLoggedInUsername(this.username);
+      this.navCtrl.navigateForward('aarti-list');
+    }else{
+      this.dbService.showToast("Kindly Check Your Internet Connecion!")
+    }
+    
   }
 
   login() {
+    let internet =this.dataService.getInternetStatus();
+    if(internet == true){
       this.loginPin = false;
       this.loginUname = false;
       let flag = this.regResult.filter(value => {
@@ -312,6 +320,10 @@ export class RegistrationLoginPage implements OnInit {
         this.loginUname = true;
         //console.log("Please check your username");
       }
+    }else{
+      this.dbService.showToast("Kindly Check Your Internet Connecion!") 
+    }
+      
   }
   
   rememberMe(identifier, e) {

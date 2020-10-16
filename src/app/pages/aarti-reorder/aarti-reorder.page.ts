@@ -28,13 +28,9 @@ export class AartiReorderPage implements OnInit {
     private dbService: FirebaseDbService,
     private route: ActivatedRoute
   ) { }
-  // ionViewDidLeave(){
-  //   this.selectedItems = [];
-  // }
 
-  ngOnInit() {
-    
-    // this.selectedLang = this.dataService.getLang();
+  ionViewWillEnter(){
+      // this.selectedLang = this.dataService.getLang();
     // console.log(this.selectedLang);
     this.dataPage = this.dataService.getPresentPage();
     this.selectedItems = this.dataService.getAarti();
@@ -52,6 +48,14 @@ export class AartiReorderPage implements OnInit {
     });
     
     this.srNo = this.dataService.getLoggedInUserData();
+  }
+  // ionViewDidLeave(){
+  //   this.selectedItems = [];
+  // }
+
+  ngOnInit() {
+    
+  
   }
   // displayLang() {
   //   this.lang = !this.lang;

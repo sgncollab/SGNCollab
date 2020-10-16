@@ -20,6 +20,7 @@ export class DataService {
   private username;
   private Rmno=0;
   resetname:any;
+  internet= true;
   user;
   usertype:string="guest";
   item;
@@ -150,6 +151,11 @@ export class DataService {
   getItem(){
     return this.item;
   }
-  
+  setInternetStatus(net){
+    this.internet = net;
+  }
+  getInternetStatus(){
+ return this.internet;
+  }
   
 }

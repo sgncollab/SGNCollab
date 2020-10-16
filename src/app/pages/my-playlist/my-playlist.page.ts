@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FirebaseDbService } from 'src/app/services/firebase-db.service';
 import { DataService } from 'src/app/services/data.service';
 import { NavController, LoadingController, ActionSheetController,Platform,MenuController, AlertController } from '@ionic/angular';
-import { NavigationExtras } from '@angular/router';
 import { Clipboard } from '@ionic-native/clipboard/ngx';
 
 @Component({
